@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="asterisk-java" default="build" basedir=".">
+	<property prefix="asterisk" file="version"/>
+	
+	<property name="src" value="src/main"/>
+	
+	<path id="project.class.path">
+		<!-- compile classes -->
+		<pathelement location="build/classes"/>
+		<!-- project libs -->
+		<fileset dir="lib" includes="**/*.jar"/>
+	</path>
+	
+	<!-- compile project -->
+	<target name="compile" description="compile java source">
+		<mkdir dir="build/classes"/>
+		<javac includeantruntime="false" srcdir="${src}" includes="**" encoding="UTF8" destdir="build/classes" source="${env.java_ver}" target="${env.java_ver}" nowarn="true" debug="${env.debug}" debuglevel="${env.debugInfo}">
+			<classpath refid="project.class.path"/>
+		</javac>
+	</target>
+	
+	<!-- generate javadoc project -->
+	<target name="javadoc">
+		<mkdir dir="build/doc"/>
+		<javadoc destdir="build/doc" author="true" version="true" use="true" windowtitle="Asterisk-Java ${asterisk.ver} API">
+			<packageset dir="${src}" defaultexcludes="yes">
+			</packageset>
+		</javadoc>
+	</target>
+	
+	<!-- build project -->
+	<target name="build" depends="compile,javadoc" description="build this project">
+		<mkdir dir="build/jar"/>
+		<jar destfile="build/jar/${ant.project.name}-${asterisk.ver}.jar">
+			<manifest>
+				<attribute name="Built-By" value="${user.name}"/>
+				<attribute name="Implementation-Version" value="${asterisk.ver}"/>
+			</manifest>
+			<fileset dir="build/classes"/>
+		</jar>
+		<jar destfile="build/jar/${ant.project.name}-${asterisk.ver}-src.jar">
+			<manifest>
+				<attribute name="Built-By" value="${user.name}"/>
+				<attribute name="Implementation-Version" value="${asterisk.ver}"/>
+			</manifest>
+			<fileset dir="${src}"/>
+		</jar>
+		<jar destfile="build/jar/${ant.project.name}-${asterisk.ver}-src.jar">
+			<manifest>
+				<attribute name="Built-By" value="${user.name}"/>
+				<attribute name="Implementation-Version" value="${asterisk.ver}"/>
+			</manifest>
+			<fileset dir="${src}"/>
+			<fileset dir="build" includes="doc/"/>
+		</jar>
+	</target>
+	
+	<!-- clean project -->
+	<target name="clean" description="Cleans this project">
+		<delete dir="build/classes" failonerror="false"/>
+		<delete dir="build/doc" failonerror="false"/>
+	</target>
+</project>

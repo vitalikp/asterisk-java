@@ -1,6 +1,3 @@
-<html>
-<head>
-<!--
 /*
  *  Copyright 2004-2006 Stefan Reuter
  *
@@ -17,12 +14,10 @@
  *  limitations under the License.
  *
  */
--->
-</head>
-<body>
 
-<p>Provides classes that represent the standard actions that can be sent
-	to an Asterisk server via the Manager API.</p>
-
-</body>
-</html>
+/**
+ * Provides classes that represent the responses that are received
+ * from an Asterisk server in response to an action send via the 
+ * Manager API.
+ */
+package org.asteriskjava.manager.response;

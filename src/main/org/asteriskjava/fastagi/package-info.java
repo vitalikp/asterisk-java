@@ -1,6 +1,3 @@
-<html>
-<head>
-<!--
 /*
  *  Copyright 2004-2006 Stefan Reuter
  *
@@ -17,11 +14,8 @@
  *  limitations under the License.
  *
  */
--->
-</head>
-<body>
 
-<p>Provides an implementaion of Asterisk's Manager API.</p>
-
-</body>
-</html>
+/**
+ * Provides an implementaion of Asterisk's FastAGI.
+ */
+package org.asteriskjava.fastagi;

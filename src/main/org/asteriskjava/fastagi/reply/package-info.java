@@ -1,6 +1,3 @@
-<html>
-<head>
-<!--
 /*
  *  Copyright 2004-2006 Stefan Reuter
  *
@@ -17,12 +14,10 @@
  *  limitations under the License.
  *
  */
--->
-</head>
-<body>
 
-<p>Provides private implementations for interfaces defined in the
-	org.asteriskjava.fastagi package.</p>
-
-</body>
-</html>
+/**
+ * Provides a class that represents the reply that is received
+ * from an Asterisk server in response to a command sent via 
+ * the FastAGI.
+ */
+package org.asteriskjava.fastagi.reply;

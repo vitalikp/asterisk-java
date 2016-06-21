@@ -1,6 +1,3 @@
-<html>
-<head>
-<!--
 /*
  *  Copyright 2004-2006 Stefan Reuter
  *
@@ -17,11 +14,11 @@
  *  limitations under the License.
  *
  */
--->
-</head>
-<body>
 
-<p>Provides a higher level API on top of Asterisk's Manager API.</p>
-
-</body>
-</html>
+/**
+ * <p>Provides various utility classes used throughout the library.</p>
+ * <p>Client code is generally not supposed to use classes or interfaces in this packages
+ * with the exception of the logging support if they want to reuse Asterisk-Java's
+ * logging abstraction layer.</p>
+ */
+package org.asteriskjava.util;

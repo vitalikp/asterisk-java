@@ -1,6 +1,3 @@
-<html>
-<head>
-<!--
 /*
  *  Copyright 2004-2006 Stefan Reuter
  *
@@ -17,11 +14,9 @@
  *  limitations under the License.
  *
  */
--->
-</head>
-<body>
 
-<p>Provides an implementaion of Asterisk's FastAGI.</p>
-
-</body>
-</html>
+/**
+ * Provides classes that represent the standard events that can be received
+ * from an Asterisk server via the Manager API.
+ */
+package org.asteriskjava.manager.event;

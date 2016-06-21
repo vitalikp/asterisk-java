@@ -1,6 +1,3 @@
-<html>
-<head>
-<!--
 /*
  *  Copyright 2004-2006 Stefan Reuter
  *
@@ -17,13 +14,8 @@
  *  limitations under the License.
  *
  */
--->
-</head>
-<body>
 
-<p>Provides a class that represents the reply that is received
-	from an Asterisk server in response to a command sent via 
-	the FastAGI.</p>
-
-</body>
-</html>
+/**
+ * Provides a higher level API on top of Asterisk's Manager API.
+ */
+package org.asteriskjava.live;

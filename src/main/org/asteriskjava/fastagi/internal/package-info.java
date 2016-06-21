@@ -1,6 +1,3 @@
-<html>
-<head>
-<!--
 /*
  *  Copyright 2004-2006 Stefan Reuter
  *
@@ -17,12 +14,9 @@
  *  limitations under the License.
  *
  */
--->
-</head>
-<body>
 
-<p>Provides classes that represent the standard commands that can be sent
-	to an Asterisk server via the FastAGI.</p>
-
-</body>
-</html>
+/**
+ * Provides private implementations for interfaces defined in the
+ * org.asteriskjava.fastagi package.
+ */
+package org.asteriskjava.fastagi.internal;

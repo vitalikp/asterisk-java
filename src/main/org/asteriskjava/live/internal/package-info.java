@@ -1,6 +1,3 @@
-<html>
-<head>
-<!--
 /*
  *  Copyright 2004-2006 Stefan Reuter
  *
@@ -17,12 +14,9 @@
  *  limitations under the License.
  *
  */
--->
-</head>
-<body>
 
-<p>Provides private implementations and helper classes for interfaces 
-    defined in the org.asteriskjava.live package.</p>
-
-</body>
-</html>
+/**
+ * Provides private implementations and helper classes for interfaces 
+ * defined in the org.asteriskjava.live package.
+ */
+package org.asteriskjava.live.internal;

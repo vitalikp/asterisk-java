@@ -1,6 +1,3 @@
-<html>
-<head>
-<!--
 /*
  *  Copyright 2004-2006 Stefan Reuter
  *
@@ -17,12 +14,8 @@
  *  limitations under the License.
  *
  */
--->
-</head>
-<body>
 
-<p>Provides private implementations for interfaces defined in the
-	org.asteriskjava.manager package.</p>
-
-</body>
-</html>
+/**
+ * Provides an implementaion of Asterisk's Manager API.
+ */
+package org.asteriskjava.manager;

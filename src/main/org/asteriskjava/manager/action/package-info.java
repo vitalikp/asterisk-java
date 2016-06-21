@@ -1,6 +1,3 @@
-<html>
-<head>
-<!--
 /*
  *  Copyright 2004-2006 Stefan Reuter
  *
@@ -17,14 +14,9 @@
  *  limitations under the License.
  *
  */
--->
-</head>
-<body>
 
-<p>Provides various utility classes used throughout the library.</p>
-<p>Client code is generally not supposed to use classes or interfaces in this packages
-	with the exception of the logging support if they want to reuse Asterisk-Java's
-	logging abstraction layer.</p>
-
-</body>
-</html>
+/**
+ * Provides classes that represent the standard actions that can be sent
+ * to an Asterisk server via the Manager API.
+ */
+package org.asteriskjava.manager.action;

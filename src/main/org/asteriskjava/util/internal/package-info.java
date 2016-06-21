@@ -1,6 +1,3 @@
-<html>
-<head>
-<!--
 /*
  *  Copyright 2004-2006 Stefan Reuter
  *
@@ -17,12 +14,9 @@
  *  limitations under the License.
  *
  */
--->
-</head>
-<body>
 
-<p>Provides classes that represent the standard events that can be received
-	from an Asterisk server via the Manager API.</p>
-
-</body>
-</html>
+/**
+ * Provides private implementations for interfaces defined in the
+ * org.asteriskjava.util package.
+ */
+package org.asteriskjava.util.internal;

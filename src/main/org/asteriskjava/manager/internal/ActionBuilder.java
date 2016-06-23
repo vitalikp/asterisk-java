@@ -16,7 +16,6 @@
  */
 package org.asteriskjava.manager.internal;
 
-import org.asteriskjava.AsteriskVersion;
 import org.asteriskjava.manager.action.ManagerAction;
 
 
@@ -29,14 +28,6 @@ import org.asteriskjava.manager.action.ManagerAction;
  */
 interface ActionBuilder
 {
-    /**
-     * Sets the version of the Asterisk server to built the action for.
-     * 
-     * @param asteriskVersion the version of the target Asterisk server.
-     * @since 0.2
-     */
-    void setTargetVersion(AsteriskVersion targetVersion);
-
     /**
      * Builds a String suitable to be sent to Asterisk based on the given action object.<p>
      * Asterisk actions consist of an unordered set of key value pairs corresponding to the

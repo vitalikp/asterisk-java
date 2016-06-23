@@ -1132,14 +1132,6 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
     {
         logger.info("Connected via " + identifier);
 
-        if (!"Asterisk Call Manager/1.0".equals(identifier)
-                && !"Asterisk Call Manager/1.2".equals(identifier) // bri stuffed 
-                && !"OpenPBX Call Manager/1.0".equals(identifier)
-                && !"CallWeaver Call Manager/1.0".equals(identifier))
-        {
-            logger.warn("Unsupported protocol version '" + identifier + "'. Use at your own risk.");
-        }
-
         synchronized (protocolIdentifier)
         {
             protocolIdentifier.value = identifier;

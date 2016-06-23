@@ -18,7 +18,6 @@ package org.asteriskjava.manager.internal;
 
 import java.io.IOException;
 
-import org.asteriskjava.AsteriskVersion;
 import org.asteriskjava.manager.action.ManagerAction;
 import org.asteriskjava.util.SocketConnectionFacade;
 
@@ -35,14 +34,6 @@ import org.asteriskjava.util.SocketConnectionFacade;
  */
 public interface ManagerWriter
 {
-    /**
-     * Sets the version of the target Asterisk server.
-     * 
-     * @param asteriskVersion the version of the target Asterisk server.
-     * @since 0.2
-     */
-    public void setTargetVersion(AsteriskVersion targetVersion);
-
     /**
      * Sets the socket to use for writing to Asterisk.
      * 

@@ -18,7 +18,6 @@ package org.asteriskjava.manager.internal;
 
 import java.io.IOException;
 
-import org.asteriskjava.AsteriskVersion;
 import org.asteriskjava.manager.action.ManagerAction;
 import org.asteriskjava.util.Log;
 import org.asteriskjava.util.LogFactory;
@@ -52,11 +51,6 @@ public class ManagerWriterImpl implements ManagerWriter
     public ManagerWriterImpl()
     {
         this.actionBuilder = new ActionBuilderImpl();
-    }
-
-    public void setTargetVersion(AsteriskVersion version)
-    {
-        actionBuilder.setTargetVersion(version);
     }
 
     public synchronized void setSocket(final SocketConnectionFacade socket)

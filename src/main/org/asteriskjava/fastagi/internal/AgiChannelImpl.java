@@ -68,14 +68,14 @@ public class AgiChannelImpl implements AgiChannel
     private final AgiWriter agiWriter;
     private final AgiReader agiReader;
 
-    AgiChannelImpl(AgiRequest request, SocketConnectionFacade socket)
+    public AgiChannelImpl(AgiRequest request, SocketConnectionFacade socket)
     {
         this.request = request;
         this.agiWriter = new AgiWriterImpl(socket);
         this.agiReader = new AgiReaderImpl(socket);
     }
 
-    AgiChannelImpl(AgiRequest request, AgiWriter agiWriter, AgiReader agiReader)
+    public AgiChannelImpl(AgiRequest request, AgiWriter agiWriter, AgiReader agiReader)
     {
         this.request = request;
         this.agiWriter = agiWriter;

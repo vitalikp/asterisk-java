@@ -27,7 +27,7 @@ import org.asteriskjava.fastagi.reply.AgiReply;
  * @author srt
  * @version $Id: AgiReader.java 263 2006-05-07 11:37:58Z srt $
  */
-interface AgiReader
+public interface AgiReader
 {
     /**
      * Reads the initial request data from Asterisk.

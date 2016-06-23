@@ -22,7 +22,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.HashSet;
 
-import org.asteriskjava.AsteriskVersion;
 import org.asteriskjava.manager.action.ManagerAction;
 import org.asteriskjava.util.Log;
 import org.asteriskjava.util.LogFactory;
@@ -44,27 +43,12 @@ class ActionBuilderImpl implements ActionBuilder
      * Instance logger.
      */
     private final Log logger = LogFactory.getLog(getClass());
-    private AsteriskVersion targetVersion;
-
-    /**
-     * Creates a new ActionBuilder for Asterisk 1.0.
-     */
-    ActionBuilderImpl()
-    {
-        this.targetVersion = AsteriskVersion.ASTERISK_1_0;
-    }
-
-    public void setTargetVersion(AsteriskVersion targetVersion)
-    {
-        this.targetVersion = targetVersion;
-    }
 
     public String buildAction(final ManagerAction action)
     {
         return buildAction(action, null);
     }
 
-    @SuppressWarnings("unchecked")
     public String buildAction(final ManagerAction action, final String internalActionId)
     {
         StringBuffer sb = new StringBuffer();

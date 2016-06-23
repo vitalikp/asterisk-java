@@ -17,7 +17,6 @@
 package org.asteriskjava.manager.internal;
 
 import java.lang.reflect.Method;
-import java.util.Iterator;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
@@ -129,45 +128,6 @@ class ActionBuilderImpl implements ActionBuilder
             singularKey = key;
         }
 
-        if (targetVersion.isAtLeast(AsteriskVersion.ASTERISK_1_2))
-        {
-            appendMap12(sb, singularKey, values);
-        }
-        else
-        {
-            appendMap10(sb, singularKey, values);
-        }
-    }
-
-    private void appendMap10(StringBuffer sb, String singularKey, Map<String, String> values)
-    {
-        Iterator<Map.Entry<String, String>> entryIterator;
-
-        sb.append(singularKey);
-        sb.append(": ");
-        entryIterator = values.entrySet().iterator();
-        while (entryIterator.hasNext())
-        {
-            Map.Entry entry;
-
-            entry = entryIterator.next();
-            sb.append(entry.getKey());
-            sb.append("=");
-            if (entry.getValue() != null)
-            {
-                sb.append(entry.getValue());
-            }
-
-            if (entryIterator.hasNext())
-            {
-                sb.append("|");
-            }
-        }
-        sb.append(LINE_SEPARATOR);
-    }
-
-    private void appendMap12(StringBuffer sb, String singularKey, Map<String, String> values)
-    {
         for (Map.Entry entry : values.entrySet())
         {
             sb.append(singularKey);

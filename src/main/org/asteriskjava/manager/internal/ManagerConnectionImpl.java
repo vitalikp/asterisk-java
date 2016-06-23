@@ -34,7 +34,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicLong;
 
-import org.asteriskjava.AsteriskVersion;
 import org.asteriskjava.manager.AuthenticationFailedException;
 import org.asteriskjava.manager.EventTimeoutException;
 import org.asteriskjava.manager.ManagerConnection;
@@ -44,7 +43,6 @@ import org.asteriskjava.manager.SendActionCallback;
 import org.asteriskjava.manager.ResponseEvents;
 import org.asteriskjava.manager.TimeoutException;
 import org.asteriskjava.manager.action.ChallengeAction;
-import org.asteriskjava.manager.action.CommandAction;
 import org.asteriskjava.manager.action.EventGeneratingAction;
 import org.asteriskjava.manager.action.LoginAction;
 import org.asteriskjava.manager.action.LogoffAction;
@@ -55,7 +53,6 @@ import org.asteriskjava.manager.event.ManagerEvent;
 import org.asteriskjava.manager.event.ProtocolIdentifierReceivedEvent;
 import org.asteriskjava.manager.event.ResponseEvent;
 import org.asteriskjava.manager.response.ChallengeResponse;
-import org.asteriskjava.manager.response.CommandResponse;
 import org.asteriskjava.manager.response.ManagerError;
 import org.asteriskjava.manager.response.ManagerResponse;
 import org.asteriskjava.util.DateUtil;
@@ -87,8 +84,6 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
     private static final int RECONNECTION_INTERVAL_2 = 5000;
     private static final String DEFAULT_HOSTNAME = "localhost";
     private static final int DEFAULT_PORT = 5038;
-    private static final int RECONNECTION_VERSION_INTERVAL = 500;
-    private static final int MAX_VERSION_ATTEMPTS = 4;
 
     private static final AtomicLong idCounter = new AtomicLong(0);
 
@@ -192,11 +187,6 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
      * to be used as mutex.
      */
     private final ProtocolIdentifierWrapper protocolIdentifier;
-
-    /**
-     * The version of the Asterisk server we are connected to.
-     */
-    private AsteriskVersion version;
 
     /**
      * Contains the registered handlers that process the ManagerResponses.
@@ -578,99 +568,12 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
 
         logger.info("Successfully logged in");
 
-        version = determineVersion();
-        writer.setTargetVersion(version);
-
-        logger.info("Determined Asterisk version: " + version);
-
         // generate pseudo event indicating a successful login
         ConnectEvent connectEvent = new ConnectEvent(this);
         connectEvent.setProtocolIdentifier(getProtocolIdentifier());
         connectEvent.setDateReceived(DateUtil.getDate());
         // TODO could this cause a deadlock?
         fireEvent(connectEvent);
-    }
-
-    protected AsteriskVersion determineVersion() throws IOException, TimeoutException
-    {
-        int attempts = 0;
-        while (attempts < MAX_VERSION_ATTEMPTS)
-        {
-            ManagerResponse showVersionFilesResponse;
-
-            // increase timeout as output is quite large
-            showVersionFilesResponse = sendAction(new CommandAction("show version files pbx.c"), defaultResponseTimeout * 2);
-            if (showVersionFilesResponse instanceof CommandResponse)
-            {
-                List<String> showVersionFilesResult;
-
-                showVersionFilesResult = ((CommandResponse) showVersionFilesResponse).getResult();
-                if (showVersionFilesResult != null && showVersionFilesResult.size() > 0)
-                {
-                    String line1;
-
-                    line1 = showVersionFilesResult.get(0);
-                    if (line1 != null && line1.startsWith("File"))
-                    {
-                        final String rawVersion;
-
-                        rawVersion = getRawVersion();
-                        if (rawVersion != null && rawVersion.startsWith("Asterisk 1.4"))
-                        {
-                            return AsteriskVersion.ASTERISK_1_4;
-                        }
-
-                        return AsteriskVersion.ASTERISK_1_2;
-                    }
-                    else if (line1 != null && line1.contains("No such command"))
-                    {
-                        try
-                        {
-                            attempts++;
-                            Thread.sleep(RECONNECTION_VERSION_INTERVAL);
-                        }
-                        catch (Exception ex)
-                        {
-                            // ingnore
-                        }
-                    }
-                    else
-                    {
-                        // if it isn't the "no such command", break and return the lowest version immediately
-                        break;
-                    }
-                }
-            }
-        }
-
-        return AsteriskVersion.ASTERISK_1_0;
-    }
-
-    protected String getRawVersion()
-    {
-        final ManagerResponse showVersionResponse;
-
-        try
-        {
-            showVersionResponse = sendAction(new CommandAction("show version"), defaultResponseTimeout * 2);
-        }
-        catch (Exception e)
-        {
-            return null;
-        }
-
-        if (showVersionResponse instanceof CommandResponse)
-        {
-            final List<String> showVersionResult;
-
-            showVersionResult = ((CommandResponse) showVersionResponse).getResult();
-            if (showVersionResult != null && showVersionResult.size() > 0)
-            {
-                return showVersionResult.get(0);
-            }
-        }
-
-        return null;
     }
 
     protected synchronized void connect() throws IOException

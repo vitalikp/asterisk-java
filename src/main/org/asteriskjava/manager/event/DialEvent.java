@@ -32,10 +32,12 @@ public class DialEvent extends ManagerEvent
      */
     private static final long serialVersionUID = 3258130241292417336L;
 
+    private String subEvent;
+    
     /**
      * The name of the source channel.
      */
-    private String src;
+    private String channel;
 
     /**
      * The name of the destination channel.
@@ -43,24 +45,33 @@ public class DialEvent extends ManagerEvent
     private String destination;
 
     /**
-     * The new Caller*ID.
+     * The new Caller*ID Num.
      */
-    private String callerId;
+    private String callerIdNum;
 
     /**
      * The new Caller*ID Name.
      */
     private String callerIdName;
+    
+    
+    private String connectedLineNum;
+    
+    private String connectedLineName;
 
     /**
      * The unique id of the source channel.
      */
-    private String srcUniqueId;
+    private String uniqueId;
 
     /**
      * The unique id of the destination channel.
      */
     private String destUniqueId;
+    
+    private String dialStatus;
+    
+    private String dialstring;
 
     /**
      * Creates a new DialEvent.
@@ -72,14 +83,24 @@ public class DialEvent extends ManagerEvent
         super(source);
     }
 
-    /**
+    public String getSubEvent()
+	{
+		return subEvent;
+	}
+
+	public void setSubEvent(String subEvent)
+	{
+		this.subEvent = subEvent;
+	}
+
+	/**
      * Returns the name of the source channel.
      * 
      * @return the name of the source channel.
      */
-    public String getSrc()
+    public String getChannel()
     {
-        return src;
+        return channel;
     }
 
     /**
@@ -87,9 +108,9 @@ public class DialEvent extends ManagerEvent
      * 
      * @param src the name of the source channel.
      */
-    public void setSrc(String src)
+    public void setChannel(String channel)
     {
-        this.src = src;
+        this.channel = channel;
     }
 
     /**
@@ -113,13 +134,13 @@ public class DialEvent extends ManagerEvent
     }
 
     /**
-     * Returns the Caller*ID.
+     * Returns the Caller*ID Num.
      * 
-     * @return the Caller*ID or "<unknown>" if none has been set.
+     * @return the Caller*ID Num or "<unknown>" if none has been set.
      */
-    public String getCallerId()
+    public String getCallerIdNum()
     {
-        return callerId;
+        return callerIdNum;
     }
 
     /**
@@ -127,9 +148,9 @@ public class DialEvent extends ManagerEvent
      * 
      * @param callerId the caller*ID.
      */
-    public void setCallerId(String callerId)
+    public void setCallerIdNum(String callerIdNum)
     {
-        this.callerId = callerId;
+        this.callerIdNum = callerIdNum;
     }
 
     /**
@@ -152,14 +173,34 @@ public class DialEvent extends ManagerEvent
         this.callerIdName = callerIdName;
     }
 
-    /**
+    public String getConnectedLineNum()
+	{
+		return connectedLineNum;
+	}
+
+	public void setConnectedLineNum(String connectedLineNum)
+	{
+		this.connectedLineNum = connectedLineNum;
+	}
+
+	public String getConnectedLineName()
+	{
+		return connectedLineName;
+	}
+
+	public void setConnectedLineName(String connectedLineName)
+	{
+		this.connectedLineName = connectedLineName;
+	}
+
+	/**
      * Returns the unique ID of the source channel.
      * 
      * @return the unique ID of the source channel.
      */
-    public String getSrcUniqueId()
+    public String getUniqueId()
     {
-        return srcUniqueId;
+        return uniqueId;
     }
 
     /**
@@ -167,9 +208,9 @@ public class DialEvent extends ManagerEvent
      * 
      * @param srcUniqueId the unique ID of the source channel.
      */
-    public void setSrcUniqueId(String srcUniqueId)
+    public void setUniqueId(String uniqueId)
     {
-        this.srcUniqueId = srcUniqueId;
+        this.uniqueId = uniqueId;
     }
 
     /**
@@ -191,4 +232,24 @@ public class DialEvent extends ManagerEvent
     {
         this.destUniqueId = destUniqueId;
     }
+
+	public String getDialStatus()
+	{
+		return dialStatus;
+	}
+
+	public void setDialStatus(String dialStatus)
+	{
+		this.dialStatus = dialStatus;
+	}
+
+	public String getDialstring()
+	{
+		return dialstring;
+	}
+
+	public void setDialstring(String dialstring)
+	{
+		this.dialstring = dialstring;
+	}
 }

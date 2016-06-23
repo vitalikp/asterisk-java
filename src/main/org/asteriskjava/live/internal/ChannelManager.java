@@ -477,13 +477,13 @@ class ChannelManager
 
     void handleDialEvent(DialEvent event)
     {
-        AsteriskChannelImpl sourceChannel = getChannelImplById(event.getSrcUniqueId());
+        AsteriskChannelImpl sourceChannel = getChannelImplById(event.getUniqueId());
         AsteriskChannelImpl destinationChannel = getChannelImplById(event.getDestUniqueId());
 
         if (sourceChannel == null)
         {
             logger.error("Ignored LinkEvent for unknown source channel "
-                    + event.getSrc());
+                    + event.getChannel());
             return;
         }
         if (destinationChannel == null)

@@ -33,11 +33,11 @@ import org.asteriskjava.util.SocketConnectionFacade;
  * @author srt
  * @version $Id: AgiReaderImpl.java 580 2006-12-27 22:21:49Z srt $
  */
-class AgiReaderImpl implements AgiReader
+public class AgiReaderImpl implements AgiReader
 {
     private final SocketConnectionFacade socket;
 
-    AgiReaderImpl(SocketConnectionFacade socket)
+    public AgiReaderImpl(SocketConnectionFacade socket)
     {
         this.socket = socket;
     }

@@ -26,7 +26,7 @@ package org.asteriskjava.fastagi;
  * @author srt
  * @version $Id: BaseAgiScript.java 601 2007-02-10 22:30:01Z srt $
  */
-public abstract class BaseAgiScript extends AgiOperations implements AgiScript
+public abstract class BaseAgiScript implements AgiScript
 {
     public BaseAgiScript()
     {

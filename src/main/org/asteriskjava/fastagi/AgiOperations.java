@@ -762,7 +762,7 @@ public class AgiOperations
      * @return the reply received from Asterisk
      * @throws AgiException if the command could not be processed properly
      */
-    public AgiReply sendCommand(AgiCommand command) throws AgiException
+    public AgiReply sendCommand(String command) throws AgiException
     {
         return getChannel().sendCommand(command);
     }

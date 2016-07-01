@@ -91,13 +91,17 @@ public class AgiChannelImpl implements AgiChannel
     {
         return request.getUniqueId();
     }
+    
+    private AgiReply sendCommand(AgiCommand command) throws AgiException
+    {
+    	return sendCommand(command.buildCommand());
+    }
 
-    public synchronized AgiReply sendCommand(AgiCommand agiCmd) throws AgiException
+    public synchronized AgiReply sendCommand(String command)
+    	throws AgiException
     {
         AgiReply reply;
         
-        String command = agiCmd.buildCommand();
-
         agiWriter.sendCommand(command);
         reply = agiReader.readReply();
 

@@ -16,7 +16,6 @@
  */
 package org.asteriskjava.fastagi;
 
-import org.asteriskjava.fastagi.command.AgiCommand;
 import org.asteriskjava.fastagi.reply.AgiReply;
 
 
@@ -54,7 +53,7 @@ public interface AgiChannel
      * @throws AgiException if the command can't be sent to Asterisk (for
      *             example because the channel has been hung up)
      */
-    AgiReply sendCommand(AgiCommand command) throws AgiException;
+    AgiReply sendCommand(String command) throws AgiException;
 
     /**
      * Answers the channel.

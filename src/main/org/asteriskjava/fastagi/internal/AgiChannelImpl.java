@@ -92,16 +92,18 @@ public class AgiChannelImpl implements AgiChannel
         return request.getUniqueId();
     }
 
-    public synchronized AgiReply sendCommand(AgiCommand command) throws AgiException
+    public synchronized AgiReply sendCommand(AgiCommand agiCmd) throws AgiException
     {
         AgiReply reply;
+        
+        String command = agiCmd.buildCommand();
 
         agiWriter.sendCommand(command);
         reply = agiReader.readReply();
 
         if (reply.getStatus() == AgiReply.SC_INVALID_OR_UNKNOWN_COMMAND)
         {
-            throw new InvalidOrUnknownCommandException(command.buildCommand());
+            throw new InvalidOrUnknownCommandException(command);
         }
         if (reply.getStatus() == AgiReply.SC_INVALID_COMMAND_SYNTAX)
         {

@@ -17,7 +17,6 @@
 package org.asteriskjava.fastagi;
 
 import org.asteriskjava.fastagi.command.AgiCommand;
-import org.asteriskjava.fastagi.command.AnswerCommand;
 import org.asteriskjava.fastagi.internal.AgiConnectionHandler;
 import org.asteriskjava.fastagi.reply.AgiReply;
 
@@ -57,7 +56,7 @@ public class AgiOperations
      */
     public void answer() throws AgiException
     {
-        sendCommand(new AnswerCommand());
+        getChannel().answer();
     }
 
     /**

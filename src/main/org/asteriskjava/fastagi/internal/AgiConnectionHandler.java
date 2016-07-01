@@ -23,7 +23,6 @@ import org.asteriskjava.fastagi.AgiException;
 import org.asteriskjava.fastagi.AgiRequest;
 import org.asteriskjava.fastagi.AgiScript;
 import org.asteriskjava.fastagi.MappingStrategy;
-import org.asteriskjava.fastagi.command.VerboseCommand;
 import org.asteriskjava.util.Log;
 import org.asteriskjava.util.LogFactory;
 import org.asteriskjava.util.SocketConnectionFacade;
@@ -190,7 +189,7 @@ public class AgiConnectionHandler implements Runnable
 
         try
         {
-            channel.sendCommand(new VerboseCommand(message, 1));
+            channel.verbose(message, 1);
         }
         catch (Exception e) // NOPMD
         {

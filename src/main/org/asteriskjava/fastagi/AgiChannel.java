@@ -229,6 +229,17 @@ public interface AgiChannel
     int exec(String application, String options) throws AgiException;
 
     /**
+     * Plays back given filenames (do not put extension of wav/alaw etc).
+     * The playback command answer the channel.
+     * 
+     * @param filenames name of the files to play.
+     * 
+     * @return the return code of the application or
+     *         -2 if the application was not found.
+     */
+    int playback(String ... filenames) throws AgiException;
+
+    /**
      * Sets the context for continuation upon exiting the application.
      * 
      * @param context the context for continuation upon exiting the application.

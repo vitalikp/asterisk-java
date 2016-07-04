@@ -35,6 +35,7 @@ import org.asteriskjava.fastagi.command.GetFullVariableCommand;
 import org.asteriskjava.fastagi.command.GetOptionCommand;
 import org.asteriskjava.fastagi.command.GetVariableCommand;
 import org.asteriskjava.fastagi.command.HangupCommand;
+import org.asteriskjava.fastagi.command.PlaybackCommand;
 import org.asteriskjava.fastagi.command.RecordFileCommand;
 import org.asteriskjava.fastagi.command.SayAlphaCommand;
 import org.asteriskjava.fastagi.command.SayDateTimeCommand;
@@ -219,7 +220,17 @@ public class AgiChannelImpl implements AgiChannel
         return reply.getResultCode();
     }
 
-    public void setContext(String context) throws AgiException
+    @Override
+    public int playback(String ... filenames)
+        throws AgiException
+    {
+        AgiReply reply;
+        
+        reply = sendCommand(new PlaybackCommand(filenames));
+        return reply.getResultCode();
+    }
+
+	public void setContext(String context) throws AgiException
     {
         sendCommand(new SetContextCommand(context));
     }

@@ -19,7 +19,6 @@ package org.asteriskjava.fastagi.internal;
 import java.io.IOException;
 
 import org.asteriskjava.fastagi.AgiChannel;
-import org.asteriskjava.fastagi.AgiException;
 import org.asteriskjava.fastagi.AgiRequest;
 import org.asteriskjava.fastagi.AgiScript;
 import org.asteriskjava.fastagi.MappingStrategy;
@@ -115,11 +114,6 @@ public class AgiConnectionHandler implements Runnable
                 runScript(script, request, channel);
             }
         }
-        catch (AgiException e)
-        {
-            setStatusVariable(channel, AJ_AGISTATUS_FAILED);
-            logger.error("AgiException while handling request", e);
-        }
         catch (Exception e)
         {
             setStatusVariable(channel, AJ_AGISTATUS_FAILED);
@@ -149,11 +143,6 @@ public class AgiConnectionHandler implements Runnable
         {
             script.service(request, channel);
             setStatusVariable(channel, AJ_AGISTATUS_SUCCESS);
-        }
-        catch (AgiException e)
-        {
-            logger.error("AgiException running AgiScript " + script.getClass().getName() + " on " + threadName, e);
-            setStatusVariable(channel, AJ_AGISTATUS_FAILED);
         }
         catch (Exception e)
         {

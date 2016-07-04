@@ -16,6 +16,8 @@
  */
 package org.asteriskjava.fastagi;
 
+import java.io.IOException;
+
 /**
  * AgiScripts are used by the AsteriskServer to handle AgiRequests received from
  * the Asterisk server.<p>
@@ -38,7 +40,7 @@ public interface AgiScript
      * @param channel a handle to communicate with Asterisk such as sending
      *            commands to the channel sending the request.
      * 
-     * @throws AgiException any exception thrown by your script will be logged.
+     * @throws IOException any exception thrown by your script will be logged.
      */
-    void service(final AgiRequest request, final AgiChannel channel) throws AgiException;
+    void service(final AgiRequest request, final AgiChannel channel) throws IOException;
 }

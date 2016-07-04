@@ -16,7 +16,7 @@
  */
 package org.asteriskjava.fastagi.internal;
 
-import org.asteriskjava.fastagi.AgiException;
+import java.io.IOException;
 
 /**
  * The AgiWriter sends commands to Asterisk.
@@ -30,7 +30,7 @@ interface AgiWriter
      * Sends the given command to the Asterisk server.
      * 
      * @param command the command to send.
-     * @throws AgiException if the command can't be sent.
+     * @throws IOException if the command can't be sent.
      */
-    void sendCommand(String command) throws AgiException;
+    void sendCommand(String command) throws IOException;
 }

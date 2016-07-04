@@ -20,9 +20,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.asteriskjava.fastagi.AgiException;
 import org.asteriskjava.fastagi.AgiHangupException;
-import org.asteriskjava.fastagi.AgiNetworkException;
 import org.asteriskjava.fastagi.AgiRequest;
 import org.asteriskjava.fastagi.reply.AgiReply;
 import org.asteriskjava.util.SocketConnectionFacade;
@@ -42,7 +40,7 @@ public class AgiReaderImpl implements AgiReader
         this.socket = socket;
     }
 
-    public AgiRequest readRequest() throws AgiException
+    public AgiRequest readRequest() throws IOException
     {
         AgiRequestImpl request;
         String line;
@@ -50,21 +48,14 @@ public class AgiReaderImpl implements AgiReader
 
         lines = new ArrayList<String>();
 
-        try
+        while ((line = socket.readLine()) != null)
         {
-            while ((line = socket.readLine()) != null)
+            if (line.length() == 0)
             {
-                if (line.length() == 0)
-                {
-                    break;
-                }
-
-                lines.add(line);
+                break;
             }
-        }
-        catch (IOException e)
-        {
-            throw new AgiNetworkException("Unable to read request from Asterisk: " + e.getMessage(), e);
+
+            lines.add(line);
         }
 
         request = new AgiRequestImpl(lines);
@@ -76,7 +67,7 @@ public class AgiReaderImpl implements AgiReader
         return request;
     }
 
-    public AgiReply readReply() throws AgiException
+    public AgiReply readReply() throws IOException
     {
         AgiReply reply;
         List<String> lines;
@@ -84,14 +75,7 @@ public class AgiReaderImpl implements AgiReader
 
         lines = new ArrayList<String>();
 
-        try
-        {
-            line = socket.readLine();
-        }
-        catch (IOException e)
-        {
-            throw new AgiNetworkException("Unable to read reply from Asterisk: " + e.getMessage(), e);
-        }
+        line = socket.readLine();
 
         if (line == null)
         {
@@ -103,20 +87,13 @@ public class AgiReaderImpl implements AgiReader
         // read synopsis and usage if statuscode is 520
         if (line.startsWith(Integer.toString(AgiReply.SC_INVALID_COMMAND_SYNTAX)))
         {
-            try
+            while ((line = socket.readLine()) != null)
             {
-                while ((line = socket.readLine()) != null)
+                lines.add(line);
+                if (line.startsWith(Integer.toString(AgiReply.SC_INVALID_COMMAND_SYNTAX)))
                 {
-                    lines.add(line);
-                    if (line.startsWith(Integer.toString(AgiReply.SC_INVALID_COMMAND_SYNTAX)))
-                    {
-                        break;
-                    }
+                    break;
                 }
-            }
-            catch (IOException e)
-            {
-                throw new AgiNetworkException("Unable to read reply from Asterisk: " + e.getMessage(), e);
             }
         }
 

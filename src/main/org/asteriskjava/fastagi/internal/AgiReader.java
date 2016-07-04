@@ -16,7 +16,8 @@
  */
 package org.asteriskjava.fastagi.internal;
 
-import org.asteriskjava.fastagi.AgiException;
+import java.io.IOException;
+
 import org.asteriskjava.fastagi.AgiRequest;
 import org.asteriskjava.fastagi.reply.AgiReply;
 
@@ -33,15 +34,15 @@ public interface AgiReader
      * Reads the initial request data from Asterisk.
      * 
      * @return the request read.
-     * @throws AgiException if the request can't be read.
+     * @throws IOException if the request can't be read.
      */
-    AgiRequest readRequest() throws AgiException;
+    AgiRequest readRequest() throws IOException;
 
     /**
      * Reads one reply to an AgiCommand from Asterisk.
      * 
      * @return the reply read.
-     * @throws AgiException if the reply can't be read.
+     * @throws IOException if the reply can't be read.
      */
-    AgiReply readReply() throws AgiException;
+    AgiReply readReply() throws IOException;
 }

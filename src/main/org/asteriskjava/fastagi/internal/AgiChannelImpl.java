@@ -23,6 +23,7 @@ import org.asteriskjava.fastagi.InvalidCommandSyntaxException;
 import org.asteriskjava.fastagi.InvalidOrUnknownCommandException;
 import org.asteriskjava.fastagi.command.AgiCommand;
 import org.asteriskjava.fastagi.command.AnswerCommand;
+import org.asteriskjava.fastagi.command.BackgroundCommand;
 import org.asteriskjava.fastagi.command.ChannelStatusCommand;
 import org.asteriskjava.fastagi.command.ControlStreamFileCommand;
 import org.asteriskjava.fastagi.command.DatabaseDelCommand;
@@ -227,6 +228,16 @@ public class AgiChannelImpl implements AgiChannel
         AgiReply reply;
         
         reply = sendCommand(new PlaybackCommand(filenames));
+        return reply.getResultCode();
+    }
+
+    @Override
+    public int background(String ... filenames)
+        throws AgiException
+    {
+        AgiReply reply;
+        
+        reply = sendCommand(new BackgroundCommand(filenames));
         return reply.getResultCode();
     }
 

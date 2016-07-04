@@ -240,6 +240,16 @@ public interface AgiChannel
     int playback(String ... filenames) throws AgiException;
 
     /**
+     * Play an audio file while waiting for digits.
+     * 
+     * @param filenames name of the files to play.
+     * 
+     * @return the return code of the application or
+     *         -2 if the application was not found.
+     */
+    int background(String ... filenames) throws AgiException;
+
+    /**
      * Sets the context for continuation upon exiting the application.
      * 
      * @param context the context for continuation upon exiting the application.

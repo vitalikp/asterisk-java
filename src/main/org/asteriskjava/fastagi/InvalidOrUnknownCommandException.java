@@ -23,7 +23,7 @@ package org.asteriskjava.fastagi;
  * @author srt
  * @version $Id: InvalidOrUnknownCommandException.java 229 2006-04-16 21:04:17Z srt $
  */
-public class InvalidOrUnknownCommandException extends AgiException
+public class InvalidOrUnknownCommandException extends RuntimeException
 {
     /**
      * Serial version identifier.

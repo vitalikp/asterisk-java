@@ -23,7 +23,7 @@ package org.asteriskjava.fastagi;
  * @author srt
  * @version $Id: AgiHangupException.java 384 2006-05-25 12:58:15Z srt $
  */
-public class AgiHangupException extends AgiException
+public class AgiHangupException extends RuntimeException
 {
     /**
      * Serial version identifier.

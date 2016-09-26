@@ -35,6 +35,7 @@ import org.asteriskjava.manager.event.AgentsCompleteEvent;
 import org.asteriskjava.manager.event.AgentsEvent;
 import org.asteriskjava.manager.event.AlarmClearEvent;
 import org.asteriskjava.manager.event.AlarmEvent;
+import org.asteriskjava.manager.event.BridgeEvent;
 import org.asteriskjava.manager.event.CdrEvent;
 import org.asteriskjava.manager.event.ChannelReloadEvent;
 import org.asteriskjava.manager.event.DbGetResponseEvent;
@@ -134,6 +135,7 @@ class EventBuilderImpl implements EventBuilder
         registerEventClass(AgentsCompleteEvent.class);
         registerEventClass(AlarmEvent.class);
         registerEventClass(AlarmClearEvent.class);
+        registerEventClass(BridgeEvent.class);
         registerEventClass(CdrEvent.class);
         registerEventClass(ChannelReloadEvent.class);
         registerEventClass(DbGetResponseEvent.class);

@@ -30,6 +30,19 @@ public class HangupEvent extends AbstractChannelStateEvent
      */
     static final long serialVersionUID = 650153034857116588L;
 
+    /**
+     * The new Caller*ID Num.
+     */
+    private String callerIdNum;
+
+    /**
+     * The new Caller*ID Name.
+     */
+    private String callerIdName;
+
+    private String connectedLineNum;
+    private String connectedLineName;
+
     private Integer cause;
     private String causeTxt;
 
@@ -40,6 +53,65 @@ public class HangupEvent extends AbstractChannelStateEvent
     {
         super(source);
     }
+    /**
+     * Returns the Caller*ID Num.
+     * 
+     * @return the Caller*ID Num or "<unknown>" if none has been set.
+     */
+    public String getCallerIdNum()
+    {
+        return callerIdNum;
+    }
+
+    /**
+     * Sets the caller*ID.
+     * 
+     * @param callerId the caller*ID.
+     */
+    public void setCallerIdNum(String callerIdNum)
+    {
+        this.callerIdNum = callerIdNum;
+    }
+
+    /**
+     * Returns the Caller*ID Name.
+     * 
+     * @return the Caller*ID Name or "<unknown>" if none has been set.
+     */
+    public String getCallerIdName()
+    {
+        return callerIdName;
+    }
+
+    /**
+     * Sets the Caller*Id Name.
+     * 
+     * @param callerIdName the Caller*Id Name to set.
+     */
+    public void setCallerIdName(String callerIdName)
+    {
+        this.callerIdName = callerIdName;
+    }
+
+    public String getConnectedLineNum()
+	{
+		return connectedLineNum;
+	}
+
+	public void setConnectedLineNum(String connectedLineNum)
+	{
+		this.connectedLineNum = connectedLineNum;
+	}
+
+	public String getConnectedLineName()
+	{
+		return connectedLineName;
+	}
+
+	public void setConnectedLineName(String connectedLineName)
+	{
+		this.connectedLineName = connectedLineName;
+	}
 
     /**
      * Returns the cause of the hangup.

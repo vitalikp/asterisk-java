@@ -57,6 +57,7 @@ import org.asteriskjava.manager.event.MeetMeMuteEvent;
 import org.asteriskjava.manager.event.MeetMeStopTalkingEvent;
 import org.asteriskjava.manager.event.MeetMeTalkingEvent;
 import org.asteriskjava.manager.event.MessageWaitingEvent;
+import org.asteriskjava.manager.event.NewAccountCodeEvent;
 import org.asteriskjava.manager.event.NewCallerIdEvent;
 import org.asteriskjava.manager.event.NewChannelEvent;
 import org.asteriskjava.manager.event.NewExtenEvent;
@@ -154,6 +155,7 @@ class EventBuilderImpl implements EventBuilder
         registerEventClass(MeetMeTalkingEvent.class);
         registerEventClass(MeetMeStopTalkingEvent.class);
         registerEventClass(MessageWaitingEvent.class);
+        registerEventClass(NewAccountCodeEvent.class);
         registerEventClass(NewCallerIdEvent.class);
         registerEventClass(NewChannelEvent.class);
         registerEventClass(NewExtenEvent.class);

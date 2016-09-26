@@ -42,6 +42,7 @@ import org.asteriskjava.manager.event.DialEvent;
 import org.asteriskjava.manager.event.DndStateEvent;
 import org.asteriskjava.manager.event.ExtensionStatusEvent;
 import org.asteriskjava.manager.event.FaxReceivedEvent;
+import org.asteriskjava.manager.event.FullyBootedEvent;
 import org.asteriskjava.manager.event.HangupEvent;
 import org.asteriskjava.manager.event.HoldEvent;
 import org.asteriskjava.manager.event.HoldedCallEvent;
@@ -139,6 +140,7 @@ class EventBuilderImpl implements EventBuilder
         registerEventClass(DndStateEvent.class);
         registerEventClass(ExtensionStatusEvent.class);
         registerEventClass(FaxReceivedEvent.class);
+        registerEventClass(FullyBootedEvent.class);
         registerEventClass(HangupEvent.class);
         registerEventClass(HoldedCallEvent.class);
         registerEventClass(HoldEvent.class);

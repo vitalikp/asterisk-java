@@ -30,6 +30,12 @@ public class NewStateEvent extends AbstractChannelStateEvent
      */
     static final long serialVersionUID = -3660049241052945802L;
 
+    private Integer channelState;
+    private String channelStateDesc;
+
+    private String connectedLineNum;
+    private String connectedLineName;
+
     /**
      * @param source
      */
@@ -37,4 +43,44 @@ public class NewStateEvent extends AbstractChannelStateEvent
     {
         super(source);
     }
+
+    public Integer getChannelState()
+	{
+		return channelState;
+	}
+
+	public void setChannelState(Integer channelState)
+	{
+		this.channelState = channelState;
+	}
+
+	public String getChannelStateDesc()
+	{
+		return channelStateDesc;
+	}
+
+	public void setChannelStateDesc(String channelStateDesc)
+	{
+		this.channelStateDesc = channelStateDesc;
+	}
+
+	public String getConnectedLineNum()
+	{
+		return connectedLineNum;
+	}
+
+	public void setConnectedLineNum(String connectedLineNum)
+	{
+		this.connectedLineNum = connectedLineNum;
+	}
+
+	public String getConnectedLineName()
+	{
+		return connectedLineName;
+	}
+
+	public void setConnectedLineName(String connectedLineName)
+	{
+		this.connectedLineName = connectedLineName;
+	}
 }

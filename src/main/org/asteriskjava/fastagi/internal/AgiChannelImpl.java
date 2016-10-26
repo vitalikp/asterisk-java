@@ -19,6 +19,7 @@ package org.asteriskjava.fastagi.internal;
 import java.io.IOException;
 
 import org.asteriskjava.fastagi.AgiChannel;
+import org.asteriskjava.fastagi.AgiHangupException;
 import org.asteriskjava.fastagi.AgiRequest;
 import org.asteriskjava.fastagi.InvalidCommandSyntaxException;
 import org.asteriskjava.fastagi.InvalidOrUnknownCommandException;
@@ -111,6 +112,10 @@ public class AgiChannelImpl implements AgiChannel
         if (reply.getStatus() == AgiReply.SC_INVALID_OR_UNKNOWN_COMMAND)
         {
             throw new InvalidOrUnknownCommandException(command);
+        }
+        if (reply.getStatus() == AgiReply.SC_DEAD_CHANNEL)
+        {
+            throw new AgiHangupException();
         }
         if (reply.getStatus() == AgiReply.SC_INVALID_COMMAND_SYNTAX)
         {

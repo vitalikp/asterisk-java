@@ -51,7 +51,7 @@ public class SocketConnectionFacadeImpl implements SocketConnectionFacade
 	 * @param host the foreign host to connect to.
 	 * @param port the foreign port to connect to.
 	 * @param ssl <code>true</code> to use SSL, <code>false</code> otherwise.
-	 * @param timeout 0 incidcates default
+	 * @param timeout 0 indicates default
 	 * @param readTimeout see {@link Socket#setSoTimeout(int)}
 	 * @throws IOException
 	 */

@@ -59,7 +59,7 @@ public interface SocketConnectionFacade
 
 	/**
 	 * Closes the socket connection including its input and output stream and
-	 * frees all associated ressources.<p>
+	 * frees all associated resources.<p>
 	 * When calling close() any Thread currently blocked by a call to readLine()
 	 * will be unblocked and receive an IOException.
 	 *
@@ -70,7 +70,7 @@ public interface SocketConnectionFacade
 	/**
 	 * Returns the connection state of the socket.
 	 *
-	 * @return <code>true</code> if the socket successfuly connected to a
+	 * @return <code>true</code> if the socket successfully connected to a
 	 *         server
 	 */
 	boolean isConnected();

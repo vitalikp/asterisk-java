@@ -35,99 +35,102 @@ import org.asteriskjava.util.SocketConnectionFacade;
 
 /**
  * Default implementation of the SocketConnectionFacade interface using java.io.
- * 
+ *
  * @author srt
  * @version $Id: SocketConnectionFacadeImpl.java 592 2007-01-21 16:44:00Z srt $
  */
 public class SocketConnectionFacadeImpl implements SocketConnectionFacade
 {
-    private final Socket socket;
-    private final BufferedReader reader;
-    private final BufferedWriter writer;
+	private final Socket socket;
+	private final BufferedReader reader;
+	private final BufferedWriter writer;
 
-    /**
-     * Creates a new instance.
-     * 
-     * @param host the foreign host to connect to.
-     * @param port the foreign port to connect to.
-     * @param ssl <code>true</code> to use SSL, <code>false</code> otherwise.
-     * @param timeout 0 incidcates default
-     * @param readTimeout see {@link Socket#setSoTimeout(int)} 
-     * @throws IOException
-     */
-    public SocketConnectionFacadeImpl(String host, int port, boolean ssl, int timeout, int readTimeout) throws IOException
-    {
-        if (ssl)
-        {
-            this.socket = SSLSocketFactory.getDefault().createSocket();
-        }
-        else
-        {
-            this.socket = SocketFactory.getDefault().createSocket();
-        }
-        this.socket.setSoTimeout(readTimeout);
-    	this.socket.connect(new InetSocketAddress(host, port), timeout);
+	/**
+	 * Creates a new instance.
+	 *
+	 * @param host the foreign host to connect to.
+	 * @param port the foreign port to connect to.
+	 * @param ssl <code>true</code> to use SSL, <code>false</code> otherwise.
+	 * @param timeout 0 incidcates default
+	 * @param readTimeout see {@link Socket#setSoTimeout(int)}
+	 * @throws IOException
+	 */
+	public SocketConnectionFacadeImpl(String host, int port, boolean ssl, int timeout, int readTimeout) throws IOException
+	{
+		SocketFactory socketFactory;
 
-        InputStream inputStream = socket.getInputStream();
-        OutputStream outputStream = socket.getOutputStream();
+		if (ssl)
+			socketFactory = SSLSocketFactory.getDefault();
+		else
+			socketFactory = SocketFactory.getDefault();
+		socket = socketFactory.createSocket();
+		socket.setSoTimeout(readTimeout);
+		socket.connect(new InetSocketAddress(host, port), timeout);
 
-        this.reader = new BufferedReader(new InputStreamReader(inputStream));
-        this.writer = new BufferedWriter(new OutputStreamWriter(outputStream));
-    }
+		InputStream inputStream = socket.getInputStream();
+		OutputStream outputStream = socket.getOutputStream();
 
-    SocketConnectionFacadeImpl(Socket socket) throws IOException
-    {
-        this.socket = socket;
+		reader = new BufferedReader(new InputStreamReader(inputStream));
+		writer = new BufferedWriter(new OutputStreamWriter(outputStream));
+	}
 
-        InputStream inputStream = socket.getInputStream();
-        OutputStream outputStream = socket.getOutputStream();
+	SocketConnectionFacadeImpl(Socket socket) throws IOException
+	{
+		this.socket = socket;
 
-        this.reader = new BufferedReader(new InputStreamReader(inputStream));
-        this.writer = new BufferedWriter(new OutputStreamWriter(outputStream));
-    }
+		InputStream inputStream = socket.getInputStream();
+		OutputStream outputStream = socket.getOutputStream();
 
-    public String readLine() throws IOException
-    {
-        return reader.readLine();
-    }
+		reader = new BufferedReader(new InputStreamReader(inputStream));
+		writer = new BufferedWriter(new OutputStreamWriter(outputStream));
+	}
 
-    public void write(String s) throws IOException
-    {
-        writer.write(s);
-    }
+	public String readLine()
+		throws IOException
+	{
+		return reader.readLine();
+	}
 
-    public void flush() throws IOException
-    {
-        writer.flush();
-    }
+	public void write(String s)
+		throws IOException
+	{
+		writer.write(s);
+	}
 
-    public void close() throws IOException
-    {
-        this.socket.close();
-    }
+	public void flush()
+		throws IOException
+	{
+		writer.flush();
+	}
 
-    public boolean isConnected()
-    {
-        return socket.isConnected();
-    }
+	public void close()
+		throws IOException
+	{
+		socket.close();
+	}
 
-    public InetAddress getLocalAddress()
-    {
-        return socket.getLocalAddress();
-    }
+	public boolean isConnected()
+	{
+		return socket.isConnected();
+	}
 
-    public int getLocalPort()
-    {
-        return socket.getLocalPort();
-    }
+	public InetAddress getLocalAddress()
+	{
+		return socket.getLocalAddress();
+	}
 
-    public InetAddress getRemoteAddress()
-    {
-        return socket.getInetAddress();
-    }
+	public int getLocalPort()
+	{
+		return socket.getLocalPort();
+	}
 
-    public int getRemotePort()
-    {
-        return socket.getPort();
-    }
+	public InetAddress getRemoteAddress()
+	{
+		return socket.getInetAddress();
+	}
+
+	public int getRemotePort()
+	{
+		return socket.getPort();
+	}
 }

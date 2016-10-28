@@ -74,7 +74,7 @@ public class SocketConnectionFacadeImpl implements SocketConnectionFacade
 		writer = new BufferedWriter(new OutputStreamWriter(outputStream));
 	}
 
-	SocketConnectionFacadeImpl(Socket socket) throws IOException
+	public SocketConnectionFacadeImpl(Socket socket) throws IOException
 	{
 		this.socket = socket;
 

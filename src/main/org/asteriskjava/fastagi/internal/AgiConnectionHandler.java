@@ -48,8 +48,6 @@ public class AgiConnectionHandler implements Runnable
 	 * The socket connection.
 	 */
 	private final Socket socket;
-	private final AgiReader reader;
-	private final AgiWriter writer;
 
 	/**
 	 * The strategy to use to determine which script to run.
@@ -68,9 +66,6 @@ public class AgiConnectionHandler implements Runnable
 	{
 		this.socket = socket;
 		this.mappingStrategy = mappingStrategy;
-
-		reader = new AgiReaderImpl(socket);
-		writer = new AgiWriterImpl(socket);
 	}
 
 	public void run()
@@ -82,8 +77,8 @@ public class AgiConnectionHandler implements Runnable
 			AgiRequest request;
 			AgiScript script;
 
-			request = reader.readRequest();
-			channel = new AgiChannelImpl(request, writer, reader);
+			channel = new AgiChannelImpl(socket);
+			request = channel.getRequest();
 
 			script = mappingStrategy.determineScript(request);
 			if (script == null)

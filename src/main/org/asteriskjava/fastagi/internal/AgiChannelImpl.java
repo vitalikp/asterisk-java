@@ -17,6 +17,7 @@
 package org.asteriskjava.fastagi.internal;
 
 import java.io.IOException;
+import java.net.Socket;
 
 import org.asteriskjava.fastagi.AgiChannel;
 import org.asteriskjava.fastagi.AgiHangupException;
@@ -58,7 +59,6 @@ import org.asteriskjava.fastagi.command.StreamFileCommand;
 import org.asteriskjava.fastagi.command.VerboseCommand;
 import org.asteriskjava.fastagi.command.WaitForDigitCommand;
 import org.asteriskjava.fastagi.reply.AgiReply;
-import org.asteriskjava.util.SocketConnectionFacade;
 
 /**
  * Default implementation of the AgiChannel interface.
@@ -72,7 +72,8 @@ public class AgiChannelImpl implements AgiChannel
 	private final AgiWriter agiWriter;
 	private final AgiReader agiReader;
 
-	public AgiChannelImpl(AgiRequest request, SocketConnectionFacade socket)
+	public AgiChannelImpl(AgiRequest request, Socket socket)
+		throws IOException
 	{
 		this.request = request;
 		agiWriter = new AgiWriterImpl(socket);

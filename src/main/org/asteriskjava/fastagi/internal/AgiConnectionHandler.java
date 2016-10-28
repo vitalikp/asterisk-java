@@ -17,6 +17,7 @@
 package org.asteriskjava.fastagi.internal;
 
 import java.io.IOException;
+import java.net.Socket;
 
 import org.asteriskjava.fastagi.AgiChannel;
 import org.asteriskjava.fastagi.AgiRequest;
@@ -24,7 +25,6 @@ import org.asteriskjava.fastagi.AgiScript;
 import org.asteriskjava.fastagi.MappingStrategy;
 import org.asteriskjava.util.Log;
 import org.asteriskjava.util.LogFactory;
-import org.asteriskjava.util.SocketConnectionFacade;
 
 /**
  * An AgiConnectionHandler is created and run by the AgiServer whenever a new
@@ -47,7 +47,9 @@ public class AgiConnectionHandler implements Runnable
 	/**
 	 * The socket connection.
 	 */
-	private final SocketConnectionFacade socket;
+	private final Socket socket;
+	private final AgiReader reader;
+	private final AgiWriter writer;
 
 	/**
 	 * The strategy to use to determine which script to run.
@@ -61,20 +63,24 @@ public class AgiConnectionHandler implements Runnable
 	 * @param mappingStrategy the strategy to use to determine which script to
 	 *            run.
 	 */
-	public AgiConnectionHandler(SocketConnectionFacade socket, MappingStrategy mappingStrategy)
+	public AgiConnectionHandler(Socket socket, MappingStrategy mappingStrategy)
+		throws IOException
 	{
 		this.socket = socket;
 		this.mappingStrategy = mappingStrategy;
+
+		reader = new AgiReaderImpl(socket);
+		writer = new AgiWriterImpl(socket);
 	}
 
 	protected AgiReader createReader()
 	{
-		return new AgiReaderImpl(socket);
+		return reader;
 	}
 
 	protected AgiWriter createWriter()
 	{
-		return new AgiWriterImpl(socket);
+		return writer;
 	}
 
 	public void run()

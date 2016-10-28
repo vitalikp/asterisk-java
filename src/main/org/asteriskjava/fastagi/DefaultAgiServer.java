@@ -18,6 +18,7 @@ package org.asteriskjava.fastagi;
 
 import java.io.IOException;
 import java.net.ServerSocket;
+import java.net.Socket;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 import java.util.concurrent.LinkedBlockingQueue;
@@ -28,8 +29,6 @@ import org.asteriskjava.fastagi.internal.AgiConnectionHandler;
 import org.asteriskjava.util.DaemonThreadFactory;
 import org.asteriskjava.util.Log;
 import org.asteriskjava.util.LogFactory;
-import org.asteriskjava.util.SocketConnectionFacade;
-import org.asteriskjava.util.internal.SocketConnectionFacadeImpl;
 
 /**
  * Default implementation of the {@link org.asteriskjava.fastagi.AgiServer} interface.
@@ -243,7 +242,7 @@ public class DefaultAgiServer implements AgiServer
 	public void startup()
 		throws IOException, IllegalStateException
 	{
-		SocketConnectionFacade socket;
+		Socket socket;
 		AgiConnectionHandler connectionHandler;
 
 		die = false;
@@ -269,8 +268,8 @@ public class DefaultAgiServer implements AgiServer
 		{
 			try
 			{
-				socket = new SocketConnectionFacadeImpl(serverSocket.accept());
-				logger.info("Received connection from " + socket.getRemoteAddress());
+				socket = serverSocket.accept();
+				logger.info("Received connection from " + socket.getInetAddress());
 				connectionHandler = new AgiConnectionHandler(socket, mappingStrategy);
 				pool.execute(connectionHandler);
 			}

@@ -16,14 +16,17 @@
  */
 package org.asteriskjava.fastagi.internal;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.asteriskjava.fastagi.AgiHangupException;
 import org.asteriskjava.fastagi.AgiRequest;
 import org.asteriskjava.fastagi.reply.AgiReply;
-import org.asteriskjava.util.SocketConnectionFacade;
 
 /**
  * Default implementation of the AgiReader implementation.
@@ -33,11 +36,17 @@ import org.asteriskjava.util.SocketConnectionFacade;
  */
 public class AgiReaderImpl implements AgiReader
 {
-	private final SocketConnectionFacade socket;
+	private final Socket socket;
+	private final BufferedReader reader;
 
-	public AgiReaderImpl(SocketConnectionFacade socket)
+	public AgiReaderImpl(Socket socket)
+		throws IOException
 	{
 		this.socket = socket;
+
+		InputStream inputStream = socket.getInputStream();
+
+		reader = new BufferedReader(new InputStreamReader(inputStream));
 	}
 
 	public AgiRequest readRequest() throws IOException
@@ -48,7 +57,7 @@ public class AgiReaderImpl implements AgiReader
 
 		lines = new ArrayList<String>();
 
-		while ((line = socket.readLine()) != null)
+		while ((line = reader.readLine()) != null)
 		{
 			if (line.length() == 0)
 				break;
@@ -59,8 +68,8 @@ public class AgiReaderImpl implements AgiReader
 		request = new AgiRequestImpl(lines);
 		request.setLocalAddress(socket.getLocalAddress());
 		request.setLocalPort(socket.getLocalPort());
-		request.setRemoteAddress(socket.getRemoteAddress());
-		request.setRemotePort(socket.getRemotePort());
+		request.setRemoteAddress(socket.getInetAddress());
+		request.setRemotePort(socket.getPort());
 
 		return request;
 	}
@@ -73,7 +82,7 @@ public class AgiReaderImpl implements AgiReader
 
 		lines = new ArrayList<String>();
 
-		line = socket.readLine();
+		line = reader.readLine();
 
 		if (line == null)
 			throw new AgiHangupException();
@@ -83,7 +92,7 @@ public class AgiReaderImpl implements AgiReader
 		// read synopsis and usage if statuscode is 520
 		if (line.startsWith(Integer.toString(AgiReply.SC_INVALID_COMMAND_SYNTAX)))
 		{
-			while ((line = socket.readLine()) != null)
+			while ((line = reader.readLine()) != null)
 			{
 				lines.add(line);
 

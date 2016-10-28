@@ -16,9 +16,11 @@
  */
 package org.asteriskjava.fastagi.internal;
 
+import java.io.BufferedWriter;
 import java.io.IOException;
-
-import org.asteriskjava.util.SocketConnectionFacade;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.net.Socket;
 
 
 /**
@@ -29,16 +31,22 @@ import org.asteriskjava.util.SocketConnectionFacade;
  */
 class AgiWriterImpl implements AgiWriter
 {
-	private final SocketConnectionFacade socket;
+	private final Socket socket;
+	private final BufferedWriter writer;
 
-	AgiWriterImpl(SocketConnectionFacade socket)
+	AgiWriterImpl(Socket socket)
+		throws IOException
 	{
 		this.socket = socket;
+
+		OutputStream outputStream = socket.getOutputStream();
+
+		writer = new BufferedWriter(new OutputStreamWriter(outputStream));
 	}
 
 	public void sendCommand(String command) throws IOException
 	{
-		socket.write(command + "\n");
-		socket.flush();
+		writer.write(command + "\n");
+		writer.flush();
 	}
 }

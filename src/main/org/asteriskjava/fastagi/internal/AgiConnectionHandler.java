@@ -185,15 +185,4 @@ public class AgiConnectionHandler implements Runnable
             // swallow
         }
     }
-
-    /**
-     * Returns the AgiChannel associated with the current thread.
-     * 
-     * @return the AgiChannel associated with the current thread or
-     *         <code>null</code> if none is associated.
-     */
-    public static AgiChannel getChannel()
-    {
-        return AgiConnectionHandler.channel.get();
-    }
 }

@@ -88,6 +88,11 @@ public class AgiChannelImpl implements AgiChannel
 		this.agiReader = agiReader;
 	}
 
+	public AgiRequest getRequest()
+	{
+		return request;
+	}
+
 	public String getName()
 	{
 		return request.getChannel();

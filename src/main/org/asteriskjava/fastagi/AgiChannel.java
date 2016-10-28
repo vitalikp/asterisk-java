@@ -34,6 +34,13 @@ import org.asteriskjava.fastagi.reply.AgiReply;
 public interface AgiChannel
 {
 	/**
+	 * Returns the AGI request.
+	 *
+	 * @return the AGI request.
+	 */
+	AgiRequest getRequest();
+
+	/**
 	 * Returns the name of the channel.
 	 *
 	 * @return the name of the channel.

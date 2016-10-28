@@ -33,7 +33,7 @@ import org.asteriskjava.util.internal.ServerSocketFacadeImpl;
 
 /**
  * Default implementation of the {@link org.asteriskjava.fastagi.AgiServer} interface.
- * 
+ *
  * @author srt
  * @version $Id: DefaultAgiServer.java 538 2006-08-11 12:48:39Z srt $
  */
@@ -102,11 +102,11 @@ public class DefaultAgiServer implements AgiServer
 	 */
 	public DefaultAgiServer()
 	{
-		this.port = DEFAULT_BIND_PORT;
-		this.poolSize = DEFAULT_POOL_SIZE;
-		this.maximumPoolSize = DEFAULT_MAXIMUM_POOL_SIZE;
-		this.maximumPoolSize = this.poolSize;
-		this.mappingStrategy = new CompositeMappingStrategy(new ResourceBundleMappingStrategy(),
+		port = DEFAULT_BIND_PORT;
+		poolSize = DEFAULT_POOL_SIZE;
+		maximumPoolSize = DEFAULT_MAXIMUM_POOL_SIZE;
+		maximumPoolSize = poolSize;
+		mappingStrategy = new CompositeMappingStrategy(new ResourceBundleMappingStrategy(),
 				new ClassNameMappingStrategy());
 
 		loadConfig();
@@ -118,7 +118,7 @@ public class DefaultAgiServer implements AgiServer
 	 * This is the number of threads that are available even if they are idle.
 	 * <p>
 	 * The default pool size is 10.
-	 * 
+	 *
 	 * @param poolSize the size of the worker thread pool.
 	 */
 	public void setPoolSize(int poolSize)
@@ -132,7 +132,7 @@ public class DefaultAgiServer implements AgiServer
 	 * This equals the maximum number of concurrent requests this AgiServer can serve.
 	 * <p>
 	 * The default maximum pool size is 100.
-	 * 
+	 *
 	 * @param maximumPoolSize the maximum size of the worker thread pool.
 	 */
 	public void setMaximumPoolSize(int maximumPoolSize)
@@ -144,20 +144,20 @@ public class DefaultAgiServer implements AgiServer
 	 * Sets the TCP port to listen on for new connections.
 	 * <p>
 	 * The default port is 4573.
-	 * 
+	 *
 	 * @param bindPort the port to bind to.
 	 * @deprecated use {@see #setPort(int)} instead
 	 */
 	public void setBindPort(int bindPort)
 	{
-		this.port = bindPort;
+		port = bindPort;
 	}
 
 	/**
 	 * Sets the TCP port to listen on for new connections.
 	 * <p>
 	 * The default port is 4573.
-	 * 
+	 *
 	 * @param port the port to bind to.
 	 * @since 0.2
 	 */
@@ -170,7 +170,7 @@ public class DefaultAgiServer implements AgiServer
 	 * Sets the strategy to use for mapping AgiRequests to AgiScripts that serve them.
 	 * <p>
 	 * The default mapping strategy is a ResourceBundleMappingStrategy.
-	 * 
+	 *
 	 * @param mappingStrategy the mapping strategy to use.
 	 * @see ResourceBundleMappingStrategy
 	 */
@@ -278,16 +278,13 @@ public class DefaultAgiServer implements AgiServer
 			{
 				// swallow only if shutdown
 				if (die)
-				{
 					break;
-				}
-				else
-				{
-					logger.error("IOException while waiting for connections.", e);
-					// log error but continue
-				}
+
+				logger.error("IOException while waiting for connections.", e);
+				// log error but continue
 			}
 		}
+
 		logger.info("AgiServer shut down.");
 	}
 
@@ -306,7 +303,7 @@ public class DefaultAgiServer implements AgiServer
 
 	public void die()
 	{
-		// setting the death flag causes the accept() loop to exit when an 
+		// setting the death flag causes the accept() loop to exit when an
 		// SocketException occurs.
 		die = true;
 
@@ -325,9 +322,7 @@ public class DefaultAgiServer implements AgiServer
 		}
 
 		if (pool != null)
-		{
 			pool.shutdown();
-		}
 	}
 
 	public void shutdown()
@@ -341,9 +336,7 @@ public class DefaultAgiServer implements AgiServer
 	{
 		super.finalize();
 		if (pool != null)
-		{
 			pool.shutdown();
-		}
 
 		if (serverSocket != null)
 		{

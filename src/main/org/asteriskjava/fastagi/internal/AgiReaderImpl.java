@@ -87,6 +87,18 @@ public class AgiReaderImpl implements AgiReader
 		if (line == null)
 			throw new AgiHangupException();
 
+		if ("HANGUP".equals(line))
+		{
+			// shutdown output stream
+        	socket.shutdownOutput();
+
+        	// read the remaining data
+        	while ((line = reader.readLine()) != null)
+        		lines.add(line);
+
+        	throw new AgiHangupException();
+		}
+
 		lines.add(line);
 
 		// read synopsis and usage if statuscode is 520

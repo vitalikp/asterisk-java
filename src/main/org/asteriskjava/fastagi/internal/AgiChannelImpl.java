@@ -81,13 +81,6 @@ public class AgiChannelImpl implements AgiChannel
 		request = agiReader.readRequest();
 	}
 
-	public AgiChannelImpl(AgiRequest request, AgiWriter agiWriter, AgiReader agiReader)
-	{
-		this.request = request;
-		this.agiWriter = agiWriter;
-		this.agiReader = agiReader;
-	}
-
 	public AgiRequest getRequest()
 	{
 		return request;

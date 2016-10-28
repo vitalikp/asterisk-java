@@ -73,29 +73,14 @@ public class AgiConnectionHandler implements Runnable
 		writer = new AgiWriterImpl(socket);
 	}
 
-	protected AgiReader createReader()
-	{
-		return reader;
-	}
-
-	protected AgiWriter createWriter()
-	{
-		return writer;
-	}
-
 	public void run()
 	{
 		AgiChannel channel;
 
 		try
 		{
-			AgiReader reader;
-			AgiWriter writer;
 			AgiRequest request;
 			AgiScript script;
-
-			reader = createReader();
-			writer = createWriter();
 
 			request = reader.readRequest();
 			channel = new AgiChannelImpl(request, writer, reader);

@@ -336,7 +336,6 @@ public class DefaultAgiServer implements AgiServer
 		die();
 	}
 
-	@Override
 	protected void finalize()
 		throws Throwable
 	{

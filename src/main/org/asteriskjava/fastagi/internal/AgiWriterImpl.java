@@ -23,22 +23,22 @@ import org.asteriskjava.util.SocketConnectionFacade;
 
 /**
  * Default implementation of the AGIWriter interface.
- * 
+ *
  * @author srt
  * @version $Id: AgiWriterImpl.java 458 2006-07-05 22:32:02Z srt $
  */
 class AgiWriterImpl implements AgiWriter
 {
-    private final SocketConnectionFacade socket;
+	private final SocketConnectionFacade socket;
 
-    AgiWriterImpl(SocketConnectionFacade socket)
-    {
-        this.socket = socket;
-    }
+	AgiWriterImpl(SocketConnectionFacade socket)
+	{
+		this.socket = socket;
+	}
 
-    public void sendCommand(String command) throws IOException
-    {
-        socket.write(command + "\n");
-        socket.flush();
-    }
+	public void sendCommand(String command) throws IOException
+	{
+		socket.write(command + "\n");
+		socket.flush();
+	}
 }

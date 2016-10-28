@@ -39,7 +39,7 @@ public class AgiReaderImpl implements AgiReader
 	private final Socket socket;
 	private final BufferedReader reader;
 
-	public AgiReaderImpl(Socket socket)
+	AgiReaderImpl(Socket socket)
 		throws IOException
 	{
 		this.socket = socket;

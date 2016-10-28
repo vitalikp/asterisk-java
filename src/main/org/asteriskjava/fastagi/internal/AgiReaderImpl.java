@@ -51,9 +51,7 @@ public class AgiReaderImpl implements AgiReader
 		while ((line = socket.readLine()) != null)
 		{
 			if (line.length() == 0)
-			{
 				break;
-			}
 
 			lines.add(line);
 		}
@@ -78,9 +76,7 @@ public class AgiReaderImpl implements AgiReader
 		line = socket.readLine();
 
 		if (line == null)
-		{
 			throw new AgiHangupException();
-		}
 
 		lines.add(line);
 
@@ -90,10 +86,9 @@ public class AgiReaderImpl implements AgiReader
 			while ((line = socket.readLine()) != null)
 			{
 				lines.add(line);
+
 				if (line.startsWith(Integer.toString(AgiReply.SC_INVALID_COMMAND_SYNTAX)))
-				{
 					break;
-				}
 			}
 		}
 

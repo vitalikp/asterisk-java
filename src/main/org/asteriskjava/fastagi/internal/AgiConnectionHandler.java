@@ -43,7 +43,6 @@ public class AgiConnectionHandler implements Runnable
 	private static final String AJ_AGISTATUS_SUCCESS = "SUCCESS";
 	private static final String AJ_AGISTATUS_FAILED = "FAILED";
 	private final Log logger = LogFactory.getLog(getClass());
-	private static final ThreadLocal<AgiChannel> channel = new ThreadLocal<AgiChannel>();
 
 	/**
 	 * The socket connection.
@@ -95,8 +94,6 @@ public class AgiConnectionHandler implements Runnable
 			request = reader.readRequest();
 			channel = new AgiChannelImpl(request, writer, reader);
 
-			AgiConnectionHandler.channel.set(channel);
-
 			script = mappingStrategy.determineScript(request);
 			if (script == null)
 			{
@@ -121,7 +118,6 @@ public class AgiConnectionHandler implements Runnable
 		}
 		finally
 		{
-			AgiConnectionHandler.channel.set(null);
 			try
 			{
 				socket.close();

@@ -75,8 +75,8 @@ public class AgiChannelImpl implements AgiChannel
 	public AgiChannelImpl(AgiRequest request, SocketConnectionFacade socket)
 	{
 		this.request = request;
-		this.agiWriter = new AgiWriterImpl(socket);
-		this.agiReader = new AgiReaderImpl(socket);
+		agiWriter = new AgiWriterImpl(socket);
+		agiReader = new AgiReaderImpl(socket);
 	}
 
 	public AgiChannelImpl(AgiRequest request, AgiWriter agiWriter, AgiReader agiReader)
@@ -111,17 +111,13 @@ public class AgiChannelImpl implements AgiChannel
 		reply = agiReader.readReply();
 
 		if (reply.getStatus() == AgiReply.SC_INVALID_OR_UNKNOWN_COMMAND)
-		{
 			throw new InvalidOrUnknownCommandException(command);
-		}
+
 		if (reply.getStatus() == AgiReply.SC_DEAD_CHANNEL)
-		{
 			throw new AgiHangupException();
-		}
+
 		if (reply.getStatus() == AgiReply.SC_INVALID_COMMAND_SYNTAX)
-		{
 			throw new InvalidCommandSyntaxException(reply.getSynopsis(), reply.getUsage());
-		}
 
 		return reply;
 	}
@@ -368,9 +364,8 @@ public class AgiChannelImpl implements AgiChannel
 
 		reply = sendCommand(new GetVariableCommand(name));
 		if (reply.getResultCode() != 1)
-		{
 			return null;
-		}
+
 		return reply.getExtra();
 	}
 
@@ -394,9 +389,8 @@ public class AgiChannelImpl implements AgiChannel
 
 		reply = sendCommand(new GetFullVariableCommand(name));
 		if (reply.getResultCode() != 1)
-		{
 			return null;
-		}
+
 		return reply.getExtra();
 	}
 
@@ -406,9 +400,8 @@ public class AgiChannelImpl implements AgiChannel
 
 		reply = sendCommand(new GetFullVariableCommand(name, channel));
 		if (reply.getResultCode() != 1)
-		{
 			return null;
-		}
+
 		return reply.getExtra();
 	}
 
@@ -450,9 +443,8 @@ public class AgiChannelImpl implements AgiChannel
 
 		reply = sendCommand(new DatabaseGetCommand(family, key));
 		if (reply.getResultCode() != 1)
-		{
 			return null;
-		}
+
 		return reply.getExtra();
 	}
 

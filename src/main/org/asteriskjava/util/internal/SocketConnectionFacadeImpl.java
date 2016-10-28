@@ -74,17 +74,6 @@ public class SocketConnectionFacadeImpl implements SocketConnectionFacade
 		writer = new BufferedWriter(new OutputStreamWriter(outputStream));
 	}
 
-	public SocketConnectionFacadeImpl(Socket socket) throws IOException
-	{
-		this.socket = socket;
-
-		InputStream inputStream = socket.getInputStream();
-		OutputStream outputStream = socket.getOutputStream();
-
-		reader = new BufferedReader(new InputStreamReader(inputStream));
-		writer = new BufferedWriter(new OutputStreamWriter(outputStream));
-	}
-
 	public String readLine()
 		throws IOException
 	{

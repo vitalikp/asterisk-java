@@ -79,7 +79,7 @@ public class AgiConnectionHandler implements Runnable
 
 	public void run()
 	{
-		AgiChannel channel = null;
+		AgiChannel channel;
 
 		try
 		{
@@ -107,13 +107,10 @@ public class AgiConnectionHandler implements Runnable
 				logToAsterisk(channel, errorMessage);
 			}
 			else
-			{
 				runScript(script, request, channel);
-			}
 		}
-		catch (Exception e)
+		catch (IOException e)
 		{
-			setStatusVariable(channel, AJ_AGISTATUS_FAILED);
 			logger.error("Unexpected Exception while handling request", e);
 		}
 		finally
@@ -151,9 +148,7 @@ public class AgiConnectionHandler implements Runnable
 	private void setStatusVariable(AgiChannel channel, String value)
 	{
 		if (channel == null)
-		{
 			return;
-		}
 
 		try
 		{
@@ -168,9 +163,7 @@ public class AgiConnectionHandler implements Runnable
 	private void logToAsterisk(AgiChannel channel, String message)
 	{
 		if (channel == null)
-		{
 			return;
-		}
 
 		try
 		{

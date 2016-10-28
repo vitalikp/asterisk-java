@@ -350,13 +350,4 @@ public class DefaultAgiServer implements AgiServer
 			}
 		}
 	}
-
-	public static void main(String[] args)
-		throws Exception
-	{
-		AgiServer server;
-
-		server = new DefaultAgiServer();
-		server.startup();
-	}
 }

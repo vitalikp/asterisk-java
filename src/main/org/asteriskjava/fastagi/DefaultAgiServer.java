@@ -17,6 +17,7 @@
 package org.asteriskjava.fastagi;
 
 import java.io.IOException;
+import java.net.ServerSocket;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 import java.util.concurrent.LinkedBlockingQueue;
@@ -27,9 +28,8 @@ import org.asteriskjava.fastagi.internal.AgiConnectionHandler;
 import org.asteriskjava.util.DaemonThreadFactory;
 import org.asteriskjava.util.Log;
 import org.asteriskjava.util.LogFactory;
-import org.asteriskjava.util.ServerSocketFacade;
 import org.asteriskjava.util.SocketConnectionFacade;
-import org.asteriskjava.util.internal.ServerSocketFacadeImpl;
+import org.asteriskjava.util.internal.SocketConnectionFacadeImpl;
 
 /**
  * Default implementation of the {@link org.asteriskjava.fastagi.AgiServer} interface.
@@ -64,7 +64,7 @@ public class DefaultAgiServer implements AgiServer
 	 */
 	private final Log logger = LogFactory.getLog(DefaultAgiServer.class);
 
-	private ServerSocketFacade serverSocket;
+	private ServerSocket serverSocket;
 
 	/**
 	 * The port to listen on.
@@ -234,10 +234,10 @@ public class DefaultAgiServer implements AgiServer
 		}
 	}
 
-	protected ServerSocketFacade createServerSocket()
+	protected ServerSocket createServerSocket()
 		throws IOException
 	{
-		return new ServerSocketFacadeImpl(port, 0, null);
+		return new ServerSocket(port, 0, null);
 	}
 
 	public void startup()
@@ -269,7 +269,7 @@ public class DefaultAgiServer implements AgiServer
 		{
 			try
 			{
-				socket = serverSocket.accept();
+				socket = new SocketConnectionFacadeImpl(serverSocket.accept());
 				logger.info("Received connection from " + socket.getRemoteAddress());
 				connectionHandler = new AgiConnectionHandler(socket, mappingStrategy);
 				pool.execute(connectionHandler);

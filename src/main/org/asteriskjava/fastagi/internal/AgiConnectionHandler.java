@@ -90,7 +90,7 @@ public class AgiConnectionHandler implements Runnable
 				logger.error(errorMessage);
 
 				setStatusVariable(channel, AJ_AGISTATUS_NOT_FOUND);
-				logToAsterisk(channel, errorMessage);
+				channel.verbose(errorMessage, 1);
 			}
 			else
 				runScript(script, request, channel);
@@ -139,21 +139,6 @@ public class AgiConnectionHandler implements Runnable
 		try
 		{
 			channel.setVariable(AJ_AGISTATUS_VARIABLE, value);
-		}
-		catch (Exception e) // NOPMD
-		{
-			// swallow
-		}
-	}
-
-	private void logToAsterisk(AgiChannel channel, String message)
-	{
-		if (channel == null)
-			return;
-
-		try
-		{
-			channel.verbose(message, 1);
 		}
 		catch (Exception e) // NOPMD
 		{

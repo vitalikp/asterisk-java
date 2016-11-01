@@ -50,6 +50,11 @@ public class AgiConnectionHandler implements Runnable
 	private final Socket socket;
 
 	/**
+	 * The AGI channel
+	 */
+	private final AgiChannel channel;
+
+	/**
 	 * The strategy to use to determine which script to run.
 	 */
 	private final MappingStrategy mappingStrategy;
@@ -66,18 +71,17 @@ public class AgiConnectionHandler implements Runnable
 	{
 		this.socket = socket;
 		this.mappingStrategy = mappingStrategy;
+
+		channel = new AgiChannelImpl(socket);
 	}
 
 	public void run()
 	{
-		AgiChannel channel;
-
 		try
 		{
 			AgiRequest request;
 			AgiScript script;
 
-			channel = new AgiChannelImpl(socket);
 			request = channel.getRequest();
 
 			script = mappingStrategy.determineScript(request);

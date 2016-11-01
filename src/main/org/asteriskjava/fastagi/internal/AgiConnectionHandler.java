@@ -77,13 +77,13 @@ public class AgiConnectionHandler implements Runnable
 
 	public void run()
 	{
+		AgiRequest request;
+		AgiScript script;
+
+		request = channel.getRequest();
+
 		try
 		{
-			AgiRequest request;
-			AgiScript script;
-
-			request = channel.getRequest();
-
 			script = mappingStrategy.determineScript(request);
 			if (script == null)
 			{
@@ -97,7 +97,7 @@ public class AgiConnectionHandler implements Runnable
 				channel.verbose(errorMessage, 1);
 			}
 			else
-				runScript(script, request, channel);
+				runScript(script, request);
 		}
 		catch (IOException e)
 		{
@@ -116,23 +116,28 @@ public class AgiConnectionHandler implements Runnable
 		}
 	}
 
-	private void runScript(AgiScript script, AgiRequest request, AgiChannel channel)
+	private void runScript(AgiScript script, AgiRequest request)
 		throws IOException
 	{
 		String threadName;
 		threadName = Thread.currentThread().getName();
 
+		String status = AJ_AGISTATUS_SUCCESS;
+
 		logger.info("Begin AgiScript " + script.getClass().getName() + " on " + threadName);
 		try
 		{
 			script.service(request, channel);
-			channel.setVariable(AJ_AGISTATUS_VARIABLE, AJ_AGISTATUS_SUCCESS);
 		}
 		catch (Exception e)
 		{
 			logger.error("Exception running AgiScript " + script.getClass().getName() + " on " + threadName, e);
-			channel.setVariable(AJ_AGISTATUS_VARIABLE, AJ_AGISTATUS_FAILED);
+			status = AJ_AGISTATUS_FAILED;
 		}
-		logger.info("End AgiScript " + script.getClass().getName() + " on " + threadName);
+		finally
+		{
+			channel.setVariable(AJ_AGISTATUS_VARIABLE, status);
+			logger.info("End AgiScript " + script.getClass().getName() + " on " + threadName);
+		}
 	}
 }

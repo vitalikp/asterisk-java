@@ -239,11 +239,25 @@ public class DefaultAgiServer implements AgiServer
 		return new ServerSocket(port, 0, null);
 	}
 
+	private void execute(Socket socket)
+		throws IOException
+	{
+		logger.info("Received connection from " + socket.getInetAddress());
+
+		try
+		{
+			pool.execute(new AgiConnectionHandler(socket, mappingStrategy));
+		}
+		catch (IOException e)
+		{
+			socket.close();
+		}
+	}
+
 	public void startup()
 		throws IOException, IllegalStateException
 	{
 		Socket socket;
-		AgiConnectionHandler connectionHandler;
 
 		die = false;
 		pool = new ThreadPoolExecutor(poolSize, (maximumPoolSize < poolSize) ? poolSize : maximumPoolSize, 50000L,
@@ -269,9 +283,8 @@ public class DefaultAgiServer implements AgiServer
 			try
 			{
 				socket = serverSocket.accept();
-				logger.info("Received connection from " + socket.getInetAddress());
-				connectionHandler = new AgiConnectionHandler(socket, mappingStrategy);
-				pool.execute(connectionHandler);
+
+				execute(socket);
 			}
 			catch (IOException e)
 			{

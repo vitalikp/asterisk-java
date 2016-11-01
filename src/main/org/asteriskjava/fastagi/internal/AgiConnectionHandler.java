@@ -93,7 +93,7 @@ public class AgiConnectionHandler implements Runnable
 						+ request.getScript() + "')";
 				logger.error(errorMessage);
 
-				setStatusVariable(channel, AJ_AGISTATUS_NOT_FOUND);
+				channel.setVariable(AJ_AGISTATUS_VARIABLE, AJ_AGISTATUS_NOT_FOUND);
 				channel.verbose(errorMessage, 1);
 			}
 			else
@@ -101,7 +101,7 @@ public class AgiConnectionHandler implements Runnable
 		}
 		catch (IOException e)
 		{
-			logger.error("Unexpected Exception while handling request", e);
+			logger.error(String.format("IOException while handling request: %s", e.getMessage()));
 		}
 		finally
 		{
@@ -117,6 +117,7 @@ public class AgiConnectionHandler implements Runnable
 	}
 
 	private void runScript(AgiScript script, AgiRequest request, AgiChannel channel)
+		throws IOException
 	{
 		String threadName;
 		threadName = Thread.currentThread().getName();
@@ -125,28 +126,13 @@ public class AgiConnectionHandler implements Runnable
 		try
 		{
 			script.service(request, channel);
-			setStatusVariable(channel, AJ_AGISTATUS_SUCCESS);
+			channel.setVariable(AJ_AGISTATUS_VARIABLE, AJ_AGISTATUS_SUCCESS);
 		}
 		catch (Exception e)
 		{
 			logger.error("Exception running AgiScript " + script.getClass().getName() + " on " + threadName, e);
-			setStatusVariable(channel, AJ_AGISTATUS_FAILED);
+			channel.setVariable(AJ_AGISTATUS_VARIABLE, AJ_AGISTATUS_FAILED);
 		}
 		logger.info("End AgiScript " + script.getClass().getName() + " on " + threadName);
-	}
-
-	private void setStatusVariable(AgiChannel channel, String value)
-	{
-		if (channel == null)
-			return;
-
-		try
-		{
-			channel.setVariable(AJ_AGISTATUS_VARIABLE, value);
-		}
-		catch (Exception e) // NOPMD
-		{
-			// swallow
-		}
 	}
 }

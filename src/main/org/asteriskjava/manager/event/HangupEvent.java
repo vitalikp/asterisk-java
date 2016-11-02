@@ -56,7 +56,7 @@ public class HangupEvent extends AbstractChannelStateEvent
     /**
      * Returns the Caller*ID Num.
      * 
-     * @return the Caller*ID Num or "<unknown>" if none has been set.
+     * @return the Caller*ID Num or "&lt;unknown&gt;" if none has been set.
      */
     public String getCallerIdNum()
     {
@@ -76,7 +76,7 @@ public class HangupEvent extends AbstractChannelStateEvent
     /**
      * Returns the Caller*ID Name.
      * 
-     * @return the Caller*ID Name or "<unknown>" if none has been set.
+     * @return the Caller*ID Name or "&lt;unknown&gt;" if none has been set.
      */
     public String getCallerIdName()
     {

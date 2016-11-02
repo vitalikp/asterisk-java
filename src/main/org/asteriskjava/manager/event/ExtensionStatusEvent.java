@@ -25,9 +25,11 @@ package org.asteriskjava.manager.event;
  * <pre>exten => 1234,1,Dial(SIP/myuser)
  * exten => 1234,hint,SIP/myuser</pre>
  * Hints can also be used to map the state of multiple channels to an extension:
- * <pre>exten => 6789,hint,SIP/user1&SIP/user2
- * <p>
- * It is implemented in <code>manager.c</code>, values for state are defined in
+ * <pre>
+ *    exten => 6789,hint,SIP/user1&SIP/user2
+ * </pre>
+ *
+ * <p>It is implemented in <code>manager.c</code>, values for state are defined in
  * <code>include/asterisk/pbx.h</code>.
  * 
  * @author srt
@@ -106,7 +108,7 @@ public class ExtensionStatusEvent extends ManagerEvent
      * <li>NOT_INUSE
      * <li>BUSY
      * <li>UNAVAILABLE
-     * </li>
+     * </ul>
      */
     public Integer getStatus()
     {

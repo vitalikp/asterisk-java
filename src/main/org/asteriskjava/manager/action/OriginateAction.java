@@ -135,9 +135,9 @@ public class OriginateAction extends AbstractManagerAction implements EventGener
      * presentation indicator.<p>
      * In essence, it says, 'Is the person who has been called allowed to see the callers number?'
      * (presentation) and 'What authority was used to verify that this is a genuine number?'
-     * (screening).<p>
-     * <p/>
-     * Presentation indicator (Bits 6 and 7):
+     * (screening).
+     *
+     * <p>Presentation indicator (Bits 6 and 7):
      * <pre>
      * Bits Meaning
      *  7 6

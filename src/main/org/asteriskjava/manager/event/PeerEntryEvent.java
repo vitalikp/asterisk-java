@@ -179,15 +179,10 @@ public class PeerEntryEvent extends ResponseEvent
      * For SIP peers this is one of:
      * <dl>
      * <dt>"UNREACHABLE"</dt>
-     * <dd></dd>
      * <dt>"LAGGED (%d ms)"</dt>
-     * <dd></dd>
      * <dt>"OK (%d ms)"</dt>
-     * <dd></dd>
      * <dt>"UNKNOWN"</dt>
-     * <dd></dd>
      * <dt>"Unmonitored"</dt>
-     * <dd></dd>
      * </dl>
      * 
      * @return the status of this peer.

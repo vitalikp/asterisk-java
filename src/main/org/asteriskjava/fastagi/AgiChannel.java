@@ -108,7 +108,7 @@ public interface AgiChannel
 	 * Plays music on hold from the given music on hold class.
 	 *
 	 * @param musicOnHoldClass the music on hold class to play music from as
-	 *            configures in Asterisk's <code><musiconhold.conf/code>.
+	 *            configures in Asterisk's <code>musiconhold.conf</code>.
 	 * @since 0.2
 	 */
 	void playMusicOnHold(String musicOnHoldClass) throws IOException;

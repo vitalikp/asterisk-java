@@ -64,14 +64,14 @@ import org.asteriskjava.manager.action.UserEventAction;
 
 /**
  * Default implemention of the ManagerConnection interface.
- * <p/>
- * Generelly avoid direct use of this class. Use the ManagerConnectionFactory to
+ *
+ * <p>Generelly avoid direct use of this class. Use the ManagerConnectionFactory to
  * obtain a ManagerConnection instead.
- * <p/>
- * When using a dependency injection framework like Spring direct usage for
+ *
+ * <p>When using a dependency injection framework like Spring direct usage for
  * wiring up beans that require a ManagerConnection property is fine though.
- * <p/>
- * Note that the DefaultManagerConnection will create one new Thread for reading
+ *
+ * <p>Note that the DefaultManagerConnection will create one new Thread for reading
  * data from Asterisk on the first call to on of the login() methods.
  *
  * @author srt
@@ -245,8 +245,8 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
 
     /**
      * Sets the hostname of the asterisk server to connect to.
-     * <p/>
-     * Default is <code>localhost</code>.
+     *
+     * <p>Default is <code>localhost</code>.
      *
      * @param hostname the hostname to connect to
      */
@@ -258,8 +258,8 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
     /**
      * Sets the port to use to connect to the asterisk server. This is the port
      * specified in asterisk's <code>manager.conf</code> file.
-     * <p/>
-     * Default is 5038.
+     *
+     * <p>Default is 5038.
      *
      * @param port the port to connect to
      */
@@ -277,8 +277,8 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
 
     /**
      * Sets whether to use SSL.
-     * <p/>
-     * Default is false.
+     *
+     * <p>Default is false.
      *
      * @param ssl <code>true</code> to use SSL for the connection,
      *            <code>false</code> for a plain text connection.
@@ -315,8 +315,8 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
      * Sets the time in milliseconds the synchronous method
      * {@link #sendAction(ManagerAction)} will wait for a response before
      * throwing a TimeoutException.
-     * <p/>
-     * Default is 2000.
+     *
+     * <p>Default is 2000.
      *
      * @param defaultResponseTimeout default response timeout in milliseconds
      * @since 0.2
@@ -330,8 +330,8 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
      * Sets the time in milliseconds the synchronous method
      * {@link #sendEventGeneratingAction(EventGeneratingAction)} will wait for a
      * response and the last response event before throwing a TimeoutException.
-     * <p/>
-     * Default is 5000.
+     *
+     * <p>Default is 5000.
      *
      * @param defaultEventTimeout default event timeout in milliseconds
      * @since 0.2
@@ -344,8 +344,8 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
     /**
      * Set to <code>true</code> to try reconnecting to ther asterisk serve
      * even if the reconnection attempt threw an AuthenticationFailedException.
-     * <p/>
-     * Default is <code>true</code>.
+     *
+     * <p>Default is <code>true</code>.
      *
      * @param keepAliveAfterAuthenticationFailure
      *         <code>true</code> to try reconnecting to ther asterisk serve
@@ -434,7 +434,6 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
 
     /**
      * Does the real login, following the steps outlined below.
-     * <p/>
      * <ol>
      * <li>Connects to the asterisk server by calling {@link #connect()} if not
      * already connected

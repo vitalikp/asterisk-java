@@ -22,8 +22,8 @@ import java.io.Serializable;
 
 /**
  * Represents a Caller*ID containing name and number.
- * <p/>
- * Objects of this type are immutable.
+ *
+ * <p>Objects of this type are immutable.
  *
  * @author srt
  * @version $Id: CallerId.java 837 2007-07-09 06:44:23Z srt $

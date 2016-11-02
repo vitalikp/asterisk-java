@@ -90,7 +90,7 @@ public class QueueParamsEvent extends ResponseEvent
 
     /**
      * Returns the strategy used for this queue.<p>
-     * Possible values are:<p>
+     * Possible values are:
      * <ul>
      * <li>ringall</li>
      * <li>roundrobin</li>

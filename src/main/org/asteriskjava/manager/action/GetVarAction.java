@@ -30,8 +30,9 @@ package org.asteriskjava.manager.action;
  * {@link org.asteriskjava.manager.response.ManagerResponse} call
  * {@link org.asteriskjava.manager.response.ManagerResponse#getAttribute(String)}
  * with either the variable name as parameter (for Asterisk 1.0.x) or
- * with "Value" as parameter (for Asterisk since 1.2).<p>
- * Example (for Asterisk 1.2):<p>
+ * with "Value" as parameter (for Asterisk since 1.2).
+ *
+ * <p>Example (for Asterisk 1.2):
  * <pre>
  * GetVarAction getVarAction = new GetVarAction(channel, "MY_VAR");
  * ManagerResponse response = c.sendAction(getVarAction);

@@ -45,7 +45,7 @@ public abstract class AbstractChannelStateEvent extends AbstractChannelEvent
 
     /**
      * Returns the (new) state of the channel.<p>
-     * The following states are used:<p>
+     * The following states are used:
      * <ul>
      * <li>Down</li>
      * <li>OffHook</li>
@@ -54,7 +54,7 @@ public abstract class AbstractChannelStateEvent extends AbstractChannelEvent
      * <li>Ringing</li>
      * <li>Up</li>
      * <li>Busy</li>
-     * <ul>
+     * </ul>
      */
     public String getState()
     {

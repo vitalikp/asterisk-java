@@ -72,38 +72,6 @@ public class Log4JLogger implements Log, Serializable
     // --------------------------------------------------------- Implementation
 
     /**
-     * Log a message to the Log4j Logger with <code>TRACE</code> priority.
-     * Currently logs to <code>DEBUG</code> level in Log4J.
-     */
-    public void trace(Object message)
-    {
-        if (IS12)
-        {
-            getLogger().log(FQCN, (Priority) Level.DEBUG, message, null);
-        }
-        else
-        {
-            getLogger().log(FQCN, Level.DEBUG, message, null);
-        }
-    }
-
-    /**
-     * Log an error to the Log4j Logger with <code>TRACE</code> priority.
-     * Currently logs to <code>DEBUG</code> level in Log4J.
-     */
-    public void trace(Object message, Throwable t)
-    {
-        if (IS12)
-        {
-            getLogger().log(FQCN, (Priority) Level.DEBUG, message, t);
-        }
-        else
-        {
-            getLogger().log(FQCN, Level.DEBUG, message, t);
-        }
-    }
-
-    /**
      * Log a message to the Log4j Logger with <code>DEBUG</code> priority.
      */
     public void debug(Object message)
@@ -119,21 +87,6 @@ public class Log4JLogger implements Log, Serializable
     }
 
     /**
-     * Log an error to the Log4j Logger with <code>DEBUG</code> priority.
-     */
-    public void debug(Object message, Throwable t)
-    {
-        if (IS12)
-        {
-            getLogger().log(FQCN, (Priority) Level.DEBUG, message, t);
-        }
-        else
-        {
-            getLogger().log(FQCN, Level.DEBUG, message, t);
-        }
-    }
-
-    /**
      * Log a message to the Log4j Logger with <code>INFO</code> priority.
      */
     public void info(Object message)
@@ -145,21 +98,6 @@ public class Log4JLogger implements Log, Serializable
         else
         {
             getLogger().log(FQCN, Level.INFO, message, null);
-        }
-    }
-
-    /**
-     * Log an error to the Log4j Logger with <code>INFO</code> priority.
-     */
-    public void info(Object message, Throwable t)
-    {
-        if (IS12)
-        {
-            getLogger().log(FQCN, (Priority) Level.INFO, message, t);
-        }
-        else
-        {
-            getLogger().log(FQCN, Level.INFO, message, t);
         }
     }
 
@@ -224,36 +162,6 @@ public class Log4JLogger implements Log, Serializable
     }
 
     /**
-     * Log a message to the Log4j Logger with <code>FATAL</code> priority.
-     */
-    public void fatal(Object message)
-    {
-        if (IS12)
-        {
-            getLogger().log(FQCN, (Priority) Level.FATAL, message, null);
-        }
-        else
-        {
-            getLogger().log(FQCN, Level.FATAL, message, null);
-        }
-    }
-
-    /**
-     * Log an error to the Log4j Logger with <code>FATAL</code> priority.
-     */
-    public void fatal(Object message, Throwable t)
-    {
-        if (IS12)
-        {
-            getLogger().log(FQCN, (Priority) Level.FATAL, message, t);
-        }
-        else
-        {
-            getLogger().log(FQCN, Level.FATAL, message, t);
-        }
-    }
-
-    /**
      * Return the native Logger instance we are using.
      */
     public final Logger getLogger()
@@ -263,81 +171,5 @@ public class Log4JLogger implements Log, Serializable
             logger = Logger.getLogger(name);
         }
         return (this.logger);
-    }
-
-    /**
-     * Check whether the Log4j Logger used is enabled for <code>DEBUG</code>
-     * priority.
-     */
-    public boolean isDebugEnabled()
-    {
-        return getLogger().isDebugEnabled();
-    }
-
-    /**
-     * Check whether the Log4j Logger used is enabled for <code>ERROR</code>
-     * priority.
-     */
-    public boolean isErrorEnabled()
-    {
-        if (IS12)
-        {
-            return getLogger().isEnabledFor((Priority) Level.ERROR);
-        }
-        else
-        {
-            return getLogger().isEnabledFor(Level.ERROR);
-        }
-    }
-
-    /**
-     * Check whether the Log4j Logger used is enabled for <code>FATAL</code>
-     * priority.
-     */
-    public boolean isFatalEnabled()
-    {
-        if (IS12)
-        {
-            return getLogger().isEnabledFor((Priority) Level.FATAL);
-        }
-        else
-        {
-            return getLogger().isEnabledFor(Level.FATAL);
-        }
-    }
-
-    /**
-     * Check whether the Log4j Logger used is enabled for <code>INFO</code>
-     * priority.
-     */
-    public boolean isInfoEnabled()
-    {
-        return getLogger().isInfoEnabled();
-    }
-
-    /**
-     * Check whether the Log4j Logger used is enabled for <code>TRACE</code>
-     * priority. For Log4J, this returns the value of
-     * <code>isDebugEnabled()</code>
-     */
-    public boolean isTraceEnabled()
-    {
-        return getLogger().isDebugEnabled();
-    }
-
-    /**
-     * Check whether the Log4j Logger used is enabled for <code>WARN</code>
-     * priority.
-     */
-    public boolean isWarnEnabled()
-    {
-        if (IS12)
-        {
-            return getLogger().isEnabledFor((Priority) Level.WARN);
-        }
-        else
-        {
-            return getLogger().isEnabledFor(Level.WARN);
-        }
     }
 }

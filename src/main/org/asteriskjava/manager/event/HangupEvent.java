@@ -64,9 +64,9 @@ public class HangupEvent extends AbstractChannelStateEvent
     }
 
     /**
-     * Sets the caller*ID.
+     * Sets the caller*ID Num.
      * 
-     * @param callerId the caller*ID.
+     * @param callerIdNum the caller*ID Num.
      */
     public void setCallerIdNum(String callerIdNum)
     {

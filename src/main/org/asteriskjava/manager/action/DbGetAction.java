@@ -20,11 +20,11 @@ import org.asteriskjava.manager.event.DbGetResponseEvent;
 
 /**
  * Retrieves an entry in the Asterisk database for a given family and key.<p>
- * If an entry is found a DBGetResponseEvent is sent by Asterisk containing the
+ * If an entry is found a DbGetResponseEvent is sent by Asterisk containing the
  * value, otherwise a ManagerError indicates that no entry matches.<p>
  * Available since Asterisk 1.2
  * 
- * @see org.asteriskjava.manager.event.DBGetResponseEvent
+ * @see org.asteriskjava.manager.event.DbGetResponseEvent
  * @author srt
  * @version $Id: DbGetAction.java 729 2007-05-26 05:16:57Z sprior $
  * @since 0.2

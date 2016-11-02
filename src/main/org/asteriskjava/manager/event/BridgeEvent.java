@@ -69,7 +69,7 @@ public class BridgeEvent extends ManagerEvent
     /**
      * Sets the name of the channel 1.
      * 
-     * @param channel the name of the channel 1.
+     * @param channel1 the name of the channel 1.
      */
     public void setChannel1(String channel1)
     {
@@ -89,7 +89,7 @@ public class BridgeEvent extends ManagerEvent
     /**
      * Sets the name of the channel 2.
      * 
-     * @param channel the name of the channel 2.
+     * @param channel2 the name of the channel 2.
      */
     public void setChannel2(String channel2)
     {
@@ -109,7 +109,7 @@ public class BridgeEvent extends ManagerEvent
     /**
      * Sets the unique id of the channel 1.
      * 
-     * @param uniqueId the unique id of the channel 1.
+     * @param uniqueId1 the unique id of the channel 1.
      */
     public void setUniqueId1(String uniqueId1)
     {
@@ -129,7 +129,7 @@ public class BridgeEvent extends ManagerEvent
     /**
      * Sets the unique id of the channel 2.
      * 
-     * @param uniqueId the unique id of the channel 2.
+     * @param uniqueId2 the unique id of the channel 2.
      */
     public void setUniqueId2(String uniqueId2)
     {

@@ -106,7 +106,7 @@ public class DialEvent extends ManagerEvent
     /**
      * Sets the name of the source channel.
      * 
-     * @param src the name of the source channel.
+     * @param channel the name of the source channel.
      */
     public void setChannel(String channel)
     {
@@ -144,9 +144,9 @@ public class DialEvent extends ManagerEvent
     }
 
     /**
-     * Sets the caller*ID.
+     * Sets the caller*ID Num.
      * 
-     * @param callerId the caller*ID.
+     * @param callerIdNum the caller*ID Num.
      */
     public void setCallerIdNum(String callerIdNum)
     {
@@ -206,7 +206,7 @@ public class DialEvent extends ManagerEvent
     /**
      * Sets the unique ID of the source channel.
      * 
-     * @param srcUniqueId the unique ID of the source channel.
+     * @param uniqueId the unique ID of the source channel.
      */
     public void setUniqueId(String uniqueId)
     {

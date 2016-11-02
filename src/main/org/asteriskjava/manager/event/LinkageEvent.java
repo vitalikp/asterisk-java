@@ -145,7 +145,7 @@ public abstract class LinkageEvent extends ManagerEvent
     /**
      * Sets the Caller*Id number of the second channel.
      * 
-     * @param callerId1 the Caller*Id number of the second channel.
+     * @param callerId2 the Caller*Id number of the second channel.
      * @since 0.2
      */
     public void setCallerId2(String callerId2)

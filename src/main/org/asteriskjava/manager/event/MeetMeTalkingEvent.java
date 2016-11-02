@@ -67,7 +67,7 @@ public class MeetMeTalkingEvent extends AbstractMeetMeEvent
     /**
      * Sets whether the user has started or stopped talking.
      * 
-     * @return <code>true</code> if ther user has started talking,
+     * @param status <code>true</code> if ther user has started talking,
      *         <code>false</code> if the user has stopped talking.
      * @since 0.3
      */

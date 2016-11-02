@@ -22,8 +22,8 @@ package org.asteriskjava.manager.event;
  * Available since Asterisk 1.2
  * 
  * @see org.asteriskjava.manager.event.PeerEntryEvent
- * @see org.asteriskjava.manager.action.SIPPeersAction
- * @see org.asteriskjava.manager.action.SIPShowPeerAction
+ * @see org.asteriskjava.manager.action.SipPeersAction
+ * @see org.asteriskjava.manager.action.SipShowPeerAction
  * @author srt
  * @version $Id: PeerlistCompleteEvent.java 397 2006-05-26 12:13:32Z srt $
  * @since 0.2

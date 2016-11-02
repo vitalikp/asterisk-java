@@ -17,11 +17,11 @@
 package org.asteriskjava.manager.event;
 
 /**
- * A DBGetResponseEvent is sent in response to a DBGetAction and contains the
+ * A DBGetResponseEvent is sent in response to a DbGetAction and contains the
  * entry that was queried.<p>
  * Available since Asterisk 1.2
  * 
- * @see org.asteriskjava.manager.action.DBGetAction
+ * @see org.asteriskjava.manager.action.DbGetAction
  * @author srt
  * @version $Id: DbGetResponseEvent.java 397 2006-05-26 12:13:32Z srt $
  * @since 0.2

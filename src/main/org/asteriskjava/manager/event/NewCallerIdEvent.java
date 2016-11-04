@@ -57,10 +57,10 @@ public class NewCallerIdEvent extends AbstractChannelEvent
     }
 
     /**
-     * Returns the textual respresentation of the CallerId
+     * Returns the textual representation of the CallerId
      * presentation/screening.
      * 
-     * @return the textual respresentation of the CallerId
+     * @return the textual representation of the CallerId
      *         presentation/screening.
      * @since 0.2
      */

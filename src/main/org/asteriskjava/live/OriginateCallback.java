@@ -20,7 +20,7 @@ package org.asteriskjava.live;
  * Callback interface for asynchronous originates.
  * <p>
  * Contract:<br>
- * {@link #onDialing(AsteriskChannel)} is called exactly once iif originate did not fail.
+ * {@link #onDialing(AsteriskChannel)} is called exactly once if originate did not fail.
  * It is called immediately after the channel has been created and before it is ringing.<br>
  * In case of a failure {@link #onFailure(LiveException)} is the only method that is called
  * and it is called exactly once.<br>

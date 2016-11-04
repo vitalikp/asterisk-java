@@ -43,12 +43,12 @@ public abstract class QueueEvent extends ManagerEvent
     }
 
     /**
-     * Returns the unique id of the channel that joines or leaves the queue.<p>
+     * Returns the unique id of the channel that joins or leaves the queue.<p>
      * This property is only available since Asterisk 1.4. Up to Asterisk 1.2
      * this method always returns <code>null</code>.<p>
      * See Asterisk issues 6458 and 7002.
      * 
-     * @return the unique id of the channel that joines or leaves the queue or
+     * @return the unique id of the channel that joins or leaves the queue or
      *         <code>null</code> if not supported by your Asterisk server.
      * @since 0.3
      */
@@ -58,9 +58,9 @@ public abstract class QueueEvent extends ManagerEvent
     }
 
     /**
-     * Sets the unique id of the channel that joines or leaves the queue.
+     * Sets the unique id of the channel that joins or leaves the queue.
      * 
-     * @param uniqueId the unique id of the channel that joines or leaves the queue.
+     * @param uniqueId the unique id of the channel that joins or leaves the queue.
      * @since 0.3
      */
     public void setUniqueId(String uniqueId)
@@ -69,7 +69,7 @@ public abstract class QueueEvent extends ManagerEvent
     }
 
     /**
-     * Returns the name of the channel that joines or leaves the queue.
+     * Returns the name of the channel that joins or leaves the queue.
      */
     public String getChannel()
     {
@@ -77,7 +77,7 @@ public abstract class QueueEvent extends ManagerEvent
     }
 
     /**
-     * Sets the name of the channel that joines or leaves the queue.
+     * Sets the name of the channel that joins or leaves the queue.
      */
     public void setChannel(String channel)
     {

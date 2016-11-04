@@ -17,7 +17,7 @@
 package org.asteriskjava.fastagi.command;
 
 /**
- * Sets the given channel varible to the given value.
+ * Sets the given channel variable to the given value.
  * 
  * @author srt
  * @version $Id: SetVariableCommand.java 729 2007-05-26 05:16:57Z sprior $

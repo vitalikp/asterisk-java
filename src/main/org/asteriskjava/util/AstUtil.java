@@ -71,7 +71,7 @@ public class AstUtil
      * 
      * To support the dnd property of
      * {@link org.asteriskjava.manager.event.ZapShowChannelsEvent} this method
-     * also consideres the string "Enabled" as true.
+     * also considered the string "Enabled" as true.
      * 
      * @param s the String to check for <code>true</code>.
      * @return <code>true</code> if s represents <code>true</code>,

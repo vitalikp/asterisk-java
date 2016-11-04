@@ -80,7 +80,7 @@ public class PingThread extends Thread
 
     /**
      * Sets the timeout to wait for the ManagerResponse before throwing an
-     * excpetion.
+     * exception.
      * <p>
      * If set to 0 the response will be ignored an no exception will be thrown
      * at all.

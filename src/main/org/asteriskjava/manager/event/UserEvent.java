@@ -84,9 +84,9 @@ public abstract class UserEvent extends ManagerEvent
     }
 
     /**
-     * Returns the name of the channel this event occured in.
+     * Returns the name of the channel this event occurred in.
      * 
-     * @return the name of the channel this event occured in.
+     * @return the name of the channel this event occurred in.
      */
     public String getChannel()
     {
@@ -94,9 +94,9 @@ public abstract class UserEvent extends ManagerEvent
     }
 
     /**
-     * Sets the name of the channel this event occured in.
+     * Sets the name of the channel this event occurred in.
      * 
-     * @param channel the name of the channel this event occured in.
+     * @param channel the name of the channel this event occurred in.
      */
     public void setChannel(String channel)
     {
@@ -104,9 +104,9 @@ public abstract class UserEvent extends ManagerEvent
     }
 
     /**
-     * Returns the unqiue id of the channel this event occured in.
+     * Returns the unique id of the channel this event occurred in.
      * 
-     * @return the unqiue id of the channel this event occured in.
+     * @return the unique id of the channel this event occurred in.
      */
     public String getUniqueId()
     {
@@ -114,9 +114,9 @@ public abstract class UserEvent extends ManagerEvent
     }
 
     /**
-     * Sets the unqiue id of the channel this event occured in.
+     * Sets the unique id of the channel this event occurred in.
      * 
-     * @param uniqueId the unqiue id of the channel this event occured in.
+     * @param uniqueId the unique id of the channel this event occurred in.
      */
     public void setUniqueId(String uniqueId)
     {

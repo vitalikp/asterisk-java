@@ -18,7 +18,7 @@ package org.asteriskjava.fastagi.command;
 
 /**
  * Plays the given file, allowing playback to be interrupted by the given
- * digits, if any, and allows the listner to control the stream.<p>
+ * digits, if any, and allows the listener to control the stream.<p>
  * If offset is provided then the audio will seek to sample offset before play
  * starts.<p>
  * Returns 0 if playback completes without a digit being pressed, or the ASCII

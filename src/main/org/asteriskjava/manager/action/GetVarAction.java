@@ -114,7 +114,7 @@ public class GetVarAction extends AbstractManagerAction
      * Leave empty to query for a global variable.
      * 
      * @param channel the channel if you query for a local channel variable or
-     *            <code>null</code> to query for a gloabl variable.
+     *            <code>null</code> to query for a global variable.
      */
     public void setChannel(String channel)
     {
@@ -122,7 +122,7 @@ public class GetVarAction extends AbstractManagerAction
     }
 
     /**
-     * Retruns the name of the variable to query.
+     * Returns the name of the variable to query.
      */
     public String getVariable()
     {

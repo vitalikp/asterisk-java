@@ -83,7 +83,7 @@ public abstract class AbstractQueueMemberEvent extends ManagerEvent
     }
 
     /**
-     * Retruns the name of the queue member.
+     * Returns the name of the queue member.
      * <p>
      * Available since Asterisk 1.4
      * 

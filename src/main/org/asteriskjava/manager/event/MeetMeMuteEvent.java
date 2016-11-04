@@ -45,7 +45,7 @@ public class MeetMeMuteEvent extends AbstractMeetMeEvent
     /**
      * Returns whether the user was muted or unmuted.
      * 
-     * @return <code>true</code> if ther user was muted,
+     * @return <code>true</code> if the user was muted,
      *         <code>false</code> if the user was unmuted.
      */
     public Boolean getStatus()
@@ -56,7 +56,7 @@ public class MeetMeMuteEvent extends AbstractMeetMeEvent
     /**
      * Sets whether the user was muted or unmuted.
      * 
-     * @param status <code>true</code> if ther user was muted, 
+     * @param status <code>true</code> if the user was muted, 
      *               <code>false</code> if the user was unmuted.
      */
     public void setStatus(Boolean status)

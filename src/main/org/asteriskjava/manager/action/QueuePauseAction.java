@@ -17,7 +17,7 @@
 package org.asteriskjava.manager.action;
 
 /**
- * The QueuePauseAction makes a queue member temporarily unavailabe (or
+ * The QueuePauseAction makes a queue member temporarily unavailable (or
  * available again).<p>
  * It is implemented in <code>apps/app_queue.c</code><p>
  * Available since Asterisk 1.2.
@@ -76,7 +76,7 @@ public class QueuePauseAction extends AbstractManagerAction
      * interface available or unavailable on all queues.
      * 
      * @param iface the interface of the member to make unavailable
-     * @param paused Boolean.TRUE to make the member unavailbale, Boolean.FALSE
+     * @param paused Boolean.TRUE to make the member unavailable, Boolean.FALSE
      *            to make the member available
      */
     public QueuePauseAction(String iface, Boolean paused)
@@ -91,7 +91,7 @@ public class QueuePauseAction extends AbstractManagerAction
      * 
      * @param iface the interface of the member to make unavailable
      * @param queue the queue the member is made unvailable on
-     * @param paused Boolean.TRUE to make the member unavailbale, Boolean.FALSE
+     * @param paused Boolean.TRUE to make the member unavailable, Boolean.FALSE
      *            to make the member available
      */
     public QueuePauseAction(String iface, String queue, Boolean paused)
@@ -161,7 +161,7 @@ public class QueuePauseAction extends AbstractManagerAction
     /**
      * Returns if the member is made available or unavailable.
      * 
-     * @return Boolean.TRUE to make the member unavailbale, Boolean.FALSE to
+     * @return Boolean.TRUE to make the member unavailable, Boolean.FALSE to
      *         make the member available
      */
     public Boolean getPaused()
@@ -173,7 +173,7 @@ public class QueuePauseAction extends AbstractManagerAction
      * Sets if the member is made available or unavailable.<p>
      * This property is mandatory.
      * 
-     * @param paused Boolean.TRUE to make the member unavailbale, Boolean.FALSE
+     * @param paused Boolean.TRUE to make the member unavailable, Boolean.FALSE
      *            to make the member available
      */
     public void setPaused(Boolean paused)

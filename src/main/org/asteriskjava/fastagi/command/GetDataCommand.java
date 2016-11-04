@@ -17,9 +17,9 @@
 package org.asteriskjava.fastagi.command;
 
 /**
- * Stream the given file, and recieve DTMF data. The user may interrupt the streaming
+ * Stream the given file, and receive DTMF data. The user may interrupt the streaming
  * by starting to enter digits.<p>
- * Returns the digits recieved from the channel at the other end.<p>
+ * Returns the digits received from the channel at the other end.<p>
  * Input ends when the timeout is reached, the maximum number of digits is read
  * or the user presses #.
  * 

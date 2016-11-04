@@ -63,9 +63,9 @@ import org.asteriskjava.util.internal.SocketConnectionFacadeImpl;
 import org.asteriskjava.manager.action.UserEventAction;
 
 /**
- * Default implemention of the ManagerConnection interface.
+ * Default implementation of the ManagerConnection interface.
  *
- * <p>Generelly avoid direct use of this class. Use the ManagerConnectionFactory to
+ * <p>Generally avoid direct use of this class. Use the ManagerConnectionFactory to
  * obtain a ManagerConnection instead.
  *
  * <p>When using a dependency injection framework like Spring direct usage for
@@ -231,7 +231,7 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
         this.protocolIdentifier = new ProtocolIdentifierWrapper();
     }
 
-    // the following two methods can be overriden when running test cases to
+    // the following two methods can be overridden when running test cases to
     // return a mock object
     protected ManagerReader createReader(Dispatcher dispatcher, Object source)
     {
@@ -342,13 +342,13 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
     }
 
     /**
-     * Set to <code>true</code> to try reconnecting to ther asterisk serve
+     * Set to <code>true</code> to try reconnecting to the asterisk server
      * even if the reconnection attempt threw an AuthenticationFailedException.
      *
      * <p>Default is <code>true</code>.
      *
      * @param keepAliveAfterAuthenticationFailure
-     *         <code>true</code> to try reconnecting to ther asterisk serve
+     *         <code>true</code> to try reconnecting to the asterisk server
      *         even if the reconnection attempt threw an AuthenticationFailedException,
      *         <code>false</code> otherwise.
      */
@@ -1123,7 +1123,7 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
     /**
      * This method is called when a {@link ProtocolIdentifierReceivedEvent} is
      * received from the reader. Having received a correct protocol identifier
-     * is the precodition for logging in.
+     * is the precondition for logging in.
      *
      * @param identifier the protocol version used by the Asterisk server.
      */

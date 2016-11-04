@@ -17,7 +17,7 @@
 package org.asteriskjava.fastagi.command;
 
 /**
- * Returns the value of the given channel varible.<p>
+ * Returns the value of the given channel variable.<p>
  * Since Asterisk 1.2 you can also use this command to use custom Asterisk
  * functions. Syntax is "func(args)".<p>
  * Returns 0 if the variable is not set. Returns 1 if the variable is set and

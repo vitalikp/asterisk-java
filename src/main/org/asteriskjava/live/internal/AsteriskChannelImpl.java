@@ -336,10 +336,10 @@ class AsteriskChannelImpl extends AbstractLiveObject implements AsteriskChannel
     }
 
     /**
-     * Adds a visted dialplan entry to the history.
+     * Adds a visited dialplan entry to the history.
      * 
      * @param date the date the extension has been visited.
-     * @param extension the visted dialplan entry to add.
+     * @param extension the visited dialplan entry to add.
      */
     void extensionVisited(Date date, Extension extension)
     {

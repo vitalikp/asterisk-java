@@ -16,6 +16,6 @@
  */
 
 /**
- * Provides an implementaion of Asterisk's Manager API.
+ * Provides an implementation of Asterisk's Manager API.
  */
 package org.asteriskjava.manager;

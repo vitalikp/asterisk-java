@@ -48,9 +48,9 @@ public interface AgiChannel
 	String getName();
 
 	/**
-	 * Returns the unqiue id of the channel.
+	 * Returns the unique id of the channel.
 	 *
-	 * @return the unqiue id of the channel.
+	 * @return the unique id of the channel.
 	 */
 	String getUniqueId();
 
@@ -184,7 +184,7 @@ public interface AgiChannel
 
 	/**
 	 * Plays the given file, and waits for the user to press one of the given
-	 * digits. If none of the esacpe digits is pressed while streaming the file
+	 * digits. If none of the escape digits is pressed while streaming the file
 	 * it waits for the default timeout of 5 seconds still waiting for the user
 	 * to press a digit.
 	 *
@@ -198,7 +198,7 @@ public interface AgiChannel
 
 	/**
 	 * Plays the given file, and waits for the user to press one of the given
-	 * digits. If none of the esacpe digits is pressed while streaming the file
+	 * digits. If none of the escape digits is pressed while streaming the file
 	 * it waits for the specified timeout still waiting for the user to press a
 	 * digit.
 	 *
@@ -206,7 +206,7 @@ public interface AgiChannel
 	 * @param escapeDigits contains the digits that the user is expected to
 	 *            press.
 	 * @param timeout the timeout in seconds to wait if none of the defined
-	 *            esacpe digits was presses while streaming.
+	 *            escape digits was presses while streaming.
 	 * @return the DTMF digit pressed or 0x0 if none was pressed.
 	 * @since 0.2
 	 */

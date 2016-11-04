@@ -190,9 +190,9 @@ public class AgiRequestImpl implements Serializable, AgiRequest
     }
 
     /**
-     * Returns the unqiue id of the channel.
+     * Returns the unique id of the channel.
      * 
-     * @return the unqiue id of the channel.
+     * @return the unique id of the channel.
      */
     public String getUniqueId()
     {

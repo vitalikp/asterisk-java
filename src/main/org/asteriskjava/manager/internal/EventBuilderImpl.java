@@ -421,7 +421,7 @@ class EventBuilderImpl implements EventBuilder
     }
 
     /**
-     * Strips all illegal charaters from the given lower case string.
+     * Strips all illegal characters from the given lower case string.
      * 
      * @param s the original string
      * @return the string with all illegal characters stripped

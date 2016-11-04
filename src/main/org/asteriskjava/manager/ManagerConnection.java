@@ -27,7 +27,7 @@ import org.asteriskjava.manager.response.ManagerResponse;
  * The main interface to talk to an Asterisk server via the Asterisk Manager
  * API.
  * <p>
- * The ManagerConnection repesents a connection to an Asterisk server and is
+ * The ManagerConnection represents a connection to an Asterisk server and is
  * capable of sending {@link org.asteriskjava.manager.action.ManagerAction}s
  * and receiving {@link org.asteriskjava.manager.response.ManagerResponse}s and
  * {@link org.asteriskjava.manager.event.ManagerEvent}s. It does not add any
@@ -133,7 +133,7 @@ public interface ManagerConnection
      * the timeout.
      * <p>
      * If you set this property to a non zero value be sure to also use a
-     * {@link PingThread} or somthing similar to make sure there is some network
+     * {@link PingThread} or something similar to make sure there is some network
      * traffic, otherwise you will encounter lots of unexpected reconnects. The
      * read timeout should be at least twice the interval set for the
      * PingThread.
@@ -274,7 +274,7 @@ public interface ManagerConnection
      * their response in the corresponding {@link ManagerResponse} but send a
      * series of events that contain the payload.
      * <p>
-     * This method will block until the correpsonding action complete event has
+     * This method will block until the corresponding action complete event has
      * been received. The action complete event is determined by
      * {@link EventGeneratingAction#getActionCompleteEventClass()}.
      * <p>
@@ -311,7 +311,7 @@ public interface ManagerConnection
      * their response in the corresponding {@link ManagerResponse} but send a
      * series of events that contain the payload.
      * <p>
-     * This method will block until the correpsonding action complete event has
+     * This method will block until the corresponding action complete event has
      * been received but no longer that timeout seconds. The action complete
      * event is determined by
      * {@link EventGeneratingAction#getActionCompleteEventClass()}.
@@ -344,7 +344,7 @@ public interface ManagerConnection
 
     /**
      * Registers an event listener that is called whenever an
-     * {@link org.asteriskjava.manager.event.ManagerEvent} is receiced from the
+     * {@link org.asteriskjava.manager.event.ManagerEvent} is received from the
      * Asterisk server.
      * <p>
      * Event listeners are notified about new events in the same order as they
@@ -359,7 +359,7 @@ public interface ManagerConnection
     /**
      * Unregisters a previously registered event listener.
      * <p>
-     * Does nothing if the given event listener hasn't be been regiered before.
+     * Does nothing if the given event listener hasn't be been registered before.
      * 
      * @param eventListener the listener to remove
      * @see #addEventListener(ManagerEventListener)

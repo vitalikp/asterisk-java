@@ -226,7 +226,7 @@ public class CdrEvent extends ManagerEvent
      * Returns the last application if appropriate, for example "VoiceMail".<p>
      * Corresponds to CDR field <code>lastapp</code>.
      * 
-     * @return the last application or <code>null</code> if not avaialble.
+     * @return the last application or <code>null</code> if not available.
      */
     public String getLastApplication()
     {
@@ -247,7 +247,7 @@ public class CdrEvent extends ManagerEvent
      * Returns the last application's data (arguments), for example "s1234".<p>
      * Corresponds to CDR field <code>lastdata</code>.
      * 
-     * @return the last application's data or <code>null</code> if not avaialble.
+     * @return the last application's data or <code>null</code> if not available.
      */
     public String getLastData()
     {
@@ -278,7 +278,7 @@ public class CdrEvent extends ManagerEvent
     
     /**
      * Returns the start time as Date object.<p>
-     * This method asumes that the Asterisk server's timezone equals the default 
+     * This method assumes that the Asterisk server's timezone equals the default 
      * timezone of your JVM.
      * 
      * @return the start time as Date object.
@@ -325,7 +325,7 @@ public class CdrEvent extends ManagerEvent
 
     /**
      * Returns the answer time as Date object.<p>
-     * This method asumes that the Asterisk server's timezone equals the default 
+     * This method assumes that the Asterisk server's timezone equals the default 
      * timezone of your JVM.
      * 
      * @return the answer time as Date object.
@@ -372,7 +372,7 @@ public class CdrEvent extends ManagerEvent
 
     /**
      * Returns the end time as Date object.<p>
-     * This method asumes that the Asterisk server's timezone equals the default 
+     * This method assumes that the Asterisk server's timezone equals the default 
      * timezone of your JVM.
      * 
      * @return the end time as Date object.

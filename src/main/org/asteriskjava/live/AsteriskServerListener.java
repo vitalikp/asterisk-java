@@ -6,7 +6,7 @@ package org.asteriskjava.live;
  * channels and MeetMe users.
  * <p>
  * Usually it is better to extend {@link AbstractAsteriskServerListener} than to
- * implement this interface directly as additonal methods will probably be added
+ * implement this interface directly as additional methods will probably be added
  * in future versions of Asterisk-Java.
  * 
  * @author srt

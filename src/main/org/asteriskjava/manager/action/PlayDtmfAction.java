@@ -18,7 +18,7 @@ package org.asteriskjava.manager.action;
 
 /**
  * The PlayDTMFAction plays a DTMF digit on the specified channel.<p>
- * It is definied in <code>apps/app_senddtmf.c</code>.<p>
+ * It is defined in <code>apps/app_senddtmf.c</code>.<p>
  * Available since Asterisk 1.2.8
  * 
  * @since 0.3

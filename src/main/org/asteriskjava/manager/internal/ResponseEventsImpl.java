@@ -89,7 +89,7 @@ public class ResponseEventsImpl implements ResponseEvents
     }
 
     /**
-     * Indicats if all events have been received.
+     * Indicates if all events have been received.
      * 
      * @param complete <code>true</code> if all events have been received,
      *            <code>false</code> otherwise.

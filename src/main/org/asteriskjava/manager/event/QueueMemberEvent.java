@@ -196,10 +196,10 @@ public class QueueMemberEvent extends ResponseEvent
 
     /**
      * Returns the time the last successful call answered by the added member
-     * was hungup.
+     * was hangup.
      * 
      * @return the time (in seconds since 01/01/1970) the last successful call
-     *         answered by the added member was hungup.
+     *         answered by the added member was hangup.
      */
     public Long getLastCall()
     {
@@ -208,10 +208,10 @@ public class QueueMemberEvent extends ResponseEvent
 
     /**
      * Sets the time the last successful call answered by this member was
-     * hungup.
+     * hangup.
      * 
      * @param lastCall the time (in seconds since 01/01/1970) the last
-     *            successful call answered by the added member was hungup.
+     *            successful call answered by the added member was hangup.
      */
     public void setLastCall(Long lastCall)
     {

@@ -18,7 +18,7 @@ package org.asteriskjava.manager.action;
 
 /**
  * The AgentCallbackLoginAction sets an agent as logged in with callback.<p>
- * You can pass an extentsion (and optionally a context) to specify the
+ * You can pass an extension (and optionally a context) to specify the
  * destination of the callback.<p>
  * In contrast to the AgentCallbackLogin application that you can use within
  * Asterisk's dialplan, you don't need to know the agent's password when logging

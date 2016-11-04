@@ -62,9 +62,9 @@ public interface AgiRequest
     String getChannel();
 
     /**
-     * Returns the unqiue id of the channel.
+     * Returns the unique id of the channel.
      * 
-     * @return the unqiue id of the channel.
+     * @return the unique id of the channel.
      */
     String getUniqueId();
 
@@ -120,9 +120,9 @@ public interface AgiRequest
     String getDnid();
 
     /**
-     * If this call has been forwared, the number of the person doing the
+     * If this call has been forwarded, the number of the person doing the
      * redirect is returned (Redirected dialed number identification service).<p>
-     * This is usally only only available on PRI.
+     * This is usually only available on PRI.
      * 
      * @return the number of the person doing the redirect, , if no RDNIS is
      *         available or it is "unknown" <code>null</code> is returned.
@@ -157,7 +157,7 @@ public interface AgiRequest
     Integer getPriority();
 
     /**
-     * Returns wheather this agi is passed audio (EAGI - Enhanced AGI).<p>
+     * Returns whether this agi is passed audio (EAGI - Enhanced AGI).<p>
      * Enhanced AGI is currently not supported on FastAGI.
      * 
      * @return Boolean.TRUE if this agi is passed audio, Boolean.FALSE

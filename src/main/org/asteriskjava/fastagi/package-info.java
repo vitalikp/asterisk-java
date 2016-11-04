@@ -16,6 +16,6 @@
  */
 
 /**
- * Provides an implementaion of Asterisk's FastAGI.
+ * Provides an implementation of Asterisk's FastAGI.
  */
 package org.asteriskjava.fastagi;

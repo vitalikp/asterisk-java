@@ -72,7 +72,7 @@ public class LoginAction extends AbstractManagerAction
      * 
      * @param username the username as configured in Asterisk's
      *            <code>manager.conf</code>
-     * @param authType the digest alogrithm, must match the digest algorithm
+     * @param authType the digest algorithm, must match the digest algorithm
      *            that was used with the corresponding ChallengeAction.
      * @param key the hash of the user's password and the challenge
      * @since 0.2
@@ -89,7 +89,7 @@ public class LoginAction extends AbstractManagerAction
      * 
      * @param username the username as configured in Asterisk's
      *            <code>manager.conf</code>
-     * @param authType the digest alogrithm, must match the digest algorithm
+     * @param authType the digest algorithm, must match the digest algorithm
      *            that was used with the corresponding ChallengeAction.
      * @param key the hash of the user's password and the challenge
      * @param events the event mask. Set to "on" if all events should be send,
@@ -152,7 +152,7 @@ public class LoginAction extends AbstractManagerAction
     }
 
     /**
-     * Returns the digest alogrithm when using challenge/response.
+     * Returns the digest algorithm when using challenge/response.
      */
     public String getAuthType()
     {
@@ -160,7 +160,7 @@ public class LoginAction extends AbstractManagerAction
     }
 
     /**
-     * Sets the digest alogrithm when using challenge/response.<p>
+     * Sets the digest algorithm when using challenge/response.<p>
      * The digest algorithm is used to create the key based on the challenge and
      * the user's password.<p>
      * Currently Asterisk supports only "MD5".

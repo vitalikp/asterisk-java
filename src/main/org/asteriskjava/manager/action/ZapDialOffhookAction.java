@@ -17,7 +17,7 @@
 package org.asteriskjava.manager.action;
 
 /**
- * The ZapDialOffhookAction dials a number on a zap channel while offhook.
+ * The ZapDialOffhookAction dials a number on a zap channel while off-hook.
  * 
  * @author srt
  * @version $Id: ZapDialOffhookAction.java 729 2007-05-26 05:16:57Z sprior $

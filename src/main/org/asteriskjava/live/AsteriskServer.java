@@ -246,7 +246,7 @@ public interface AsteriskServer
     AsteriskChannel getChannelById(String id) throws ManagerCommunicationException;
 
     /**
-     * Returns the acitve MeetMe rooms on the Asterisk server.
+     * Returns the active MeetMe rooms on the Asterisk server.
      *
      * @return a Collection of MeetMeRooms
      * @throws ManagerCommunicationException if there is a problem communication
@@ -303,7 +303,7 @@ public interface AsteriskServer
      * @return the CVS revision of the file, or <code>null</code> if that file
      *         is not part of the Asterisk instance you are connected to (maybe
      *         due to a module that provides it has not been loaded) or if you
-     *         are connected to an Astersion 1.0.x
+     *         are connected to an Asterisk 1.0.x
      * @throws ManagerCommunicationException if the version cannot be retrieved
      *                                       from Asterisk
      * @since 0.2

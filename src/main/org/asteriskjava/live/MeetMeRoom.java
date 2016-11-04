@@ -51,7 +51,7 @@ public interface MeetMeRoom
     boolean isEmpty();
 
     /**
-     * Locks this room so no addtional users can join.
+     * Locks this room so no additional users can join.
      * 
      * @throws ManagerCommunicationException if the room can't be locked.
      */

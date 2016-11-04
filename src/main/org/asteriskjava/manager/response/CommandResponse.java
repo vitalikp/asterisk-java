@@ -20,7 +20,7 @@ import java.util.List;
 
 /**
  * Response that is received when sending a CommandAction.<p>
- * Asterisk's handling of the command action is generelly quite hairy. It sends a "Response:
+ * Asterisk's handling of the command action is generally quite hairy. It sends a "Response:
  * Follows" line followed by the raw output of the command including empty lines. At the end of the
  * command output a line containing "--END COMMAND--" is sent. The reader parses this response into
  * a CommandResponse object to hide these details.

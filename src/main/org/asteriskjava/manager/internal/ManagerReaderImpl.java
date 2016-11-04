@@ -44,13 +44,13 @@ public class ManagerReaderImpl implements ManagerReader
     private final Log logger = LogFactory.getLog(getClass());
 
     /**
-     * The event builder utility to convert a map of attributes reveived from asterisk to instances
+     * The event builder utility to convert a map of attributes received from asterisk to instances
      * of registered event classes.
      */
     private final EventBuilder eventBuilder;
 
     /**
-     * The response builder utility to convert a map of attributes reveived from asterisk to
+     * The response builder utility to convert a map of attributes received from asterisk to
      * instances of well known response classes.
      */
     private final ResponseBuilder responseBuilder;
@@ -199,7 +199,7 @@ public class ManagerReaderImpl implements ManagerReader
                     continue;
                 }
 
-                // Reponse: Follows indicates that the output starting on the next line until
+                // Response: Follows indicates that the output starting on the next line until
                 // --END COMMAND-- must be treated as raw output of a command executed by a
                 // CommandAction.
                 if ("Response: Follows".equalsIgnoreCase(line))

@@ -55,7 +55,7 @@ public class AgentLogoffAction extends AbstractManagerAction
      * Creates a new AgentLogoffAction that logs off the given agent
      * 
      * @param agent the name of the agent to log off.
-     * @param soft Boolean.TRUE if exisiting calls should not be hung up on
+     * @param soft Boolean.TRUE if existing calls should not be hung up on
      *            logout.
      */
     public AgentLogoffAction(String agent, Boolean soft)

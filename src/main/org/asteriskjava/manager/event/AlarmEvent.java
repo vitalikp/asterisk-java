@@ -66,7 +66,7 @@ public class AlarmEvent extends ManagerEvent
     }
 
     /**
-     * Returns the number of the channel the alarm occured on.
+     * Returns the number of the channel the alarm occurred on.
      */
     public Integer getChannel()
     {
@@ -74,7 +74,7 @@ public class AlarmEvent extends ManagerEvent
     }
 
     /**
-     * Sets the number of the channel the alarm occured on.
+     * Sets the number of the channel the alarm occurred on.
      */
     public void setChannel(Integer channel)
     {

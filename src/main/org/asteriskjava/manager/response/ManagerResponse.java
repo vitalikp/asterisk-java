@@ -68,7 +68,7 @@ public class ManagerResponse implements Serializable
 
     /**
      * Returns the value of the attribute with the given key.<p>
-     * This is particulary important when a response contains special 
+     * This is particularly important when a response contains special 
      * attributes that are dependent on the action that has been sent.<p>
      * An example of this is the response to the GetVarAction.
      * It contains the value of the channel variable as an attribute

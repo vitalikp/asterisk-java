@@ -32,12 +32,12 @@ public class RenameEvent extends ManagerEvent
     static final long serialVersionUID = 3400165738000349767L;
 
     /**
-     * Old name of the channel before renaming occured.
+     * Old name of the channel before renaming occurred.
      */
     protected String oldname;
 
     /**
-     * New name of the channel after renaming occured.
+     * New name of the channel after renaming occurred.
      */
     protected String newname;
 

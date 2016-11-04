@@ -18,7 +18,7 @@ package org.asteriskjava.fastagi.command;
 
 /**
  * Plays the given file, and waits for the user to press one of the given
- * digits. If none of the esacpe digits is pressed while streaming the file this
+ * digits. If none of the escape digits is pressed while streaming the file this
  * command waits for the specified timeout still waiting for the user to press a
  * digit. Streaming always begins at the beginning.<p>
  * Returns 0 if no digit being pressed, or the ASCII numerical value of the
@@ -74,7 +74,7 @@ public class GetOptionCommand extends AbstractAgiCommand
      * @param escapeDigits contains the digits that the user is expected to
      *            press.
      * @param timeout the timeout in seconds to wait if none of the defined
-     *            esacpe digits was presses while streaming.
+     *            escape digits was presses while streaming.
      */
     public GetOptionCommand(String file, String escapeDigits, int timeout)
     {
@@ -125,7 +125,7 @@ public class GetOptionCommand extends AbstractAgiCommand
     }
 
     /**
-     * Returns the timeout to wait if none of the defined esacpe digits was
+     * Returns the timeout to wait if none of the defined escape digits was
      * presses while streaming.
      * 
      * @return the timeout in seconds.
@@ -136,7 +136,7 @@ public class GetOptionCommand extends AbstractAgiCommand
     }
 
     /**
-     * Sets the timeout to wait if none of the defined esacpe digits was presses
+     * Sets the timeout to wait if none of the defined escape digits was presses
      * while streaming.
      * 
      * @param timeout the timeout in seconds.

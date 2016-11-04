@@ -52,9 +52,9 @@ public class FaxReceivedEvent extends ManagerEvent
     }
 
     /**
-     * Returns the name of the channel the fax has been recieved on.
+     * Returns the name of the channel the fax has been received on.
      * 
-     * @return the name of the channel the fax has been recieved on.
+     * @return the name of the channel the fax has been received on.
      */
     public String getChannel()
     {
@@ -62,9 +62,9 @@ public class FaxReceivedEvent extends ManagerEvent
     }
 
     /**
-     * Sets the name of the channel the fax has been recieved on.
+     * Sets the name of the channel the fax has been received on.
      * 
-     * @param channel the name of the channel the fax has been recieved on.
+     * @param channel the name of the channel the fax has been received on.
      */
     public void setChannel(String channel)
     {
@@ -114,7 +114,7 @@ public class FaxReceivedEvent extends ManagerEvent
     }
 
     /**
-     * Retruns the identifier of the remote fax station.
+     * Returns the identifier of the remote fax station.
      * 
      * @return the identifier of the remote fax station.
      */

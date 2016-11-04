@@ -33,7 +33,7 @@ interface EventBuilder
     /**
      * Registers a new event class. The event this class is registered for is
      * simply derived from the name of the class by stripping any package name
-     * (if present) and stripping the sufffix "Event". For example
+     * (if present) and stripping the suffix "Event". For example
      * <code>org.asteriskjava.manager.event.JoinEvent</code> is registered for
      * the event "Join".
      * <p>

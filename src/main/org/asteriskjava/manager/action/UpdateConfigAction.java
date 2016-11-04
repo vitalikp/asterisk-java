@@ -106,7 +106,7 @@ public class UpdateConfigAction extends AbstractManagerAction
      */
     public void addCommand(String action, String cat, String var, String value, String match)
     {
-        // for convienence of reference, shorter!
+        // for convenience of reference, shorter!
         int i = this.actionCounter;
 
         if (action != null)

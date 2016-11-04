@@ -214,9 +214,9 @@ public class DialEvent extends ManagerEvent
     }
 
     /**
-     * Returns the unique ID of the distination channel.
+     * Returns the unique ID of the destination channel.
      * 
-     * @return the unique ID of the distination channel.
+     * @return the unique ID of the destination channel.
      */
     public String getDestUniqueId()
     {
@@ -224,9 +224,9 @@ public class DialEvent extends ManagerEvent
     }
 
     /**
-     * Sets the unique ID of the distination channel.
+     * Sets the unique ID of the destination channel.
      * 
-     * @param destUniqueId the unique ID of the distination channel.
+     * @param destUniqueId the unique ID of the destination channel.
      */
     public void setDestUniqueId(String destUniqueId)
     {

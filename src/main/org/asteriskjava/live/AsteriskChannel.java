@@ -228,9 +228,9 @@ public interface AsteriskChannel extends LiveObject
     AsteriskChannel getLinkedChannel();
 
     /**
-     * Returns a list of all channels this channel was briged with.
+     * Returns a list of all channels this channel was bridged with.
      * 
-     * @return a list of all channels this channel was briged with.
+     * @return a list of all channels this channel was bridged with.
      */
     List<LinkedChannelHistoryEntry> getLinkedChannelHistory();
 

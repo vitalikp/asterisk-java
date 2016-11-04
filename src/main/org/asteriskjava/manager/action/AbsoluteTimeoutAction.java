@@ -55,7 +55,7 @@ public class AbsoluteTimeoutAction extends AbstractManagerAction
      * Creates a new AbsoluteTimeoutAction with the given channel and timeout.
      * 
      * @param channel the name of the channel
-     * @param timeout the maximum duation of the call in seconds or 0 to cancel the AbsoluteTimeout
+     * @param timeout the maximum duration of the call in seconds or 0 to cancel the AbsoluteTimeout
      * @since 0.2
      */
     public AbsoluteTimeoutAction(String channel, Integer timeout)
@@ -90,7 +90,7 @@ public class AbsoluteTimeoutAction extends AbstractManagerAction
     }
 
     /**
-     * Returns the the maximum duation of the call (in seconds) to set.
+     * Returns the the maximum duration of the call (in seconds) to set.
      */
     public Integer getTimeout()
     {
@@ -98,7 +98,7 @@ public class AbsoluteTimeoutAction extends AbstractManagerAction
     }
 
     /**
-     * Sets the the maximum duation of the call (in seconds) to set on channel.<p>
+     * Sets the the maximum duration of the call (in seconds) to set on channel.<p>
      * Setting the timeout to 0 cancels the timeout.
      */
     public void setTimeout(Integer timeout)

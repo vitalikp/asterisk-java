@@ -36,7 +36,7 @@ interface Dispatcher
      * received. The response is dispatched to the associated
      * {@link org.asteriskjava.manager.SendActionCallback}.
      * 
-     * @param response the resonse received by the reader
+     * @param response the response received by the reader
      * @see ManagerReader
      */
     void dispatchResponse(ManagerResponse response);

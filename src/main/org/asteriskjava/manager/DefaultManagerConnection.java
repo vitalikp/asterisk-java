@@ -24,10 +24,10 @@ import org.asteriskjava.manager.internal.ManagerConnectionImpl;
 import org.asteriskjava.manager.response.ManagerResponse;
 
 /**
- * Default implemention of the
+ * Default implementation of the
  * {@link org.asteriskjava.manager.ManagerConnection} interface.
  * <p>
- * Generelly avoid direct use of this class. Use a
+ * Generally avoid direct use of this class. Use a
  * {@link org.asteriskjava.manager.ManagerConnectionFactory} to obtain a
  * {@link org.asteriskjava.manager.ManagerConnection} instead.
  * <p>
@@ -209,7 +209,7 @@ public class DefaultManagerConnection implements ManagerConnection
     }
 
     /**
-     * Set to <code>true</code> to try reconnecting to ther asterisk serve
+     * Set to <code>true</code> to try reconnecting to the asterisk server
      * even if the reconnection attempt threw an AuthenticationFailedException.
      * <p>
      * Default is <code>true</code>.

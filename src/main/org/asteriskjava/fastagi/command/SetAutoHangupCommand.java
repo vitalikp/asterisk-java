@@ -19,7 +19,7 @@ package org.asteriskjava.fastagi.command;
 /**
  * Cause the channel to automatically hangup at the given number of seconds in
  * the future.<p>
- * Of course it can be hungup before then as well. Setting to 0 will cause the
+ * Of course it can be hangup before then as well. Setting to 0 will cause the
  * autohangup feature to be disabled on this channel.
  * 
  * @author srt

@@ -414,7 +414,7 @@ public class AsteriskServerImpl implements AsteriskServer, ManagerEventListener
         {
             variables = new HashMap<String, String>(originateAction.getVariables());
         }
-        // prefix variable name by "__" to enable variable inheritence across
+        // prefix variable name by "__" to enable variable inheritance across
         // channels
         variables.put("__" + Constants.VARIABLE_TRACE_ID, traceId);
         originateAction.setVariables(variables);
@@ -1009,7 +1009,7 @@ public class AsteriskServerImpl implements AsteriskServer, ManagerEventListener
                 }
             }
 
-            // if nothing else matched we asume no answer
+            // if nothing else matched we assume no answer
             cb.onNoAnswer(channel);
         }
         catch (Throwable t)

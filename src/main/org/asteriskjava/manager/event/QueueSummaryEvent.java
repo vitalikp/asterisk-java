@@ -116,9 +116,9 @@ public class QueueSummaryEvent extends ResponseEvent
     }
 
     /**
-     * Returns the avarage hold time for this queue.
+     * Returns the average hold time for this queue.
      * 
-     * @return the avarage hold time for this queue.
+     * @return the average hold time for this queue.
      */
     public Integer getHoldTime()
     {
@@ -126,9 +126,9 @@ public class QueueSummaryEvent extends ResponseEvent
     }
 
     /**
-     * Sets the avarage hold time for this queue.
+     * Sets the average hold time for this queue.
      * 
-     * @param holdTime the avarage hold time for this queue.
+     * @param holdTime the average hold time for this queue.
      */
     public void setHoldTime(Integer holdTime)
     {

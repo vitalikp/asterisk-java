@@ -120,7 +120,7 @@ public abstract class AbstractChannelEvent extends ManagerEvent
     }
 
     /**
-     * Returns the Caller*ID numbe of the channel if set or "&lt;unknown&gt;" if none has been set.
+     * Returns the Caller*ID number of the channel if set or "&lt;unknown&gt;" if none has been set.
      * 
      * @since 0.3
      */

@@ -17,7 +17,7 @@
 package org.asteriskjava.fastagi.command;
 
 /**
- * Returns the value of the given channel varible and understands complex
+ * Returns the value of the given channel variable and understands complex
  * variable names and builtin variables, unlike the GetVariableCommand.<p>
  * You can also use this command to use custom Asterisk functions. Syntax is
  * "func(args)".<p>

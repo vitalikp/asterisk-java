@@ -46,7 +46,7 @@ public class ChallengeAction extends AbstractManagerAction
      * Creates a new ChallengeAction that requests a new login challenge for use
      * with the given digest algorithm.
      * 
-     * @param authType the digest alogrithm to use.
+     * @param authType the digest algorithm to use.
      * @since 0.2
      */
     public ChallengeAction(String authType)
@@ -64,7 +64,7 @@ public class ChallengeAction extends AbstractManagerAction
     }
 
     /**
-     * Returns the digest alogrithm to use.
+     * Returns the digest algorithm to use.
      */
     public String getAuthType()
     {
@@ -72,7 +72,7 @@ public class ChallengeAction extends AbstractManagerAction
     }
 
     /**
-     * Sets the digest alogrithm to use. Currently asterisk only supports "MD5".
+     * Sets the digest algorithm to use. Currently asterisk only supports "MD5".
      */
     public void setAuthType(String authType)
     {

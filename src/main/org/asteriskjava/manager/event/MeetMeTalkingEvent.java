@@ -55,7 +55,7 @@ public class MeetMeTalkingEvent extends AbstractMeetMeEvent
      * <code>true</code> so when used with version 1.2 of Asterisk you get
      * <code>true</code> when calling {@link #getStatus()}.
      * 
-     * @return <code>true</code> if ther user has started talking,
+     * @return <code>true</code> if the user has started talking,
      *         <code>false</code> if the user has stopped talking.
      * @since 0.3
      */
@@ -67,7 +67,7 @@ public class MeetMeTalkingEvent extends AbstractMeetMeEvent
     /**
      * Sets whether the user has started or stopped talking.
      * 
-     * @param status <code>true</code> if ther user has started talking,
+     * @param status <code>true</code> if the user has started talking,
      *         <code>false</code> if the user has stopped talking.
      * @since 0.3
      */

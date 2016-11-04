@@ -30,7 +30,7 @@ package org.asteriskjava.fastagi.command;
  * <li>6 Line is up
  * <li>7 Line is busy
  * </ul>
- * 
+ *
  * @author srt
  * @version $Id: ChannelStatusCommand.java 729 2007-05-26 05:16:57Z sprior $
  */
@@ -57,7 +57,7 @@ public class ChannelStatusCommand extends AbstractAgiCommand
 
     /**
      * Creates a new ChannelStatusCommand that queries the given channel.
-     * 
+     *
      * @param channel the name of the channel to query.
      */
     public ChannelStatusCommand(String channel)
@@ -68,7 +68,7 @@ public class ChannelStatusCommand extends AbstractAgiCommand
 
     /**
      * Returns the name of the channel to query.
-     * 
+     *
      * @return the name of the channel to query or <code>null</code> for the
      *         current channel.
      */
@@ -79,7 +79,7 @@ public class ChannelStatusCommand extends AbstractAgiCommand
 
     /**
      * Sets the name of the channel to query.
-     * 
+     *
      * @param channel the name of the channel to query or <code>null</code>
      *            for the current channel.
      */

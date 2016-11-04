@@ -28,7 +28,7 @@ import org.asteriskjava.util.LogFactory;
  * <p>
  * You can use this to prevent the connection being shut down when there is no
  * traffic.
- * 
+ *
  * @author srt
  * @version $Id: PingThread.java 729 2007-05-26 05:16:57Z sprior $
  */
@@ -53,7 +53,7 @@ public class PingThread extends Thread
 
     /**
      * Creates a new PingThread that uses the given ManagerConnection.
-     * 
+     *
      * @param connection ManagerConnection that is pinged
      */
     public PingThread(ManagerConnection connection)
@@ -70,7 +70,7 @@ public class PingThread extends Thread
      * Adjusts how often a PingAction is sent.
      * <p>
      * Default is 20000ms, i.e. 20 seconds.
-     * 
+     *
      * @param interval the interval in milliseconds
      */
     public void setInterval(long interval)
@@ -86,7 +86,7 @@ public class PingThread extends Thread
      * at all.
      * <p>
      * Default is 0.
-     * 
+     *
      * @param timeout the timeout in milliseconds or 0 to indicate no timeout.
      * @since 0.3
      */

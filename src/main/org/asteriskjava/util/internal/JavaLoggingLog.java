@@ -27,7 +27,7 @@ import org.asteriskjava.util.Log;
  * the java.util.logging package.
  * <p>
  * Kindly donated by Sun's Steve Drach.
- * 
+ *
  * @author drach
  */
 public class JavaLoggingLog implements Log
@@ -40,7 +40,7 @@ public class JavaLoggingLog implements Log
     /**
      * Creates a new JavaLoggingLog obtained from java.util.logging for the
      * given class.
-     * 
+     *
      * @param clazz the class to log for.
      */
     public JavaLoggingLog(Class clazz)
@@ -143,5 +143,4 @@ public class JavaLoggingLog implements Log
 
         return null;
     }
-
 }

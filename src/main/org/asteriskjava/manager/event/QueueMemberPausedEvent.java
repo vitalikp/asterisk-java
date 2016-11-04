@@ -21,7 +21,7 @@ package org.asteriskjava.manager.event;
  * unpaused.<p>
  * It is implemented in <code>apps/app_queue.c</code>.<p>
  * Available since Asterisk 1.2
- * 
+ *
  * @author srt
  * @version $Id: QueueMemberPausedEvent.java 397 2006-05-26 12:13:32Z srt $
  * @since 0.2
@@ -42,7 +42,7 @@ public class QueueMemberPausedEvent extends AbstractQueueMemberEvent
 
     /**
      * Returns if this queue member is paused (not accepting calls).<p>
-     * 
+     *
      * @return <code>Boolean.TRUE</code> if this member has been paused or
      *         <code>Boolean.FALSE</code> if not.
      */
@@ -53,7 +53,7 @@ public class QueueMemberPausedEvent extends AbstractQueueMemberEvent
 
     /**
      * Sets if this member is paused.
-     * 
+     *
      * @param paused <code>Boolean.TRUE</code> if this member has been paused
      *            or <code>Boolean.FALSE</code> if not.
      */

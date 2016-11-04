@@ -21,7 +21,7 @@ package org.asteriskjava.manager.event;
  * hold.<p>
  * It is implemented in <code>channels/chan_sip.c</code>.<p>
  * Available since Asterisk 1.2
- * 
+ *
  * @see org.asteriskjava.manager.event.UnholdEvent
  * @author srt
  * @version $Id: HoldEvent.java 397 2006-05-26 12:13:32Z srt $
@@ -46,7 +46,7 @@ public class HoldEvent extends ManagerEvent
 
     /**
      * Creates a new HoldEvent.
-     * 
+     *
      * @param source
      */
     public HoldEvent(Object source)

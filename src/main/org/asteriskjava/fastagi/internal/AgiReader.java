@@ -24,7 +24,7 @@ import org.asteriskjava.fastagi.reply.AgiReply;
 /**
  * The AgiReader reads the replies from the network and parses them using a
  * ReplyBuilder.
- * 
+ *
  * @author srt
  * @version $Id: AgiReader.java 263 2006-05-07 11:37:58Z srt $
  */
@@ -32,7 +32,7 @@ public interface AgiReader
 {
     /**
      * Reads the initial request data from Asterisk.
-     * 
+     *
      * @return the request read.
      * @throws IOException if the request can't be read.
      */
@@ -40,7 +40,7 @@ public interface AgiReader
 
     /**
      * Reads one reply to an AgiCommand from Asterisk.
-     * 
+     *
      * @return the reply read.
      * @throws IOException if the reply can't be read.
      */

@@ -24,7 +24,7 @@ package org.asteriskjava.manager.event;
  * See http://soft-switch.org/installing-spandsp.html for details.
  * <p>
  * Implemented in <code>apps/app_rxfax.c</code>.
- * 
+ *
  * @author srt
  * @version $Id: FaxReceivedEvent.java 578 2006-10-07 20:57:16Z srt $
  * @since 0.2
@@ -53,7 +53,7 @@ public class FaxReceivedEvent extends ManagerEvent
 
     /**
      * Returns the name of the channel the fax has been received on.
-     * 
+     *
      * @return the name of the channel the fax has been received on.
      */
     public String getChannel()
@@ -63,7 +63,7 @@ public class FaxReceivedEvent extends ManagerEvent
 
     /**
      * Sets the name of the channel the fax has been received on.
-     * 
+     *
      * @param channel the name of the channel the fax has been received on.
      */
     public void setChannel(String channel)
@@ -74,7 +74,7 @@ public class FaxReceivedEvent extends ManagerEvent
     /**
      * Returns the extension in Asterisk's dialplan the fax was received
      * through.
-     * 
+     *
      * @return the extension the fax was received through.
      */
     public String getExten()
@@ -84,7 +84,7 @@ public class FaxReceivedEvent extends ManagerEvent
 
     /**
      * Sets the extension the fax was received through.
-     * 
+     *
      * @param exten the extension the fax was received through.
      */
     public void setExten(String exten)
@@ -95,7 +95,7 @@ public class FaxReceivedEvent extends ManagerEvent
     /**
      * Returns the Caller*ID of the calling party or an empty string if none is
      * available.
-     * 
+     *
      * @return the Caller*ID of the calling party.
      */
     public String getCallerId()
@@ -105,7 +105,7 @@ public class FaxReceivedEvent extends ManagerEvent
 
     /**
      * Sets the Caller*ID of the calling party.
-     * 
+     *
      * @param callerId the Caller*ID of the calling party.
      */
     public void setCallerId(String callerId)
@@ -115,7 +115,7 @@ public class FaxReceivedEvent extends ManagerEvent
 
     /**
      * Returns the identifier of the remote fax station.
-     * 
+     *
      * @return the identifier of the remote fax station.
      */
     public String getRemoteStationId()
@@ -125,7 +125,7 @@ public class FaxReceivedEvent extends ManagerEvent
 
     /**
      * Sets the identifier of the remote fax station.
-     * 
+     *
      * @param remoteStationId the identifier of the remote fax station.
      */
     public void setRemoteStationId(String remoteStationId)
@@ -135,7 +135,7 @@ public class FaxReceivedEvent extends ManagerEvent
 
     /**
      * Returns the identifier of the local fax station.
-     * 
+     *
      * @return the identifier of the local fax station.
      */
     public String getLocalStationId()
@@ -145,7 +145,7 @@ public class FaxReceivedEvent extends ManagerEvent
 
     /**
      * Sets the identifier of the local fax station.
-     * 
+     *
      * @param localStationId the identifier of the local fax station.
      */
     public void setLocalStationId(String localStationId)
@@ -155,7 +155,7 @@ public class FaxReceivedEvent extends ManagerEvent
 
     /**
      * Returns the number of pages transferred.
-     * 
+     *
      * @return the number of pages transferred.
      */
     public Integer getPagesTransferred()
@@ -165,7 +165,7 @@ public class FaxReceivedEvent extends ManagerEvent
 
     /**
      * Sets the number of pages transferred.
-     * 
+     *
      * @param pagesTransferred the number of pages transferred.
      */
     public void setPagesTransferred(Integer pagesTransferred)
@@ -175,7 +175,7 @@ public class FaxReceivedEvent extends ManagerEvent
 
     /**
      * Returns the row resolution of the received fax.
-     * 
+     *
      * @return the row resolution of the received fax.
      */
     public Integer getResolution()
@@ -185,7 +185,7 @@ public class FaxReceivedEvent extends ManagerEvent
 
     /**
      * Sets the row resolution of the received fax.
-     * 
+     *
      * @param resolution the row resolution of the received fax.
      */
     public void setResolution(Integer resolution)
@@ -195,7 +195,7 @@ public class FaxReceivedEvent extends ManagerEvent
 
     /**
      * Returns the transfer rate in bits/s.
-     * 
+     *
      * @return the transfer rate in bits/s.
      */
     public Integer getTransferRate()
@@ -205,7 +205,7 @@ public class FaxReceivedEvent extends ManagerEvent
 
     /**
      * Sets the transfer rate in bits/s.
-     * 
+     *
      * @param transferRate the transfer rate in bits/s.
      */
     public void setTransferRate(Integer transferRate)
@@ -216,7 +216,7 @@ public class FaxReceivedEvent extends ManagerEvent
     /**
      * Returns the filename of the received fax including its full path on the
      * Asterisk server.
-     * 
+     *
      * @return the filename of the received fax
      */
     public String getFilename()
@@ -226,7 +226,7 @@ public class FaxReceivedEvent extends ManagerEvent
 
     /**
      * Sets the filename of the received fax.
-     * 
+     *
      * @param filename the filename of the received fax
      */
     public void setFilename(String filename)

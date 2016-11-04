@@ -27,7 +27,7 @@ import org.asteriskjava.util.LogFactory;
 
 /**
  * Default implementation of the AsteriskQueue interface.
- * 
+ *
  * @author srt
  * @version $Id: AsteriskQueueImpl.java 835 2007-07-08 08:39:32Z srt $
  */
@@ -144,7 +144,7 @@ class AsteriskQueueImpl extends AbstractLiveObject implements AsteriskQueue
 
         return sb.toString();
     }
-    
+
     public void addAsteriskQueueListener(AsteriskQueueListener listener)
     {
         synchronized (listeners)

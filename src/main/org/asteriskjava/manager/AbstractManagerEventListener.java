@@ -72,46 +72,46 @@ import org.asteriskjava.manager.event.ZapShowChannelsEvent;
 /**
  * Utility class that provides a protected handler method for each concrete manager event.
  * Makes life easier by removing the need to code endless if-then-else constructs with instanceof
- * checking for the events you are interested in.  
+ * checking for the events you are interested in.
  * <p>
  * Kindly donated by Steve Prior.
  * <p>
  * Example based on HelloEvents from the tutorial:
- * 
+ *
  * <pre>
  * public class HelloEvents extends AbstractManagerEventListener
  * {
  *     private ManagerConnection managerConnection;
- * 
+ *
  *     public HelloEvents(String machine, String userid, String password) throws IOException
  *     {
  *         ManagerConnectionFactory factory = new ManagerConnectionFactory(machine, userid, password);
  *         this.managerConnection = factory.createManagerConnection();
  *     }
- * 
+ *
  *     public void run() throws Exception
  *     {
  *         // register for events
  *         managerConnection.addEventListener(this);
- * 
+ *
  *         // connect to Asterisk and log in
  *         managerConnection.login();
- * 
+ *
  *         // request channel state
  *         managerConnection.sendAction(new StatusAction());
- * 
+ *
  *         // wait 10 seconds for events to come in
  *         Thread.sleep(10000);
- * 
+ *
  *         // and finally log off and disconnect
  *         managerConnection.logoff();
  *     }
- * 
+ *
  *     protected void handleEvent(StatusEvent event)
  *     {
  *         System.out.println(event.getChannel() + &quot;:&quot; + event.getState());
  *     }
- * 
+ *
  *     public static void main(String[] args) throws Exception
  *     {
  *         HelloEvents helloEvents;
@@ -120,7 +120,7 @@ import org.asteriskjava.manager.event.ZapShowChannelsEvent;
  *     }
  * }
  * </pre>
- * 
+ *
  * @author srt
  * @since 0.3
  */
@@ -396,7 +396,7 @@ public abstract class AbstractManagerEventListener implements ManagerEventListen
 
     /**
      * Dispatches to the appropriate handleEvent(...) method.
-     * 
+     *
      * @param event the event to handle
      */
     public void onManagerEvent(ManagerEvent event)

@@ -2,7 +2,7 @@ package org.asteriskjava.manager;
 
 /**
  * The lifecycle status of a {@link org.asteriskjava.manager.ManagerConnection}.
- * 
+ *
  * @author srt
  * @since 0.3
  */
@@ -15,14 +15,14 @@ public enum ManagerConnectionState
      * is called.
      */
     INITIAL,
-    
+
     /**
      * The connection is being made and login is performed.<p>
      * Changes to {@link #CONNECTED} when login has successfully completed or
-     * {@link #DISCONNECTED} if login fails. 
+     * {@link #DISCONNECTED} if login fails.
      */
     CONNECTING,
-    
+
     /**
      * The connection has been successfully established, login has been perfomed and
      * the connection is ready to be used.<p>
@@ -31,7 +31,7 @@ public enum ManagerConnectionState
      * when {@link org.asteriskjava.manager.ManagerConnection#logoff()} is called.
      */
     CONNECTED,
-    
+
     /**
      * The connection has been disrupted and is about to be reestablished.<p>
      * Changes to {@link #CONNECTED} when connection is successfully reestablished or
@@ -39,16 +39,16 @@ public enum ManagerConnectionState
      * is called.
      */
     RECONNECTING,
-    
+
     /**
      * The connection is about to be closed by user request.<p>
      * Changes to {@link #DISCONNECTED} when connection has been closed.
      */
     DISCONNECTING,
-    
+
     /**
      * The connection has been closed on user's request is not about to be reestablished.<p>
-     * Can be changed to {@link #CONNECTING} by calling 
+     * Can be changed to {@link #CONNECTING} by calling
      * {@link org.asteriskjava.manager.ManagerConnection#login()}.
      */
     DISCONNECTED

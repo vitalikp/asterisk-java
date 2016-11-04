@@ -21,7 +21,7 @@ package org.asteriskjava.manager.action;
  * available again).<p>
  * It is implemented in <code>apps/app_queue.c</code><p>
  * Available since Asterisk 1.2.
- * 
+ *
  * @author srt
  * @version $Id: QueuePauseAction.java 729 2007-05-26 05:16:57Z sprior $
  * @since 0.2
@@ -48,7 +48,7 @@ public class QueuePauseAction extends AbstractManagerAction
     /**
      * Creates a new QueuePauseAction that makes the member on the given
      * interface unavailable on all queues.
-     * 
+     *
      * @param iface the interface of the member to make unavailable
      */
     public QueuePauseAction(String iface)
@@ -60,7 +60,7 @@ public class QueuePauseAction extends AbstractManagerAction
     /**
      * Creates a new QueuePauseAction that makes the member on the given
      * interface unavailable on the given queue.
-     * 
+     *
      * @param iface the interface of the member to make unavailable
      * @param queue the queue the member is made unvailable on
      */
@@ -74,7 +74,7 @@ public class QueuePauseAction extends AbstractManagerAction
     /**
      * Creates a new QueuePauseAction that makes the member on the given
      * interface available or unavailable on all queues.
-     * 
+     *
      * @param iface the interface of the member to make unavailable
      * @param paused Boolean.TRUE to make the member unavailable, Boolean.FALSE
      *            to make the member available
@@ -88,7 +88,7 @@ public class QueuePauseAction extends AbstractManagerAction
     /**
      * Creates a new QueuePauseAction that makes the member on the given
      * interface unavailable on the given queue.
-     * 
+     *
      * @param iface the interface of the member to make unavailable
      * @param queue the queue the member is made unvailable on
      * @param paused Boolean.TRUE to make the member unavailable, Boolean.FALSE
@@ -103,7 +103,7 @@ public class QueuePauseAction extends AbstractManagerAction
 
     /**
      * Returns the name of this action, i.e. "QueuePause".
-     * 
+     *
      * @return the name of this action.
      */
     @Override
@@ -114,7 +114,7 @@ public class QueuePauseAction extends AbstractManagerAction
 
     /**
      * Returns the interface of the member to make available or unavailable.
-     * 
+     *
      * @return the interface of the member to make available or unavailable.
      */
     public String getInterface()
@@ -125,7 +125,7 @@ public class QueuePauseAction extends AbstractManagerAction
     /**
      * Sets the interface of the member to make available or unavailable.<p>
      * This property is mandatory.
-     * 
+     *
      * @param iface the interface of the member to make available or
      *            unavailable.
      */
@@ -137,7 +137,7 @@ public class QueuePauseAction extends AbstractManagerAction
     /**
      * Returns the name of the queue the member is made available or unavailable
      * on.
-     * 
+     *
      * @return the name of the queue the member is made available or unavailable
      *         on or <code>null</code> for all queues.
      */
@@ -149,7 +149,7 @@ public class QueuePauseAction extends AbstractManagerAction
     /**
      * Sets the name of the queue the member is made available or unavailable
      * on.
-     * 
+     *
      * @param queue the name of the queue the member is made available or
      *            unavailable on or <code>null</code> for all queues.
      */
@@ -160,7 +160,7 @@ public class QueuePauseAction extends AbstractManagerAction
 
     /**
      * Returns if the member is made available or unavailable.
-     * 
+     *
      * @return Boolean.TRUE to make the member unavailable, Boolean.FALSE to
      *         make the member available
      */
@@ -172,7 +172,7 @@ public class QueuePauseAction extends AbstractManagerAction
     /**
      * Sets if the member is made available or unavailable.<p>
      * This property is mandatory.
-     * 
+     *
      * @param paused Boolean.TRUE to make the member unavailable, Boolean.FALSE
      *            to make the member available
      */

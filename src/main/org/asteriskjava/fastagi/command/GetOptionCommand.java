@@ -25,7 +25,7 @@ package org.asteriskjava.fastagi.command;
  * digit if one was pressed, or -1 on error or if the channel was disconnected.
  * <p>
  * Remember, the file extension must not be included in the filename.
- * 
+ *
  * @see org.asteriskjava.fastagi.command.StreamFileCommand
  * @author srt
  * @version $Id: GetOptionCommand.java 729 2007-05-26 05:16:57Z sprior $
@@ -54,7 +54,7 @@ public class GetOptionCommand extends AbstractAgiCommand
 
     /**
      * Creates a new GetOptionCommand with a default timeout of 5 seconds.
-     * 
+     *
      * @param file the name of the file to stream, must not include extension.
      * @param escapeDigits contains the digits that the user is expected to
      *            press.
@@ -69,7 +69,7 @@ public class GetOptionCommand extends AbstractAgiCommand
 
     /**
      * Creates a new GetOptionCommand with the given timeout.
-     * 
+     *
      * @param file the name of the file to stream, must not include extension.
      * @param escapeDigits contains the digits that the user is expected to
      *            press.
@@ -86,7 +86,7 @@ public class GetOptionCommand extends AbstractAgiCommand
 
     /**
      * Returns the name of the file to stream.
-     * 
+     *
      * @return the name of the file to stream.
      */
     public String getFile()
@@ -96,7 +96,7 @@ public class GetOptionCommand extends AbstractAgiCommand
 
     /**
      * Sets the name of the file to stream.
-     * 
+     *
      * @param file the name of the file to stream, must not include extension.
      */
     public void setFile(String file)
@@ -106,7 +106,7 @@ public class GetOptionCommand extends AbstractAgiCommand
 
     /**
      * Returns the digits that the user is expected to press.
-     * 
+     *
      * @return the digits that the user is expected to press.
      */
     public String getEscapeDigits()
@@ -116,7 +116,7 @@ public class GetOptionCommand extends AbstractAgiCommand
 
     /**
      * Sets the digits that the user is expected to press.
-     * 
+     *
      * @param escapeDigits the digits that the user is expected to press.
      */
     public void setEscapeDigits(String escapeDigits)
@@ -127,7 +127,7 @@ public class GetOptionCommand extends AbstractAgiCommand
     /**
      * Returns the timeout to wait if none of the defined escape digits was
      * presses while streaming.
-     * 
+     *
      * @return the timeout in seconds.
      */
     public int getTimeout()
@@ -138,7 +138,7 @@ public class GetOptionCommand extends AbstractAgiCommand
     /**
      * Sets the timeout to wait if none of the defined escape digits was presses
      * while streaming.
-     * 
+     *
      * @param timeout the timeout in seconds.
      */
     public void setTimeout(int timeout)

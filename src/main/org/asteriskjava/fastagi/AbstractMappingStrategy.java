@@ -25,7 +25,7 @@ import org.asteriskjava.util.LogFactory;
  * Abstract base class for common mapping strategies.
  * <p>
  * If you implement your own mapping strategy you can derive from this class.
- * 
+ *
  * @author srt
  * @since 0.3
  */
@@ -38,7 +38,7 @@ public abstract class AbstractMappingStrategy implements MappingStrategy
 
     /**
      * Creates a new instance of an AGI script.
-     * 
+     *
      * @param className Class name of the AGI script. The class must implement
      *            {@link AgiScript}.
      * @return the created instance of the AGI script class. If the instance

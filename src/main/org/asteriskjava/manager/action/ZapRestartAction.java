@@ -5,7 +5,7 @@ package org.asteriskjava.manager.action;
  * interfaces.
  * <p>
  * Available since Asterisk 1.4.
- * 
+ *
  * @author srt
  * @since 0.3
  * @version $Id: ZapRestartAction.java 575 2006-09-28 15:53:49Z srt $

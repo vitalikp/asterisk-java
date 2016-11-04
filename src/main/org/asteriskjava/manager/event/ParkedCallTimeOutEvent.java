@@ -21,7 +21,7 @@ package org.asteriskjava.manager.event;
  * channel.<p>
  * It is implemented in <code>res/res_features.c</code><p>
  * Available since Asterisk 1.2
- * 
+ *
  * @author srt
  * @version $Id: ParkedCallTimeOutEvent.java 397 2006-05-26 12:13:32Z srt $
  * @since 0.2

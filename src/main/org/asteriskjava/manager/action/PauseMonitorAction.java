@@ -22,7 +22,7 @@ package org.asteriskjava.manager.action;
  * It is implemented in <code>res/res_monitor.c</code>
  * <p>
  * Available since Asterisk 1.4.
- * 
+ *
  * @see UnpauseMonitorAction
  * @author srt
  * @since 0.3
@@ -51,7 +51,7 @@ public class PauseMonitorAction extends AbstractManagerAction
     /**
      * Creates a new PauseMonitorAction that temporarily stops monitoring the
      * given channel.
-     * 
+     *
      * @param channel the name of the channel to temporarily stop monitoring.
      */
     public PauseMonitorAction(String channel)
@@ -61,7 +61,7 @@ public class PauseMonitorAction extends AbstractManagerAction
 
     /**
      * Returns the name of this action, i.e. "PauseMonitor".
-     * 
+     *
      * @return the name of this action.
      */
     @Override
@@ -72,7 +72,7 @@ public class PauseMonitorAction extends AbstractManagerAction
 
     /**
      * Returns the name of the channel to temporarily stop monitoring.
-     * 
+     *
      * @return the name of the channel to temporarily stop monitoring.
      */
     public String getChannel()
@@ -84,7 +84,7 @@ public class PauseMonitorAction extends AbstractManagerAction
      * Sets the name of the channel to temporarily stop monitoring.
      * <p>
      * This property is mandatory.
-     * 
+     *
      * @param channel the name of the channel to temporarily stop monitoring.
      */
     public void setChannel(String channel)

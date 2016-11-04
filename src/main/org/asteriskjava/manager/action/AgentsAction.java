@@ -23,10 +23,10 @@ import org.asteriskjava.manager.event.AgentsCompleteEvent;
  * For each agent an AgentsEvent is generated. After the state of all agents has been
  * reported an AgentsCompleteEvent is generated.<p>
  * Available since Asterisk 1.2
- * 
+ *
  * @see org.asteriskjava.manager.event.AgentsEvent
  * @see org.asteriskjava.manager.event.AgentsCompleteEvent
- * 
+ *
  * @author srt
  * @version $Id: AgentsAction.java 729 2007-05-26 05:16:57Z sprior $
  * @since 0.2
@@ -43,9 +43,9 @@ public class AgentsAction extends AbstractManagerAction implements EventGenerati
      */
     public AgentsAction()
     {
-        
+
     }
-    
+
     /**
      * Returns the name of this action, i.e. "Agents".
      */

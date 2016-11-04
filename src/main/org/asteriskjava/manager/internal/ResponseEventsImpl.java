@@ -23,10 +23,9 @@ import org.asteriskjava.manager.ResponseEvents;
 import org.asteriskjava.manager.event.ResponseEvent;
 import org.asteriskjava.manager.response.ManagerResponse;
 
-
 /**
  * Implementation of the ResponseEvents interface.
- * 
+ *
  * @author srt
  * @version $Id: ResponseEventsImpl.java 260 2006-05-07 11:08:35Z srt $
  * @since 0.2
@@ -67,7 +66,7 @@ public class ResponseEventsImpl implements ResponseEvents
 
     /**
      * Sets the ManagerResponse received.
-     * 
+     *
      * @param response the ManagerResponse received.
      */
     public void setRepsonse(ManagerResponse response)
@@ -77,7 +76,7 @@ public class ResponseEventsImpl implements ResponseEvents
 
     /**
      * Adds a ResponseEvent that has been received.
-     * 
+     *
      * @param event the ResponseEvent that has been received.
      */
     public void addEvent(ResponseEvent event)
@@ -90,7 +89,7 @@ public class ResponseEventsImpl implements ResponseEvents
 
     /**
      * Indicates if all events have been received.
-     * 
+     *
      * @param complete <code>true</code> if all events have been received,
      *            <code>false</code> otherwise.
      */

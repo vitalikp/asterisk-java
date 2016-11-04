@@ -22,7 +22,7 @@ import org.asteriskjava.manager.event.StatusCompleteEvent;
  * The StatusAction requests the state of all active channels.<p>
  * For each active channel a StatusEvent is generated. After the state of all
  * channels has been reported a StatusCompleteEvent is generated.
- * 
+ *
  * @see org.asteriskjava.manager.event.StatusEvent
  * @see org.asteriskjava.manager.event.StatusCompleteEvent
  * @author srt

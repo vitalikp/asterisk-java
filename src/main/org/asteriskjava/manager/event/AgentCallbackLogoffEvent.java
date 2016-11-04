@@ -21,7 +21,7 @@ package org.asteriskjava.manager.event;
  * AgentCallbackLogin is logged of.
  * <p>
  * It is implemented in <code>channels/chan_agent.c</code>
- * 
+ *
  * @see org.asteriskjava.manager.event.AgentCallbackLoginEvent
  * @author srt
  * @version $Id: AgentCallbackLogoffEvent.java 404 2006-05-26 14:21:29Z srt $

@@ -20,7 +20,7 @@ package org.asteriskjava.fastagi.command;
  * Adds or updates an entry in the Asterisk database for a given family, key,
  * and value.<p>
  * Returns 1 if successful, 0 otherwise.
- * 
+ *
  * @author srt
  * @version $Id: DatabasePutCommand.java 729 2007-05-26 05:16:57Z sprior $
  */
@@ -48,7 +48,7 @@ public class DatabasePutCommand extends AbstractAgiCommand
 
     /**
      * Creates a new DatabasePutCommand.
-     * 
+     *
      * @param family the family of the key to set.
      * @param key the key to set.
      * @param value the value to set.
@@ -63,7 +63,7 @@ public class DatabasePutCommand extends AbstractAgiCommand
 
     /**
      * Returns the family of the key to set.
-     * 
+     *
      * @return the family of the key to set.
      */
     public String getFamily()
@@ -73,7 +73,7 @@ public class DatabasePutCommand extends AbstractAgiCommand
 
     /**
      * Sets the family of the key to set.
-     * 
+     *
      * @param family the family of the key to set.
      */
     public void setFamily(String family)
@@ -83,7 +83,7 @@ public class DatabasePutCommand extends AbstractAgiCommand
 
     /**
      * Returns the the key to set.
-     * 
+     *
      * @return the key to set.
      */
     public String getKey()
@@ -93,7 +93,7 @@ public class DatabasePutCommand extends AbstractAgiCommand
 
     /**
      * Sets the key to set.
-     * 
+     *
      * @param key the key to set.
      */
     public void setKey(String key)
@@ -103,7 +103,7 @@ public class DatabasePutCommand extends AbstractAgiCommand
 
     /**
      * Returns the value to set.
-     * 
+     *
      * @return the value to set.
      */
     public String getValue()
@@ -113,7 +113,7 @@ public class DatabasePutCommand extends AbstractAgiCommand
 
     /**
      * Sets the value to set.
-     * 
+     *
      * @param value the value to set.
      */
     public void setValue(String value)

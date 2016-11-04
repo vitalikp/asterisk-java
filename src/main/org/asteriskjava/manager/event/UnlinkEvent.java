@@ -20,7 +20,7 @@ package org.asteriskjava.manager.event;
  * An UnlinkEvent is triggered when a link between two voice channels is discontinued, for example,
  * just before call completion.<p>
  * It is implemented in <code>channel.c</code>
- * 
+ *
  * @author srt
  * @version $Id: UnlinkEvent.java 397 2006-05-26 12:13:32Z srt $
  */

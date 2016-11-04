@@ -18,7 +18,7 @@ package org.asteriskjava.live;
 
 /**
  * The lifecycle status of a {@link org.asteriskjava.live.MeetMeUser}.
- * 
+ *
  * @author srt
  * @version $Id: MeetMeUserState.java 453 2006-06-25 09:07:23Z srt $
  */

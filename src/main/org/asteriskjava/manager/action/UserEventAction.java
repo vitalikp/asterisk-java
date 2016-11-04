@@ -7,7 +7,7 @@ import org.asteriskjava.manager.event.UserEvent;
  * This is equivalent to using the <code>UserEvent</code> application in your
  * dial plan. Before you send this event, you <em>must</em> register your
  * event class with the registerUserEventClass method of the ManagerConnection.
- * 
+ *
  * @see org.asteriskjava.manager.event.UserEvent
  * @see org.asteriskjava.manager.ManagerConnection#registerUserEventClass(Class)
  * @author Martin
@@ -31,7 +31,7 @@ public class UserEventAction extends AbstractManagerAction
 
     /**
      * Create the userevent action with userEvent as the event it will send
-     * 
+     *
      * @param userEvent the subclass representing a custom event
      */
     public UserEventAction(UserEvent userEvent)

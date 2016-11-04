@@ -19,7 +19,7 @@ package org.asteriskjava.manager.event;
 /**
  * A NewStateEvent is triggered when the state of a channel has changed.<p>
  * It is implemented in <code>channel.c</code>
- * 
+ *
  * @author srt
  * @version $Id: NewStateEvent.java 476 2006-07-14 11:45:58Z srt $
  */

@@ -21,10 +21,9 @@ import java.io.IOException;
 import org.asteriskjava.manager.action.ManagerAction;
 import org.asteriskjava.util.SocketConnectionFacade;
 
-
 /**
  * Default implementation of ManagerWriter interface.
- * 
+ *
  * @author srt
  * @version $Id: ManagerWriterImpl.java 636 2007-04-17 00:26:18Z srt $
  */

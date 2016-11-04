@@ -22,7 +22,7 @@ import org.asteriskjava.manager.event.ParkedCallsCompleteEvent;
  * The ParkedCallsAction requests a list of all currently parked calls.<p>
  * For each active channel a ParkedCallEvent is generated. After all parked
  * calls have been reported a ParkedCallsCompleteEvent is generated.
- * 
+ *
  * @see org.asteriskjava.manager.event.ParkedCallEvent
  * @see org.asteriskjava.manager.event.ParkedCallsCompleteEvent
  * @author srt

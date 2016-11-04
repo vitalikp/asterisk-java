@@ -18,7 +18,7 @@ package org.asteriskjava.fastagi.command;
 
 /**
  * Does nothing.
- * 
+ *
  * @author srt
  * @version $Id: NoopCommand.java 729 2007-05-26 05:16:57Z sprior $
  */

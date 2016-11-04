@@ -24,7 +24,7 @@ import java.beans.PropertyChangeListener;
  * Allows you to retrieve the {@link org.asteriskjava.live.AsteriskServer} this
  * live object belongs to and provides support for
  * {@link java.beans.PropertyChangeEvent}s.
- * 
+ *
  * @author srt
  * @version $Id: LiveObject.java 453 2006-06-25 09:07:23Z srt $
  * @since 0.3
@@ -33,7 +33,7 @@ public interface LiveObject
 {
     /**
      * Returns the AsteriskServer this live object belongs to.
-     * 
+     *
      * @return the AsteriskServer this live object belongs to.
      */
     AsteriskServer getServer();
@@ -41,7 +41,7 @@ public interface LiveObject
     /**
      * Adds a PropertyChangeListener that is notified whenever a property value
      * changes.
-     * 
+     *
      * @param listener listener to notify
      */
     void addPropertyChangeListener(PropertyChangeListener listener);
@@ -49,7 +49,7 @@ public interface LiveObject
     /**
      * Adds a PropertyChangeListener that is notified whenever a given property
      * value changes.
-     * 
+     *
      * @param propertyName property to observe
      * @param listener listener to notify
      * @see #addPropertyChangeListener(PropertyChangeListener)
@@ -59,7 +59,7 @@ public interface LiveObject
     /**
      * Removes the given PropertyChangeListener that was added by calling
      * {@link #addPropertyChangeListener(PropertyChangeListener)}.
-     * 
+     *
      * @param listener listener to remove
      */
     void removePropertyChangeListener(PropertyChangeListener listener);
@@ -67,7 +67,7 @@ public interface LiveObject
     /**
      * Removes the given PropertyChangeListener that was added by calling
      * {@link #addPropertyChangeListener(String, PropertyChangeListener)}.
-     * 
+     *
      * @param propertyName property that is observed
      * @param listener listener to remove
      */

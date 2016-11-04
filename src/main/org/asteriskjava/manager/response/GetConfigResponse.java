@@ -28,7 +28,7 @@ import java.util.Set;
  * the ugly details. If the file requested exists but does not contain at least
  * a line with a category, the ResponseBuilder won't create an instance of
  * GetConfigResponse, as it won't know what the empty response is.
- * 
+ *
  * @see org.asteriskjava.manager.action.GetConfigAction
  * @author martins
  * @since 0.3
@@ -42,7 +42,7 @@ public class GetConfigResponse extends ManagerResponse
 
     /**
      * Returns the map of category numbers to category names
-     * 
+     *
      * @returns the map of category numbers to names
      * @see org.asteriskjava.manager.response.GetConfigResponse#getLines
      */
@@ -85,7 +85,7 @@ public class GetConfigResponse extends ManagerResponse
 
     /**
      * Returns the map of line number to line value for a given category
-     * 
+     *
      * @param categoryNumber a valid category number from getCategories
      * @returns the map of category numbers to names
      * @see org.asteriskjava.manager.response.GetConfigResponse#getCategories

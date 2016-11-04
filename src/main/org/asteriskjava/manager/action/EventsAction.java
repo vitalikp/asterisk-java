@@ -19,7 +19,7 @@ package org.asteriskjava.manager.action;
 /**
  * With the EventsAction you can specify what kind of events should be sent to
  * this manager connection.
- * 
+ *
  * @author srt
  * @version $Id: EventsAction.java 729 2007-05-26 05:16:57Z sprior $
  */
@@ -43,7 +43,7 @@ public class EventsAction extends AbstractManagerAction
     /**
      * Creates a new EventsAction that applies the given event mask to the
      * current manager connection.
-     * 
+     *
      * @param eventMask the event mask. Set to "on" if all events should be
      *            send, "off" if not events should be sent or a combination of
      *            "system", "call" and "log" (separated by ',') to specify what

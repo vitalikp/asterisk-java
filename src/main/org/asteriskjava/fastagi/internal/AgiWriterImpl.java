@@ -22,7 +22,6 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.net.Socket;
 
-
 /**
  * Default implementation of the AGIWriter interface.
  *

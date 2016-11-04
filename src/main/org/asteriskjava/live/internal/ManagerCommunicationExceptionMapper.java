@@ -23,7 +23,7 @@ import org.asteriskjava.manager.EventTimeoutException;
  * Maps exceptions received from
  * {@link org.asteriskjava.manager.ManagerConnection} to the corresponding
  * {@link org.asteriskjava.live.ManagerCommunicationException}.
- * 
+ *
  * @author srt
  * @version $Id: ManagerCommunicationExceptionMapper.java 458 2006-07-05 22:32:02Z srt $
  */
@@ -40,7 +40,7 @@ class ManagerCommunicationExceptionMapper
      * {@link org.asteriskjava.manager.ManagerConnection} when sending a
      * {@link org.asteriskjava.manager.action.ManagerAction} to the corresponding
      * {@link org.asteriskjava.live.ManagerCommunicationException}.
-     * 
+     *
      * @param actionName name of the action that has been tried to send
      * @param exception exception received
      * @return the corresponding ManagerCommunicationException

@@ -19,7 +19,7 @@ package org.asteriskjava.manager.action;
 /**
  * The AgentLogoffAction sets an agent as no longer logged in.<p>
  * Available since Asterisk 1.2
- * 
+ *
  * @author srt
  * @version $Id: AgentLogoffAction.java 729 2007-05-26 05:16:57Z sprior $
  * @since 0.2
@@ -43,7 +43,7 @@ public class AgentLogoffAction extends AbstractManagerAction
 
     /**
      * Creates a new AgentLogoffAction that logs off the given agent
-     * 
+     *
      * @param agent the name of the agent to log off.
      */
     public AgentLogoffAction(String agent)
@@ -53,7 +53,7 @@ public class AgentLogoffAction extends AbstractManagerAction
 
     /**
      * Creates a new AgentLogoffAction that logs off the given agent
-     * 
+     *
      * @param agent the name of the agent to log off.
      * @param soft Boolean.TRUE if existing calls should not be hung up on
      *            logout.
@@ -66,7 +66,7 @@ public class AgentLogoffAction extends AbstractManagerAction
 
     /**
      * Returns the name of this action, i.e. "AgentLogoff".
-     * 
+     *
      * @return the name of this action
      */
     @Override
@@ -77,7 +77,7 @@ public class AgentLogoffAction extends AbstractManagerAction
 
     /**
      * Returns the name of the agent to log off, for example "1002".
-     * 
+     *
      * @return the name of the agent to log off
      */
     public String getAgent()
@@ -88,7 +88,7 @@ public class AgentLogoffAction extends AbstractManagerAction
     /**
      * Sets the name of the agent to log off, for example "1002".<p>
      * This is property is mandatory.
-     * 
+     *
      * @param agent the name of the agent to log off
      */
     public void setAgent(String agent)
@@ -99,7 +99,7 @@ public class AgentLogoffAction extends AbstractManagerAction
     /**
      * Returns whether to hangup existing calls or not.<p>
      * Default is to hangup existing calls on logoff.
-     * 
+     *
      * @return Boolean.TRUE if existing calls should not be hung up,
      *         Boolean.FALSE otherwise. <code>null</code> if default should be
      *         used.
@@ -112,7 +112,7 @@ public class AgentLogoffAction extends AbstractManagerAction
     /**
      * Sets whether existing calls should be hung up or not.<p>
      * Default is to hangup existing calls on logoff.
-     * 
+     *
      * @param soft Boolean.TRUE if existing calls should not be hung up,
      *            Boolean.FALSE otherwise. <code>null</code> if default should
      *            be used.

@@ -18,7 +18,7 @@ package org.asteriskjava.fastagi.command;
 
 /**
  * Sets the given channel variable to the given value.
- * 
+ *
  * @author srt
  * @version $Id: SetVariableCommand.java 729 2007-05-26 05:16:57Z sprior $
  */
@@ -41,7 +41,7 @@ public class SetVariableCommand extends AbstractAgiCommand
 
     /**
      * Creates a new GetVariableCommand.
-     * 
+     *
      * @param variable the name of the variable to set.
      * @param value the value to set.
      */
@@ -54,7 +54,7 @@ public class SetVariableCommand extends AbstractAgiCommand
 
     /**
      * Returns the name of the variable to set.
-     * 
+     *
      * @return the the name of the variable to set.
      */
     public String getVariable()
@@ -64,7 +64,7 @@ public class SetVariableCommand extends AbstractAgiCommand
 
     /**
      * Sets the name of the variable to set.
-     * 
+     *
      * @param variable the name of the variable to set.
      */
     public void setVariable(String variable)
@@ -74,7 +74,7 @@ public class SetVariableCommand extends AbstractAgiCommand
 
     /**
      * Returns the value to set.
-     * 
+     *
      * @return the value to set.
      */
     public String getValue()
@@ -84,7 +84,7 @@ public class SetVariableCommand extends AbstractAgiCommand
 
     /**
      * Sets the value to set.
-     * 
+     *
      * @param value the value to set.
      */
     public void setValue(String value)

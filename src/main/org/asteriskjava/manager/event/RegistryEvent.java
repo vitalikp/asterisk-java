@@ -241,5 +241,4 @@ public class RegistryEvent extends ManagerEvent
     {
         this.cause = cause;
     }
-
 }

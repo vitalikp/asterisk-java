@@ -34,7 +34,7 @@ import java.util.List;
  * in <code>fastagi-mapping.properties</code> and - if the properties file is
  * not present on the classpath or contains no mapping for the request - uses
  * a {@link ClassNameMappingStrategy} to get the script.
- * 
+ *
  * @see ResourceBundleMappingStrategy
  * @see ClassNameMappingStrategy
  * @author srt
@@ -55,7 +55,7 @@ public class CompositeMappingStrategy implements MappingStrategy
 
     /**
      * Creates a new CompositeMappingStrategy.
-     * 
+     *
      * @param strategies the strategies to use.
      */
     public CompositeMappingStrategy(MappingStrategy... strategies)
@@ -70,7 +70,7 @@ public class CompositeMappingStrategy implements MappingStrategy
 
     /**
      * Creates a new CompositeMappingStrategy.
-     * 
+     *
      * @param strategies the strategies to use.
      */
     public CompositeMappingStrategy(List<MappingStrategy> strategies)
@@ -81,7 +81,7 @@ public class CompositeMappingStrategy implements MappingStrategy
 
     /**
      * Adds a strategy (at the end of the list).
-     * 
+     *
      * @param strategy the strategy to add.
      */
     public void addStrategy(MappingStrategy strategy)
@@ -95,7 +95,7 @@ public class CompositeMappingStrategy implements MappingStrategy
 
     /**
      * Sets the strategies to use.
-     * 
+     *
      * @param strategies the strategies to use.
      */
     public void setStrategies(List<MappingStrategy> strategies)

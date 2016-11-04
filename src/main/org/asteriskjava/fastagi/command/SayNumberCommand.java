@@ -21,7 +21,7 @@ package org.asteriskjava.fastagi.command;
  * received on the channel.<p>
  * Returns 0 if playback completes without a digit being pressed, or the ASCII
  * numerical value of the digit if one was pressed or -1 on error/hangup.
- * 
+ *
  * @author srt
  * @version $Id: SayNumberCommand.java 729 2007-05-26 05:16:57Z sprior $
  */
@@ -44,7 +44,7 @@ public class SayNumberCommand extends AbstractAgiCommand
 
     /**
      * Creates a new SayNumberCommand.
-     * 
+     *
      * @param number the number to say.
      */
     public SayNumberCommand(String number)
@@ -55,7 +55,7 @@ public class SayNumberCommand extends AbstractAgiCommand
 
     /**
      * Creates a new SayNumberCommand.
-     * 
+     *
      * @param number the number to say.
      * @param escapeDigits contains the number that allow the user to
      *            interrupt this command.
@@ -69,7 +69,7 @@ public class SayNumberCommand extends AbstractAgiCommand
 
     /**
      * Returns the number to say.
-     * 
+     *
      * @return the number to say.
      */
     public String getNumber()
@@ -79,7 +79,7 @@ public class SayNumberCommand extends AbstractAgiCommand
 
     /**
      * Sets the number to say.
-     * 
+     *
      * @param number the number to say.
      */
     public void setNumber(String number)
@@ -89,7 +89,7 @@ public class SayNumberCommand extends AbstractAgiCommand
 
     /**
      * Returns the number that allow the user to interrupt this command.
-     * 
+     *
      * @return the number that allow the user to interrupt this command.
      */
     public String getEscapeDigits()
@@ -99,7 +99,7 @@ public class SayNumberCommand extends AbstractAgiCommand
 
     /**
      * Sets the number that allow the user to interrupt this command.
-     * 
+     *
      * @param escapeDigits the number that allow the user to interrupt this
      *            command or <code>null</code> for none.
      */

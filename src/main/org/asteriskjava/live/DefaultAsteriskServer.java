@@ -26,7 +26,7 @@ import org.asteriskjava.manager.ManagerConnection;
 
 /**
  * Default implementation of the AsteriskServer interface.
- * 
+ *
  * @see org.asteriskjava.live.AsteriskServer
  * @author srt
  * @version $Id: DefaultAsteriskServer.java 638 2007-04-21 14:17:09Z srt $
@@ -49,7 +49,7 @@ public class DefaultAsteriskServer implements AsteriskServer
     /**
      * Creates a new instance and a new {@link ManagerConnection} with the given
      * connection data.
-     * 
+     *
      * @param hostname the hostname of the Asterisk server to connect to.
      * @param username the username to use for login
      * @param password the password to use for login
@@ -64,7 +64,7 @@ public class DefaultAsteriskServer implements AsteriskServer
     /**
      * Creates a new instance and a new {@link ManagerConnection} with the given
      * connection data.
-     * 
+     *
      * @param hostname the hostname of the Asterisk server to connect to.
      * @param port the port where Asterisk listens for incoming Manager API
      *            connections, usually 5038.
@@ -87,7 +87,7 @@ public class DefaultAsteriskServer implements AsteriskServer
 
     /**
      * Creates a new instance that uses the given {@link ManagerConnection}.
-     * 
+     *
      * @param eventConnection the ManagerConnection to use for receiving events
      *            from Asterisk.
      */
@@ -103,7 +103,7 @@ public class DefaultAsteriskServer implements AsteriskServer
      * QueueStatusComplete event.
      * <p>
      * Default is <code>false</code>.
-     * 
+     *
      * @param skipQueues <code>true</code> to skip queue initialization,
      *            <code>false</code> to not skip.
      * @since 0.2
@@ -247,7 +247,7 @@ public class DefaultAsteriskServer implements AsteriskServer
     {
         impl.removeAsteriskServerListener(listener);
     }
-    
+
     public void shutdown()
     {
         impl.shutdown();

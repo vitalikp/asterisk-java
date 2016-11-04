@@ -19,7 +19,7 @@ package org.asteriskjava.manager.action;
 /**
  * The PingAction will elicit a 'Pong' response, it is used to keep the manager
  * connection open and performs no operation.
- * 
+ *
  * @author srt
  * @version $Id: PingAction.java 729 2007-05-26 05:16:57Z sprior $
  */

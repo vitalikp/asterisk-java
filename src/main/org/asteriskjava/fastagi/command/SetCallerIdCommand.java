@@ -18,7 +18,7 @@ package org.asteriskjava.fastagi.command;
 
 /**
  * Changes the callerid of the current channel.
- * 
+ *
  * @author srt
  * @version $Id: SetCallerIdCommand.java 729 2007-05-26 05:16:57Z sprior $
  */
@@ -36,7 +36,7 @@ public class SetCallerIdCommand extends AbstractAgiCommand
 
     /**
      * Creates a new SetCallerIdCommand.
-     * 
+     *
      * @param callerId the new callerId.
      */
     public SetCallerIdCommand(String callerId)
@@ -47,7 +47,7 @@ public class SetCallerIdCommand extends AbstractAgiCommand
 
     /**
      * Returns the new callerId.
-     * 
+     *
      * @return the new callerId.
      */
     public String getCallerId()
@@ -57,7 +57,7 @@ public class SetCallerIdCommand extends AbstractAgiCommand
 
     /**
      * Sets the new callerId.
-     * 
+     *
      * @param callerId the new callerId.
      */
     public void setCallerId(String callerId)

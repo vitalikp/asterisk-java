@@ -21,7 +21,7 @@ package org.asteriskjava.manager.action;
  * <p>
  * Defined in <code>res/res_features.c</code><p>
  * Available since Asterisk 1.4.
- * 
+ *
  * @author srt
  * @version $Id: ParkAction.java 729 2007-05-26 05:16:57Z sprior $
  */
@@ -46,7 +46,7 @@ public class ParkAction extends AbstractManagerAction
 
     /**
      * Creates a new ParkAction.
-     * 
+     *
      * @param channel name of the channel to park.
      * @param channel2 name of the channel to announce park info to and return
      *            to on timeout.
@@ -60,7 +60,7 @@ public class ParkAction extends AbstractManagerAction
 
     /**
      * Creates a new ParkAction with a timeout.
-     * 
+     *
      * @param channel the name of the channel to park.
      * @param channel2 the name of the channel to announce park info to and
      *            return to on timeout.
@@ -85,7 +85,7 @@ public class ParkAction extends AbstractManagerAction
 
     /**
      * Returns the name of the channel to park.
-     * 
+     *
      * @return the name of the channel to park.
      */
     public String getChannel()
@@ -96,7 +96,7 @@ public class ParkAction extends AbstractManagerAction
     /**
      * Sets the name of the channel to park.<p>
      * This property is mandatory.
-     * 
+     *
      * @param channel the name of the channel to park.
      */
     public void setChannel(String channel)
@@ -107,7 +107,7 @@ public class ParkAction extends AbstractManagerAction
     /**
      * Returns the name of the channel to announce park info to and return to on
      * timeout.
-     * 
+     *
      * @return the name of the channel to announce park info to and return to on
      *         timeout.
      */
@@ -120,7 +120,7 @@ public class ParkAction extends AbstractManagerAction
      * Sets the name of the channel to announce park info to and return to on
      * timeout.<p>
      * This property is mandatory.
-     * 
+     *
      * @param channel2 the name of the channel to announce park info to and
      *            return to on timeout.
      */
@@ -131,7 +131,7 @@ public class ParkAction extends AbstractManagerAction
 
     /**
      * Returns the timeout in seconds before callback.
-     * 
+     *
      * @return the timeout in seconds before callback.
      */
     public Integer getTimeout()
@@ -141,7 +141,7 @@ public class ParkAction extends AbstractManagerAction
 
     /**
      * Sets the timeout in seconds before callback.
-     * 
+     *
      * @param timeout the timeout in seconds before callback.
      */
     public void setTimeout(Integer timeout)

@@ -20,10 +20,9 @@ import java.util.Map;
 
 import org.asteriskjava.manager.response.ManagerResponse;
 
-
 /**
  * Transforms maps of attributes to instances of ManagerResponse.
- * 
+ *
  * @see org.asteriskjava.manager.response.ManagerResponse
  * @author srt
  * @version $Id: ResponseBuilder.java 381 2006-05-25 12:00:57Z srt $
@@ -33,7 +32,7 @@ interface ResponseBuilder
 
     /**
      * Constructs an instance of ManagerResponse based on a map of attributes.
-     * 
+     *
      * @param attributes the attributes and their values. The keys of this map must be all lower
      * case.
      * @return the response with the given attributes.

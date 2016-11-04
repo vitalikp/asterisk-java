@@ -19,7 +19,7 @@ package org.asteriskjava.fastagi;
 /**
  * An InvalidOrUnknownCommandException is thrown when the reader receives a reply
  * with status code 510.
- * 
+ *
  * @author srt
  * @version $Id: InvalidOrUnknownCommandException.java 229 2006-04-16 21:04:17Z srt $
  */
@@ -32,7 +32,7 @@ public class InvalidOrUnknownCommandException extends RuntimeException
 
     /**
      * Creates a new InvalidOrUnknownCommandException.
-     * 
+     *
      * @param command the invalid or unknown command.
      */
     public InvalidOrUnknownCommandException(String command)

@@ -48,7 +48,7 @@ import org.asteriskjava.manager.response.ManagerResponse;
 
 /**
  * Default implementation of the AsteriskChannel interface.
- * 
+ *
  * @author srt
  * @version $Id: AsteriskChannelImpl.java 729 2007-05-26 05:16:57Z sprior $
  */
@@ -176,7 +176,7 @@ class AsteriskChannelImpl extends AbstractLiveObject implements AsteriskChannel
 
     /**
      * Changes the name of this channel.
-     * 
+     *
      * @param date date of the name change.
      * @param name the new name of this channel.
      */
@@ -200,7 +200,7 @@ class AsteriskChannelImpl extends AbstractLiveObject implements AsteriskChannel
 
     /**
      * Sets the caller id of this channel.
-     * 
+     *
      * @param callerId the caller id of this channel.
      */
     void setCallerId(final CallerId callerId)
@@ -234,14 +234,14 @@ class AsteriskChannelImpl extends AbstractLiveObject implements AsteriskChannel
 
     public boolean wasBusy()
     {
-        return wasInState(ChannelState.BUSY) 
+        return wasInState(ChannelState.BUSY)
                 || hangupCause == HangupCause.AST_CAUSE_BUSY
                 || hangupCause == HangupCause.AST_CAUSE_USER_BUSY;
     }
 
     /**
      * Changes the state of this channel.
-     * 
+     *
      * @param date when the state change occurred.
      * @param state the new state of this channel.
      */
@@ -274,7 +274,7 @@ class AsteriskChannelImpl extends AbstractLiveObject implements AsteriskChannel
 
     /**
      * Sets the account code used to bill this channel.
-     * 
+     *
      * @param account the account code used to bill this channel.
      */
     void setAccount(String account)
@@ -337,7 +337,7 @@ class AsteriskChannelImpl extends AbstractLiveObject implements AsteriskChannel
 
     /**
      * Adds a visited dialplan entry to the history.
-     * 
+     *
      * @param date the date the extension has been visited.
      * @param extension the visited dialplan entry to add.
      */
@@ -392,7 +392,7 @@ class AsteriskChannelImpl extends AbstractLiveObject implements AsteriskChannel
     /**
      * Sets dateOfRemoval, hangupCause and hangupCauseText and changes state to
      * {@link ChannelState#HUNGUP}. Fires a PropertyChangeEvent for state.
-     * 
+     *
      * @param dateOfRemoval date the channel was hung up
      * @param hangupCause cause for hangup
      * @param hangupCauseText textual representation of hangup cause
@@ -480,7 +480,7 @@ class AsteriskChannelImpl extends AbstractLiveObject implements AsteriskChannel
 
     /**
      * Sets the channel this channel is bridged with.
-     * 
+     *
      * @param linkedChannel the channel this channel is bridged with.
      */
     synchronized void channelLinked(Date date, AsteriskChannel linkedChannel)

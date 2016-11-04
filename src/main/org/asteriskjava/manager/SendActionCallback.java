@@ -21,7 +21,7 @@ import org.asteriskjava.manager.response.ManagerResponse;
 /**
  * Callback interface to send {@link org.asteriskjava.manager.action.ManagerAction}s
  * asynchronously.
- * 
+ *
  * @see org.asteriskjava.manager.ManagerConnection#sendAction(ManagerAction, SendActionCallback)
  * @author srt
  * @version $Id: SendActionCallback.java 421 2006-05-28 15:02:14Z srt $
@@ -30,7 +30,7 @@ public interface SendActionCallback
 {
     /**
      * This method is called when a response is received.
-     * 
+     *
      * @param response the response that has been received
      */
     void onResponse(ManagerResponse response);

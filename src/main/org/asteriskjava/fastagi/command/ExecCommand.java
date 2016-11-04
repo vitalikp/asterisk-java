@@ -20,7 +20,7 @@ package org.asteriskjava.fastagi.command;
  * Executes an application with the given options.<p>
  * Returns whatever the application returns, or -2 if the application was not
  * found.
- * 
+ *
  * @author srt
  * @version $Id: ExecCommand.java 729 2007-05-26 05:16:57Z sprior $
  */
@@ -43,7 +43,7 @@ public class ExecCommand extends AbstractAgiCommand
 
     /**
      * Creates a new ExecCommand.
-     * 
+     *
      * @param application the name of the application to execute.
      */
     public ExecCommand(String application)
@@ -54,7 +54,7 @@ public class ExecCommand extends AbstractAgiCommand
 
     /**
      * Creates a new ExecCommand.
-     * 
+     *
      * @param application the name of the application to execute.
      * @param options the options to pass to the application.
      */
@@ -67,7 +67,7 @@ public class ExecCommand extends AbstractAgiCommand
 
     /**
      * Returns the name of the application to execute.
-     * 
+     *
      * @return the name of the application to execute.
      */
     public String getApplication()
@@ -77,7 +77,7 @@ public class ExecCommand extends AbstractAgiCommand
 
     /**
      * Sets the name of the application to execute.
-     * 
+     *
      * @param application the name of the application to execute.
      */
     public void setApplication(String application)
@@ -87,7 +87,7 @@ public class ExecCommand extends AbstractAgiCommand
 
     /**
      * Returns the options to pass to the application.
-     * 
+     *
      * @return the options to pass to the application.
      */
     public String getOptions()
@@ -98,7 +98,7 @@ public class ExecCommand extends AbstractAgiCommand
     /**
      * Sets the options to pass to the application. Multiple options are
      * separated by the pipe character ('|').
-     * 
+     *
      * @param options the options to pass to the application.
      */
     public void setOptions(String options)

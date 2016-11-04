@@ -18,7 +18,7 @@ package org.asteriskjava.manager.event;
 
 /**
  * Abstract base class for several agent related events.
- * 
+ *
  * @author srt
  * @author martins
  * @version $Id: AbstractAgentEvent.java 629 2007-03-25 01:05:20Z srt $
@@ -62,7 +62,7 @@ public abstract class AbstractAgentEvent extends ManagerEvent
 
     /**
      * Returns the unique id of the channel.
-     * 
+     *
      * @return the unique id of the channel.
      */
     public String getUniqueId()
@@ -72,7 +72,7 @@ public abstract class AbstractAgentEvent extends ManagerEvent
 
     /**
      * Sets the unique id of the channel.
-     * 
+     *
      * @param uniqueId the unique id of the channel.
      */
     public void setUniqueId(String uniqueId)
@@ -82,7 +82,7 @@ public abstract class AbstractAgentEvent extends ManagerEvent
 
     /**
      * Returns the name of the queue.
-     * 
+     *
      * @return the name of the queue.
      */
     public String getQueue()
@@ -92,7 +92,7 @@ public abstract class AbstractAgentEvent extends ManagerEvent
 
     /**
      * Sets the name of the queue.
-     * 
+     *
      * @param queue the name of the queue.
      */
     public void setQueue(String queue)
@@ -102,7 +102,7 @@ public abstract class AbstractAgentEvent extends ManagerEvent
 
     /**
      * Returns the name of the member's interface.
-     * 
+     *
      * @return the name of the member's interface.
      */
     public String getMember()
@@ -112,7 +112,7 @@ public abstract class AbstractAgentEvent extends ManagerEvent
 
     /**
      * Sets the name of the member's interface.
-     * 
+     *
      * @param member the name of the member's interface.
      */
     public void setMember(String member)
@@ -124,7 +124,7 @@ public abstract class AbstractAgentEvent extends ManagerEvent
      * Returns the member name supplied for logging when the member is added.
      * <p>
      * Available since Asterisk 1.4.
-     * 
+     *
      * @return the member name supplied for logging when the member is added.
      */
     public String getMemberName()

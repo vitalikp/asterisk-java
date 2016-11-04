@@ -23,7 +23,7 @@ package org.asteriskjava.fastagi.command;
  * Most channels do not support the reception of text.<p>
  * Returns the decimal value of the character if one is received, or 0 if the
  * channel does not support text reception. Returns -1 only on error/hangup.
- * 
+ *
  * @author srt
  * @version $Id: ReceiveCharCommand.java 729 2007-05-26 05:16:57Z sprior $
  */
@@ -51,7 +51,7 @@ public class ReceiveCharCommand extends AbstractAgiCommand
 
     /**
      * Creates a new ReceiveCharCommand.
-     * 
+     *
      * @param timeout the milliseconds to wait for the channel to receive a
      *            character.
      */
@@ -63,7 +63,7 @@ public class ReceiveCharCommand extends AbstractAgiCommand
 
     /**
      * Returns the milliseconds to wait for the channel to receive a character.
-     * 
+     *
      * @return the milliseconds to wait for the channel to receive a character.
      */
     public int getTimeout()
@@ -73,7 +73,7 @@ public class ReceiveCharCommand extends AbstractAgiCommand
 
     /**
      * Sets the milliseconds to wait for the channel to receive a character.
-     * 
+     *
      * @param timeout the milliseconds to wait for the channel to receive a
      *            character.
      */

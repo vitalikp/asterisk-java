@@ -19,7 +19,7 @@ package org.asteriskjava.manager.action;
 /**
  * The MailboxStatusAction checks if a mailbox contains waiting messages.<p>
  * The MailboxStatusAction returns a MailboxStatusResponse.
- * 
+ *
  * @see org.asteriskjava.manager.response.MailboxStatusResponse
  * @author srt
  * @version $Id: MailboxStatusAction.java 729 2007-05-26 05:16:57Z sprior $
@@ -44,7 +44,7 @@ public class MailboxStatusAction extends AbstractManagerAction
     /**
      * Creates a new MailboxStatusAction that checks for waiting messages in the
      * given mailbox.
-     * 
+     *
      * @param mailbox the name of the mailbox to check.<p>
      *            This can either be only the number of the mailbox or a string
      *            of the form mailboxnumber@context. If no context is specified

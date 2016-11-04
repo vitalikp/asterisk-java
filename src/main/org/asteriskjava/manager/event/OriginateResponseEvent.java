@@ -18,7 +18,7 @@ package org.asteriskjava.manager.event;
 
 /**
  * Response to an OriginateAction.
- * 
+ *
  * @see org.asteriskjava.manager.action.OriginateAction
  * @author srt
  * @version $Id: OriginateResponseEvent.java 618 2007-03-24 00:08:01Z srt $
@@ -48,7 +48,7 @@ public class OriginateResponseEvent extends ResponseEvent
 
     /**
      * Returns the result of the corresponding Originate action.
-     * 
+     *
      * @return "Success" or "Failure"
      */
     public String getResponse()
@@ -58,14 +58,14 @@ public class OriginateResponseEvent extends ResponseEvent
 
     /**
      * Sets the result of the corresponding Originate action.
-     * 
+     *
      * @param response "Success" or "Failure"
      */
     public void setResponse(String response)
     {
         this.response = response;
     }
-    
+
     public boolean isSuccess()
     {
         return "Success".equalsIgnoreCase(response);
@@ -131,7 +131,7 @@ public class OriginateResponseEvent extends ResponseEvent
 
     /**
      * Returns the unique id of the originated channel.
-     * 
+     *
      * @return the unique id of the originated channel or "&lt;null&gt;" if none
      *         is available.
      */
@@ -149,7 +149,7 @@ public class OriginateResponseEvent extends ResponseEvent
      * Returns the Caller*ID Number of the originated channel.
      * <p>
      * Available sind Asterisk 1.4.
-     * 
+     *
      * @return the Caller*ID Number of the originated channel or
      *         "&lt;unknown&gt;" if none was set.
      * @since 0.3
@@ -177,7 +177,7 @@ public class OriginateResponseEvent extends ResponseEvent
      * Returns the Caller*ID Name of the originated channel.
      * <p>
      * Available sind Asterisk 1.4.
-     * 
+     *
      * @return the Caller*ID Name of the originated channel or "&lt;unknown&gt;"
      *         if none was set.
      */

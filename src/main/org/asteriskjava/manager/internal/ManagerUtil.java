@@ -23,8 +23,8 @@ package org.asteriskjava.manager.internal;
  * send unique ids to Asterisk even when the user of Asterisk-Java does not
  * provide a unique action id or no action id at all.<p>
  * All the methods contained in this class are supposed to be internally
- * only. 
- * 
+ * only.
+ *
  * @author srt
  * @version $Id: ManagerUtil.java 543 2006-08-20 20:38:10Z srt $
  */
@@ -41,14 +41,14 @@ public class ManagerUtil
     /**
      * Converts a byte array to a hex string representing it. The hex digits are
      * lower case.
-     * 
+     *
      * @param b the byte array to convert
      * @return the hex representation of b
      */
     public static String toHexString(byte[] b)
     {
         final StringBuilder sb;
-        
+
         sb = new StringBuilder(b.length * 2);
         for (int i = 0; i < b.length; i++)
         {
@@ -60,7 +60,7 @@ public class ManagerUtil
 
     /**
      * Returns the internal action id contained in the given action id.
-     * 
+     *
      * @param actionId the action id prefixed by the internal action
      *            id as received from Asterisk.
      * @return the internal action id that has been added before.
@@ -83,7 +83,7 @@ public class ManagerUtil
 
     /**
      * Strips the internal action id from the given action id.
-     * 
+     *
      * @param actionId the action id prefixed by the internal action
      *            id as received from Asterisk.
      * @return the original action id, that is the action id as it was before
@@ -114,7 +114,7 @@ public class ManagerUtil
 
     /**
      * Adds the internal action id to the given action id.
-     * 
+     *
      * @param actionId the action id as set by the user.
      * @param internalActionId the internal action id to add.
      * @return the action id prefixed by the internal action id suitable to be

@@ -17,7 +17,7 @@
 
 /**
  * Provides a class that represents the reply that is received
- * from an Asterisk server in response to a command sent via 
+ * from an Asterisk server in response to a command sent via
  * the FastAGI.
  */
 package org.asteriskjava.fastagi.reply;

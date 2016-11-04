@@ -31,7 +31,7 @@ import org.asteriskjava.manager.event.UserEvent;
 
 /**
  * Default implementation of the ActionBuilder interface.
- * 
+ *
  * @author srt
  * @version $Id: ActionBuilderImpl.java 835 2007-07-08 08:39:32Z srt $
  */

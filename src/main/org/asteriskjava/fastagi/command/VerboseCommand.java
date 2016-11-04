@@ -19,7 +19,7 @@ package org.asteriskjava.fastagi.command;
 /**
  * Sends a message to the Asterisk console via the verbose message system.<p>
  * Always returns 1.
- * 
+ *
  * @author srt
  * @version $Id: VerboseCommand.java 729 2007-05-26 05:16:57Z sprior $
  */
@@ -43,7 +43,7 @@ public class VerboseCommand extends AbstractAgiCommand
 
     /**
      * Creates a new VerboseCommand.
-     * 
+     *
      * @param message the message to send.
      * @param level the verbosity level to use.<p>
      *            Must be in [1..4]
@@ -57,7 +57,7 @@ public class VerboseCommand extends AbstractAgiCommand
 
     /**
      * Returns the message to send.
-     * 
+     *
      * @return the message to send.
      */
     public String getMessage()
@@ -67,7 +67,7 @@ public class VerboseCommand extends AbstractAgiCommand
 
     /**
      * Sets the message to send.
-     * 
+     *
      * @param message the message to send.
      */
     public void setMessage(String message)
@@ -77,7 +77,7 @@ public class VerboseCommand extends AbstractAgiCommand
 
     /**
      * Returns the level to use.
-     * 
+     *
      * @return the level to use.
      */
     public int getLevel()
@@ -88,7 +88,7 @@ public class VerboseCommand extends AbstractAgiCommand
     /**
      * Sets the level to use.<p>
      * Must be in in [1..4].
-     * 
+     *
      * @param level the level to use.
      */
     public void setLevel(int level)

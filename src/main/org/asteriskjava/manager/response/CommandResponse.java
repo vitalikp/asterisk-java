@@ -24,9 +24,9 @@ import java.util.List;
  * Follows" line followed by the raw output of the command including empty lines. At the end of the
  * command output a line containing "--END COMMAND--" is sent. The reader parses this response into
  * a CommandResponse object to hide these details.
- * 
+ *
  * @see org.asteriskjava.manager.action.CommandAction
- * 
+ *
  * @author srt
  * @version $Id: CommandResponse.java 458 2006-07-05 22:32:02Z srt $
  */

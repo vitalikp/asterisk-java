@@ -50,7 +50,7 @@ import org.asteriskjava.util.LogFactory;
 
 /**
  * Manages channel events on behalf of an AsteriskServer.
- * 
+ *
  * @author srt
  * @version $Id: ChannelManager.java 886 2007-09-05 15:56:21Z srt $
  */
@@ -64,7 +64,7 @@ class ChannelManager
     private static final long REMOVAL_THRESHOLD = 15 * 60 * 1000L; // 15 minutes
 
     private final AsteriskServerImpl server;
-    
+
     /**
      * A map of all active channel by their unique id.
      */
@@ -106,7 +106,7 @@ class ChannelManager
 
     /**
      * Returns a collection of all active AsteriskChannels.
-     * 
+     *
      * @return a collection of all active AsteriskChannels.
      */
     Collection<AsteriskChannel> getChannels()
@@ -141,7 +141,7 @@ class ChannelManager
     private void removeOldChannels()
     {
         Iterator<AsteriskChannelImpl> i;
-        
+
         synchronized (channels)
         {
             i = channels.values().iterator();
@@ -161,8 +161,8 @@ class ChannelManager
         }
     }
 
-    private AsteriskChannelImpl addNewChannel(String uniqueId, String name, 
-            Date dateOfCreation, String callerIdNumber, String callerIdName, 
+    private AsteriskChannelImpl addNewChannel(String uniqueId, String name,
+            Date dateOfCreation, String callerIdNumber, String callerIdName,
             ChannelState state)
     {
         final AsteriskChannelImpl channel;
@@ -219,7 +219,7 @@ class ChannelManager
         if (channel == null)
         {
             Date dateOfCreation;
-            
+
             if (event.getSeconds() != null)
             {
                 dateOfCreation = new Date(DateUtil.getDate().getTime() - (event.getSeconds() * 1000L));
@@ -325,7 +325,7 @@ class ChannelManager
      * Local channels consist of two sides, like
      * "Local/1234@from-local-60b5,1" and "Local/1234@from-local-60b5,2"
      * this method returns the other side.
-     * 
+     *
      * @param localChannel one side
      * @return the other side, or <code>null</code> if not available or if the given channel
      *         is not a local channel.
@@ -370,7 +370,7 @@ class ChannelManager
         if (channel == null)
         {
             channel = addNewChannel(
-                    event.getUniqueId(), event.getChannel(), event.getDateReceived(), 
+                    event.getUniqueId(), event.getChannel(), event.getDateReceived(),
                     event.getCallerIdNum(), event.getCallerIdName(),
                     string2ChannelState(event.getState()));
         }
@@ -400,7 +400,7 @@ class ChannelManager
         }
 
         extension = new Extension(
-                        event.getContext(), event.getExtension(), event.getPriority(), 
+                        event.getContext(), event.getExtension(), event.getPriority(),
                         event.getApplication(), event.getAppData());
 
         synchronized (channel)
@@ -417,7 +417,7 @@ class ChannelManager
         {
             // NewStateEvent can occur instead of a NewChannelEvent
             channel = addNewChannel(
-                    event.getUniqueId(), event.getChannel(), event.getDateReceived(), 
+                    event.getUniqueId(), event.getChannel(), event.getDateReceived(),
                     event.getCallerIdNum(), event.getCallerIdName(), string2ChannelState(event.getState()));
         }
         if (event.getState() != null)
@@ -437,7 +437,7 @@ class ChannelManager
         {
             // NewCallerIdEvent can occur before NewChannelEvent
             channel = addNewChannel(
-                    event.getUniqueId(), event.getChannel(), event.getDateReceived(), 
+                    event.getUniqueId(), event.getChannel(), event.getDateReceived(),
                     event.getCallerIdNum(), event.getCallerIdName(), ChannelState.DOWN);
         }
         else
@@ -465,7 +465,7 @@ class ChannelManager
         {
             cause = HangupCause.getByCode(event.getCause());
         }
-        
+
         synchronized (channel)
         {
             channel.hungup(event.getDateReceived(), cause, event.getCauseTxt());

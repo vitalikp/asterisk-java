@@ -19,7 +19,7 @@ package org.asteriskjava.manager.action;
 /**
  * The MonitorAction starts monitoring (recording) a channel.<p>
  * It is implemented in <code>res/res_monitor.c</code>
- * 
+ *
  * @author srt
  * @version $Id: MonitorAction.java 729 2007-05-26 05:16:57Z sprior $
  */
@@ -46,7 +46,7 @@ public class MonitorAction extends AbstractManagerAction
      * Creates a new MonitorAction that starts monitoring the given channel and
      * writes voice data to the given files.<p>
      * The format of the files is "wav", they are not mixed.
-     * 
+     *
      * @param channel the name of the channel to monitor
      * @param file the (base) name of the files to which the voice data is
      *            written
@@ -63,7 +63,7 @@ public class MonitorAction extends AbstractManagerAction
      * Creates a new MonitorAction that starts monitoring the given channel and
      * writes voice data to the given files.<p>
      * The files are not mixed.
-     * 
+     *
      * @param channel the name of the channel to monitor
      * @param file the (base) name of the files to which the voice data is
      *            written
@@ -81,7 +81,7 @@ public class MonitorAction extends AbstractManagerAction
     /**
      * Creates a new MonitorAction that starts monitoring the given channel and
      * writes voice data to the given file(s).
-     * 
+     *
      * @param channel the name of the channel to monitor
      * @param file the (base) name of the file(s) to which the voice data is
      *            written

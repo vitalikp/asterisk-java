@@ -19,7 +19,7 @@ package org.asteriskjava.fastagi.command;
 /**
  * Hangs up the specified channel. If no channel name is given, hangs up the
  * current channel.
- * 
+ *
  * @author srt
  * @version $Id: HangupCommand.java 729 2007-05-26 05:16:57Z sprior $
  */
@@ -46,7 +46,7 @@ public class HangupCommand extends AbstractAgiCommand
 
     /**
      * Creates a new HangupCommand that hangs up the given channel.
-     * 
+     *
      * @param channel the name of the channel to hangup.
      */
     public HangupCommand(String channel)
@@ -57,7 +57,7 @@ public class HangupCommand extends AbstractAgiCommand
 
     /**
      * Returns the name of the channel to hangup.
-     * 
+     *
      * @return the name of the channel to hangup or <code>null</code> for the
      *         current channel.
      */
@@ -68,7 +68,7 @@ public class HangupCommand extends AbstractAgiCommand
 
     /**
      * Sets the name of the channel to hangup.
-     * 
+     *
      * @param channel the name of the channel to hangup or <code>null</code>
      *            for the current channel.
      */

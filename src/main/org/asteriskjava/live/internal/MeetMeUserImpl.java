@@ -78,7 +78,7 @@ class MeetMeUserImpl extends AbstractLiveObject implements MeetMeUser
 
     /**
      * Sets the status to {@link MeetMeUserState#LEFT} and dateLeft to the given date.
-     * 
+     *
      * @param dateLeft the date this user left the room.
      */
     void left(Date dateLeft)
@@ -152,7 +152,7 @@ class MeetMeUserImpl extends AbstractLiveObject implements MeetMeUser
 
         server.sendAction(new CommandAction(sb.toString()));
     }
-    
+
     @Override
    public String toString()
     {

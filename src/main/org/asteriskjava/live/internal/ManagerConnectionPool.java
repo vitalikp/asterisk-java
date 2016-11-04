@@ -107,7 +107,7 @@ class ManagerConnectionPool
 
     /**
      * Retrieves a connection from the pool.
-     * 
+     *
      * @return the retrieved connection, or <code>null</code> if interrupted
      *         while waiting for a connection to become available.
      */

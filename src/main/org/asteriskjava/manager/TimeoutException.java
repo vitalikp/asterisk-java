@@ -19,7 +19,7 @@ package org.asteriskjava.manager;
 /**
  * A TimeoutException is thrown if a ManagerResponse is not received within the
  * expected time period.
- * 
+ *
  * @author srt
  * @version $Id: TimeoutException.java 458 2006-07-05 22:32:02Z srt $
  */
@@ -32,7 +32,7 @@ public class TimeoutException extends Exception
 
     /**
      * Creates a new TimeoutException with the given message.
-     * 
+     *
      * @param message message with details about the timeout.
      */
     public TimeoutException(final String message)

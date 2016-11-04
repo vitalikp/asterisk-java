@@ -23,7 +23,7 @@ package org.asteriskjava.manager.action;
  * An unsuccessful login results in an ManagerError being received from the
  * server with a message set to "Authentication failed" and the socket being
  * closed by Asterisk.
- * 
+ *
  * @see org.asteriskjava.manager.action.ChallengeAction
  * @see org.asteriskjava.manager.response.ManagerError
  * @author srt
@@ -47,14 +47,14 @@ public class LoginAction extends AbstractManagerAction
      */
     public LoginAction()
     {
-        
+
     }
-    
+
     /**
      * Creates a new LoginAction that performs a cleartext login.<p>
      * You should not use cleartext login if you are concerned about security,
      * using {@see ChallengeAction} and login with a password hash instead.
-     * 
+     *
      * @param username the username as configured in Asterisk's
      *            <code>manager.conf</code>
      * @param secret the user's password as configured in Asterisk's
@@ -69,7 +69,7 @@ public class LoginAction extends AbstractManagerAction
 
     /**
      * Creates a new LoginAction that performs a login via challenge/response.
-     * 
+     *
      * @param username the username as configured in Asterisk's
      *            <code>manager.conf</code>
      * @param authType the digest algorithm, must match the digest algorithm
@@ -86,7 +86,7 @@ public class LoginAction extends AbstractManagerAction
 
     /**
      * Creates a new LoginAction that performs a login via challenge/response.
-     * 
+     *
      * @param username the username as configured in Asterisk's
      *            <code>manager.conf</code>
      * @param authType the digest algorithm, must match the digest algorithm
@@ -188,7 +188,7 @@ public class LoginAction extends AbstractManagerAction
 
     /**
      * Returns the event mask.
-     * 
+     *
      * @return the event mask.
      */
     public String getEvents()
@@ -198,7 +198,7 @@ public class LoginAction extends AbstractManagerAction
 
     /**
      * Sets the event mask.
-     * 
+     *
      * @param events the event mask. Set to "on" if all events should be send,
      *            "off" if not events should be sent or a combination of
      *            "system", "call" and "log" (separated by ',') to specify what

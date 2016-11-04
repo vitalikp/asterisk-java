@@ -19,9 +19,9 @@ package org.asteriskjava.manager.response;
 /**
  * A MailboxStatusResponse is sent in response to a MailboxStatusAction and indicates if a set
  * of mailboxes contains waiting messages.
- * 
+ *
  * @see org.asteriskjava.manager.action.MailboxStatusAction
- * 
+ *
  * @author srt
  * @version $Id: MailboxStatusResponse.java 229 2006-04-16 21:04:17Z srt $
  */
@@ -31,12 +31,12 @@ public class MailboxStatusResponse extends ManagerResponse
      * Serial version identifier
      */
     private static final long serialVersionUID = -7193581424292429279L;
-    
+
     /**
      * The name of the mailbox.
      */
     private String mailbox;
-    
+
     /**
      * Indicates if there are new messages waiting in the given set of mailboxes.
      */

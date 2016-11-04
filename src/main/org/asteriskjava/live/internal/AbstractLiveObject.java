@@ -26,7 +26,7 @@ import org.asteriskjava.util.LogFactory;
 
 /**
  * Abstract base class for all live objects.
- * 
+ *
  * @author srt
  * @since 0.3
  */
@@ -66,7 +66,7 @@ abstract class AbstractLiveObject implements LiveObject
     {
         changes.removePropertyChangeListener(propertyName, listener);
     }
-    
+
     protected void firePropertyChange(String propertyName, Object oldValue, Object newValue)
     {
         if (oldValue != null || newValue != null)

@@ -20,7 +20,7 @@ package org.asteriskjava.manager.action;
  * Adds or updates an entry in the Asterisk database for a given family, key,
  * and value.<p>
  * Available since Asterisk 1.2
- * 
+ *
  * @author srt
  * @version $Id: DbPutAction.java 729 2007-05-26 05:16:57Z sprior $
  * @since 0.2
@@ -46,7 +46,7 @@ public class DbPutAction extends AbstractManagerAction
     /**
      * Creates a new DbPutAction that sets the value of the database entry with
      * the given key in the given family.
-     * 
+     *
      * @param family the family of the key
      * @param key the key of the entry to set
      * @param val the value to set
@@ -67,7 +67,7 @@ public class DbPutAction extends AbstractManagerAction
 
     /**
      * Returns the family of the key to set.
-     * 
+     *
      * @return the family of the key to set.
      */
     public String getFamily()
@@ -77,7 +77,7 @@ public class DbPutAction extends AbstractManagerAction
 
     /**
      * Sets the family of the key to set.
-     * 
+     *
      * @param family the family of the key to set.
      */
     public void setFamily(String family)
@@ -87,7 +87,7 @@ public class DbPutAction extends AbstractManagerAction
 
     /**
      * Returns the the key to set.
-     * 
+     *
      * @return the key to set.
      */
     public String getKey()
@@ -97,7 +97,7 @@ public class DbPutAction extends AbstractManagerAction
 
     /**
      * Sets the key to set.
-     * 
+     *
      * @param key the key to set.
      */
     public void setKey(String key)
@@ -107,7 +107,7 @@ public class DbPutAction extends AbstractManagerAction
 
     /**
      * Returns the value to set.
-     * 
+     *
      * @return the value to set.
      */
     public String getVal()
@@ -117,7 +117,7 @@ public class DbPutAction extends AbstractManagerAction
 
     /**
      * Sets the value to set.
-     * 
+     *
      * @param val the value to set.
      */
     public void setVal(String val)

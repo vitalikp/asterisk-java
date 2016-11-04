@@ -27,7 +27,7 @@ import java.io.Serializable;
  * engine.<p>
  * There is one concrete subclass of ManagerAction per each supported Asterisk
  * Action.
- * 
+ *
  * @author srt
  * @version $Id: ManagerAction.java 397 2006-05-26 12:13:32Z srt $
  */
@@ -40,7 +40,7 @@ public interface ManagerAction extends Serializable
 
     /**
      * Returns the action id.
-     * 
+     *
      * @return the user provided action id.
      */
     String getActionId();
@@ -51,18 +51,17 @@ public interface ManagerAction extends Serializable
      * returned by the Asterisk server will include the same id. This way
      * the action id can be used to track actions and their corresponding
      * responses and response events.<p>
-     * Note that Asterisk-Java uses its own internal action id to match 
+     * Note that Asterisk-Java uses its own internal action id to match
      * actions with the corresponding responses and events. Though the internal
-     * action is never exposed to the application code. So if you want to 
+     * action is never exposed to the application code. So if you want to
      * handle responses or response events on your own your application must
      * set a unique action id using this method otherwise the action id of
      * the response and response event objects passed to your application
      * will be null.
-     * 
+     *
      * @param actionId the user provided action id to set.
      * @see org.asteriskjava.manager.response.ManagerResponse#getActionId()
      * @see org.asteriskjava.manager.event.ResponseEvent#getActionId()
      */
     void setActionId(String actionId);
-
 }

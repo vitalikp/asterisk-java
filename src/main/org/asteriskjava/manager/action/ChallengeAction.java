@@ -20,7 +20,7 @@ package org.asteriskjava.manager.action;
  * The ChallengeAction requests a challenge from the server to use when logging
  * in using challenge/response. Sending this action to the asterisk server
  * results in a ChallengeResponse being received from the server.
- * 
+ *
  * @see org.asteriskjava.manager.action.LoginAction
  * @see org.asteriskjava.manager.response.ChallengeResponse
  * @author srt
@@ -45,7 +45,7 @@ public class ChallengeAction extends AbstractManagerAction
     /**
      * Creates a new ChallengeAction that requests a new login challenge for use
      * with the given digest algorithm.
-     * 
+     *
      * @param authType the digest algorithm to use.
      * @since 0.2
      */

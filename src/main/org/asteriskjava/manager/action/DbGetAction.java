@@ -23,7 +23,7 @@ import org.asteriskjava.manager.event.DbGetResponseEvent;
  * If an entry is found a DbGetResponseEvent is sent by Asterisk containing the
  * value, otherwise a ManagerError indicates that no entry matches.<p>
  * Available since Asterisk 1.2
- * 
+ *
  * @see org.asteriskjava.manager.event.DbGetResponseEvent
  * @author srt
  * @version $Id: DbGetAction.java 729 2007-05-26 05:16:57Z sprior $
@@ -51,7 +51,7 @@ public class DbGetAction extends AbstractManagerAction
     /**
      * Creates a new DbGetAction that retrieves the value of the database entry
      * with the given key in the given family.
-     * 
+     *
      * @param family the family of the key
      * @param key the key of the entry to retrieve
      * @since 0.2
@@ -70,7 +70,7 @@ public class DbGetAction extends AbstractManagerAction
 
     /**
      * Returns the family of the key.
-     * 
+     *
      * @return the family of the key.
      */
     public String getFamily()
@@ -80,7 +80,7 @@ public class DbGetAction extends AbstractManagerAction
 
     /**
      * Sets the family of the key.
-     * 
+     *
      * @param family the family of the key.
      */
     public void setFamily(String family)
@@ -90,7 +90,7 @@ public class DbGetAction extends AbstractManagerAction
 
     /**
      * Returns the the key of the entry to retrieve.
-     * 
+     *
      * @return the key of the entry to retrieve.
      */
     public String getKey()
@@ -100,7 +100,7 @@ public class DbGetAction extends AbstractManagerAction
 
     /**
      * Sets the key of the entry to retrieve.
-     * 
+     *
      * @param key the key of the entry to retrieve.
      */
     public void setKey(String key)

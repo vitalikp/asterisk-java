@@ -19,7 +19,7 @@ package org.asteriskjava.fastagi;
 /**
  * The AgiHangupException is thrown if the channel is hung up while
  * processing the {@link org.asteriskjava.fastagi.AgiRequest}.
- * 
+ *
  * @author srt
  * @version $Id: AgiHangupException.java 384 2006-05-25 12:58:15Z srt $
  */
@@ -29,7 +29,7 @@ public class AgiHangupException extends RuntimeException
      * Serial version identifier.
      */
     private static final long serialVersionUID = 3256444698691252274L;
-    
+
     /**
      * Creates a new AgiHangupException.
      */

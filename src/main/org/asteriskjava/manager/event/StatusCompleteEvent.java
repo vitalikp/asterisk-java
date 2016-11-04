@@ -19,10 +19,10 @@ package org.asteriskjava.manager.event;
 /**
  * A StatusCompleteEvent is triggered after the state of all channels has been reported in response
  * to a StatusAction.
- * 
+ *
  * @see org.asteriskjava.manager.action.StatusAction
  * @see org.asteriskjava.manager.event.StatusEvent
- * 
+ *
  * @author srt
  * @version $Id: StatusCompleteEvent.java 229 2006-04-16 21:04:17Z srt $
  */

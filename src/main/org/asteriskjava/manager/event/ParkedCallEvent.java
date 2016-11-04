@@ -20,7 +20,7 @@ package org.asteriskjava.manager.event;
  * A ParkedCallEvent is triggered when a channel is parked (in this case no
  * action id is set) and in response to a ParkedCallsAction.<p>
  * It is implemented in <code>res/res_features.c</code>
- * 
+ *
  * @see org.asteriskjava.manager.action.ParkedCallsAction
  * @author srt
  * @version $Id: ParkedCallEvent.java 606 2007-02-14 23:35:22Z srt $
@@ -31,10 +31,9 @@ public class ParkedCallEvent extends AbstractParkedCallEvent
      * Serializable version identifier
      */
     private static final long serialVersionUID = -7437833328723536814L;
-    
+
     private String from;
     private Integer timeout;
-    
 
     /**
      * @param source
@@ -77,7 +76,7 @@ public class ParkedCallEvent extends AbstractParkedCallEvent
     {
         this.timeout = timeout;
     }
-  
+
     /**
      * Sets the unique id of the parked channel,
      * workaround for a typo in asterisk manager event

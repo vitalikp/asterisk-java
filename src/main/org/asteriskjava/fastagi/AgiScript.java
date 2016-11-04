@@ -25,7 +25,7 @@ import java.io.IOException;
  * interface.<p>
  * Note: The implementation of AgiScript must be threadsafe as only one instance
  * is used by AsteriskServer to handle all requests to a resource.
- * 
+ *
  * @author srt
  * @version $Id: AgiScript.java 492 2006-07-16 09:36:01Z srt $
  */
@@ -34,12 +34,12 @@ public interface AgiScript
     /**
      * The service method is called by the AsteriskServer whenever this
      * AgiScript should handle an incoming AgiRequest.
-     * 
+     *
      * @param request the initial data received from Asterisk when requesting
      *            this script.
      * @param channel a handle to communicate with Asterisk such as sending
      *            commands to the channel sending the request.
-     * 
+     *
      * @throws IOException any exception thrown by your script will be logged.
      */
     void service(final AgiRequest request, final AgiChannel channel) throws IOException;

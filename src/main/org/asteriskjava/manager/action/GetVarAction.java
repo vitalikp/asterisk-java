@@ -39,13 +39,13 @@ package org.asteriskjava.manager.action;
  * String value = response.getAttribute("Value");
  * System.out.println("MY_VAR on " + channel + " is " + value);
  * </pre>
- * Where <code>c</code> is an instance of 
+ * Where <code>c</code> is an instance of
  * {@link org.asteriskjava.manager.ManagerConnection} and <code>channel</code>
  * contains the name of a channel instance, for example "SIP/1234-9cd".
  * <p>
  * Since Asterisk 1.4 this action also supports built-in functions like
  * <code>DB()</code>, <code>CALLERID()</code> and <code>ENV()</code>.
- * 
+ *
  * @author srt
  * @version $Id: GetVarAction.java 729 2007-05-26 05:16:57Z sprior $
  */
@@ -68,7 +68,7 @@ public class GetVarAction extends AbstractManagerAction
 
     /**
      * Creates a new GetVarAction that queries for the given global variable.
-     * 
+     *
      * @param variable the name of the global variable to query.
      * @since 0.2
      */
@@ -80,7 +80,7 @@ public class GetVarAction extends AbstractManagerAction
     /**
      * Creates a new GetVarAction that queries for the given local channel
      * variable.
-     * 
+     *
      * @param channel the name of the channel, for example "SIP/1234-9cd".
      * @param variable the name of the variable to query.
      * @since 0.2
@@ -112,7 +112,7 @@ public class GetVarAction extends AbstractManagerAction
     /**
      * Sets the name of the channel if you query for a local channel variable.
      * Leave empty to query for a global variable.
-     * 
+     *
      * @param channel the channel if you query for a local channel variable or
      *            <code>null</code> to query for a global variable.
      */

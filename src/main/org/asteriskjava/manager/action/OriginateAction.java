@@ -22,7 +22,6 @@ import java.util.StringTokenizer;
 
 import org.asteriskjava.manager.event.OriginateResponseEvent;
 
-
 /**
  * The OriginateAction generates an outgoing call to the extension in the given
  * context with the given priority or to a given application with optional

@@ -20,7 +20,7 @@ package org.asteriskjava.manager.event;
  * A PeerEntryEvent is triggered in response to a SIPPeersAction or SIPShowPeerAction and contains
  * information about a peer.<p>
  * It is implemented in <code>channels/chan_sip.c</code>
- * 
+ *
  * @author srt
  * @version $Id: PeerEntryEvent.java 607 2007-02-15 13:16:41Z srt $
  * @since 0.2
@@ -46,7 +46,7 @@ public class PeerEntryEvent extends ResponseEvent
 
     /**
      * Creates a new instance.
-     * 
+     *
      * @param source
      */
     public PeerEntryEvent(Object source)
@@ -56,7 +56,7 @@ public class PeerEntryEvent extends ResponseEvent
 
     /**
      * For SIP peers this is "SIP".
-     * 
+     *
      * @return
      */
     public String getChannelType()
@@ -81,7 +81,7 @@ public class PeerEntryEvent extends ResponseEvent
 
     /**
      * For SIP peers this is either "peer" or "user".
-     * 
+     *
      * @return
      */
     public String getChanObjectType()
@@ -96,7 +96,7 @@ public class PeerEntryEvent extends ResponseEvent
 
     /**
      * Returns the IP address of the peer.
-     * 
+     *
      * @return the IP address of the peer or "-none-" if none is available.
      */
     public String getIpAddress()
@@ -106,7 +106,7 @@ public class PeerEntryEvent extends ResponseEvent
 
     /**
      * Sets the IP address of the peer.
-     * 
+     *
      * @param ipAddress the IP address of the peer.
      */
     public void setIpAddress(String ipAddress)
@@ -146,7 +146,7 @@ public class PeerEntryEvent extends ResponseEvent
 
     /**
      * Available since Asterisk 1.4.
-     * 
+     *
      * @since 0.3
      */
     public Boolean getVideoSupport()
@@ -156,7 +156,7 @@ public class PeerEntryEvent extends ResponseEvent
 
     /**
      * Available since Asterisk 1.4.
-     * 
+     *
      * @since 0.3
      */
     public void setVideoSupport(Boolean videoSupport)
@@ -184,7 +184,7 @@ public class PeerEntryEvent extends ResponseEvent
      * <dt>"UNKNOWN"</dt>
      * <dt>"Unmonitored"</dt>
      * </dl>
-     * 
+     *
      * @return the status of this peer.
      */
     public String getStatus()
@@ -194,7 +194,7 @@ public class PeerEntryEvent extends ResponseEvent
 
     /**
      * Sets the status of this peer.
-     * 
+     *
      * @param status the status of this peer.
      */
     public void setStatus(String status)
@@ -204,7 +204,7 @@ public class PeerEntryEvent extends ResponseEvent
 
     /**
      * Available since Asterisk 1.4.
-     * 
+     *
      * @since 0.3
      */
     public String getRealtimeDevice()
@@ -214,7 +214,7 @@ public class PeerEntryEvent extends ResponseEvent
 
     /**
      * Available since Asterisk 1.4.
-     * 
+     *
      * @since 0.3
      */
     public void setRealtimeDevice(String realtimeDevice)

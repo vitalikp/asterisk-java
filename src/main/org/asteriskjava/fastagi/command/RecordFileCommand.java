@@ -27,7 +27,7 @@ package org.asteriskjava.fastagi.command;
  * end of the file. "maxSilence" is the number of seconds of maxSilence allowed
  * before the function returns despite the lack of dtmf digits or reaching
  * timeout.
- * 
+ *
  * @author srt
  * @version $Id: RecordFileCommand.java 729 2007-05-26 05:16:57Z sprior $
  */
@@ -76,7 +76,7 @@ public class RecordFileCommand extends AbstractAgiCommand
 
     /**
      * Creates a new RecordFileCommand.
-     * 
+     *
      * @param file the name of the file to stream, must not include extension.
      * @param format the format of the file to be recorded, for example "wav".
      * @param escapeDigits contains the digits that allow the user to end
@@ -98,7 +98,7 @@ public class RecordFileCommand extends AbstractAgiCommand
 
     /**
      * Creates a new RecordFileCommand.
-     * 
+     *
      * @param file the name of the file to stream, must not include extension.
      * @param format the format of the file to be recorded, for example "wav".
      * @param escapeDigits contains the digits that allow the user to end
@@ -126,7 +126,7 @@ public class RecordFileCommand extends AbstractAgiCommand
 
     /**
      * Returns the name of the file to stream.
-     * 
+     *
      * @return the name of the file to stream.
      */
     public String getFile()
@@ -136,7 +136,7 @@ public class RecordFileCommand extends AbstractAgiCommand
 
     /**
      * Sets the name of the file to stream.
-     * 
+     *
      * @param file the name of the file to stream, must not include extension.
      */
     public void setFile(String file)
@@ -146,7 +146,7 @@ public class RecordFileCommand extends AbstractAgiCommand
 
     /**
      * Returns the format of the file to be recorded, for example "wav".
-     * 
+     *
      * @return the format of the file to be recorded, for example "wav".
      */
     public String getFormat()
@@ -156,7 +156,7 @@ public class RecordFileCommand extends AbstractAgiCommand
 
     /**
      * Sets the format of the file to be recorded, for example "wav".
-     * 
+     *
      * @param format the format of the file to be recorded, for example "wav".
      */
     public void setFormat(String format)
@@ -166,7 +166,7 @@ public class RecordFileCommand extends AbstractAgiCommand
 
     /**
      * Returns the digits that allow the user to end recording.
-     * 
+     *
      * @return the digits that allow the user to end recording.
      */
     public String getEscapeDigits()
@@ -176,7 +176,7 @@ public class RecordFileCommand extends AbstractAgiCommand
 
     /**
      * Sets the digits that allow the user to end recording.
-     * 
+     *
      * @param escapeDigits the digits that allow the user to end recording or
      *            <code>null</code> for none.
      */
@@ -187,7 +187,7 @@ public class RecordFileCommand extends AbstractAgiCommand
 
     /**
      * Returns the maximum record time in milliseconds.
-     * 
+     *
      * @return the maximum record time in milliseconds.
      */
     public int getTimeout()
@@ -197,7 +197,7 @@ public class RecordFileCommand extends AbstractAgiCommand
 
     /**
      * Sets the maximum record time in milliseconds.
-     * 
+     *
      * @param timeout the maximum record time in milliseconds, or -1 for no
      *            timeout.
      */
@@ -208,7 +208,7 @@ public class RecordFileCommand extends AbstractAgiCommand
 
     /**
      * Returns the offset samples to skip.
-     * 
+     *
      * @return the offset samples to skip.
      */
     public int getOffset()
@@ -218,7 +218,7 @@ public class RecordFileCommand extends AbstractAgiCommand
 
     /**
      * Sets the offset samples to skip.
-     * 
+     *
      * @param offset the offset samples to skip.
      */
     public void setOffset(int offset)
@@ -228,7 +228,7 @@ public class RecordFileCommand extends AbstractAgiCommand
 
     /**
      * Returns <code>true</code> if a beep should be played before recording.
-     * 
+     *
      * @return <code>true</code> if a beep should be played before recording,
      *         <code>false</code> if not.
      */
@@ -239,7 +239,7 @@ public class RecordFileCommand extends AbstractAgiCommand
 
     /**
      * Set to <code>true</code> to play a beep before recording.
-     * 
+     *
      * @param beep <code>true</code> if a beep should be played before
      *            recording, <code>false</code> if not.
      */
@@ -251,7 +251,7 @@ public class RecordFileCommand extends AbstractAgiCommand
     /**
      * Returns the amount of silence (in seconds) to allow before returning
      * despite the lack of dtmf digits or reaching timeout.
-     * 
+     *
      * @return the amount of silence (in seconds) to allow before returning
      *         despite the lack of dtmf digits or reaching timeout.
      */
@@ -263,7 +263,7 @@ public class RecordFileCommand extends AbstractAgiCommand
     /**
      * Sets the amount of silence (in seconds) to allow before returning despite
      * the lack of dtmf digits or reaching timeout.
-     * 
+     *
      * @param maxSilence the amount of silence (in seconds) to allow before
      *            returning despite the lack of dtmf digits or reaching timeout.
      */

@@ -19,7 +19,7 @@ package org.asteriskjava.manager.event;
 /**
  * An ExtensionStatusEvent is triggered when the state of an extension changes.<p>
  * For this to work for you must provide appropriate hints in your dialplan to
- * map channels to extensions. 
+ * map channels to extensions.
  * <p>
  * Example:
  * <pre>exten => 1234,1,Dial(SIP/myuser)
@@ -31,7 +31,7 @@ package org.asteriskjava.manager.event;
  *
  * <p>It is implemented in <code>manager.c</code>, values for state are defined in
  * <code>include/asterisk/pbx.h</code>.
- * 
+ *
  * @author srt
  * @version $Id: ExtensionStatusEvent.java 541 2006-08-12 08:01:43Z srt $
  */
@@ -52,7 +52,7 @@ public class ExtensionStatusEvent extends ManagerEvent
     public static final int UNAVAILABLE = 1 << 2;
     /** One or more devices RINGING */
     public static final int RINGING = 1 << 3;
-    
+
     private String exten;
     private String context;
     private Integer status;
@@ -127,7 +127,7 @@ public class ExtensionStatusEvent extends ManagerEvent
      * Returns the Caller*ID in the form <code>"Some Name" &lt;1234&gt;</code>.
      * <p>
      * This property is only available on BRIstuffed Asterisk servers.
-     * 
+     *
      * @return the Caller*ID.
      * @since 0.3
      */
@@ -138,7 +138,7 @@ public class ExtensionStatusEvent extends ManagerEvent
 
     /**
      * Sets the Caller*ID.
-     * 
+     *
      * @param callerId the Caller*ID.
      * @since 0.3
      */

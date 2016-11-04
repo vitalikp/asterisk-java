@@ -18,7 +18,7 @@ package org.asteriskjava.live;
 
 /**
  * Base class for exceptions thrown by the live package.
- * 
+ *
  * @author srt
  * @version $Id: LiveException.java 458 2006-07-05 22:32:02Z srt $
  */
@@ -31,7 +31,7 @@ public class LiveException extends Exception
 
     /**
      * Creates a new instance with the given message.
-     * 
+     *
      * @param message the message
      */
     protected LiveException(String message)
@@ -41,7 +41,7 @@ public class LiveException extends Exception
 
     /**
      * Creates a new instance with the given message and cause.
-     * 
+     *
      * @param message the message
      * @param cause the cause
      */

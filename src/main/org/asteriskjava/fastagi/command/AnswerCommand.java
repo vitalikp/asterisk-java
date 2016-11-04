@@ -19,7 +19,7 @@ package org.asteriskjava.fastagi.command;
 /**
  * Answers channel if not already in answer state.<p>
  * Returns -1 on channel failure, or 0 if successful.
- * 
+ *
  * @author srt
  * @version $Id: AnswerCommand.java 729 2007-05-26 05:16:57Z sprior $
  */

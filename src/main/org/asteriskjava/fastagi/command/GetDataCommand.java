@@ -22,7 +22,7 @@ package org.asteriskjava.fastagi.command;
  * Returns the digits received from the channel at the other end.<p>
  * Input ends when the timeout is reached, the maximum number of digits is read
  * or the user presses #.
- * 
+ *
  * @author srt
  * @version $Id: GetDataCommand.java 729 2007-05-26 05:16:57Z sprior $
  */
@@ -36,7 +36,6 @@ public class GetDataCommand extends AbstractAgiCommand
     private static final int DEFAULT_MAX_DIGITS = 1024;
     private static final int DEFAULT_TIMEOUT = 0;
 
-    
     /**
      * The name of the file to stream.
      */
@@ -58,7 +57,7 @@ public class GetDataCommand extends AbstractAgiCommand
     /**
      * Creates a new GetDataCommand with default timeout and maxDigits set to
      * 1024.
-     * 
+     *
      * @param file the name of the file to stream, must not include extension.
      */
     public GetDataCommand(String file)
@@ -72,7 +71,7 @@ public class GetDataCommand extends AbstractAgiCommand
     /**
      * Creates a new GetDataCommand with the given timeout and maxDigits set to
      * 1024.
-     * 
+     *
      * @param file the name of the file to stream, must not include extension.
      * @param timeout the timeout in milliseconds to wait for data.<p>
      *            0 means standard timeout value, -1 means "ludicrous time"
@@ -88,14 +87,14 @@ public class GetDataCommand extends AbstractAgiCommand
 
     /**
      * Creates a new GetDataCommand with the given timeout and maxDigits.
-     * 
+     *
      * @param file the name of the file to stream, must not include extension.
      * @param timeout the timeout in milliseconds to wait for data.<p>
      *            0 means standard timeout value, -1 means "ludicrous time"
      *            (essentially never times out).
      * @param maxDigits the maximum number of digits to read.<p>
      *            Must be in [1..1024].
-     * 
+     *
      * @throws IllegalArgumentException if maxDigits is not in [1..1024]
      */
     public GetDataCommand(String file, long timeout, int maxDigits)
@@ -114,7 +113,7 @@ public class GetDataCommand extends AbstractAgiCommand
 
     /**
      * Returns the name of the file to stream.
-     * 
+     *
      * @return the name of the file to stream.
      */
     public String getFile()
@@ -125,7 +124,7 @@ public class GetDataCommand extends AbstractAgiCommand
     /**
      * Sets the name of the file to stream.<p>
      * This attribute is mandatory.
-     * 
+     *
      * @param file the name of the file to stream, must not include extension.
      */
     public void setFile(String file)
@@ -135,7 +134,7 @@ public class GetDataCommand extends AbstractAgiCommand
 
     /**
      * Returns the timeout to wait for data.
-     * 
+     *
      * @return the timeout in milliseconds to wait for data.
      */
     public long getTimeout()
@@ -145,7 +144,7 @@ public class GetDataCommand extends AbstractAgiCommand
 
     /**
      * Sets the timeout to wait for data.
-     * 
+     *
      * @param timeout the timeout in milliseconds to wait for data.<p>
      *            0 means standard timeout value, -1 means "ludicrous time"
      *            (essentially never times out).
@@ -157,7 +156,7 @@ public class GetDataCommand extends AbstractAgiCommand
 
     /**
      * Returns the maximum number of digits to read.
-     * 
+     *
      * @return the maximum number of digits to read.
      */
     public int getMaxDigits()
@@ -167,10 +166,10 @@ public class GetDataCommand extends AbstractAgiCommand
 
     /**
      * Sets the maximum number of digits to read.
-     * 
+     *
      * @param maxDigits the maximum number of digits to read.<p>
      *            Must be in [1..1024].
-     * 
+     *
      * @throws IllegalArgumentException if maxDigits is not in [1..1024]
      */
     public void setMaxDigits(int maxDigits) throws IllegalArgumentException

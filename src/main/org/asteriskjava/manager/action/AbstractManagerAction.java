@@ -24,7 +24,7 @@ import org.asteriskjava.util.ReflectionUtil;
 /**
  * This class implements the ManagerAction interface and can serve as base class
  * for your concrete Action implementations.
- * 
+ *
  * @author srt
  * @version $Id: AbstractManagerAction.java 729 2007-05-26 05:16:57Z sprior $
  * @since 0.2

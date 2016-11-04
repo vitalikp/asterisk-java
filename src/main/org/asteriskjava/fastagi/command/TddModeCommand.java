@@ -19,7 +19,7 @@ package org.asteriskjava.fastagi.command;
 /**
  * Enable/Disable TDD transmission/reception on a channel.<p>
  * Returns 1 if successful, or 0 if channel is not TDD-capable.
- * 
+ *
  * @author srt
  * @version $Id: TddModeCommand.java 729 2007-05-26 05:16:57Z sprior $
  */
@@ -37,7 +37,7 @@ public class TddModeCommand extends AbstractAgiCommand
 
     /**
      * Creates a new TDDModeCommand.
-     * 
+     *
      * @param mode the mode to set, this can be one of "on", "off", "mate" or
      *            "tdd".
      */
@@ -49,7 +49,7 @@ public class TddModeCommand extends AbstractAgiCommand
 
     /**
      * Returns the mode to set.
-     * 
+     *
      * @return the mode to set.
      */
     public String getMode()
@@ -59,7 +59,7 @@ public class TddModeCommand extends AbstractAgiCommand
 
     /**
      * Sets the mode to set.
-     * 
+     *
      * @param mode the mode to set, this can be one of "on", "off", "mate" or
      *            "tdd".
      */

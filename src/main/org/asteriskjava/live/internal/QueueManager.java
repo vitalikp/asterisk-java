@@ -37,7 +37,7 @@ import org.asteriskjava.util.LogFactory;
 
 /**
  * Manages queue events on behalf of an AsteriskServer.
- * 
+ *
  * @author srt
  * @version $Id: QueueManager.java 835 2007-07-08 08:39:32Z srt $
  */

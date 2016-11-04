@@ -20,7 +20,7 @@ import java.util.List;
 
 /**
  * An Asterisk ACD queue.
- * 
+ *
  * @author srt
  * @version $Id: AsteriskQueue.java 835 2007-07-08 08:39:32Z srt $
  */
@@ -29,7 +29,7 @@ public interface AsteriskQueue
     /**
      * Returns the name of this queue as defined in Asterisk's
      * <code>queues.conf</code>.
-     * 
+     *
      * @return the name of this queue.
      */
     String getName();
@@ -40,7 +40,7 @@ public interface AsteriskQueue
      * <p>
      * Corresponds to the <code>maxlen</code> option in Asterisk's
      * <code>queues.conf</code>.
-     * 
+     *
      * @return the maximum number of people allowed to wait in this queue.
      */
     Integer getMax();
@@ -66,7 +66,7 @@ public interface AsteriskQueue
     /**
      * Returns the service level (in seconds) as defined by the
      * <code>servicelevel</code> setting in <code>queues.conf</code>.
-     * 
+     *
      * @return the service level (in seconds).
      */
     Integer getServiceLevel();
@@ -79,7 +79,7 @@ public interface AsteriskQueue
      * queue's call if the member is also in the higher weight queue.
      * <p>
      * Available since Asterisk 1.2
-     * 
+     *
      * @return the weight of this queue or <code>null</code> if not supported
      *         by your version of Asterisk.
      */
@@ -87,14 +87,14 @@ public interface AsteriskQueue
 
     /**
      * Returns the list of channels currently waiting in this queue.
-     * 
+     *
      * @return the list of channels currently waiting in this queue.
      */
     List<AsteriskChannel> getEntries();
-    
+
     /**
      * Registers a new queue listener.
-     * 
+     *
      * @param listener the listener to add.
      * @since 0.3
      */
@@ -102,7 +102,7 @@ public interface AsteriskQueue
 
     /**
      * Removes a previously registered queue listener.
-     * 
+     *
      * @param listener the listener to remove.
      * @since 0.3
      */

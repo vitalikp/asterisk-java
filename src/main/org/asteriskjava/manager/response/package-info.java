@@ -17,7 +17,7 @@
 
 /**
  * Provides classes that represent the responses that are received
- * from an Asterisk server in response to an action send via the 
+ * from an Asterisk server in response to an action send via the
  * Manager API.
  */
 package org.asteriskjava.manager.response;

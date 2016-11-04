@@ -18,7 +18,7 @@ package org.asteriskjava.manager.event;
 
 /**
  * Abstract base class for several call parking related events.
- * 
+ *
  * @author srt
  * @version $Id: AbstractParkedCallEvent.java 606 2007-02-14 23:35:22Z srt $
  * @since 0.2
@@ -34,7 +34,6 @@ public abstract class AbstractParkedCallEvent extends ManagerEvent
     private String callerId;
     private String callerIdName;
     private String uniqueId;
-   
 
     /**
      * @param source
@@ -78,7 +77,7 @@ public abstract class AbstractParkedCallEvent extends ManagerEvent
 
     /**
      * Returns the Caller*ID number of the parked channel.
-     * 
+     *
      * @return the Caller*ID number of the parked channel.
      */
     public String getCallerId()
@@ -88,7 +87,7 @@ public abstract class AbstractParkedCallEvent extends ManagerEvent
 
     /**
      * Sets the Caller*ID number of the parked channel.
-     * 
+     *
      * @param callerId the Caller*ID number of the parked channel.
      */
     public void setCallerId(String callerId)
@@ -98,7 +97,7 @@ public abstract class AbstractParkedCallEvent extends ManagerEvent
 
     /**
      * Returns the Caller*ID name of the parked channel.
-     * 
+     *
      * @return the Caller*ID name of the parked channel.
      */
     public String getCallerIdName()
@@ -108,14 +107,14 @@ public abstract class AbstractParkedCallEvent extends ManagerEvent
 
     /**
      * Sets the Caller*ID name of the parked channel.
-     * 
+     *
      * @param callerIdName the Caller*ID name of the parked channel.
      */
     public void setCallerIdName(String callerIdName)
     {
         this.callerIdName = callerIdName;
     }
-    
+
     /**
      * Returns the unique id of the parked channel.
      */

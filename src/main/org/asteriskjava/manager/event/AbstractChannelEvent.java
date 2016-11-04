@@ -18,7 +18,7 @@ package org.asteriskjava.manager.event;
 
 /**
  * Abstract base class providing common properties channel related events.
- * 
+ *
  * @author srt
  * @version $Id: AbstractChannelEvent.java 610 2007-02-16 12:30:13Z srt $
  */
@@ -59,7 +59,7 @@ public abstract class AbstractChannelEvent extends ManagerEvent
 
     /**
      * Returns the name of the channel.
-     * 
+     *
      * @return the name of the channel.
      */
     public String getChannel()
@@ -69,7 +69,7 @@ public abstract class AbstractChannelEvent extends ManagerEvent
 
     /**
      * Sets the name of the channel.
-     * 
+     *
      * @param channel the name of the channel.
      */
     public void setChannel(String channel)
@@ -79,7 +79,7 @@ public abstract class AbstractChannelEvent extends ManagerEvent
 
     /**
      * Returns the unique id of the channel.
-     * 
+     *
      * @return the unique id of the channel.
      */
     public String getUniqueId()
@@ -89,7 +89,7 @@ public abstract class AbstractChannelEvent extends ManagerEvent
 
     /**
      * Sets the unique id of the channel.
-     * 
+     *
      * @param uniqueId the unique id of the channel.
      */
     public void setUniqueId(String uniqueId)
@@ -99,7 +99,7 @@ public abstract class AbstractChannelEvent extends ManagerEvent
 
     /**
      * Returns the Caller*ID of the channel if set or "&lt;unknown&gt;" if none has been set.
-     * 
+     *
      * @deprecated
      * @see #getCallerIdNum()
      */
@@ -110,7 +110,7 @@ public abstract class AbstractChannelEvent extends ManagerEvent
 
     /**
      * Sets the Caller*ID of the channel.
-     * 
+     *
      * @param callerId the Caller*ID of the channel.
      * @deprecated
      */
@@ -121,7 +121,7 @@ public abstract class AbstractChannelEvent extends ManagerEvent
 
     /**
      * Returns the Caller*ID number of the channel if set or "&lt;unknown&gt;" if none has been set.
-     * 
+     *
      * @since 0.3
      */
     public String getCallerIdNum()
@@ -131,7 +131,7 @@ public abstract class AbstractChannelEvent extends ManagerEvent
 
     /**
      * Sets the Caller*ID number of the channel.
-     * 
+     *
      * @param callerIdNum the Caller*ID number of the channel.
      * @since 0.3
      */
@@ -142,7 +142,7 @@ public abstract class AbstractChannelEvent extends ManagerEvent
 
     /**
      * Returns the Caller*ID Name of the channel if set or "&lt;unknown&gt;" if none has been set.
-     * 
+     *
      * @return the Caller*ID Name of the channel.
      */
     public String getCallerIdName()
@@ -152,7 +152,7 @@ public abstract class AbstractChannelEvent extends ManagerEvent
 
     /**
      * Sets the Caller*ID Name of the channel.
-     * 
+     *
      * @param callerIdName the Caller*ID Name of the channel.
      */
     public void setCallerIdName(String callerIdName)

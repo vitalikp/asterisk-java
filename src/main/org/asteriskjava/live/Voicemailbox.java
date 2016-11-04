@@ -20,7 +20,7 @@ import java.io.Serializable;
 
 /**
  * An Asterisk voicemailbox with status.
- * 
+ *
  * @author srt
  * @version $Id: Voicemailbox.java 837 2007-07-09 06:44:23Z srt $
  * @since 0.3
@@ -39,7 +39,7 @@ public class Voicemailbox implements Serializable
 
     /**
      * Creates a new instance.
-     * 
+     *
      * @param mailbox the name of this mailbox as defined in
      *            <code>voicemail.conf</code>.
      * @param context the context of this mailbox as defined in
@@ -57,7 +57,7 @@ public class Voicemailbox implements Serializable
     /**
      * Returns the name of this mailbox as defined in
      * <code>voicemail.conf</code>.
-     * 
+     *
      * @return the name of this mailbox as defined in
      *         <code>voicemail.conf</code>.
      */
@@ -69,7 +69,7 @@ public class Voicemailbox implements Serializable
     /**
      * Returns the context of this mailbox as defined in
      * <code>voicemail.conf</code>.
-     * 
+     *
      * @return the context of this mailbox as defined in
      *         <code>voicemail.conf</code>.
      */
@@ -81,7 +81,7 @@ public class Voicemailbox implements Serializable
     /**
      * Returns the user (usually the full name) of this mailbox as defined in
      * <code>voicemail.conf</code>.
-     * 
+     *
      * @return the user of this mailbox as defined in
      *         <code>voicemail.conf</code>.
      */
@@ -92,7 +92,7 @@ public class Voicemailbox implements Serializable
 
     /**
      * Returns the number of new messages.
-     * 
+     *
      * @return the number of new messages.
      */
     public int getNewMessages()
@@ -102,7 +102,7 @@ public class Voicemailbox implements Serializable
 
     /**
      * Sets the number of new messages.
-     * 
+     *
      * @param newMessages the number of new messages.
      */
     public void setNewMessages(int newMessages)
@@ -112,7 +112,7 @@ public class Voicemailbox implements Serializable
 
     /**
      * Returns the number of old messages.
-     * 
+     *
      * @return the number of old messages.
      */
     public int getOldMessages()
@@ -122,7 +122,7 @@ public class Voicemailbox implements Serializable
 
     /**
      * Sets the number of old messages.
-     * 
+     *
      * @param oldMessages the number of old messages.
      */
     public void setOldMessages(int oldMessages)

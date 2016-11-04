@@ -16,11 +16,10 @@
  */
 package org.asteriskjava.manager.event;
 
-
 /**
  * A NewCallerIdEvent is triggered when the caller id of a channel changes.<p>
  * It is implemented in <code>channel.c</code>
- * 
+ *
  * @author srt
  * @version $Id: NewCallerIdEvent.java 476 2006-07-14 11:45:58Z srt $
  */
@@ -47,7 +46,7 @@ public class NewCallerIdEvent extends AbstractChannelEvent
 
     /**
      * Returns the CallerId presentation/screening.
-     * 
+     *
      * @return the CallerId presentation/screening.
      * @since 0.2
      */
@@ -59,7 +58,7 @@ public class NewCallerIdEvent extends AbstractChannelEvent
     /**
      * Returns the textual representation of the CallerId
      * presentation/screening.
-     * 
+     *
      * @return the textual representation of the CallerId
      *         presentation/screening.
      * @since 0.2
@@ -71,7 +70,7 @@ public class NewCallerIdEvent extends AbstractChannelEvent
 
     /**
      * Sets the CallerId presentation/screening in the form "%d (%s)".
-     * 
+     *
      * @param s the CallerId presentation/screening in the form "%d (%s)".
      * @since 0.2
      */

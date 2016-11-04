@@ -19,8 +19,8 @@ package org.asteriskjava.live;
 /**
  * Empty implementation of the {@link org.asteriskjava.live.AsteriskServerListener}
  * interface. Use this class as a base class for your own listeners if you only want
- * to implement a subset of the methods in {@link org.asteriskjava.live.AsteriskServerListener}.  
- * 
+ * to implement a subset of the methods in {@link org.asteriskjava.live.AsteriskServerListener}.
+ *
  * @author srt
  * @version $Id: AbstractAsteriskServerListener.java 453 2006-06-25 09:07:23Z srt $
  * @since 0.3

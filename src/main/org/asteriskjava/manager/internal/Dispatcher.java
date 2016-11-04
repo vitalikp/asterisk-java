@@ -19,13 +19,12 @@ package org.asteriskjava.manager.internal;
 import org.asteriskjava.manager.event.ManagerEvent;
 import org.asteriskjava.manager.response.ManagerResponse;
 
-
 /**
  * The Dispatcher defines the interface used for communication between
  * ManagerConnection and ManagerReader.<p>
  * Do not use this interface in your code, it is intended to be used only by the
  * DefaultManagerConnection and its ManagerReader.
- * 
+ *
  * @author srt
  * @version $Id: Dispatcher.java 421 2006-05-28 15:02:14Z srt $
  */
@@ -35,7 +34,7 @@ interface Dispatcher
      * This method is called by the reader whenever a {@link ManagerResponse} is
      * received. The response is dispatched to the associated
      * {@link org.asteriskjava.manager.SendActionCallback}.
-     * 
+     *
      * @param response the response received by the reader
      * @see ManagerReader
      */
@@ -44,7 +43,7 @@ interface Dispatcher
     /**
      * This method is called by the reader whenever a ManagerEvent is received.
      * The event is dispatched to all registered ManagerEventHandlers.
-     * 
+     *
      * @param event the event received by the reader
      * @see ManagerReader
      */

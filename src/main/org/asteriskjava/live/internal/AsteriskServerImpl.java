@@ -79,7 +79,7 @@ import org.asteriskjava.util.LogFactory;
 
 /**
  * Default implementation of the {@link AsteriskServer} interface.
- * 
+ *
  * @author srt
  * @version $Id: AsteriskServerImpl.java 877 2007-07-31 15:47:01Z srt $
  */
@@ -168,7 +168,7 @@ public class AsteriskServerImpl implements AsteriskServer, ManagerEventListener
 
     /**
      * Creates a new instance.
-     * 
+     *
      * @param eventConnection the ManagerConnection to use for receiving events
      *            from Asterisk.
      */
@@ -185,7 +185,7 @@ public class AsteriskServerImpl implements AsteriskServer, ManagerEventListener
      * QueueStatusComplete event.
      * <p>
      * Default is <code>false</code>.
-     * 
+     *
      * @param skipQueues <code>true</code> to skip queue initialization,
      *            <code>false</code> to not skip.
      * @since 0.2
@@ -248,7 +248,7 @@ public class AsteriskServerImpl implements AsteriskServer, ManagerEventListener
         {
             managerEventListenerProxy = new ManagerEventListenerProxy(this);
             eventConnection.addEventListener(managerEventListenerProxy);
-        } 
+        }
         else if (!asyncEventHandling && eventListener == null)
         {
             eventListener = this;
@@ -1019,13 +1019,13 @@ public class AsteriskServerImpl implements AsteriskServer, ManagerEventListener
     }
 
     public void shutdown() {
-        
-        if (eventConnection != null && eventConnection.getState() == ManagerConnectionState.CONNECTED) 
+
+        if (eventConnection != null && eventConnection.getState() == ManagerConnectionState.CONNECTED)
         {
             eventConnection.logoff();
             eventConnection = null;
         }
-        if (managerEventListenerProxy != null) 
+        if (managerEventListenerProxy != null)
         {
             managerEventListenerProxy.shutdown();
         }

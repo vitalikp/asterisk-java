@@ -21,7 +21,7 @@ package org.asteriskjava.fastagi;
  * write custom {@link org.asteriskjava.fastagi.AgiScript}s.
  * <p>
  * Just extend it by your own script classes.
- * 
+ *
  * @since 0.2
  * @author srt
  * @version $Id: BaseAgiScript.java 601 2007-02-10 22:30:01Z srt $

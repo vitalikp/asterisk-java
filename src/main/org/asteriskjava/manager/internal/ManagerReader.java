@@ -27,7 +27,7 @@ import org.asteriskjava.util.SocketConnectionFacade;
  * associated ManagerConnection.<p>
  * Do not use this interface in your code, it is intended to be used only by the
  * DefaultManagerConnection.
- * 
+ *
  * @see org.asteriskjava.manager.internal.EventBuilder
  * @see org.asteriskjava.manager.internal.ResponseBuilder
  * @see org.asteriskjava.manager.DefaultManagerConnection
@@ -39,7 +39,7 @@ public interface ManagerReader extends Runnable
 
     /**
      * Sets the socket to use for reading from the asterisk server.
-     * 
+     *
      * @param socket the socket to use for reading from the asterisk server.
      */
     void setSocket(final SocketConnectionFacade socket);
@@ -47,7 +47,7 @@ public interface ManagerReader extends Runnable
     /**
      * Registers a new event type with the underlying EventBuilderImpl.<p>
      * The eventClass must extend ManagerEvent.
-     * 
+     *
      * @see EventBuilder
      * @see ManagerEvent
      * @param event class of the event to register.
@@ -57,10 +57,10 @@ public interface ManagerReader extends Runnable
     void die();
 
     boolean isDead();
-    
+
     /**
      * Returns the Exception that caused this reader to terminate if any.
-     * 
+     *
      * @return the Exception that caused this reader to terminate if any or <code>null</code> if not.
      */
     IOException getTerminationException();

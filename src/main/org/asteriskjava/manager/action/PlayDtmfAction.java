@@ -20,7 +20,7 @@ package org.asteriskjava.manager.action;
  * The PlayDTMFAction plays a DTMF digit on the specified channel.<p>
  * It is defined in <code>apps/app_senddtmf.c</code>.<p>
  * Available since Asterisk 1.2.8
- * 
+ *
  * @since 0.3
  * @author srt
  * @version $Id: PlayDtmfAction.java 729 2007-05-26 05:16:57Z sprior $
@@ -45,7 +45,7 @@ public class PlayDtmfAction extends AbstractManagerAction
 
     /**
      * Creates a new PlayDtmfAction that sends the given DTMF digit to the given channel.
-     * 
+     *
      * @param channel the name of the channel to send the digit to.
      * @param digit the DTML digit to play.
      */
@@ -66,7 +66,7 @@ public class PlayDtmfAction extends AbstractManagerAction
 
     /**
      * Returns the name of the channel to send the digit to.
-     * 
+     *
      * @return the name of the channel to send the digit to.
      */
     public String getChannel()
@@ -76,7 +76,7 @@ public class PlayDtmfAction extends AbstractManagerAction
 
     /**
      * Sets the name of the channel to send the digit to.
-     * 
+     *
      * @param channel the name of the channel to send the digit to.
      */
     public void setChannel(String channel)
@@ -86,7 +86,7 @@ public class PlayDtmfAction extends AbstractManagerAction
 
     /**
      * Returns the DTMF digit to play.
-     * 
+     *
      * @return the DTMF digit to play.
      */
     public String getDigit()
@@ -96,7 +96,7 @@ public class PlayDtmfAction extends AbstractManagerAction
 
     /**
      * Sets the DTMF digit to play.
-     * 
+     *
      * @param digit the DTMF digit to play.
      */
     public void setDigit(String digit)

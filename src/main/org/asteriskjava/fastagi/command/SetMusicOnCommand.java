@@ -19,7 +19,7 @@ package org.asteriskjava.fastagi.command;
 /**
  * Turns on music on hold on the current channel.<p>
  * Always returns 0.
- * 
+ *
  * @author srt
  * @version $Id: SetMusicOnCommand.java 729 2007-05-26 05:16:57Z sprior $
  */
@@ -47,7 +47,7 @@ public class SetMusicOnCommand extends AbstractAgiCommand
     /**
      * Creates a new SetMusicOnCommand playing music from the default music on
      * hold class.
-     * 
+     *
      * @param musicOnHoldClass the music on hold class to play music from.
      */
     public SetMusicOnCommand(String musicOnHoldClass)
@@ -57,7 +57,7 @@ public class SetMusicOnCommand extends AbstractAgiCommand
 
     /**
      * Returns the music on hold class to play music from.
-     * 
+     *
      * @return the music on hold class to play music from or <code>null</code>
      *         for the default class.
      */
@@ -68,7 +68,7 @@ public class SetMusicOnCommand extends AbstractAgiCommand
 
     /**
      * Sets the music on hold class to play music from.
-     * 
+     *
      * @param musicOnHoldClass the music on hold class to play music from or
      *            <code>null</code> for the default class.
      */

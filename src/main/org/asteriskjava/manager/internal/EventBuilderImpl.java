@@ -104,7 +104,7 @@ import org.asteriskjava.util.ReflectionUtil;
 
 /**
  * Default implementation of the EventBuilder interface.
- * 
+ *
  * @see org.asteriskjava.manager.event.ManagerEvent
  * @author srt
  * @version $Id: EventBuilderImpl.java 815 2007-07-01 20:30:31Z srt $
@@ -219,7 +219,7 @@ class EventBuilderImpl implements EventBuilder
 
     /**
      * Registers a new event class for the event given by eventType.
-     * 
+     *
      * @param eventType the name of the event to register the class for. For
      *            example "Join".
      * @param clazz the event class to register, must extend
@@ -378,7 +378,7 @@ class EventBuilderImpl implements EventBuilder
                 logger.error("Unable to set property '" + name + "' to '" + attributes.get(name) + "' on "
                         + event.getClass().getName() + ": no setter");
             }
-            
+
             if(setter == null) {
                 continue;
             }
@@ -422,7 +422,7 @@ class EventBuilderImpl implements EventBuilder
 
     /**
      * Strips all illegal characters from the given lower case string.
-     * 
+     *
      * @param s the original string
      * @return the string with all illegal characters stripped
      */

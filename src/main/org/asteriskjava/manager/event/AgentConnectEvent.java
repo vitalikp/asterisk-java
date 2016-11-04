@@ -20,7 +20,7 @@ package org.asteriskjava.manager.event;
  * An AgentConnectEvent is triggered when a caller is connected to an agent.<p>
  * It is implemented in <code>apps/app_queue.c</code>.<p>
  * Available since Asterisk 1.2
- * 
+ *
  * @author srt
  * @version $Id: AgentConnectEvent.java 397 2006-05-26 12:13:32Z srt $
  * @since 0.2
@@ -42,7 +42,7 @@ public class AgentConnectEvent extends AbstractAgentEvent
 
     /**
      * Returns the amount of time the caller was on hold.
-     * 
+     *
      * @return the amount of time the caller was on hold in seconds.
      */
     public Long getHoldTime()
@@ -52,7 +52,7 @@ public class AgentConnectEvent extends AbstractAgentEvent
 
     /**
      * Sets the amount of time the caller was on hold.
-     * 
+     *
      * @param holdtime the amount of time the caller was on hold in seconds.
      */
     public void setHoldTime(Long holdtime)
@@ -65,7 +65,7 @@ public class AgentConnectEvent extends AbstractAgentEvent
      * call. This is useful when trying to link recording filenames back to a
      * particular call from the queue.<p>
      * Available since Asterisk 1.4.
-     * 
+     *
      * @return the unique ID of the queue member channel that is taking the
      *         call.
      */
@@ -76,7 +76,7 @@ public class AgentConnectEvent extends AbstractAgentEvent
 
     /**
      * Sets the unique ID of the queue member channel that is taking the call.
-     * 
+     *
      * @param bridgedChannel the unique ID of the queue member channel that is
      *            taking the call.
      */
@@ -84,5 +84,4 @@ public class AgentConnectEvent extends AbstractAgentEvent
     {
         this.bridgedChannel = bridgedChannel;
     }
-
 }

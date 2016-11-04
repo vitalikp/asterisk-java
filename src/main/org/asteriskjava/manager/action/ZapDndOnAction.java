@@ -18,7 +18,7 @@ package org.asteriskjava.manager.action;
 
 /**
  * The ZapDNDOnAction switches a zap channel "Do Not Disturb" status on.
- * 
+ *
  * @author srt
  * @version $Id: ZapDndOnAction.java 729 2007-05-26 05:16:57Z sprior $
  */
@@ -41,7 +41,7 @@ public class ZapDndOnAction extends AbstractManagerAction
     /**
      * Creates a new ZapDndOnAction that enables "Do Not Disturb" status for
      * the given zap channel.
-     * 
+     *
      * @param zapChannel the number of the zap channel
      * @since 0.2
      */
@@ -49,7 +49,7 @@ public class ZapDndOnAction extends AbstractManagerAction
     {
         this.zapChannel = zapChannel;
     }
-    
+
     /**
      * Returns the name of this action, i.e. "ZapDNDOn".
      */

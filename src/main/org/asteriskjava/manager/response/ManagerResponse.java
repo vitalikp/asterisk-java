@@ -27,7 +27,7 @@ import java.util.Map;
  * The response can be linked with the action that caused it by looking the
  * action id attribute that will match the action id of the corresponding
  * action.
- * 
+ *
  * @see org.asteriskjava.manager.action.ManagerAction
  * @author srt
  * @version $Id: ManagerResponse.java 729 2007-05-26 05:16:57Z sprior $
@@ -58,8 +58,8 @@ public class ManagerResponse implements Serializable
 
     /**
      * Sets the Map with all attributes.
-     * @param attributes Map with containing the attributes with all lower 
-     * case keys. 
+     * @param attributes Map with containing the attributes with all lower
+     * case keys.
      */
     public void setAttributes(Map<String, String> attributes)
     {
@@ -68,7 +68,7 @@ public class ManagerResponse implements Serializable
 
     /**
      * Returns the value of the attribute with the given key.<p>
-     * This is particularly important when a response contains special 
+     * This is particularly important when a response contains special
      * attributes that are dependent on the action that has been sent.<p>
      * An example of this is the response to the GetVarAction.
      * It contains the value of the channel variable as an attribute
@@ -83,7 +83,7 @@ public class ManagerResponse implements Serializable
      * </pre>
      * As all attributes are internally stored in lower case the key is
      * automatically converted to lower case before lookup.
-     * 
+     *
      * @param key the key to lookup.
      * @return the value of the attribute stored under this key or
      *         <code>null</code> if there is no such attribute.
@@ -112,10 +112,10 @@ public class ManagerResponse implements Serializable
     }
 
     /**
-     * Returns the user provided action id of the ManagerAction that caused 
+     * Returns the user provided action id of the ManagerAction that caused
      * this response. If the application did not set an action id this method
      * returns <code>null</code>.
-     * 
+     *
      * @return the action id of the ManagerAction that caused this response or
      *         <code>null</code> if none was set.
      * @see org.asteriskjava.manager.action.ManagerAction#setActionId
@@ -127,7 +127,7 @@ public class ManagerResponse implements Serializable
 
     /**
      * Sets the action id of the ManagerAction that caused this response.
-     * 
+     *
      * @param actionId the action id of the ManagerAction that caused this
      *            response.
      */

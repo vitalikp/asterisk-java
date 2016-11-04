@@ -18,7 +18,7 @@ package org.asteriskjava.manager.action;
 
 /**
  * The ExtensionStateAction queries the state of an extension in a given context.
- * 
+ *
  * @author srt
  * @version $Id: ExtensionStateAction.java 729 2007-05-26 05:16:57Z sprior $
  */

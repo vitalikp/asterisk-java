@@ -21,7 +21,7 @@ package org.asteriskjava.fastagi.command;
  * Returns -1 on channel failure, 0 if no digit is received in the timeout, or
  * the numerical value of the ascii of the digit if one is received. Use -1 for
  * the timeout value if you desire the call to block indefinitely.
- * 
+ *
  * @author srt
  * @version $Id: WaitForDigitCommand.java 729 2007-05-26 05:16:57Z sprior $
  */
@@ -49,7 +49,7 @@ public class WaitForDigitCommand extends AbstractAgiCommand
 
     /**
      * Creates a new WaitForDigitCommand.
-     * 
+     *
      * @param timeout the milliseconds to wait for the channel to receive a DTMF
      *            digit.
      */
@@ -61,7 +61,7 @@ public class WaitForDigitCommand extends AbstractAgiCommand
 
     /**
      * Returns the milliseconds to wait for the channel to receive a DTMF digit.
-     * 
+     *
      * @return the milliseconds to wait for the channel to receive a DTMF digit.
      */
     public long getTimeout()
@@ -71,7 +71,7 @@ public class WaitForDigitCommand extends AbstractAgiCommand
 
     /**
      * Sets the milliseconds to wait for the channel to receive a DTMF digit.
-     * 
+     *
      * @param timeout the milliseconds to wait for the channel to receive a DTMF
      *            digit.
      */

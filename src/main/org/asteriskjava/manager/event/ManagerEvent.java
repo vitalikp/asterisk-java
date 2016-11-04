@@ -33,7 +33,7 @@ import org.asteriskjava.util.ReflectionUtil;
  * <p>
  * There is one concrete subclass of ManagerEvent per each supported Asterisk
  * Event.
- * 
+ *
  * @author srt
  * @version $Id: ManagerEvent.java 564 2006-09-26 22:54:31Z srt $
  */
@@ -93,7 +93,7 @@ public abstract class ManagerEvent extends EventObject implements Serializable
      * user. Multiple privileges are separated by comma.
      * <p>
      * Note: This property is not available from Asterisk 1.0 servers.
-     * 
+     *
      * @since 0.2
      */
     public String getPrivilege()
@@ -103,7 +103,7 @@ public abstract class ManagerEvent extends EventObject implements Serializable
 
     /**
      * Sets the AMI authorization class of this event.
-     * 
+     *
      * @since 0.2
      */
     public void setPrivilege(String privilege)
@@ -120,7 +120,7 @@ public abstract class ManagerEvent extends EventObject implements Serializable
      * In contains the time the event was generated in seconds since the epoch.
      * <p>
      * Example: 1159310429.569108
-     * 
+     *
      * @return
      * @since 0.3
      */
@@ -131,7 +131,7 @@ public abstract class ManagerEvent extends EventObject implements Serializable
 
     /**
      * Sets the timestamp for this event.
-     * 
+     *
      * @param timestamp the timestamp to set.
      * @since 0.3
      */

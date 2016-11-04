@@ -16,7 +16,7 @@
  */
 
 /**
- * Provides private implementations and helper classes for interfaces 
+ * Provides private implementations and helper classes for interfaces
  * defined in the org.asteriskjava.live package.
  */
 package org.asteriskjava.live.internal;

@@ -23,7 +23,7 @@ import org.asteriskjava.util.Log;
  * This logger is only used if neither log4j nor java.util.logging are
  * available which should not happen anyway as Asterisk-Java depends on
  * at least JDK 1.5.
- * 
+ *
  * @author srt
  * @version $Id: NullLog.java 397 2006-05-26 12:13:32Z srt $
  */

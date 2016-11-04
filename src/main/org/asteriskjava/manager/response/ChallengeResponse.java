@@ -19,10 +19,10 @@ package org.asteriskjava.manager.response;
 /**
  * Corresponds to a ChallengeAction and contains the challenge needed to log in using
  * challenge/response.
- * 
+ *
  * @see org.asteriskjava.manager.action.ChallengeAction
  * @see org.asteriskjava.manager.action.LoginAction
- * 
+ *
  * @author srt
  * @version $Id: ChallengeResponse.java 458 2006-07-05 22:32:02Z srt $
  */
@@ -37,7 +37,7 @@ public class ChallengeResponse extends ManagerResponse
 
     /**
      * Returns the challenge to use when creating the key for log in.
-     * 
+     *
      * @see org.asteriskjava.manager.action.LoginAction#key
      */
     public String getChallenge()

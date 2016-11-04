@@ -21,7 +21,7 @@ package org.asteriskjava.manager.event;
  * server.<p>
  * This event is implemented in <code>channels/chan_iax2.c</code> and
  * <code>channels/chan_sip.c</code>
- * 
+ *
  * @author srt
  * @version $Id: PeerStatusEvent.java 880 2007-08-10 01:24:36Z srt $
  */
@@ -31,7 +31,7 @@ public class PeerStatusEvent extends ManagerEvent
      * Serializable version identifier.
      */
     private static final long serialVersionUID = 8384939771592846892L;
-    
+
     public static final String STATUS_REGISTERED = "Registered";
     public static final String STATUS_UNREGISTERED = "Unregistered";
     public static final String STATUS_REACHABLE = "Reachable";

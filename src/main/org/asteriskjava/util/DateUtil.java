@@ -28,7 +28,7 @@ import java.util.TimeZone;
  * conversion.
  * <p>
  * Client code is not supposed to use this class.
- * 
+ *
  * @author srt
  * @version $Id: DateUtil.java 488 2006-07-15 11:46:52Z srt $
  */
@@ -46,7 +46,7 @@ public class DateUtil
     /**
      * If set to a non null value uses the date given as current date on calls
      * to getDate(). Set to null to restore the normal behavior.
-     * 
+     *
      * @param currentDate the date to return on calls to getDate() or
      *            <code>null</code> to return the real current date.
      */
@@ -57,7 +57,7 @@ public class DateUtil
 
     /**
      * Returns the real current date or the date set with overrideCurrentDate().
-     * 
+     *
      * @return the real current date or the date set with overrideCurrentDate().
      */
     public static Date getDate()
@@ -75,7 +75,7 @@ public class DateUtil
     /**
      * Converts a date in the form of "yy-MM-dd HH:mm:ss" to a Date object using
      * the default timezone.
-     * 
+     *
      * @param s date string in the form of "yy-MM-dd HH:mm:ss"
      * @return the corresponding Java date object
      */
@@ -87,7 +87,7 @@ public class DateUtil
     /**
      * Converts a date in the form of "yy-MM-dd HH:mm:ss" to a Date object using
      * the given timezone.
-     * 
+     *
      * @param s date string in the form of "yy-MM-dd HH:mm:ss"
      * @param tz the timezone to use
      * @return the corresponding Java date object

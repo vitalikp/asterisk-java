@@ -9,7 +9,7 @@ import org.asteriskjava.manager.action.QueueSummaryAction;
  * Available in Asterisk post-1.4.
  * <p>
  * It is implemented in <code>apps/app_queue.c</code>
- * 
+ *
  * @see QueueSummaryCompleteEvent
  * @see QueueSummaryAction
  * @author srt
@@ -35,7 +35,7 @@ public class QueueSummaryEvent extends ResponseEvent
 
     /**
      * Returns the name of queue.
-     * 
+     *
      * @return the name of queue.
      */
     public String getQueue()
@@ -45,7 +45,7 @@ public class QueueSummaryEvent extends ResponseEvent
 
     /**
      * Sets the name of queue.
-     * 
+     *
      * @param queue the name of queue.
      */
     public void setQueue(String queue)
@@ -55,7 +55,7 @@ public class QueueSummaryEvent extends ResponseEvent
 
     /**
      * Returns the number of members logged in.
-     * 
+     *
      * @return the number of members logged in.
      */
     public Integer getLoggedIn()
@@ -65,7 +65,7 @@ public class QueueSummaryEvent extends ResponseEvent
 
     /**
      * Sets the number of members logged in.
-     * 
+     *
      * @param loggedIn the number of members logged in.
      */
     public void setLoggedIn(Integer loggedIn)
@@ -77,7 +77,7 @@ public class QueueSummaryEvent extends ResponseEvent
      * Returns the number of members logged in and not in a call.
      * <p>
      * This is the number of queue members currently available for calls.
-     * 
+     *
      * @return the number of members logged in and not in a call.
      */
     public Integer getAvailable()
@@ -87,7 +87,7 @@ public class QueueSummaryEvent extends ResponseEvent
 
     /**
      * Sets the number of members logged in and not in a call.
-     * 
+     *
      * @param available the number of members logged in and not in a call.
      */
     public void setAvailable(Integer available)
@@ -97,7 +97,7 @@ public class QueueSummaryEvent extends ResponseEvent
 
     /**
      * Returns the number of callers currently waiting in the queue.
-     * 
+     *
      * @return the number of callers currently waiting in the queue.
      */
     public Integer getCallers()
@@ -107,7 +107,7 @@ public class QueueSummaryEvent extends ResponseEvent
 
     /**
      * Sets the number of callers currently waiting in the queue.
-     * 
+     *
      * @param callers the number of callers currently waiting in the queue.
      */
     public void setCallers(Integer callers)
@@ -117,7 +117,7 @@ public class QueueSummaryEvent extends ResponseEvent
 
     /**
      * Returns the average hold time for this queue.
-     * 
+     *
      * @return the average hold time for this queue.
      */
     public Integer getHoldTime()
@@ -127,7 +127,7 @@ public class QueueSummaryEvent extends ResponseEvent
 
     /**
      * Sets the average hold time for this queue.
-     * 
+     *
      * @param holdTime the average hold time for this queue.
      */
     public void setHoldTime(Integer holdTime)

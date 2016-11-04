@@ -23,7 +23,7 @@ package org.asteriskjava.manager.event;
  * <code>eventwhencalled = yes</code> in <code>queues.conf</code>.
  * <p>
  * This event is implemented in <code>apps/app_queue.c</code>
- * 
+ *
  * @author srt
  * @version $Id: AgentCalledEvent.java 567 2006-09-27 02:53:31Z srt $
  */
@@ -51,7 +51,7 @@ public class AgentCalledEvent extends ManagerEvent
 
     /**
      * Returns the member interface of the agent that has been called.
-     * 
+     *
      * @return the member interface of the agent that has been called.
      * @see QueueMemberEvent#getLocation()
      */
@@ -62,7 +62,7 @@ public class AgentCalledEvent extends ManagerEvent
 
     /**
      * Sets the member interface of the agent that has been called.
-     * 
+     *
      * @param agentCalled the member interface of the agent that has been
      *            called.
      */
@@ -74,7 +74,7 @@ public class AgentCalledEvent extends ManagerEvent
     /**
      * Returns the name of the caller's channel that is about to be handled by
      * the agent.
-     * 
+     *
      * @return the name of the caller's channel.
      */
     public String getChannelCalling()
@@ -84,7 +84,7 @@ public class AgentCalledEvent extends ManagerEvent
 
     /**
      * Sets the name of the caller's channel.
-     * 
+     *
      * @param channelCalling the name of the caller's channel.
      */
     public void setChannelCalling(String channelCalling)
@@ -94,7 +94,7 @@ public class AgentCalledEvent extends ManagerEvent
 
     /**
      * Returns the Caller ID number of the caller's channel.
-     * 
+     *
      * @return the Caller ID number of the caller's channel.
      */
     public String getCallerId()
@@ -104,7 +104,7 @@ public class AgentCalledEvent extends ManagerEvent
 
     /**
      * Sets the Caller ID number of the caller's channel.
-     * 
+     *
      * @param callerId the Caller ID number of the caller's channel.
      */
     public void setCallerId(String callerId)
@@ -114,7 +114,7 @@ public class AgentCalledEvent extends ManagerEvent
 
     /**
      * Returns the Caller ID name of the caller's channel.
-     * 
+     *
      * @return the Caller ID name of the caller's channel or "unknown" if no
      *         Caller ID name has been set.
      * @since 0.2
@@ -126,7 +126,7 @@ public class AgentCalledEvent extends ManagerEvent
 
     /**
      * Sets the Caller ID name of the caller's channel.
-     * 
+     *
      * @param callerIdName the Caller ID name of the caller's channel.
      * @since 0.2
      */

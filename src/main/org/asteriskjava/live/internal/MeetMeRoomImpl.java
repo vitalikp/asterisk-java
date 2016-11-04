@@ -33,7 +33,7 @@ class MeetMeRoomImpl extends AbstractLiveObject implements MeetMeRoom
     private static final String UNLOCK_COMMAND = "unlock";
 
     private final String roomNumber;
-    
+
     /**
      * Maps userNumber to user.
      */
@@ -74,7 +74,7 @@ class MeetMeRoomImpl extends AbstractLiveObject implements MeetMeRoom
             return new ArrayList<MeetMeUserImpl>(users.values());
         }
     }
-    
+
     void addUser(MeetMeUserImpl user)
     {
         synchronized (users)

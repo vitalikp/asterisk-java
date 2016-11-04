@@ -25,7 +25,7 @@ package org.asteriskjava.fastagi.command;
  * numerical value of the digit if one was pressed, or -1 on error or if the
  * channel was disconnected. <p>
  * Remember, the file extension must not be included in the filename.
- * 
+ *
  * @author srt
  * @version $Id: StreamFileCommand.java 729 2007-05-26 05:16:57Z sprior $
  */
@@ -53,7 +53,7 @@ public class StreamFileCommand extends AbstractAgiCommand
 
     /**
      * Creates a new StreamFileCommand, streaming from the beginning.
-     * 
+     *
      * @param file the name of the file to stream, must not include extension.
      */
     public StreamFileCommand(String file)
@@ -65,7 +65,7 @@ public class StreamFileCommand extends AbstractAgiCommand
 
     /**
      * Creates a new StreamFileCommand, streaming from the beginning.
-     * 
+     *
      * @param file the name of the file to stream, must not include extension.
      * @param escapeDigits contains the digits that allow the user to interrupt
      *            this command.
@@ -80,7 +80,7 @@ public class StreamFileCommand extends AbstractAgiCommand
 
     /**
      * Creates a new StreamFileCommand, streaming from the given offset.
-     * 
+     *
      * @param file the name of the file to stream, must not include extension.
      * @param escapeDigits contains the digits that allow the user to interrupt
      *            this command. Maybe <code>null</code> if you don't want the
@@ -97,7 +97,7 @@ public class StreamFileCommand extends AbstractAgiCommand
 
     /**
      * Returns the name of the file to stream.
-     * 
+     *
      * @return the name of the file to stream.
      */
     public String getFile()
@@ -107,7 +107,7 @@ public class StreamFileCommand extends AbstractAgiCommand
 
     /**
      * Sets the name of the file to stream.
-     * 
+     *
      * @param file the name of the file to stream, must not include extension.
      */
     public void setFile(String file)
@@ -117,7 +117,7 @@ public class StreamFileCommand extends AbstractAgiCommand
 
     /**
      * Returns the digits that allow the user to interrupt this command.
-     * 
+     *
      * @return the digits that allow the user to interrupt this command.
      */
     public String getEscapeDigits()
@@ -127,7 +127,7 @@ public class StreamFileCommand extends AbstractAgiCommand
 
     /**
      * Sets the digits that allow the user to interrupt this command.
-     * 
+     *
      * @param escapeDigits the digits that allow the user to interrupt this
      *            command or <code>null</code> for none.
      */
@@ -138,7 +138,7 @@ public class StreamFileCommand extends AbstractAgiCommand
 
     /**
      * Returns the offset samples to skip before streaming.
-     * 
+     *
      * @return the offset samples to skip before streaming.
      */
     public int getOffset()
@@ -148,7 +148,7 @@ public class StreamFileCommand extends AbstractAgiCommand
 
     /**
      * Sets the offset samples to skip before streaming.
-     * 
+     *
      * @param offset the offset samples to skip before streaming.
      */
     public void setOffset(int offset)

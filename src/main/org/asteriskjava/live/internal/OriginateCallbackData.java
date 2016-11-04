@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.asteriskjava.live.internal;
 
@@ -11,7 +11,7 @@ import org.asteriskjava.manager.action.OriginateAction;
 
 /**
  * Wrapper class for OriginateCallbacks.
- * 
+ *
  * @author srt
  * @version $Id: OriginateCallbackData.java 571 2006-09-27 21:18:36Z srt $
  */
@@ -24,7 +24,7 @@ class OriginateCallbackData
 
     /**
      * Creates a new instance.
-     * 
+     *
      * @param originateAction the action that has been sent to the Asterisk
      *            server
      * @param dateSent date when the the action has been sent

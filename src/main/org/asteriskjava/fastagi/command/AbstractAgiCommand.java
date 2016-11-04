@@ -19,9 +19,9 @@ package org.asteriskjava.fastagi.command;
 import java.io.Serializable;
 
 /**
- * Abstract base class that provides some convenience methods for 
+ * Abstract base class that provides some convenience methods for
  * implementing AgiCommand classes.
- * 
+ *
  * @author srt
  * @version $Id: AbstractAgiCommand.java 729 2007-05-26 05:16:57Z sprior $
  */
@@ -37,7 +37,7 @@ public abstract class AbstractAgiCommand implements Serializable, AgiCommand
     /**
      * Escapes and quotes a given String according to the rules set by
      * Asterisk's AGI.
-     * 
+     *
      * @param s the String to escape and quote
      * @return the transformed String
      */

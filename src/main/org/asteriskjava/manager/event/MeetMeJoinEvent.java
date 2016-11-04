@@ -20,7 +20,7 @@ package org.asteriskjava.manager.event;
  * A MeetMeJoinEvent is triggered if a channel joins a MeetMe conference.<p>
  * Channel and unqiueId properties for this event are available since Asterisk 1.0.<p>
  * It is implemented in <code>apps/app_meetme.c</code>
- * 
+ *
  * @author srt
  * @version $Id: MeetMeJoinEvent.java 405 2006-05-26 14:22:33Z srt $
  */

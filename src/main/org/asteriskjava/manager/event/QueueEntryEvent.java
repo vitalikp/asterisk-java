@@ -20,7 +20,7 @@ package org.asteriskjava.manager.event;
  * A QueueEntryEvent is triggered in response to a QueueStatusAction and
  * contains information about an entry in a queue.<p>
  * It is implemented in <code>apps/app_queue.c</code>
- * 
+ *
  * @see org.asteriskjava.manager.action.QueueStatusAction
  * @author srt
  * @version $Id: QueueEntryEvent.java 397 2006-05-26 12:13:32Z srt $
@@ -96,7 +96,7 @@ public class QueueEntryEvent extends ResponseEvent
 
     /**
      * Returns the the Caller*ID number of this entry.
-     * 
+     *
      * @return the the Caller*ID number of this entry.
      */
     public String getCallerId()
@@ -106,7 +106,7 @@ public class QueueEntryEvent extends ResponseEvent
 
     /**
      * Sets the the Caller*ID number of this entry.
-     * 
+     *
      * @param callerId the the Caller*ID number of this entry.
      */
     public void setCallerId(String callerId)
@@ -116,7 +116,7 @@ public class QueueEntryEvent extends ResponseEvent
 
     /**
      * Returns the Caller*ID name of this entry.
-     * 
+     *
      * @return the Caller*ID name of this entry.
      * @since 0.2
      */
@@ -127,7 +127,7 @@ public class QueueEntryEvent extends ResponseEvent
 
     /**
      * Sets the Caller*ID name of this entry.
-     * 
+     *
      * @param callerIdName the Caller*ID name of this entry.
      * @since 0.2
      */

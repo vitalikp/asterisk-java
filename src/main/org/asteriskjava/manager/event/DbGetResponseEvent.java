@@ -20,7 +20,7 @@ package org.asteriskjava.manager.event;
  * A DBGetResponseEvent is sent in response to a DbGetAction and contains the
  * entry that was queried.<p>
  * Available since Asterisk 1.2
- * 
+ *
  * @see org.asteriskjava.manager.action.DbGetAction
  * @author srt
  * @version $Id: DbGetResponseEvent.java 397 2006-05-26 12:13:32Z srt $
@@ -47,7 +47,7 @@ public class DbGetResponseEvent extends ResponseEvent
 
     /**
      * Returns the family of the database entry that was queried.
-     * 
+     *
      * @return the family of the database entry that was queried.
      */
     public String getFamily()
@@ -57,7 +57,7 @@ public class DbGetResponseEvent extends ResponseEvent
 
     /**
      * Sets the family of the database entry that was queried.
-     * 
+     *
      * @param family the family of the database entry that was queried.
      */
     public void setFamily(String family)
@@ -67,7 +67,7 @@ public class DbGetResponseEvent extends ResponseEvent
 
     /**
      * Returns the key of the database entry that was queried.
-     * 
+     *
      * @return the key of the database entry that was queried.
      */
     public String getKey()
@@ -77,7 +77,7 @@ public class DbGetResponseEvent extends ResponseEvent
 
     /**
      * Sets the key of the database entry that was queried.
-     * 
+     *
      * @param key the key of the database entry that was queried.
      */
     public void setKey(String key)
@@ -87,7 +87,7 @@ public class DbGetResponseEvent extends ResponseEvent
 
     /**
      * Returns the value of the database entry that was queried.
-     * 
+     *
      * @return the value of the database entry that was queried.
      */
     public String getVal()
@@ -97,7 +97,7 @@ public class DbGetResponseEvent extends ResponseEvent
 
     /**
      * Sets the value of the database entry that was queried.
-     * 
+     *
      * @param val the value of the database entry that was queried.
      */
     public void setVal(String val)

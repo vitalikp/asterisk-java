@@ -20,7 +20,7 @@ import java.io.IOException;
 
 /**
  * The AgiWriter sends commands to Asterisk.
- * 
+ *
  * @author srt
  * @version $Id: AgiWriter.java 263 2006-05-07 11:37:58Z srt $
  */
@@ -28,7 +28,7 @@ interface AgiWriter
 {
     /**
      * Sends the given command to the Asterisk server.
-     * 
+     *
      * @param command the command to send.
      * @throws IOException if the command can't be sent.
      */

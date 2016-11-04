@@ -20,7 +20,7 @@ package org.asteriskjava.manager.event;
  * A dial event is triggered whenever a phone attempts to dial someone.<p>
  * This event is implemented in <code>apps/app_dial.c</code>.<p>
  * Available since Asterisk 1.2.
- * 
+ *
  * @author Asteria Solutions Group, Inc. <http://www.asteriasgi.com/>
  * @version $Id: DialEvent.java 397 2006-05-26 12:13:32Z srt $
  * @since 0.2
@@ -33,7 +33,7 @@ public class DialEvent extends ManagerEvent
     private static final long serialVersionUID = 3258130241292417336L;
 
     private String subEvent;
-    
+
     /**
      * The name of the source channel.
      */
@@ -53,10 +53,9 @@ public class DialEvent extends ManagerEvent
      * The new Caller*ID Name.
      */
     private String callerIdName;
-    
-    
+
     private String connectedLineNum;
-    
+
     private String connectedLineName;
 
     /**
@@ -68,14 +67,14 @@ public class DialEvent extends ManagerEvent
      * The unique id of the destination channel.
      */
     private String destUniqueId;
-    
+
     private String dialStatus;
-    
+
     private String dialstring;
 
     /**
      * Creates a new DialEvent.
-     * 
+     *
      * @param source
      */
     public DialEvent(Object source)
@@ -95,7 +94,7 @@ public class DialEvent extends ManagerEvent
 
 	/**
      * Returns the name of the source channel.
-     * 
+     *
      * @return the name of the source channel.
      */
     public String getChannel()
@@ -105,7 +104,7 @@ public class DialEvent extends ManagerEvent
 
     /**
      * Sets the name of the source channel.
-     * 
+     *
      * @param channel the name of the source channel.
      */
     public void setChannel(String channel)
@@ -115,7 +114,7 @@ public class DialEvent extends ManagerEvent
 
     /**
      * Returns the name of the destination channel.
-     * 
+     *
      * @return the name of the destination channel.
      */
     public String getDestination()
@@ -125,7 +124,7 @@ public class DialEvent extends ManagerEvent
 
     /**
      * Sets the name of the destination channel.
-     * 
+     *
      * @param destination the name of the destination channel.
      */
     public void setDestination(String destination)
@@ -135,7 +134,7 @@ public class DialEvent extends ManagerEvent
 
     /**
      * Returns the Caller*ID Num.
-     * 
+     *
      * @return the Caller*ID Num or "&lt;unknown&gt;" if none has been set.
      */
     public String getCallerIdNum()
@@ -145,7 +144,7 @@ public class DialEvent extends ManagerEvent
 
     /**
      * Sets the caller*ID Num.
-     * 
+     *
      * @param callerIdNum the caller*ID Num.
      */
     public void setCallerIdNum(String callerIdNum)
@@ -155,7 +154,7 @@ public class DialEvent extends ManagerEvent
 
     /**
      * Returns the Caller*ID Name.
-     * 
+     *
      * @return the Caller*ID Name or "&lt;unknown&gt;" if none has been set.
      */
     public String getCallerIdName()
@@ -165,7 +164,7 @@ public class DialEvent extends ManagerEvent
 
     /**
      * Sets the Caller*Id Name.
-     * 
+     *
      * @param callerIdName the Caller*Id Name to set.
      */
     public void setCallerIdName(String callerIdName)
@@ -195,7 +194,7 @@ public class DialEvent extends ManagerEvent
 
 	/**
      * Returns the unique ID of the source channel.
-     * 
+     *
      * @return the unique ID of the source channel.
      */
     public String getUniqueId()
@@ -205,7 +204,7 @@ public class DialEvent extends ManagerEvent
 
     /**
      * Sets the unique ID of the source channel.
-     * 
+     *
      * @param uniqueId the unique ID of the source channel.
      */
     public void setUniqueId(String uniqueId)
@@ -215,7 +214,7 @@ public class DialEvent extends ManagerEvent
 
     /**
      * Returns the unique ID of the destination channel.
-     * 
+     *
      * @return the unique ID of the destination channel.
      */
     public String getDestUniqueId()
@@ -225,7 +224,7 @@ public class DialEvent extends ManagerEvent
 
     /**
      * Sets the unique ID of the destination channel.
-     * 
+     *
      * @param destUniqueId the unique ID of the destination channel.
      */
     public void setDestUniqueId(String destUniqueId)

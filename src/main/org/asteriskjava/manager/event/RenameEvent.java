@@ -20,7 +20,7 @@ package org.asteriskjava.manager.event;
  * A RenameEvent is triggered when the name of a channel is changed.
  * <p>
  * It is implemented in <code>channel.c</code>
- * 
+ *
  * @author srt
  * @version $Id: RenameEvent.java 590 2007-01-21 12:01:04Z srt $
  */
@@ -61,7 +61,7 @@ public class RenameEvent extends ManagerEvent
 
     /**
      * Returns the new name of the channel.
-     * 
+     *
      * @return the new name of the channel.
      */
     public final String getNewname()
@@ -71,7 +71,7 @@ public class RenameEvent extends ManagerEvent
 
     /**
      * Sets the new name of the channel.
-     * 
+     *
      * @param newname the new name of the channel.
      */
     public final void setNewname(final String newname)
@@ -81,7 +81,7 @@ public class RenameEvent extends ManagerEvent
 
     /**
      * Returns the old name of the channel.
-     * 
+     *
      * @return the old name of the channel.
      */
     public final String getOldname()
@@ -91,7 +91,7 @@ public class RenameEvent extends ManagerEvent
 
     /**
      * Sets the old name of the channel.
-     * 
+     *
      * @param oldname the old name of the channel.
      */
     public final void setOldname(final String oldname)
@@ -101,7 +101,7 @@ public class RenameEvent extends ManagerEvent
 
     /**
      * Returns the unique id of the channel.
-     * 
+     *
      * @return the unique id of the channel.
      */
     public final String getUniqueId()
@@ -111,7 +111,7 @@ public class RenameEvent extends ManagerEvent
 
     /**
      * Sets the unique id of the channel.
-     * 
+     *
      * @param uniqueId the unique id of the channel.
      */
     public final void setUniqueId(final String uniqueId)
@@ -126,7 +126,7 @@ public class RenameEvent extends ManagerEvent
      * <p>
      * The purpose of this property is unclear as the unique id is supposed to
      * never change.
-     * 
+     *
      * @return the new unique id of the channel.
      * @since 0.3
      */
@@ -142,7 +142,7 @@ public class RenameEvent extends ManagerEvent
      * <p>
      * The purpose of this property is unclear as the unique id is supposed to
      * never change.
-     * 
+     *
      * @param newUniqueId the new unique id of the channel.
      * @since 0.3
      */

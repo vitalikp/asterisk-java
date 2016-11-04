@@ -21,7 +21,7 @@ package org.asteriskjava.fastagi.command;
  * Most channels do not support the transmission of text.<p>
  * Returns 0 if text is sent, or if the channel does not support text
  * transmission. Returns -1 only on error/hangup.
- * 
+ *
  * @author srt
  * @version $Id: SendTextCommand.java 729 2007-05-26 05:16:57Z sprior $
  */
@@ -39,7 +39,7 @@ public class SendTextCommand extends AbstractAgiCommand
 
     /**
      * Creates a new SendTextCommand.
-     * 
+     *
      * @param text the text to send.
      */
     public SendTextCommand(String text)
@@ -50,7 +50,7 @@ public class SendTextCommand extends AbstractAgiCommand
 
     /**
      * Returns the text to send.
-     * 
+     *
      * @return the text to send.
      */
     public String getText()
@@ -60,7 +60,7 @@ public class SendTextCommand extends AbstractAgiCommand
 
     /**
      * Sets the text to send.
-     * 
+     *
      * @param text the text to send.
      */
     public void setText(String text)

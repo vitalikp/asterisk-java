@@ -19,7 +19,7 @@ package org.asteriskjava.manager.response;
 /**
  * Represents an "Response: Error" response received from the asterisk server.
  * The cause for the error is given in the message attribute.
- * 
+ *
  * @author srt
  * @version $Id: ManagerError.java 458 2006-07-05 22:32:02Z srt $
  */

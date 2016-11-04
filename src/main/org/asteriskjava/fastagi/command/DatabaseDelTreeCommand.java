@@ -19,7 +19,7 @@ package org.asteriskjava.fastagi.command;
 /**
  * Deletes a family or specific keytree within a family in the Asterisk database.<p>
  * Returns 1 if successful, 0 otherwise.
- * 
+ *
  * @author srt
  * @version $Id: DatabaseDelTreeCommand.java 729 2007-05-26 05:16:57Z sprior $
  */
@@ -42,7 +42,7 @@ public class DatabaseDelTreeCommand extends AbstractAgiCommand
 
     /**
      * Creates a new DatabaseDelCommand to delete a whole family.
-     * 
+     *
      * @param family the family to delete.
      */
     public DatabaseDelTreeCommand(String family)
@@ -53,7 +53,7 @@ public class DatabaseDelTreeCommand extends AbstractAgiCommand
 
     /**
      * Creates a new DatabaseDelCommand to delete a keytree within a given family.
-     * 
+     *
      * @param family the family of the keytree to delete.
      * @param keytree the keytree to delete.
      */
@@ -66,7 +66,7 @@ public class DatabaseDelTreeCommand extends AbstractAgiCommand
 
     /**
      * Returns the family of the key to delete.
-     * 
+     *
      * @return the family of the key to delete.
      */
     public String getFamily()
@@ -76,7 +76,7 @@ public class DatabaseDelTreeCommand extends AbstractAgiCommand
 
     /**
      * Sets the family of the key to delete.
-     * 
+     *
      * @param family the family of the key to delete.
      */
     public void setFamily(String family)
@@ -86,7 +86,7 @@ public class DatabaseDelTreeCommand extends AbstractAgiCommand
 
     /**
      * Returns the the keytree to delete.
-     * 
+     *
      * @return the keytree to delete.
      */
     public String getKeytree()
@@ -96,7 +96,7 @@ public class DatabaseDelTreeCommand extends AbstractAgiCommand
 
     /**
      * Sets the keytree to delete.
-     * 
+     *
      * @param keytree the keytree to delete, <code>null</code> to delete the whole family.
      */
     public void setKeytree(String keytree)

@@ -22,7 +22,7 @@ package org.asteriskjava.fastagi.command;
  * Returns 0 if playback completes without a digit being pressed, or the ASCII
  * numerical value of the digit if one was pressed or -1 on error/hangup.<p>
  * Available since Asterisk 1.2.
- * 
+ *
  * @since 0.2
  * @author srt
  * @version $Id: SayDateTimeCommand.java 729 2007-05-26 05:16:57Z sprior $
@@ -43,7 +43,7 @@ public class SayDateTimeCommand extends AbstractAgiCommand
 
     /**
      * Creates a new SayDateTimeCommand that says the given time.
-     * 
+     *
      * @param time the time to say in seconds elapsed since 00:00:00 on January
      *            1, 1970, Coordinated Universal Time (UTC)
      */
@@ -56,7 +56,7 @@ public class SayDateTimeCommand extends AbstractAgiCommand
     /**
      * Creates a new SayDateTimeCommand that says the given time and allows
      * interruption by one of the given escape digits.
-     * 
+     *
      * @param time the time to say in seconds elapsed since 00:00:00 on January
      *            1, 1970, Coordinated Universal Time (UTC)
      * @param escapeDigits the digits that allow the user to interrupt this
@@ -72,7 +72,7 @@ public class SayDateTimeCommand extends AbstractAgiCommand
     /**
      * Creates a new SayDateTimeCommand that says the given time in the given
      * format and allows interruption by one of the given escape digits.
-     * 
+     *
      * @param time the time to say in seconds elapsed since 00:00:00 on January
      *            1, 1970, Coordinated Universal Time (UTC)
      * @param escapeDigits the digits that allow the user to interrupt this
@@ -91,7 +91,7 @@ public class SayDateTimeCommand extends AbstractAgiCommand
      * Creates a new SayDateTimeCommand that says the given time in the given
      * format and timezone and allows interruption by one of the given escape
      * digits.
-     * 
+     *
      * @param time the time to say in seconds elapsed since 00:00:00 on January
      *            1, 1970, Coordinated Universal Time (UTC)
      * @param escapeDigits the digits that allow the user to interrupt this
@@ -113,7 +113,7 @@ public class SayDateTimeCommand extends AbstractAgiCommand
     /**
      * Returns the time to say in seconds elapsed since 00:00:00 on January 1,
      * 1970, Coordinated Universal Time (UTC).
-     * 
+     *
      * @return the time to say in seconds elapsed since 00:00:00 on January 1,
      *         1970, Coordinated Universal Time (UTC)
      */
@@ -126,7 +126,7 @@ public class SayDateTimeCommand extends AbstractAgiCommand
      * Returns the time to say in seconds elapsed since 00:00:00 on January 1,
      * 1970, Coordinated Universal Time (UTC).<p>
      * This property is mandatory.
-     * 
+     *
      * @param time the time to say in seconds elapsed since 00:00:00 on January
      *            1, 1970, Coordinated Universal Time (UTC)
      */
@@ -137,7 +137,7 @@ public class SayDateTimeCommand extends AbstractAgiCommand
 
     /**
      * Returns the digits that allow the user to interrupt this command.
-     * 
+     *
      * @return the digits that allow the user to interrupt this command.
      */
     public String getEscapeDigits()
@@ -147,7 +147,7 @@ public class SayDateTimeCommand extends AbstractAgiCommand
 
     /**
      * Sets the digits that allow the user to interrupt this command.
-     * 
+     *
      * @param escapeDigits the digits that allow the user to interrupt this
      *            command or <code>null</code> for none.
      */
@@ -158,7 +158,7 @@ public class SayDateTimeCommand extends AbstractAgiCommand
 
     /**
      * Returns the format the time should be said in.
-     * 
+     *
      * @return the format the time should be said in
      */
     public String getFormat()
@@ -170,7 +170,7 @@ public class SayDateTimeCommand extends AbstractAgiCommand
      * Sets the format the time should be said in.<p>
      * See <code>voicemail.conf</code>.<p>
      * Defaults to "ABdY 'digits/at' IMp".
-     * 
+     *
      * @param format the format the time should be said in
      */
     public void setFormat(String format)
@@ -180,7 +180,7 @@ public class SayDateTimeCommand extends AbstractAgiCommand
 
     /**
      * Returns the timezone to use when saying the time.
-     * 
+     *
      * @return the timezone to use when saying the time.
      */
     public String getTimezone()
@@ -193,7 +193,7 @@ public class SayDateTimeCommand extends AbstractAgiCommand
      * A list of available timezones is available in
      * <code>/usr/share/zoneinfo</code> on your Asterisk server.<p>
      * Defaults to machine default.
-     * 
+     *
      * @param timezone the timezone to use when saying the time, for example
      *            "UTC" or "Europe/Berlin".
      */

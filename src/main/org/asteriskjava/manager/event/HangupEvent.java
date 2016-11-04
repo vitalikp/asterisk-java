@@ -19,7 +19,7 @@ package org.asteriskjava.manager.event;
 /**
  * A HangupEvent is triggered when a channel is hung up.<p>
  * It is implemented in <code>channel.c</code>
- * 
+ *
  * @author srt
  * @version $Id: HangupEvent.java 476 2006-07-14 11:45:58Z srt $
  */
@@ -55,7 +55,7 @@ public class HangupEvent extends AbstractChannelStateEvent
     }
     /**
      * Returns the Caller*ID Num.
-     * 
+     *
      * @return the Caller*ID Num or "&lt;unknown&gt;" if none has been set.
      */
     public String getCallerIdNum()
@@ -65,7 +65,7 @@ public class HangupEvent extends AbstractChannelStateEvent
 
     /**
      * Sets the caller*ID Num.
-     * 
+     *
      * @param callerIdNum the caller*ID Num.
      */
     public void setCallerIdNum(String callerIdNum)
@@ -75,7 +75,7 @@ public class HangupEvent extends AbstractChannelStateEvent
 
     /**
      * Returns the Caller*ID Name.
-     * 
+     *
      * @return the Caller*ID Name or "&lt;unknown&gt;" if none has been set.
      */
     public String getCallerIdName()
@@ -85,7 +85,7 @@ public class HangupEvent extends AbstractChannelStateEvent
 
     /**
      * Sets the Caller*Id Name.
-     * 
+     *
      * @param callerIdName the Caller*Id Name to set.
      */
     public void setCallerIdName(String callerIdName)
@@ -132,7 +132,7 @@ public class HangupEvent extends AbstractChannelStateEvent
 
     /**
      * Returns the textual representation of the hangup cause.
-     * 
+     *
      * @return the textual representation of the hangup cause.
      * @since 0.2
      */
@@ -143,7 +143,7 @@ public class HangupEvent extends AbstractChannelStateEvent
 
     /**
      * Sets the textual representation of the hangup cause.
-     * 
+     *
      * @param causeTxt the textual representation of the hangup cause.
      * @since 0.2
      */

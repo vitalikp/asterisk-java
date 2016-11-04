@@ -9,7 +9,7 @@ import java.util.List;
  * See Asterisk's <code>util.c</code>.
  * <p>
  * Client code is not supposed to use this class.
- * 
+ *
  * @author srt
  * @version $Id: AstUtil.java 510 2006-07-24 10:39:40Z srt $
  */
@@ -17,7 +17,7 @@ public class AstUtil
 {
     private static final List<String> TRUE_LITERALS;
     private static final List<String> NULL_LITERALS;
-    
+
     static
     {
         TRUE_LITERALS = new ArrayList<String>(20);
@@ -28,7 +28,7 @@ public class AstUtil
         TRUE_LITERALS.add("1");
         TRUE_LITERALS.add("on");
         TRUE_LITERALS.add("Enabled");
-        
+
         NULL_LITERALS = new ArrayList<String>(20);
         NULL_LITERALS.add("<unknown>");
         NULL_LITERALS.add("unknown");
@@ -39,7 +39,7 @@ public class AstUtil
         NULL_LITERALS.add("<no name>");
         NULL_LITERALS.add("n/a"); // channel in AgentsEvent
     }
-    
+
     private AstUtil()
     {
         //hide constructor
@@ -50,13 +50,13 @@ public class AstUtil
      * according to Asterisk's logic.
      * <p>
      * The original implementation is <code>util.c</code> is as follows:
-     * 
+     *
      * <pre>
      *     int ast_true(const char *s)
      *     {
      *         if (!s || ast_strlen_zero(s))
      *             return 0;
-     *      
+     *
      *         if (!strcasecmp(s, &quot;yes&quot;) ||
      *             !strcasecmp(s, &quot;true&quot;) ||
      *             !strcasecmp(s, &quot;y&quot;) ||
@@ -64,15 +64,15 @@ public class AstUtil
      *             !strcasecmp(s, &quot;1&quot;) ||
      *             !strcasecmp(s, &quot;on&quot;))
      *             return -1;
-     *     
+     *
      *         return 0;
      *     }
      * </pre>
-     * 
+     *
      * To support the dnd property of
      * {@link org.asteriskjava.manager.event.ZapShowChannelsEvent} this method
      * also considered the string "Enabled" as true.
-     * 
+     *
      * @param s the String to check for <code>true</code>.
      * @return <code>true</code> if s represents <code>true</code>,
      *         <code>false</code> otherwise.
@@ -102,7 +102,7 @@ public class AstUtil
      * <p>
      * This resembles <code>ast_callerid_parse</code> in
      * <code>callerid.c</code> but strips any whitespace.
-     * 
+     *
      * @param s the string to parse
      * @return a String[] with name (index 0) and number (index 1)
      */
@@ -171,10 +171,10 @@ public class AstUtil
      * fdprintf(fd, "agi_callerid: %s\n", S_OR(chan-&gt;cid.cid_num, "unknown"));
      * </pre>
      * and more...
-     * 
+     *
      * @param s the string to test, may be <code>null</code>.
      * @return <code>true</code> if the s was <code>null</code> in Asterisk;
-     *         <code>false</code> otherwise. 
+     *         <code>false</code> otherwise.
      */
     public static boolean isNull(String s)
     {

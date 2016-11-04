@@ -20,9 +20,9 @@ import java.io.IOException;
 
 /**
  * Listens for incoming AGI connections, reads the inital data and builds an
- * {@link AgiRequest} that is then handed over to the appropriate 
+ * {@link AgiRequest} that is then handed over to the appropriate
  * {@link org.asteriskjava.fastagi.AgiScript} for processing.
- * 
+ *
  * @see org.asteriskjava.fastagi.AgiServerThread
  * @author srt
  * @version $Id: AgiServer.java 397 2006-05-26 12:13:32Z srt $
@@ -34,9 +34,9 @@ public interface AgiServer
      * After calling startup() this AgiServer is ready to receive requests from
      * Asterisk servers and process them.<p>
      * Note that this method will not return until the AgiServer has been shut down.
-     * If you want to run the AgiServer in the background use wrap it with an 
+     * If you want to run the AgiServer in the background use wrap it with an
      * {@link AgiServerThread}.
-     * 
+     *
      * @throws IOException if the server socket cannot be bound.
      * @throws IllegalStateException if this AgiServer is already running.
      */
@@ -44,10 +44,10 @@ public interface AgiServer
 
     /**
      * Stops this AgiServer.<p>
-     * The server socket is closed, new connections are refused and resources 
+     * The server socket is closed, new connections are refused and resources
      * are freed. Any running {@link AgiScript}s are finish before shutdown
      * completes.
-     * 
+     *
      * @throws IllegalStateException if this AgiServer is already shut down or
      *             has not yet been started.
      */

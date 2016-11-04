@@ -18,7 +18,7 @@ package org.asteriskjava.fastagi.command;
 
 /**
  * Sets the context for continuation upon exiting the application.
- * 
+ *
  * @author srt
  * @version $Id: SetContextCommand.java 729 2007-05-26 05:16:57Z sprior $
  */
@@ -36,7 +36,7 @@ public class SetContextCommand extends AbstractAgiCommand
 
     /**
      * Creates a new SetPriorityCommand.
-     * 
+     *
      * @param context the context for continuation upon exiting the application.
      */
     public SetContextCommand(String context)
@@ -47,7 +47,7 @@ public class SetContextCommand extends AbstractAgiCommand
 
     /**
      * Returns the context for continuation upon exiting the application.
-     * 
+     *
      * @return the context for continuation upon exiting the application.
      */
     public String getContext()
@@ -57,7 +57,7 @@ public class SetContextCommand extends AbstractAgiCommand
 
     /**
      * Sets the context for continuation upon exiting the application.
-     * 
+     *
      * @param context the context for continuation upon exiting the application.
      */
     public void setContext(String context)

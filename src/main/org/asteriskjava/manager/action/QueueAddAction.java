@@ -19,7 +19,7 @@ package org.asteriskjava.manager.action;
 /**
  * The QueueAddAction adds a new member to a queue.<p>
  * It is implemented in <code>apps/app_queue.c</code>
- * 
+ *
  * @author srt
  * @version $Id: QueueAddAction.java 729 2007-05-26 05:16:57Z sprior $
  */
@@ -45,7 +45,7 @@ public class QueueAddAction extends AbstractManagerAction
     /**
      * Creates a new QueueAddAction that adds a new member on the given
      * interface to the given queue.
-     * 
+     *
      * @param queue the name of the queue the new member will be added to
      * @param iface Sets the interface to add. To add a specific channel just
      *            use the channel name, e.g. "SIP/1234".
@@ -60,7 +60,7 @@ public class QueueAddAction extends AbstractManagerAction
     /**
      * Creates a new QueueAddAction that adds a new member on the given
      * interface to the given queue with the given penalty.
-     * 
+     *
      * @param queue the name of the queue the new member will be added to
      * @param iface Sets the interface to add. To add a specific channel just
      *            use the channel name, e.g. "SIP/1234".
@@ -142,7 +142,7 @@ public class QueueAddAction extends AbstractManagerAction
 
     /**
      * Returns if the queue member should be paused when added.
-     * 
+     *
      * @return Boolean.TRUE if the queue member should be paused when added.
      * @since 0.2
      */
@@ -153,7 +153,7 @@ public class QueueAddAction extends AbstractManagerAction
 
     /**
      * Sets if the queue member should be paused when added.
-     * 
+     *
      * @param paused Boolean.TRUE if the queue member should be paused when
      *            added.
      * @since 0.2

@@ -23,7 +23,7 @@ package org.asteriskjava.fastagi.command;
  * Most channels do not support the reception of text.<p>
  * Returns -1 for failure or 1 for success, and the string in parentheses.<p>
  * Available since Asterisk 1.2.
- * 
+ *
  * @since 0.2
  * @author srt
  * @version $Id: ReceiveTextCommand.java 729 2007-05-26 05:16:57Z sprior $
@@ -52,7 +52,7 @@ public class ReceiveTextCommand extends AbstractAgiCommand
 
     /**
      * Creates a new ReceiveTextCommand.
-     * 
+     *
      * @param timeout the milliseconds to wait for the channel to receive the
      *            text.
      */
@@ -64,7 +64,7 @@ public class ReceiveTextCommand extends AbstractAgiCommand
 
     /**
      * Returns the milliseconds to wait for the channel to receive the text.
-     * 
+     *
      * @return the milliseconds to wait for the channel to receive the text.
      */
     public int getTimeout()
@@ -74,7 +74,7 @@ public class ReceiveTextCommand extends AbstractAgiCommand
 
     /**
      * Sets the milliseconds to wait for the channel to receive the text.
-     * 
+     *
      * @param timeout the milliseconds to wait for the channel to receive the
      *            text.
      */

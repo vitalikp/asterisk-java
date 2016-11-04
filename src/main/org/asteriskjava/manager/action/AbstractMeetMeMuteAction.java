@@ -18,7 +18,7 @@ package org.asteriskjava.manager.action;
 
 /**
  * Abstract base class for mute and unmute actions.
- * 
+ *
  * @author srt
  * @version $Id: AbstractMeetMeMuteAction.java 462 2006-07-07 00:08:43Z srt $
  */
@@ -46,7 +46,7 @@ public abstract class AbstractMeetMeMuteAction extends AbstractManagerAction
 
     /**
      * Returns the conference number.
-     * 
+     *
      * @return the conference number.
      */
     public String getMeetMe()
@@ -57,7 +57,7 @@ public abstract class AbstractMeetMeMuteAction extends AbstractManagerAction
     /**
      * Sets the conference number.<p>
      * This property is mandatory.
-     * 
+     *
      * @param meetMe the conference number.
      */
     public void setMeetMe(String meetMe)
@@ -67,7 +67,7 @@ public abstract class AbstractMeetMeMuteAction extends AbstractManagerAction
 
     /**
      * Returns the index of the user in the conference.
-     * 
+     *
      * @return the index of the user in the conference.
      */
     public Integer getUserNum()
@@ -78,7 +78,7 @@ public abstract class AbstractMeetMeMuteAction extends AbstractManagerAction
     /**
      * Sets the index of the user in the conference.<p>
      * This property is mandatory.
-     * 
+     *
      * @param userNum the index of the user in the conference.
      */
     public void setUserNum(Integer userNum)

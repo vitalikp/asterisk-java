@@ -22,7 +22,7 @@ package org.asteriskjava.manager.action;
  * events.<p>
  * The event type that indicates that Asterisk is finished is returned by the
  * getActionCompleteEventClass() method.
- * 
+ *
  * @see org.asteriskjava.manager.event.ResponseEvent
  * @author srt
  * @version $Id: EventGeneratingAction.java 397 2006-05-26 12:13:32Z srt $
@@ -33,7 +33,7 @@ public interface EventGeneratingAction extends ManagerAction
     /**
      * Returns the event type that indicates that Asterisk is finished sending
      * response events for this action.
-     * 
+     *
      * @return a Class that is an instance of ResponseEvent.
      * @see org.asteriskjava.manager.event.ResponseEvent
      */

@@ -24,7 +24,7 @@ import org.asteriskjava.util.DaemonThreadFactory;
  * ...
  * connection.addEventListener(new ManagerEventListenerProxy(myListener));
  * </pre>
- * 
+ *
  * @author srt
  * @since 0.3
  * @version $Id: ManagerEventListenerProxy.java 599 2007-02-03 16:35:22Z srt $
@@ -46,7 +46,7 @@ public class ManagerEventListenerProxy implements ManagerEventListener
     /**
      * Creates a new ManagerEventListenerProxy that notifies the given target
      * asynchronously when new events are received.
-     * 
+     *
      * @param target the target listener to invoke.
      */
     public ManagerEventListenerProxy(ManagerEventListener target)
@@ -79,9 +79,9 @@ public class ManagerEventListenerProxy implements ManagerEventListener
             });
         }
     }
-    
+
     public void shutdown() {
-        
+
         executor.shutdown();
     }
 }

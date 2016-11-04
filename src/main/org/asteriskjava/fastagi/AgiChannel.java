@@ -20,7 +20,6 @@ import java.io.IOException;
 
 import org.asteriskjava.fastagi.reply.AgiReply;
 
-
 /**
  * Provides the functionality to send AgiCommands to Asterisk while handling an
  * AgiRequest.

@@ -29,7 +29,7 @@ package org.asteriskjava.manager.action;
  * This action corresponds the the AbsoluteTimeout command used in the dialplan.
  * <p>
  * Implemented in <code>manager.c</code>
- * 
+ *
  * @author srt
  * @version $Id: AbsoluteTimeoutAction.java 729 2007-05-26 05:16:57Z sprior $
  */
@@ -53,7 +53,7 @@ public class AbsoluteTimeoutAction extends AbstractManagerAction
 
     /**
      * Creates a new AbsoluteTimeoutAction with the given channel and timeout.
-     * 
+     *
      * @param channel the name of the channel
      * @param timeout the maximum duration of the call in seconds or 0 to cancel the AbsoluteTimeout
      * @since 0.2

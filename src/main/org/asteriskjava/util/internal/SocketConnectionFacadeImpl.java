@@ -32,7 +32,6 @@ import javax.net.ssl.SSLSocketFactory;
 
 import org.asteriskjava.util.SocketConnectionFacade;
 
-
 /**
  * Default implementation of the SocketConnectionFacade interface using java.io.
  *

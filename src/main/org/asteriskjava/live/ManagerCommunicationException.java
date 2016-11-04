@@ -16,7 +16,6 @@
  */
 package org.asteriskjava.live;
 
-
 public class ManagerCommunicationException extends LiveException
 {
     /**

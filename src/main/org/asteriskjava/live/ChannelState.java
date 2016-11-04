@@ -18,7 +18,7 @@ package org.asteriskjava.live;
 
 /**
  * The lifecycle status of an {@link org.asteriskjava.live.AsteriskChannel}.
- * 
+ *
  * @author srt
  * @version $Id: ChannelState.java 349 2006-05-22 17:47:00Z srt $
  */

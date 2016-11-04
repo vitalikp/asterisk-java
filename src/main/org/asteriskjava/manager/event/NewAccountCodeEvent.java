@@ -15,7 +15,7 @@ public class NewAccountCodeEvent extends AbstractChannelEvent
 	/**
      * Returns the account number that is usually used to identify the party to bill for the call.<p>
      * Corresponds to CDR field <code>accountcode</code>.
-     * 
+     *
      * @return the account number.
      */
     public String getAccountCode()
@@ -25,7 +25,7 @@ public class NewAccountCodeEvent extends AbstractChannelEvent
 
     /**
      * Sets the account number.
-     * 
+     *
      * @param accountCode the account number.
      */
     public void setAccountCode(String accountCode)
@@ -36,7 +36,7 @@ public class NewAccountCodeEvent extends AbstractChannelEvent
     /**
      * Returns the old account number that is usually used to identify the party to bill for the call.<p>
      * Corresponds to CDR field <code>accountcode</code>.
-     * 
+     *
      * @return the old account number.
      */
 	public String getOldAccountCode()
@@ -46,7 +46,7 @@ public class NewAccountCodeEvent extends AbstractChannelEvent
 
 	/**
      * Sets the old account number.
-     * 
+     *
      * @param oldAccountCode the old account number.
      */
 	public void setOldAccountCode(String oldAccountCode)

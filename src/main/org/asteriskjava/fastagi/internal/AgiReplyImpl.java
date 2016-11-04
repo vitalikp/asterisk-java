@@ -22,10 +22,9 @@ import java.util.regex.*;
 
 import org.asteriskjava.fastagi.reply.AgiReply;
 
-
 /**
  * Default implementation of the AgiReply interface.
- * 
+ *
  * @author srt
  * @version $Id: AgiReplyImpl.java 729 2007-05-26 05:16:57Z sprior $
  */
@@ -117,7 +116,7 @@ public class AgiReplyImpl implements Serializable, AgiReply
 
     /**
      * Returns the return code (the result as int).
-     * 
+     *
      * @return the return code or -1 if the result is not an int.
      */
     public int getResultCode()
@@ -142,7 +141,7 @@ public class AgiReplyImpl implements Serializable, AgiReply
 
     /**
      * Returns the return code as character.
-     * 
+     *
      * @return the return code as character.
      */
     public char getResultCodeAsChar()
@@ -163,7 +162,7 @@ public class AgiReplyImpl implements Serializable, AgiReply
     /**
      * Returns the result, that is the part directly following the "result="
      * string.
-     * 
+     *
      * @return the result.
      */
     public String getResult()
@@ -192,7 +191,7 @@ public class AgiReplyImpl implements Serializable, AgiReply
      * <li>510 Invalid or unknown command
      * <li>520 Invalid command syntax
      * </ul>
-     * 
+     *
      * @return the status code.
      */
     public int getStatus()
@@ -219,7 +218,7 @@ public class AgiReplyImpl implements Serializable, AgiReply
      * endpos attribute indicating the frame where the playback was stopped.
      * This can be retrieved by calling getAttribute("endpos") on the
      * corresponding reply.
-     * 
+     *
      * @param name the name of the attribute to retrieve. The name is case
      *            insensitive.
      * @return the value of the attribute or <code>null</code> if it is not
@@ -276,7 +275,7 @@ public class AgiReplyImpl implements Serializable, AgiReply
      * The meaning of this property depends on the command sent. Sometimes it
      * contains a flag like "timeout" or "hangup" or - in case of the
      * GetVariableCommand - the value of the variable.
-     * 
+     *
      * @return the text in the parenthesis or <code>null</code> if not set.
      */
     public String getExtra()
@@ -305,7 +304,7 @@ public class AgiReplyImpl implements Serializable, AgiReply
     /**
      * Returns the synopsis of the command sent if Asterisk expected a different
      * syntax (getStatus() == SC_INVALID_COMMAND_SYNTAX).
-     * 
+     *
      * @return the synopsis of the command sent, <code>null</code> if there
      *         were no syntax errors.
      */
@@ -356,7 +355,7 @@ public class AgiReplyImpl implements Serializable, AgiReply
     /**
      * Returns the usage of the command sent if Asterisk expected a different
      * syntax (getStatus() == SC_INVALID_COMMAND_SYNTAX).
-     * 
+     *
      * @return the usage of the command sent, <code>null</code> if there were
      *         no syntax errors.
      */

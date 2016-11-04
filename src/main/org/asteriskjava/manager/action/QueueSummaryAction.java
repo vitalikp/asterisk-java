@@ -37,7 +37,7 @@ public class QueueSummaryAction extends AbstractManagerAction implements EventGe
     /**
      * Creates a new QueueSummaryAction that retrieves the summary for the given
      * queue.
-     * 
+     *
      * @param queue name of the queue to retrieve the summary for.
      */
     public QueueSummaryAction(String queue)
@@ -58,7 +58,7 @@ public class QueueSummaryAction extends AbstractManagerAction implements EventGe
 
     /**
      * Returns the name of the queue to retrieve the summary for.
-     * 
+     *
      * @return the name of the queue to retrieve the summary for or
      *         <code>null</code> to retrieve the summary for all queues.
      */
@@ -69,7 +69,7 @@ public class QueueSummaryAction extends AbstractManagerAction implements EventGe
 
     /**
      * Sets the name of the queue to retrieve the summary for.
-     * 
+     *
      * @param queue the name of the queue to retrieve the summary for or
      *            <code>null</code> to retrieve the summary for all queues.
      */

@@ -19,9 +19,9 @@ package org.asteriskjava.manager.event;
 /**
  * A ZapShowChannelsEvent is triggered in response to a ZapShowChannelsAction and shows the state of
  * a zap channel.
- * 
+ *
  * @see org.asteriskjava.manager.action.ZapShowChannelsAction
- * 
+ *
  * @author srt
  * @version $Id: ZapShowChannelsEvent.java 397 2006-05-26 12:13:32Z srt $
  */
@@ -121,7 +121,7 @@ public class ZapShowChannelsEvent extends ResponseEvent
 
     /**
      * Returns whether dnd (do not disturb) is enabled for this zap channel.
-     * 
+     *
      * @return Boolean.TRUE if dnd is enabled, Boolean.FALSE if it is disabled,
      *         <code>null</code> if not set.
      * @since 0.3
@@ -133,7 +133,7 @@ public class ZapShowChannelsEvent extends ResponseEvent
 
     /**
      * Sets whether dnd (do not disturb) is enabled for this zap channel.
-     * 
+     *
      * @param dnd Boolean.TRUE if dnd is enabled, Boolean.FALSE if it is disabled.
      * @since 0.3
      */

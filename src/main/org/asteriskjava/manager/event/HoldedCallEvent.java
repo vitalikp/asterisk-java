@@ -19,7 +19,7 @@ package org.asteriskjava.manager.event;
 /**
  * A ParkedCallEvent is triggered when a channel is put on hold.<p>
  * It is implemented in <code>res/res_features.c</code>
- * 
+ *
  * @author srt
  * @version $Id: HoldedCallEvent.java 397 2006-05-26 12:13:32Z srt $
  */
@@ -105,5 +105,4 @@ public class HoldedCallEvent extends ManagerEvent
     {
         this.channel2 = channel2;
     }
-
 }

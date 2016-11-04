@@ -20,7 +20,7 @@ package org.asteriskjava.manager.event;
  * An AgentsCompleteEvent is triggered after the state of all agents has been
  * reported in response to an AgentsAction.<p>
  * Available since Asterisk 1.2
- * 
+ *
  * @see org.asteriskjava.manager.action.AgentsAction
  * @author srt
  * @version $Id: AgentsCompleteEvent.java 397 2006-05-26 12:13:32Z srt $

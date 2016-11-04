@@ -18,7 +18,7 @@ package org.asteriskjava.manager.action;
 
 /**
  * The GetConfigAction sends a GetConfig command to the asterisk server.
- * 
+ *
  * @see org.asteriskjava.manager.response.GetConfigResponse
  * @author martins
  * @since 0.3
@@ -42,7 +42,7 @@ public class GetConfigAction extends AbstractManagerAction
 
     /**
      * Creates a new GetConfigAction with the given filename.
-     * 
+     *
      * @param filename the name of the file to get.
      */
     public GetConfigAction(String filename)

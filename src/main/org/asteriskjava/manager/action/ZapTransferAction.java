@@ -18,7 +18,7 @@ package org.asteriskjava.manager.action;
 
 /**
  * The ZapTransferAction transfers a zap channel.
- * 
+ *
  * @author srt
  * @version $Id: ZapTransferAction.java 729 2007-05-26 05:16:57Z sprior $
  */

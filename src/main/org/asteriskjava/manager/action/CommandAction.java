@@ -32,9 +32,9 @@ package org.asteriskjava.manager.action;
  *     System.out.println(line);
  * }
  * </pre>
- * Where <code>c</code> is an instance of 
+ * Where <code>c</code> is an instance of
  * {@link org.asteriskjava.manager.ManagerConnection}.
- * 
+ *
  * @see org.asteriskjava.manager.response.CommandResponse
  * @author srt
  * @version $Id: CommandAction.java 729 2007-05-26 05:16:57Z sprior $
@@ -58,7 +58,7 @@ public class CommandAction extends AbstractManagerAction
 
     /**
      * Creates a new CommandAction with the given command.
-     * 
+     *
      * @param command the CLI command to execute.
      * @since 0.2
      */

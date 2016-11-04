@@ -23,7 +23,7 @@ package org.asteriskjava.manager.action;
  * overwritten.<p>
  * The SetCDRUserFieldAction is implemented in
  * <code>apps/app_setcdruserfield.c</code>
- * 
+ *
  * @author srt
  * @version $Id: SetCdrUserFieldAction.java 729 2007-05-26 05:16:57Z sprior $
  */
@@ -48,7 +48,7 @@ public class SetCdrUserFieldAction extends AbstractManagerAction
     /**
      * Creates a new SetCdrUserFieldAction that sets the user field of the call
      * detail record for the given channel to the given value.
-     * 
+     *
      * @param channel the name of the channel
      * @param userField the new value of the userfield
      * @since 0.2
@@ -62,7 +62,7 @@ public class SetCdrUserFieldAction extends AbstractManagerAction
     /**
      * Creates a new SetCDRUserFieldAction that sets the user field of the call
      * detail record for the given channel to the given value.
-     * 
+     *
      * @param channel the name of the channel
      * @param userField the new value of the userfield
      * @param append true to append the value to the cdr user field or false to

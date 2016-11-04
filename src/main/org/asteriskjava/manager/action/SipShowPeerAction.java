@@ -23,7 +23,7 @@ import org.asteriskjava.manager.event.PeerlistCompleteEvent;
  * For a PeerEntryEvent is sent by Asterisk containing the details of the peer
  * followed by a PeerlistCompleteEvent.<p>
  * Available since Asterisk 1.2
- * 
+ *
  * @see org.asteriskjava.manager.event.PeerEntryEvent
  * @see org.asteriskjava.manager.event.PeerlistCompleteEvent
  * @author srt
@@ -54,7 +54,7 @@ public class SipShowPeerAction extends AbstractManagerAction
      * <p>
      * This is just the peer name without the channel type prefix. For example
      * if your channel is called "SIP/john", the peer name is just "john".
-     * 
+     *
      * @param peer the name of the SIP peer to retrieve details for.
      * @since 0.2
      */
@@ -72,7 +72,7 @@ public class SipShowPeerAction extends AbstractManagerAction
     /**
      * Returns the name of the peer to retrieve.<p>
      * This parameter is mandatory.
-     * 
+     *
      * @return the name of the peer to retrieve without the channel type prefix.
      */
     public String getPeer()
@@ -87,7 +87,7 @@ public class SipShowPeerAction extends AbstractManagerAction
      * if your channel is called "SIP/john", the peer name is just "john".
      * <p>
      * This parameter is mandatory.
-     * 
+     *
      * @param peer the name of the peer to retrieve without the channel type prefix.
      */
     public void setPeer(String peer)

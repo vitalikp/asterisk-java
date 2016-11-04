@@ -70,7 +70,7 @@ public class ExtensionStateResponse extends ManagerResponse
     {
         this.status = status;
     }
-    
+
     @Override
    public String toString()
     {

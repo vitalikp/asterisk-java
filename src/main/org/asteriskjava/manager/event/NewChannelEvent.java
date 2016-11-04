@@ -19,7 +19,7 @@ package org.asteriskjava.manager.event;
 /**
  * A NewChannelEvent is triggered when a new channel is created.<p>
  * It is implemented in <code>channel.c</code>
- * 
+ *
  * @author srt
  * @version $Id: NewChannelEvent.java 476 2006-07-14 11:45:58Z srt $
  */
@@ -69,7 +69,7 @@ public class NewChannelEvent extends AbstractChannelStateEvent
 	/**
      * Returns the account number that is usually used to identify the party to bill for the call.<p>
      * Corresponds to CDR field <code>accountcode</code>.
-     * 
+     *
      * @return the account number.
      */
     public String getAccountCode()
@@ -79,7 +79,7 @@ public class NewChannelEvent extends AbstractChannelStateEvent
 
     /**
      * Sets the account number.
-     * 
+     *
      * @param accountCode the account number.
      */
     public void setAccountCode(String accountCode)

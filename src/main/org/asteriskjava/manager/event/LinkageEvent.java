@@ -19,7 +19,7 @@ package org.asteriskjava.manager.event;
 /**
  * Abstract base class providing common properties for LinkEvent and
  * UnlinkEvent.
- * 
+ *
  * @author srt
  * @version $Id: LinkageEvent.java 229 2006-04-16 21:04:17Z srt $
  */
@@ -111,7 +111,7 @@ public abstract class LinkageEvent extends ManagerEvent
 
     /**
      * Returns the Caller*Id number of the first channel.
-     * 
+     *
      * @return the Caller*Id number of the first channel.
      * @since 0.2
      */
@@ -122,7 +122,7 @@ public abstract class LinkageEvent extends ManagerEvent
 
     /**
      * Sets the Caller*Id number of the first channel.
-     * 
+     *
      * @param callerId1 the Caller*Id number of the first channel.
      * @since 0.2
      */
@@ -133,7 +133,7 @@ public abstract class LinkageEvent extends ManagerEvent
 
     /**
      * Returns the Caller*Id number of the second channel.
-     * 
+     *
      * @return the Caller*Id number of the second channel.
      * @since 0.2
      */
@@ -144,7 +144,7 @@ public abstract class LinkageEvent extends ManagerEvent
 
     /**
      * Sets the Caller*Id number of the second channel.
-     * 
+     *
      * @param callerId2 the Caller*Id number of the second channel.
      * @since 0.2
      */

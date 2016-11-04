@@ -18,7 +18,7 @@ package org.asteriskjava.manager.event;
 
 /**
  * Abstract base class for several queue member related events.
- * 
+ *
  * @author srt
  * @version $Id: AbstractQueueMemberEvent.java 611 2007-02-16 12:41:14Z srt $
  * @since 0.2
@@ -43,7 +43,7 @@ public abstract class AbstractQueueMemberEvent extends ManagerEvent
 
     /**
      * Returns the name of the queue.
-     * 
+     *
      * @return the name of the queue.
      */
     public String getQueue()
@@ -53,7 +53,7 @@ public abstract class AbstractQueueMemberEvent extends ManagerEvent
 
     /**
      * Sets the name of the queue.
-     * 
+     *
      * @param queue the name of the queue.
      */
     public void setQueue(String queue)
@@ -64,7 +64,7 @@ public abstract class AbstractQueueMemberEvent extends ManagerEvent
     /**
      * Returns the name of the member's interface.<p>
      * E.g. the channel name or agent group.
-     * 
+     *
      * @return the name of the member's interface.
      */
     public String getLocation()
@@ -74,7 +74,7 @@ public abstract class AbstractQueueMemberEvent extends ManagerEvent
 
     /**
      * Sets the name of the member's interface.
-     * 
+     *
      * @param member the name of the member's interface.
      */
     public void setLocation(String member)
@@ -86,7 +86,7 @@ public abstract class AbstractQueueMemberEvent extends ManagerEvent
      * Returns the name of the queue member.
      * <p>
      * Available since Asterisk 1.4
-     * 
+     *
      * @return the name of the queue member.
      * @since 0.3
      */
@@ -99,7 +99,7 @@ public abstract class AbstractQueueMemberEvent extends ManagerEvent
      * Sets the name of the queue member.
      * <p>
      * Available since Asterisk 1.4
-     * 
+     *
      * @param memberName the name of the queue member.
      * @since 0.3
      */

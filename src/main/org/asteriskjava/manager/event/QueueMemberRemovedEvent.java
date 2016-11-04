@@ -21,7 +21,7 @@ package org.asteriskjava.manager.event;
  * queue.<p>
  * It is implemented in <code>apps/app_queue.c</code>.<p>
  * Available since Asterisk 1.2
- * 
+ *
  * @author srt
  * @version $Id: QueueMemberRemovedEvent.java 397 2006-05-26 12:13:32Z srt $
  * @since 0.2

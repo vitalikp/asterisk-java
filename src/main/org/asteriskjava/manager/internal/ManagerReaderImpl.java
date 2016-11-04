@@ -29,7 +29,6 @@ import org.asteriskjava.util.SocketConnectionFacade;
 import java.io.IOException;
 import java.util.*;
 
-
 /**
  * Default implementation of the ManagerReader interface.
  *
@@ -159,7 +158,7 @@ public class ManagerReaderImpl implements ManagerReader
 
                             if (crNVPair[0].equalsIgnoreCase("ActionID"))
                             {
-                                // Remove the command response nvpair from the 
+                                // Remove the command response nvpair from the
                                 // command result array and decrement index so we
                                 // don't skip the "new" current line
                                 commandResult.remove(crIdx--);
@@ -169,14 +168,14 @@ public class ManagerReaderImpl implements ManagerReader
                             }
                             else if (crNVPair[0].equalsIgnoreCase("Privilege"))
                             {
-                                // Remove the command response nvpair from the 
+                                // Remove the command response nvpair from the
                                 // command result array and decrement index so we
                                 // don't skip the "new" current line
                                 commandResult.remove(crIdx--);
                             }
                             else
                             {
-                                // Didn't find a name:value pattern, so we're now in the 
+                                // Didn't find a name:value pattern, so we're now in the
                                 // command results.  Stop processing the nv pairs.
                                 break;
                             }

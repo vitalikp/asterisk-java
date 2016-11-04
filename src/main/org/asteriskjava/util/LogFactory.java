@@ -33,7 +33,7 @@ import org.asteriskjava.util.internal.NullLog;
  * </pre>
  * Asterisk-Java's logging abstraction layer uses log4j when available
  * and falls back to java.util.logging otherwise.
- * 
+ *
  * @author srt
  * @version $Id: LogFactory.java 397 2006-05-26 12:13:32Z srt $
  */
@@ -50,10 +50,10 @@ public final class LogFactory
      * check has not yet performed this is <code>null</code>.
      */
     private static Boolean javaLoggingAvailable = null;
-    
+
     /**
      * Returns an instance of Log suitable for logging from the given class.
-     * 
+     *
      * @param clazz the class to create the logger for.
      * @return the created logger.
      */

@@ -20,7 +20,7 @@ package org.asteriskjava.manager.event;
  * A LogChannelEvent is triggered when logging is turned on or off.<p>
  * It is implemented in <code>logger.c</code><p>
  * Available since Asterisk 1.2
- * 
+ *
  * @author srt
  * @version $Id: LogChannelEvent.java 458 2006-07-05 22:32:02Z srt $
  * @since 0.2
@@ -47,7 +47,7 @@ public class LogChannelEvent extends ManagerEvent
 
     /**
      * Returns the name of the log channel.
-     * 
+     *
      * @return the name of the log channel.
      */
     public String getChannel()
@@ -57,7 +57,7 @@ public class LogChannelEvent extends ManagerEvent
 
     /**
      * Sets the name of the log channel.
-     * 
+     *
      * @param channel the name of the log channel.
      */
     public void setChannel(String channel)
@@ -67,7 +67,7 @@ public class LogChannelEvent extends ManagerEvent
 
     /**
      * Returns if logging has been enabled or disabled.
-     * 
+     *
      * @return Boolean.TRUE if logging has been enabled, Boolean.FALSE if it has
      *         been disabled.
      */
@@ -78,7 +78,7 @@ public class LogChannelEvent extends ManagerEvent
 
     /**
      * Sets if logging has been enabled or disabled.
-     * 
+     *
      * @param enabled Boolean.TRUE if logging has been enabled, Boolean.FALSE if
      *            it has been disabled.
      */
@@ -89,7 +89,7 @@ public class LogChannelEvent extends ManagerEvent
 
     /**
      * Returns the reason code for disabling logging.
-     * 
+     *
      * @return the reason code for disabling logging.
      */
     public Integer getReason()
@@ -99,7 +99,7 @@ public class LogChannelEvent extends ManagerEvent
 
     /**
      * Returns the textual representation of the reason for disabling logging.
-     * 
+     *
      * @return the textual representation of the reason for disabling logging.
      */
     public String getReasonTxt()
@@ -109,7 +109,7 @@ public class LogChannelEvent extends ManagerEvent
 
     /**
      * Sets the reason for disabling logging.
-     * 
+     *
      * @param s the reason in the form "%d - %s".
      */
     public void setReason(String s)

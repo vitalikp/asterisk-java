@@ -21,7 +21,7 @@ package org.asteriskjava.fastagi.command;
  * the future.<p>
  * Of course it can be hangup before then as well. Setting to 0 will cause the
  * autohangup feature to be disabled on this channel.
- * 
+ *
  * @author srt
  * @version $Id: SetAutoHangupCommand.java 729 2007-05-26 05:16:57Z sprior $
  */
@@ -39,7 +39,7 @@ public class SetAutoHangupCommand extends AbstractAgiCommand
 
     /**
      * Creates a new SetAutoHangupCommand.
-     * 
+     *
      * @param time the number of seconds before this channel is automatically
      *            hung up.<p>
      *            0 disables the autohangup feature.
@@ -53,7 +53,7 @@ public class SetAutoHangupCommand extends AbstractAgiCommand
     /**
      * Returns the number of seconds before this channel is automatically hung
      * up.
-     * 
+     *
      * @return the number of seconds before this channel is automatically hung
      *         up.
      */
@@ -64,7 +64,7 @@ public class SetAutoHangupCommand extends AbstractAgiCommand
 
     /**
      * Sets the number of seconds before this channel is automatically hung up.
-     * 
+     *
      * @param time the number of seconds before this channel is automatically
      *            hung up.<p>
      *            0 disables the autohangup feature.

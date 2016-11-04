@@ -23,7 +23,7 @@ package org.asteriskjava.fastagi.command;
  * Coordinated Universal Time (UTC).<p>
  * Returns 0 if playback completes without a digit being pressed, or the ASCII
  * numerical value of the digit if one was pressed or -1 on error/hangup.
- * 
+ *
  * @author srt
  * @version $Id: SayTimeCommand.java 729 2007-05-26 05:16:57Z sprior $
  */
@@ -46,7 +46,7 @@ public class SayTimeCommand extends AbstractAgiCommand
 
     /**
      * Creates a new SayTimeCommand.
-     * 
+     *
      * @param time the time to say in seconds since 00:00:00 on January 1, 1970.
      */
     public SayTimeCommand(long time)
@@ -57,7 +57,7 @@ public class SayTimeCommand extends AbstractAgiCommand
 
     /**
      * Creates a new SayTimeCommand.
-     * 
+     *
      * @param time the time to say in seconds since 00:00:00 on January 1, 1970.
      * @param escapeDigits contains the digits that allow the user to interrupt
      *            this command.
@@ -71,7 +71,7 @@ public class SayTimeCommand extends AbstractAgiCommand
 
     /**
      * Returns the time to say in seconds since 00:00:00 on January 1, 1970.
-     * 
+     *
      * @return the time to say in seconds since 00:00:00 on January 1, 1970.
      */
     public long getTime()
@@ -81,7 +81,7 @@ public class SayTimeCommand extends AbstractAgiCommand
 
     /**
      * Sets the time to say in seconds since 00:00:00 on January 1, 1970.
-     * 
+     *
      * @param time the time to say in seconds since 00:00:00 on January 1, 1970.
      */
     public void setTime(long time)
@@ -91,7 +91,7 @@ public class SayTimeCommand extends AbstractAgiCommand
 
     /**
      * Returns the digits that allow the user to interrupt this command.
-     * 
+     *
      * @return the digits that allow the user to interrupt this command.
      */
     public String getEscapeDigits()
@@ -101,7 +101,7 @@ public class SayTimeCommand extends AbstractAgiCommand
 
     /**
      * Sets the digits that allow the user to interrupt this command.
-     * 
+     *
      * @param escapeDigits the time that allow the user to interrupt this
      *            command or <code>null</code> for none.
      */

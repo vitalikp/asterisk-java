@@ -35,7 +35,7 @@ import java.util.HashMap;
  * Cat-XXXXXX: Category to operate on Var-XXXXXX: Variable to work on
  * Value-XXXXXX: Value to work on Match-XXXXXX: Extra match required to match
  * line
- * 
+ *
  * @see org.asteriskjava.manager.response.GetConfigResponse
  * @see org.asteriskjava.manager.action.UpdateConfigAction#addCommand
  * @author martins
@@ -77,7 +77,7 @@ public class UpdateConfigAction extends AbstractManagerAction
 
     /**
      * Creates a new UpdateConfigAction with the given parameters.
-     * 
+     *
      * @param srcFilename the name of the file to get.
      */
     public UpdateConfigAction(String srcFilename, String dstFilename, boolean reload)
@@ -95,7 +95,7 @@ public class UpdateConfigAction extends AbstractManagerAction
      * sections, provide a null value to this method. The command index will be
      * incremented even if you supply a null for all parameters, though the map
      * will be unaffected.
-     * 
+     *
      * @param action Action to Take
      *            (NewCat,RenameCat,DelCat,Update,Delete,Append), see static
      *            fields
@@ -190,7 +190,7 @@ public class UpdateConfigAction extends AbstractManagerAction
     /**
      * Sets the reload behavior of this action, or sets a specific module to be
      * reloaded
-     * 
+     *
      * @param reload the reload parameter to set
      * @see org.asteriskjava.manager.action.UpdateConfigAction#setReload(boolean)
      */
@@ -202,7 +202,7 @@ public class UpdateConfigAction extends AbstractManagerAction
     /**
      * Sets the reload behavior of this action. If you don't know what string to
      * feed Asterisk, this method will provide the appropriate one.
-     * 
+     *
      * @param reload the reload parameter to set
      * @see org.asteriskjava.manager.action.UpdateConfigAction#setReload(String)
      */
@@ -217,7 +217,7 @@ public class UpdateConfigAction extends AbstractManagerAction
      * contain the values for those keys. This method will typically only be
      * used by the ActionBuilder to generate the actual strings to be sent to
      * the manager interface.
-     * 
+     *
      * @see org.asteriskjava.manager.action.UpdateConfigAction#addCommand
      * @return a Map of the actions that should be taken
      */
@@ -231,7 +231,7 @@ public class UpdateConfigAction extends AbstractManagerAction
      * key,value pairs that you would like to send for this command. Setting
      * your own map will reset the command index to the number of keys in the
      * Map
-     * 
+     *
      * @see org.asteriskjava.manager.action.UpdateConfigAction#addCommand
      * @param actions the actions to set
      */
@@ -240,5 +240,4 @@ public class UpdateConfigAction extends AbstractManagerAction
         this.actions = actions;
         this.actionCounter = actions.keySet().size();
     }
-
 }

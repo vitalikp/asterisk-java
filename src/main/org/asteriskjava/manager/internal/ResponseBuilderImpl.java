@@ -27,10 +27,9 @@ import org.asteriskjava.manager.response.MailboxStatusResponse;
 import org.asteriskjava.manager.response.ManagerError;
 import org.asteriskjava.manager.response.ManagerResponse;
 
-
 /**
  * Default implementation of the ResponseBuilder interface.
- * 
+ *
  * @see org.asteriskjava.manager.response.ManagerResponse
  * @author srt
  * @version $Id: ResponseBuilderImpl.java 614 2007-03-18 23:42:10Z srt $
@@ -39,7 +38,7 @@ class ResponseBuilderImpl implements ResponseBuilder
 {
     /**
      * Constructs an instance of ManagerResponse based on a map of attributes.
-     * 
+     *
      * @param attributes the attributes and their values. The keys of this map must be all lower
      * case.
      * @return the response with the given attributes.
@@ -49,7 +48,7 @@ class ResponseBuilderImpl implements ResponseBuilder
         ManagerResponse response;
         String responseType;
         String proxyResponseType;
-        
+
         responseType = attributes.get("response");
         proxyResponseType = attributes.get("proxyresponse");
 
@@ -68,7 +67,7 @@ class ResponseBuilderImpl implements ResponseBuilder
         {
             final MailboxStatusResponse mailboxStatusResponse = new MailboxStatusResponse();
             mailboxStatusResponse.setMailbox((String) attributes.get("mailbox"));
-            
+
             if ("1".equals((String) attributes.get("waiting")))
             {
                 mailboxStatusResponse.setWaiting(Boolean.TRUE);
@@ -77,7 +76,7 @@ class ResponseBuilderImpl implements ResponseBuilder
             {
                 mailboxStatusResponse.setWaiting(Boolean.FALSE);
             }
-            
+
             response = mailboxStatusResponse;
         }
         else if (attributes.containsKey("mailbox") && attributes.containsKey("newmessages")

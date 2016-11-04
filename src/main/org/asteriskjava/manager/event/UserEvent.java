@@ -24,25 +24,25 @@ package org.asteriskjava.manager.event;
  * To add your own user events you must subclass this class and name it corresponding to your event.
  * If you plan to send an event by <code>UserEvent(VIPCall)</code> you will create a new class
  * called VIPCallEvent that extends UserEvent. The name of this class is important: Just use the
- * name of the event you will send (VIPCall in this example) and append "Event".<p> 
- * To pass additional data create appropriate attributes with getter and setter methods in your 
+ * name of the event you will send (VIPCall in this example) and append "Event".<p>
+ * To pass additional data create appropriate attributes with getter and setter methods in your
  * new class.<p>
  * Example:
  * <pre>
  * public class VIPCallEvent extends UserEvent
  * {
  *   private String firstName;
- * 
+ *
  *   public VIPCallEvent(Object source)
  *   {
  *     super(source);
  *   }
- *   
+ *
  *   public String getFirstName()
  *   {
  *     return firstName;
  *   }
- *   
+ *
  *   public void setFirstName(String firstName)
  *   {
  *     this.firstName = firstName;
@@ -55,9 +55,9 @@ package org.asteriskjava.manager.event;
  * The UserEvent is implemented in <code>apps/app_userevent.c</code>.<p>
  * Note that you must register your UserEvent with the ManagerConnection you are using in order
  * to be recognized.
- * 
+ *
  * @see org.asteriskjava.manager.ManagerConnection#registerUserEventClass(Class)
- * 
+ *
  * @author srt
  * @version $Id: UserEvent.java 397 2006-05-26 12:13:32Z srt $
  */
@@ -85,7 +85,7 @@ public abstract class UserEvent extends ManagerEvent
 
     /**
      * Returns the name of the channel this event occurred in.
-     * 
+     *
      * @return the name of the channel this event occurred in.
      */
     public String getChannel()
@@ -95,7 +95,7 @@ public abstract class UserEvent extends ManagerEvent
 
     /**
      * Sets the name of the channel this event occurred in.
-     * 
+     *
      * @param channel the name of the channel this event occurred in.
      */
     public void setChannel(String channel)
@@ -105,7 +105,7 @@ public abstract class UserEvent extends ManagerEvent
 
     /**
      * Returns the unique id of the channel this event occurred in.
-     * 
+     *
      * @return the unique id of the channel this event occurred in.
      */
     public String getUniqueId()
@@ -115,7 +115,7 @@ public abstract class UserEvent extends ManagerEvent
 
     /**
      * Sets the unique id of the channel this event occurred in.
-     * 
+     *
      * @param uniqueId the unique id of the channel this event occurred in.
      */
     public void setUniqueId(String uniqueId)

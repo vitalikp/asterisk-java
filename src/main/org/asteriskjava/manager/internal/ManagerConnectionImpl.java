@@ -190,8 +190,8 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
 
     /**
      * Contains the registered handlers that process the ManagerResponses.
-     * <p/>
-     * Key is the internalActionId of the Action sent and value the
+     *
+     * <p>Key is the internalActionId of the Action sent and value the
      * corresponding ResponseListener.
      */
     private final Map<String, SendActionCallback> responseListeners;
@@ -199,8 +199,8 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
     /**
      * Contains the event handlers that handle ResponseEvents for the
      * sendEventGeneratingAction methods.
-     * <p/>
-     * Key is the internalActionId of the Action sent and value the
+     *
+     * <p>Key is the internalActionId of the Action sent and value the
      * corresponding EventHandler.
      */
     private final Map<String, ManagerEventListener> responseEventListeners;
@@ -1140,15 +1140,15 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
 
     /**
      * Reconnects to the asterisk server when the connection is lost.
-     * <p/>
-     * While keepAlive is <code>true</code> we will try to reconnect.
+     *
+     * <p>While keepAlive is <code>true</code> we will try to reconnect.
      * Reconnection attempts will be stopped when the {@link #logoff()} method
      * is called or when the login after a successful reconnect results in an
      * {@link AuthenticationFailedException} suggesting that the manager
      * credentials have changed and keepAliveAfterAuthenticationFailure is not
      * set.
-     * <p/>
-     * This method is called when a {@link DisconnectEvent} is received from the
+     *
+     * <p>This method is called when a {@link DisconnectEvent} is received from the
      * reader.
      */
     private void reconnect()

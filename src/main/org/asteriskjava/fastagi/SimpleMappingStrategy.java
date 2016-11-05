@@ -53,7 +53,7 @@ import java.util.Map;
  * &lt;beans&gt;
  * </pre>
  *
- * LeastCostDialAgiScript and HelloAgiScript must both implement the AgiScript.<p>
+ * LeastCostDialAgiScript and HelloAgiScript must both implement the AgiScript.
  *
  * @author srt
  * @version $Id: SimpleMappingStrategy.java 397 2006-05-26 12:13:32Z srt $

@@ -43,7 +43,7 @@ public class QueueMemberPausedEvent extends AbstractQueueMemberEvent
     }
 
     /**
-     * Returns if this queue member is paused (not accepting calls).<p>
+     * Returns if this queue member is paused (not accepting calls).
      *
      * @return <code>Boolean.TRUE</code> if this member has been paused or
      *         <code>Boolean.FALSE</code> if not.

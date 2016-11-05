@@ -29,7 +29,7 @@ public interface AgiCommand
 {
 
     /**
-     * Returns a string suitable to be sent to asterisk.<p>
+     * Returns a string suitable to be sent to asterisk.
      *
      * @return a string suitable to be sent to asterisk.
      */

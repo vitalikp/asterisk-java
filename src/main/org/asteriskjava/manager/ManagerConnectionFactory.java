@@ -39,7 +39,7 @@ package org.asteriskjava.manager;
  * connection.logoff();
  * </pre>
  * If want you can use the factory to create multiple connections to the same
- * server by calling {@link #createManagerConnection()} multiple times.<p>
+ * server by calling {@link #createManagerConnection()} multiple times.
  *
  * @see org.asteriskjava.manager.ManagerConnection
  * @author srt

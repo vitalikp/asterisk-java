@@ -90,7 +90,7 @@ public class ChannelStatusCommand extends AbstractAgiCommand
     }
 
     @Override
-   public String buildCommand()
+    public String buildCommand()
     {
         return "CHANNEL STATUS"
                 + (channel == null ? "" : " " + escapeAndQuote(channel));

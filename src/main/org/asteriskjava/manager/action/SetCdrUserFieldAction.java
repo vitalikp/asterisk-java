@@ -83,7 +83,7 @@ public class SetCdrUserFieldAction extends AbstractManagerAction
      * Returns the name of the action, i.e. "SetCDRUserField".
      */
     @Override
-   public String getAction()
+    public String getAction()
     {
         return "SetCDRUserField";
     }

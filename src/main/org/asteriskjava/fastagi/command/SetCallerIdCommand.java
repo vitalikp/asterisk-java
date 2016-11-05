@@ -66,7 +66,7 @@ public class SetCallerIdCommand extends AbstractAgiCommand
     }
 
     @Override
-   public String buildCommand()
+    public String buildCommand()
     {
         return "SET CALLERID " + escapeAndQuote(callerId);
     }

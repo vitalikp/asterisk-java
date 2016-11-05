@@ -71,7 +71,7 @@ public class SendTextCommand extends AbstractAgiCommand
     }
 
     @Override
-   public String buildCommand()
+    public String buildCommand()
     {
         return "SEND TEXT " + escapeAndQuote(text);
     }

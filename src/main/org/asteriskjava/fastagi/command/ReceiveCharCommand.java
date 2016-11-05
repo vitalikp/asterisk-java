@@ -86,7 +86,7 @@ public class ReceiveCharCommand extends AbstractAgiCommand
     }
 
     @Override
-   public String buildCommand()
+    public String buildCommand()
     {
         return "RECEIVE CHAR " + timeout;
     }

@@ -110,7 +110,7 @@ public class SayNumberCommand extends AbstractAgiCommand
     }
 
     @Override
-   public String buildCommand()
+    public String buildCommand()
     {
         return "SAY NUMBER " + escapeAndQuote(number) + " "
                 + escapeAndQuote(escapeDigits);

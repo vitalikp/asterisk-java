@@ -36,7 +36,7 @@ public class ExtensionStateAction extends AbstractManagerAction
      * Returns the name of this action, i.e. "ExtensionState".
      */
     @Override
-   public String getAction()
+    public String getAction()
     {
         return "ExtensionState";
     }

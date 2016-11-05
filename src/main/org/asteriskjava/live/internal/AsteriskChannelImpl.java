@@ -722,7 +722,7 @@ class AsteriskChannelImpl extends AbstractLiveObject implements AsteriskChannel
     }
 
     @Override
-   public String toString()
+    public String toString()
     {
         final StringBuffer sb;
         final AsteriskChannel dialedChannel;

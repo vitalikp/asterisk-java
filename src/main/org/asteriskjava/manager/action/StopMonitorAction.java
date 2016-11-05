@@ -62,7 +62,7 @@ public class StopMonitorAction extends AbstractManagerAction
      * @return the name of this action.
      */
     @Override
-   public String getAction()
+    public String getAction()
     {
         return "StopMonitor";
     }

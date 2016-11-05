@@ -51,7 +51,7 @@ public abstract class AbstractManagerAction implements ManagerAction
     }
 
     @Override
-   public String toString()
+    public String toString()
     {
         StringBuffer sb;
         Map<String, Method> getters;

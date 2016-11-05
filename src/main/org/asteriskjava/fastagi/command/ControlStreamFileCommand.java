@@ -258,7 +258,7 @@ public class ControlStreamFileCommand extends AbstractAgiCommand
     }
 
     @Override
-   public String buildCommand()
+    public String buildCommand()
     {
         StringBuffer sb;
 

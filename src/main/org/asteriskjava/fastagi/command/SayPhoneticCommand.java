@@ -110,7 +110,7 @@ public class SayPhoneticCommand extends AbstractAgiCommand
     }
 
     @Override
-   public String buildCommand()
+    public String buildCommand()
     {
         return "SAY PHONETIC " + escapeAndQuote(text) + " "
                 + escapeAndQuote(escapeDigits);

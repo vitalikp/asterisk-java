@@ -154,7 +154,7 @@ class MeetMeUserImpl extends AbstractLiveObject implements MeetMeUser
     }
 
     @Override
-   public String toString()
+    public String toString()
     {
         StringBuffer sb;
         int systemHashcode;

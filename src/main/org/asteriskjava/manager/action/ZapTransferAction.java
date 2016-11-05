@@ -34,7 +34,7 @@ public class ZapTransferAction extends AbstractManagerAction
      * Returns the name of this action, i.e. "ZapTransfer".
      */
     @Override
-   public String getAction()
+    public String getAction()
     {
         return "ZapTransfer";
     }

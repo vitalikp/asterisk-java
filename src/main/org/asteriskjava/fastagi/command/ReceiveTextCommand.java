@@ -88,7 +88,7 @@ public class ReceiveTextCommand extends AbstractAgiCommand
     }
 
     @Override
-   public String buildCommand()
+    public String buildCommand()
     {
         return "RECEIVE TEXT " + timeout;
     }

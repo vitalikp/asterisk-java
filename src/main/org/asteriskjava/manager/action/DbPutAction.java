@@ -61,7 +61,7 @@ public class DbPutAction extends AbstractManagerAction
     }
 
     @Override
-   public String getAction()
+    public String getAction()
     {
         return "DBPut";
     }

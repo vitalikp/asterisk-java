@@ -65,7 +65,7 @@ public class DbGetAction extends AbstractManagerAction
     }
 
     @Override
-   public String getAction()
+    public String getAction()
     {
         return "DBGet";
     }

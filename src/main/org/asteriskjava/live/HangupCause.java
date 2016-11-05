@@ -130,7 +130,7 @@ public enum HangupCause
     }
 
     @Override
-   public String toString()
+    public String toString()
     {
         if (name().startsWith("AST_CAUSE_"))
         {

@@ -606,7 +606,7 @@ public class AgiRequestImpl implements Serializable, AgiRequest
     }
 
     @Override
-   public String toString()
+    public String toString()
     {
         StringBuffer sb;
 

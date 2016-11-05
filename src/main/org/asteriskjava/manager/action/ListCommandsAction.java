@@ -44,7 +44,7 @@ public class ListCommandsAction extends AbstractManagerAction
      * Returns the name of this action, i.e. "ListCommands".
      */
     @Override
-   public String getAction()
+    public String getAction()
     {
         return "ListCommands";
     }

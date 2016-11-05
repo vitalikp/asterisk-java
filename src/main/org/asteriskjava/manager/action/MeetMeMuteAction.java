@@ -56,7 +56,7 @@ public class MeetMeMuteAction extends AbstractMeetMeMuteAction
      * Returns the name of this action, i.e. "MeetMeMute".
      */
     @Override
-   public String getAction()
+    public String getAction()
     {
         return "MeetMeMute";
     }

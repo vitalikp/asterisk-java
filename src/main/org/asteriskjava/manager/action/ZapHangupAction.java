@@ -53,7 +53,7 @@ public class ZapHangupAction extends AbstractManagerAction
      * Returns the name of this action, i.e. "ZapHangup".
      */
     @Override
-   public String getAction()
+    public String getAction()
     {
         return "ZapHangup";
     }

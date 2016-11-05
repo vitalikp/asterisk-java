@@ -105,7 +105,7 @@ public class PingThread extends Thread
     }
 
     @Override
-   public void run()
+    public void run()
     {
         while (!die)
         {

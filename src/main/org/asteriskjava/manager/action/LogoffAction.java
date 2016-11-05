@@ -41,7 +41,7 @@ public class LogoffAction extends AbstractManagerAction
      * Returns the name of this action, i.e. "Logoff".
      */
     @Override
-   public String getAction()
+    public String getAction()
     {
         return "Logoff";
     }

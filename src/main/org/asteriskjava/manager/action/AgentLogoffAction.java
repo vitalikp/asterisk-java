@@ -71,7 +71,7 @@ public class AgentLogoffAction extends AbstractManagerAction
      * @return the name of this action
      */
     @Override
-   public String getAction()
+    public String getAction()
     {
         return "AgentLogoff";
     }

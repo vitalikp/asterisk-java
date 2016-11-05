@@ -56,7 +56,7 @@ public class MeetMeUnmuteAction extends AbstractMeetMeMuteAction
      * Returns the name of this action, i.e. "MeetMeUnmute".
      */
     @Override
-   public String getAction()
+    public String getAction()
     {
         return "MeetMeUnmute";
     }

@@ -114,7 +114,7 @@ public class LoginAction extends AbstractManagerAction
      * Returns the name of this action, i.e. "Login".
      */
     @Override
-   public String getAction()
+    public String getAction()
     {
         return "Login";
     }

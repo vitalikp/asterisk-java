@@ -123,7 +123,7 @@ public class DatabasePutCommand extends AbstractAgiCommand
     }
 
     @Override
-   public String buildCommand()
+    public String buildCommand()
     {
         return "DATABASE PUT " + escapeAndQuote(family) + " "
                 + escapeAndQuote(key) + " " + escapeAndQuote(value);

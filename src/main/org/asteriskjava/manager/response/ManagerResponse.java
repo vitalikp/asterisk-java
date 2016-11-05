@@ -195,7 +195,7 @@ public class ManagerResponse implements Serializable
     }
 
     @Override
-   public String toString()
+    public String toString()
     {
         StringBuffer sb;
 

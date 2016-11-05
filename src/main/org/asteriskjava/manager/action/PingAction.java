@@ -42,7 +42,7 @@ public class PingAction extends AbstractManagerAction
      * Returns the name of this action, i.e. "Ping".
      */
     @Override
-   public String getAction()
+    public String getAction()
     {
         return "Ping";
     }

@@ -148,7 +148,7 @@ public class GetOptionCommand extends AbstractAgiCommand
     }
 
     @Override
-   public String buildCommand()
+    public String buildCommand()
     {
         return "GET OPTION " + escapeAndQuote(file) + " "
                 + escapeAndQuote(escapeDigits)

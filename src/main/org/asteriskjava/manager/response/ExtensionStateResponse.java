@@ -72,7 +72,7 @@ public class ExtensionStateResponse extends ManagerResponse
     }
 
     @Override
-   public String toString()
+    public String toString()
     {
         StringBuffer sb;
 

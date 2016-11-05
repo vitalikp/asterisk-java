@@ -108,7 +108,7 @@ public class ExecCommand extends AbstractAgiCommand
     }
 
     @Override
-   public String buildCommand()
+    public String buildCommand()
     {
         return "EXEC " + escapeAndQuote(application) + " "
                 + escapeAndQuote(options);

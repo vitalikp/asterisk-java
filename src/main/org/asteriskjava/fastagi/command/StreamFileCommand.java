@@ -160,7 +160,7 @@ public class StreamFileCommand extends AbstractAgiCommand
     }
 
     @Override
-   public String buildCommand()
+    public String buildCommand()
     {
         return "STREAM FILE " + escapeAndQuote(file) + " "
                 + escapeAndQuote(escapeDigits)

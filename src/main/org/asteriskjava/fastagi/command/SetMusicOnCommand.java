@@ -79,7 +79,7 @@ public class SetMusicOnCommand extends AbstractAgiCommand
     }
 
     @Override
-   public String buildCommand()
+    public String buildCommand()
     {
         return "SET MUSIC ON"
                 + (musicOnHoldClass == null ? "" : " "

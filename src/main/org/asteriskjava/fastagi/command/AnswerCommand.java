@@ -40,7 +40,7 @@ public class AnswerCommand extends AbstractAgiCommand
     }
 
     @Override
-   public String buildCommand()
+    public String buildCommand()
     {
         return "ANSWER";
     }

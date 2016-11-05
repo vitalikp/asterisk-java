@@ -50,7 +50,7 @@ public class ZapShowChannelsAction extends AbstractManagerAction
      * Returns the name of this action, i.e. "ZapShowChannels".
      */
     @Override
-   public String getAction()
+    public String getAction()
     {
         return "ZapShowChannels";
     }

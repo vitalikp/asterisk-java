@@ -57,7 +57,7 @@ public class ZapDialOffhookAction extends AbstractManagerAction
      * Returns the name of this action, i.e. "ZapDialOffhook".
      */
     @Override
-   public String getAction()
+    public String getAction()
     {
         return "ZapDialOffhook";
     }

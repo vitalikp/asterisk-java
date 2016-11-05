@@ -106,7 +106,7 @@ public class MonitorAction extends AbstractManagerAction
      * Returns the name of this action, i.e. "Monitor".
      */
     @Override
-   public String getAction()
+    public String getAction()
     {
         return "Monitor";
     }

@@ -76,7 +76,7 @@ public class SetAutoHangupCommand extends AbstractAgiCommand
     }
 
     @Override
-   public String buildCommand()
+    public String buildCommand()
     {
         return "SET AUTOHANGUP " + time;
     }

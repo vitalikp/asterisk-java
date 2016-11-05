@@ -18,11 +18,11 @@ package org.asteriskjava.manager.event;
 
 /**
  * An AgentCalledEvent is triggered when an agent is rung.
- * <p>
- * To enable AgentCalledEvents you have to set
+ *
+ * <p>To enable AgentCalledEvents you have to set
  * <code>eventwhencalled = yes</code> in <code>queues.conf</code>.
- * <p>
- * This event is implemented in <code>apps/app_queue.c</code>
+ *
+ * <p>This event is implemented in <code>apps/app_queue.c</code>
  *
  * @author srt
  * @version $Id: AgentCalledEvent.java 567 2006-09-27 02:53:31Z srt $

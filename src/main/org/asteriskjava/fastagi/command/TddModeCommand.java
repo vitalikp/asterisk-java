@@ -17,8 +17,9 @@
 package org.asteriskjava.fastagi.command;
 
 /**
- * Enable/Disable TDD transmission/reception on a channel.<p>
- * Returns 1 if successful, or 0 if channel is not TDD-capable.
+ * Enable/Disable TDD transmission/reception on a channel.
+ *
+ * <p>Returns 1 if successful, or 0 if channel is not TDD-capable.
  *
  * @author srt
  * @version $Id: TddModeCommand.java 729 2007-05-26 05:16:57Z sprior $

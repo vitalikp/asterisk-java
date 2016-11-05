@@ -18,8 +18,9 @@ package org.asteriskjava.fastagi.command;
 
 /**
  * Adds or updates an entry in the Asterisk database for a given family, key,
- * and value.<p>
- * Returns 1 if successful, 0 otherwise.
+ * and value.
+ *
+ * <p>Returns 1 if successful, 0 otherwise.
  *
  * @author srt
  * @version $Id: DatabasePutCommand.java 729 2007-05-26 05:16:57Z sprior $

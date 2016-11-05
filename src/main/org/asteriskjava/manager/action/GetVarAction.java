@@ -17,16 +17,19 @@
 package org.asteriskjava.manager.action;
 
 /**
- * The GetVarAction queries for a global or local channel variable.<p>
- * Reading global variables is supported since Asterisk 1.2.<p>
- * You cannot read built-in channel variables such as <code>LANGUAGE</code> or
+ * The GetVarAction queries for a global or local channel variable.
+ *
+ * <p>Reading global variables is supported since Asterisk 1.2.
+ *
+ * <p>You cannot read built-in channel variables such as <code>LANGUAGE</code> or
  * <code>CALLERIDNUM</code> using the Manager API. You can only
  * read channel variables that you have explicitly set using the
  * <code>Set</code> or <code>SetVar</code> (for Asterisk 1.0.x)
  * applications in the dialplan, in an AGI script or by using
  * the {@link org.asteriskjava.manager.action.SetVarAction} through
- * the Manager API itself.<p>
- * To get the actual value from the corresponding
+ * the Manager API itself.
+ *
+ * <p>To get the actual value from the corresponding
  * {@link org.asteriskjava.manager.response.ManagerResponse} call
  * {@link org.asteriskjava.manager.response.ManagerResponse#getAttribute(String)}
  * with either the variable name as parameter (for Asterisk 1.0.x) or
@@ -42,8 +45,8 @@ package org.asteriskjava.manager.action;
  * Where <code>c</code> is an instance of
  * {@link org.asteriskjava.manager.ManagerConnection} and <code>channel</code>
  * contains the name of a channel instance, for example "SIP/1234-9cd".
- * <p>
- * Since Asterisk 1.4 this action also supports built-in functions like
+ *
+ * <p>Since Asterisk 1.4 this action also supports built-in functions like
  * <code>DB()</code>, <code>CALLERID()</code> and <code>ENV()</code>.
  *
  * @author srt

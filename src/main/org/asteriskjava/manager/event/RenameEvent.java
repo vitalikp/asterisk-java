@@ -18,8 +18,8 @@ package org.asteriskjava.manager.event;
 
 /**
  * A RenameEvent is triggered when the name of a channel is changed.
- * <p>
- * It is implemented in <code>channel.c</code>
+ *
+ * <p>It is implemented in <code>channel.c</code>
  *
  * @author srt
  * @version $Id: RenameEvent.java 590 2007-01-21 12:01:04Z srt $
@@ -121,10 +121,10 @@ public class RenameEvent extends ManagerEvent
 
     /**
      * Returns the new unique id of the channel.
-     * <p>
-     * This property is only available on BRIstuffed Asterisk servers.
-     * <p>
-     * The purpose of this property is unclear as the unique id is supposed to
+     *
+     * <p>This property is only available on BRIstuffed Asterisk servers.
+     *
+     * <p>The purpose of this property is unclear as the unique id is supposed to
      * never change.
      *
      * @return the new unique id of the channel.
@@ -137,10 +137,10 @@ public class RenameEvent extends ManagerEvent
 
     /**
      * Sets the new unique id of the channel.
-     * <p>
-     * This property is only available on BRIstuffed Asterisk servers.
-     * <p>
-     * The purpose of this property is unclear as the unique id is supposed to
+     *
+     * <p>This property is only available on BRIstuffed Asterisk servers.
+     *
+     * <p>The purpose of this property is unclear as the unique id is supposed to
      * never change.
      *
      * @param newUniqueId the new unique id of the channel.

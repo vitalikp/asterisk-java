@@ -17,9 +17,11 @@
 package org.asteriskjava.manager.event;
 
 /**
- * A QueueMemberAddedEvent is triggered when a queue member is added to a queue.<p>
- * It is implemented in <code>apps/app_queue.c</code>.<p>
- * Available since Asterisk 1.2
+ * A QueueMemberAddedEvent is triggered when a queue member is added to a queue.
+ *
+ * <p>It is implemented in <code>apps/app_queue.c</code>.
+ *
+ * <p>Available since Asterisk 1.2
  *
  * @author srt
  * @version $Id: QueueMemberAddedEvent.java 397 2006-05-26 12:13:32Z srt $
@@ -132,8 +134,9 @@ public class QueueMemberAddedEvent extends AbstractQueueMemberEvent
     }
 
     /**
-     * Returns the status of this queue member.<p>
-     * Valid status codes are:
+     * Returns the status of this queue member.
+     *
+     * <p>Valid status codes are:
      * <dl>
      * <dt>AST_DEVICE_UNKNOWN (0)</dt>
      * <dd>Queue member is available</dd>

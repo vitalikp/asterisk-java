@@ -18,8 +18,9 @@ package org.asteriskjava.manager.event;
 
 /**
  * A PeerEntryEvent is triggered in response to a SIPPeersAction or SIPShowPeerAction and contains
- * information about a peer.<p>
- * It is implemented in <code>channels/chan_sip.c</code>
+ * information about a peer.
+ *
+ * <p>It is implemented in <code>channels/chan_sip.c</code>
  *
  * @author srt
  * @version $Id: PeerEntryEvent.java 607 2007-02-15 13:16:41Z srt $
@@ -175,8 +176,9 @@ public class PeerEntryEvent extends ResponseEvent
     }
 
     /**
-     * Returns the status of this peer.<p>
-     * For SIP peers this is one of:
+     * Returns the status of this peer.
+     *
+     * <p>For SIP peers this is one of:
      * <dl>
      * <dt>"UNREACHABLE"</dt>
      * <dt>"LAGGED (%d ms)"</dt>

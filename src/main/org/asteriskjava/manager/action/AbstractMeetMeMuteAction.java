@@ -55,8 +55,9 @@ public abstract class AbstractMeetMeMuteAction extends AbstractManagerAction
     }
 
     /**
-     * Sets the conference number.<p>
-     * This property is mandatory.
+     * Sets the conference number.
+     *
+     * <p>This property is mandatory.
      *
      * @param meetMe the conference number.
      */
@@ -76,8 +77,9 @@ public abstract class AbstractMeetMeMuteAction extends AbstractManagerAction
     }
 
     /**
-     * Sets the index of the user in the conference.<p>
-     * This property is mandatory.
+     * Sets the index of the user in the conference.
+     *
+     * <p>This property is mandatory.
      *
      * @param userNum the index of the user in the conference.
      */

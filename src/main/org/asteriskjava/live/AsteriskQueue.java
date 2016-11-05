@@ -37,8 +37,8 @@ public interface AsteriskQueue
     /**
      * Returns the maximum number of people allowed to wait in this queue or 0
      * for unlimited.
-     * <p>
-     * Corresponds to the <code>maxlen</code> option in Asterisk's
+     *
+     * <p>Corresponds to the <code>maxlen</code> option in Asterisk's
      * <code>queues.conf</code>.
      *
      * @return the maximum number of people allowed to wait in this queue.
@@ -46,8 +46,9 @@ public interface AsteriskQueue
     Integer getMax();
 
     /**
-     * Returns the strategy used for this queue.<p>
-     * Possible values are:
+     * Returns the strategy used for this queue.
+     *
+     * <p>Possible values are:
      * <ul>
      * <li>ringall</li>
      * <li>roundrobin</li>
@@ -73,12 +74,12 @@ public interface AsteriskQueue
 
     /**
      * Returns the weight of this queue.
-     * <p>
-     * A queue can be assigned a 'weight' to ensure calls waiting in a higher
+     *
+     * <p>A queue can be assigned a 'weight' to ensure calls waiting in a higher
      * priority queue will deliver its calls first. Only delays the lower weight
      * queue's call if the member is also in the higher weight queue.
-     * <p>
-     * Available since Asterisk 1.2
+     *
+     * <p>Available since Asterisk 1.2
      *
      * @return the weight of this queue or <code>null</code> if not supported
      *         by your version of Asterisk.

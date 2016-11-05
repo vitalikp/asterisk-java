@@ -17,8 +17,9 @@
 package org.asteriskjava.manager.action;
 
 /**
- * The MonitorAction starts monitoring (recording) a channel.<p>
- * It is implemented in <code>res/res_monitor.c</code>
+ * The MonitorAction starts monitoring (recording) a channel.
+ *
+ * <p>It is implemented in <code>res/res_monitor.c</code>
  *
  * @author srt
  * @version $Id: MonitorAction.java 729 2007-05-26 05:16:57Z sprior $
@@ -44,8 +45,9 @@ public class MonitorAction extends AbstractManagerAction
 
     /**
      * Creates a new MonitorAction that starts monitoring the given channel and
-     * writes voice data to the given files.<p>
-     * The format of the files is "wav", they are not mixed.
+     * writes voice data to the given files.
+     *
+     * <p>The format of the files is "wav", they are not mixed.
      *
      * @param channel the name of the channel to monitor
      * @param file the (base) name of the files to which the voice data is
@@ -61,8 +63,9 @@ public class MonitorAction extends AbstractManagerAction
 
     /**
      * Creates a new MonitorAction that starts monitoring the given channel and
-     * writes voice data to the given files.<p>
-     * The files are not mixed.
+     * writes voice data to the given files.
+     *
+     * <p>The files are not mixed.
      *
      * @param channel the name of the channel to monitor
      * @param file the (base) name of the files to which the voice data is
@@ -117,8 +120,9 @@ public class MonitorAction extends AbstractManagerAction
     }
 
     /**
-     * Sets the name of the channel to monitor.<p>
-     * This property is mandatory.
+     * Sets the name of the channel to monitor.
+     *
+     * <p>This property is mandatory.
      */
     public void setChannel(String channel)
     {
@@ -134,8 +138,9 @@ public class MonitorAction extends AbstractManagerAction
     }
 
     /**
-     * Sets the (base) name of the file(s) to which the voice data is written.<p>
-     * If this property is not set it defaults to to the channel name as per CLI
+     * Sets the (base) name of the file(s) to which the voice data is written.
+     *
+     * <p>If this property is not set it defaults to to the channel name as per CLI
      * with the '/' replaced by '-'.
      */
     public void setFile(String file)
@@ -152,8 +157,9 @@ public class MonitorAction extends AbstractManagerAction
     }
 
     /**
-     * Sets the format to use for encoding the voice files.<p>
-     * If this property is not set it defaults to "wav".
+     * Sets the format to use for encoding the voice files.
+     *
+     * <p>If this property is not set it defaults to "wav".
      */
     public void setFormat(String format)
     {

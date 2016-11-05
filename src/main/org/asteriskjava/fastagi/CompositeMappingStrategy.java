@@ -23,8 +23,9 @@ import java.util.List;
  * A mapping strategy that tries a sequence of other mapping strategies to find
  * an AgiScript matching the request. The first strategy that returns a result wins,
  * so the order of the mapping strategies passed to the CompositeMappingStrategy
- * matters.<p>
- * Example:
+ * matters.
+ *
+ * <p>Example:
  * <pre>
  * new CompositeMappingStrategy(
  *       new ResourceBundleMappingStrategy(),

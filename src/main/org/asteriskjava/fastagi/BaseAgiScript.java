@@ -19,8 +19,8 @@ package org.asteriskjava.fastagi;
 /**
  * The BaseAgiScript provides some convenience methods to make it easier to
  * write custom {@link org.asteriskjava.fastagi.AgiScript}s.
- * <p>
- * Just extend it by your own script classes.
+ *
+ * <p>Just extend it by your own script classes.
  *
  * @since 0.2
  * @author srt

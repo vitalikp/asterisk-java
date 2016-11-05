@@ -17,12 +17,15 @@
 package org.asteriskjava.fastagi.command;
 
 /**
- * Returns the value of the given channel variable.<p>
- * Since Asterisk 1.2 you can also use this command to use custom Asterisk
- * functions. Syntax is "func(args)".<p>
- * Returns 0 if the variable is not set. Returns 1 if the variable is set and
- * returns the variable in parenthesis.<p>
- * Example return code: 200 result=1 (testvariable)
+ * Returns the value of the given channel variable.
+ *
+ * <p>Since Asterisk 1.2 you can also use this command to use custom Asterisk
+ * functions. Syntax is "func(args)".
+ *
+ * <p>Returns 0 if the variable is not set. Returns 1 if the variable is set and
+ * returns the variable in parenthesis.
+ *
+ * <p>Example return code: 200 result=1 (testvariable)
  *
  * @author srt
  * @version $Id: GetVariableCommand.java 729 2007-05-26 05:16:57Z sprior $
@@ -61,8 +64,9 @@ public class GetVariableCommand extends AbstractAgiCommand
     }
 
     /**
-     * Sets the name of the variable to retrieve.<p>
-     * Since Asterisk 1.2 you can also use custom dialplan functions (like
+     * Sets the name of the variable to retrieve.
+     *
+     * <p>Since Asterisk 1.2 you can also use custom dialplan functions (like
      * "func(args)") as variable.
      *
      * @param variable the name of the variable to retrieve.

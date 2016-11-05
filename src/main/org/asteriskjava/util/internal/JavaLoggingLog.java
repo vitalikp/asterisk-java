@@ -25,8 +25,8 @@ import org.asteriskjava.util.Log;
 /**
  * Implementation of {@link Log} that maps to the <strong>Logger</strong> of
  * the java.util.logging package.
- * <p>
- * Kindly donated by Sun's Steve Drach.
+ *
+ * <p>Kindly donated by Sun's Steve Drach.
  *
  * @author drach
  */

@@ -26,18 +26,18 @@ import org.asteriskjava.manager.response.ManagerResponse;
 /**
  * The main interface to talk to an Asterisk server via the Asterisk Manager
  * API.
- * <p>
- * The ManagerConnection represents a connection to an Asterisk server and is
+ *
+ * <p>The ManagerConnection represents a connection to an Asterisk server and is
  * capable of sending {@link org.asteriskjava.manager.action.ManagerAction}s
  * and receiving {@link org.asteriskjava.manager.response.ManagerResponse}s and
  * {@link org.asteriskjava.manager.event.ManagerEvent}s. It does not add any
  * further functionality but rather provides a Java view to Asterisk's Manager
  * API (freeing you from TCP/IP connection and parsing stuff).
- * <p>
- * It is used as the foundation for higher leveled interfaces like the
+ *
+ * <p>It is used as the foundation for higher leveled interfaces like the
  * Asterisk-Java Live.
- * <p>
- * A concrete implementation of this interface can be obtained from a
+ *
+ * <p>A concrete implementation of this interface can be obtained from a
  * {@link org.asteriskjava.manager.ManagerConnectionFactory}.
  *
  * @see org.asteriskjava.manager.ManagerConnectionFactory
@@ -82,8 +82,8 @@ public interface ManagerConnection
 
     /**
      * Returns whether to use SSL.
-     * <p>
-     * Default is false.
+     *
+     * <p>Default is false.
      *
      * @return <code>true</code> if SSL is used for the connection,
      *         <code>false</code> for a plain text connection.
@@ -93,20 +93,20 @@ public interface ManagerConnection
 
     /**
      * Registers a new user event type.
-     * <p>
-     * Asterisk allows you to send custom events via the UserEvent application.
+     *
+     * <p>Asterisk allows you to send custom events via the UserEvent application.
      * If you choose to send such events you can extend the abstract class
      * UserEvent provide a name for your new event and optionally add your own
      * attributes. After registering a user event type Asterisk-Java will handle
      * such events the same way it handles the internal events and inform your
      * registered event handlers.
-     * <p>
-     * Note: If you write your own Asterisk applications that use Asterisk's
+     *
+     * <p>Note: If you write your own Asterisk applications that use Asterisk's
      * <code>manager_event()</code> function directly and don't use the
      * channel and uniqueid attributes provided by UserEvent you can also
      * register events that directly subclass {@link ManagerEvent}.
-     * <p>
-     * The event class must be a concrete class with a default constructor (one
+     *
+     * <p>The event class must be a concrete class with a default constructor (one
      * that takes no arguments).
      *
      * @param userEventClass the class representing the user event to register.
@@ -119,8 +119,8 @@ public interface ManagerConnection
 
     /**
      * The timeout to use when connecting the the Asterisk server.
-     * <p>
-     * Default is 0, that is using Java's built-in default.
+     *
+     * <p>Default is 0, that is using Java's built-in default.
      *
      * @param socketTimeout the timeout value to be used in milliseconds.
      * @see java.net.Socket#connect(java.net.SocketAddress, int)
@@ -131,14 +131,14 @@ public interface ManagerConnection
     /**
      * Connection is dropped (and restarted) if it stales on read longer than
      * the timeout.
-     * <p>
-     * If you set this property to a non zero value be sure to also use a
+     *
+     * <p>If you set this property to a non zero value be sure to also use a
      * {@link PingThread} or something similar to make sure there is some network
      * traffic, otherwise you will encounter lots of unexpected reconnects. The
      * read timeout should be at least twice the interval set for the
      * PingThread.
-     * <p>
-     * Default is 0, that is no read timeout.
+     *
+     * <p>Default is 0, that is no read timeout.
      *
      * @param socketReadTimeout the read timeout value to be used in
      *            milliseconds.
@@ -269,16 +269,16 @@ public interface ManagerConnection
      * Sends an {@link EventGeneratingAction} to the Asterisk server and waits
      * for the corresponding {@link ManagerResponse} and the
      * {@link org.asteriskjava.manager.event.ResponseEvent}s
-     * <p>
-     * EventGeneratingActions are {@link ManagerAction}s that don't return
+     *
+     * <p>EventGeneratingActions are {@link ManagerAction}s that don't return
      * their response in the corresponding {@link ManagerResponse} but send a
      * series of events that contain the payload.
-     * <p>
-     * This method will block until the corresponding action complete event has
+     *
+     * <p>This method will block until the corresponding action complete event has
      * been received. The action complete event is determined by
      * {@link EventGeneratingAction#getActionCompleteEventClass()}.
-     * <p>
-     * Examples for EventGeneratingActions are
+     *
+     * <p>Examples for EventGeneratingActions are
      * {@link org.asteriskjava.manager.action.StatusAction},
      * {@link org.asteriskjava.manager.action.QueueStatusAction} or
      * {@link org.asteriskjava.manager.action.AgentsAction}.
@@ -306,17 +306,17 @@ public interface ManagerConnection
      * Sends an {@link EventGeneratingAction} to the Asterisk server and waits
      * for the corresponding {@link ManagerResponse} and the
      * {@link org.asteriskjava.manager.event.ResponseEvent}s
-     * <p>
-     * EventGeneratingActions are {@link ManagerAction}s that don't return
+     *
+     * <p>EventGeneratingActions are {@link ManagerAction}s that don't return
      * their response in the corresponding {@link ManagerResponse} but send a
      * series of events that contain the payload.
-     * <p>
-     * This method will block until the corresponding action complete event has
+     *
+     * <p>This method will block until the corresponding action complete event has
      * been received but no longer that timeout seconds. The action complete
      * event is determined by
      * {@link EventGeneratingAction#getActionCompleteEventClass()}.
-     * <p>
-     * Examples for EventGeneratingActions are the
+     *
+     * <p>Examples for EventGeneratingActions are the
      * {@link org.asteriskjava.manager.action.StatusAction}, the
      * {@link org.asteriskjava.manager.action.QueueStatusAction} or the
      * {@link org.asteriskjava.manager.action.AgentsAction}.
@@ -346,8 +346,8 @@ public interface ManagerConnection
      * Registers an event listener that is called whenever an
      * {@link org.asteriskjava.manager.event.ManagerEvent} is received from the
      * Asterisk server.
-     * <p>
-     * Event listeners are notified about new events in the same order as they
+     *
+     * <p>Event listeners are notified about new events in the same order as they
      * were registered.
      *
      * @param eventListener the listener to call whenever a manager event is
@@ -358,8 +358,8 @@ public interface ManagerConnection
 
     /**
      * Unregisters a previously registered event listener.
-     * <p>
-     * Does nothing if the given event listener hasn't be been registered before.
+     *
+     * <p>Does nothing if the given event listener hasn't be been registered before.
      *
      * @param eventListener the listener to remove
      * @see #addEventListener(ManagerEventListener)

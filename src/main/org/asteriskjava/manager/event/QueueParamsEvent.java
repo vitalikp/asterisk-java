@@ -18,8 +18,9 @@ package org.asteriskjava.manager.event;
 
 /**
  * A QueueParamsEvent is triggered in response to a QueueStatusAction and contains the parameters of
- * a queue.<p>
- * It is implemented in <code>apps/app_queue.c</code>
+ * a queue.
+ *
+ * <p>It is implemented in <code>apps/app_queue.c</code>
  *
  * @author srt
  * @version $Id: QueueParamsEvent.java 834 2007-07-08 08:26:06Z srt $
@@ -68,8 +69,9 @@ public class QueueParamsEvent extends ResponseEvent
     }
 
     /**
-     * Returns the maximum number of people waiting in the queue or 0 for unlimited.<p>
-     * This corresponds to the <code>maxlen</code> setting in <code>queues.conf</code>.
+     * Returns the maximum number of people waiting in the queue or 0 for unlimited.
+     *
+     * <p>This corresponds to the <code>maxlen</code> setting in <code>queues.conf</code>.
      *
      * @return the maximum number of people waiting in the queue or 0 for unlimited.
      */
@@ -89,8 +91,9 @@ public class QueueParamsEvent extends ResponseEvent
     }
 
     /**
-     * Returns the strategy used for this queue.<p>
-     * Possible values are:
+     * Returns the strategy used for this queue.
+     *
+     * <p>Possible values are:
      * <ul>
      * <li>ringall</li>
      * <li>roundrobin</li>
@@ -246,12 +249,14 @@ public class QueueParamsEvent extends ResponseEvent
     }
 
     /**
-     * Returns the weight of this queue.<p>
-     * A queue can be assigned a 'weight' to ensure calls waiting in a
+     * Returns the weight of this queue.
+     *
+     * <p>A queue can be assigned a 'weight' to ensure calls waiting in a
      * higher priority queue will deliver its calls first. Only delays
      * the lower weight queue's call if the member is also in the
-     * higher weight queue.<p>
-     * Available since Asterisk 1.2
+     * higher weight queue.
+     *
+     * <p>Available since Asterisk 1.2
      *
      * @return the weight of this queue or <code>null</code> if not
      *         supported by your version of Asterisk

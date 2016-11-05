@@ -27,11 +27,11 @@ import org.asteriskjava.util.ReflectionUtil;
 /**
  * Abstract base class for all Events that can be received from the Asterisk
  * server.
- * <p>
- * Events contain data pertaining to an event generated from within the Asterisk
+ *
+ * <p>Events contain data pertaining to an event generated from within the Asterisk
  * core or an extension module.
- * <p>
- * There is one concrete subclass of ManagerEvent per each supported Asterisk
+ *
+ * <p>There is one concrete subclass of ManagerEvent per each supported Asterisk
  * Event.
  *
  * @author srt
@@ -68,8 +68,8 @@ public abstract class ManagerEvent extends EventObject implements Serializable
     /**
      * Returns the point in time this event was received from the Asterisk
      * server.
-     * <p>
-     * Pseudo events that are not directly received from the asterisk server
+     *
+     * <p>Pseudo events that are not directly received from the asterisk server
      * (for example ConnectEvent and DisconnectEvent) may return
      * <code>null</code>.
      */
@@ -88,11 +88,11 @@ public abstract class ManagerEvent extends EventObject implements Serializable
 
     /**
      * Returns the AMI authorization class of this event.
-     * <p>
-     * This is one or more of system, call, log, verbose, command, agent or
+     *
+     * <p>This is one or more of system, call, log, verbose, command, agent or
      * user. Multiple privileges are separated by comma.
-     * <p>
-     * Note: This property is not available from Asterisk 1.0 servers.
+     *
+     * <p>Note: This property is not available from Asterisk 1.0 servers.
      *
      * @since 0.2
      */
@@ -113,13 +113,13 @@ public abstract class ManagerEvent extends EventObject implements Serializable
 
     /**
      * Returns the timestamp for this event.
-     * <p>
-     * The timestamp property is available in Asterisk since 1.4 if enabled in
+     *
+     * <p>The timestamp property is available in Asterisk since 1.4 if enabled in
      * <code>manager.conf</code> by setting <code>timestampevents = yes</code>.
-     * <p>
-     * In contains the time the event was generated in seconds since the epoch.
-     * <p>
-     * Example: 1159310429.569108
+     *
+     * <p>In contains the time the event was generated in seconds since the epoch.
+     *
+     * <p>Example: 1159310429.569108
      *
      * @return
      * @since 0.3

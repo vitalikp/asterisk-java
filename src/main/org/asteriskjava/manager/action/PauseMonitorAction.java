@@ -18,10 +18,10 @@ package org.asteriskjava.manager.action;
 
 /**
  * The PauseMonitorAction temporarily stop monitoring (recording) a channel.
- * <p>
- * It is implemented in <code>res/res_monitor.c</code>
- * <p>
- * Available since Asterisk 1.4.
+ *
+ * <p>It is implemented in <code>res/res_monitor.c</code>
+ *
+ * <p>Available since Asterisk 1.4.
  *
  * @see UnpauseMonitorAction
  * @author srt
@@ -82,8 +82,8 @@ public class PauseMonitorAction extends AbstractManagerAction
 
     /**
      * Sets the name of the channel to temporarily stop monitoring.
-     * <p>
-     * This property is mandatory.
+     *
+     * <p>This property is mandatory.
      *
      * @param channel the name of the channel to temporarily stop monitoring.
      */

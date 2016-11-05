@@ -19,16 +19,19 @@ package org.asteriskjava.manager.action;
 /**
  * The AbsoluteTimeoutAction sets the absolute maximum amount of time permitted
  * for a call on a given channel, it hangs up the channel after a certain time.
- * <p>
- * Note that the timeout is set from the current time forward, not counting the
- * number of seconds the call has already been up.<p>
- * When setting a new timeout all previous absolute timeouts are cancelled.<p>
- * When the timeout is reached the call is returned to the T extension so that
+ *
+ * <p>Note that the timeout is set from the current time forward, not counting the
+ * number of seconds the call has already been up.
+ *
+ * <p>When setting a new timeout all previous absolute timeouts are cancelled.
+ *
+ * <p>When the timeout is reached the call is returned to the T extension so that
  * you can playback an explanatory note to the calling party (the called party
- * will not hear that).<p>
- * This action corresponds the the AbsoluteTimeout command used in the dialplan.
- * <p>
- * Implemented in <code>manager.c</code>
+ * will not hear that).
+ *
+ * <p>This action corresponds the the AbsoluteTimeout command used in the dialplan.
+ *
+ * <p>Implemented in <code>manager.c</code>
  *
  * @author srt
  * @version $Id: AbsoluteTimeoutAction.java 729 2007-05-26 05:16:57Z sprior $
@@ -98,8 +101,9 @@ public class AbsoluteTimeoutAction extends AbstractManagerAction
     }
 
     /**
-     * Sets the the maximum duration of the call (in seconds) to set on channel.<p>
-     * Setting the timeout to 0 cancels the timeout.
+     * Sets the the maximum duration of the call (in seconds) to set on channel.
+     *
+     * <p>Setting the timeout to 0 cancels the timeout.
      */
     public void setTimeout(Integer timeout)
     {

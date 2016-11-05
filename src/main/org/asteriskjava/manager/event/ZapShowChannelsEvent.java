@@ -62,8 +62,9 @@ public class ZapShowChannelsEvent extends ResponseEvent
     }
 
     /**
-     * Returns the signalling of this zap channel.<p>
-     * Possible values are:
+     * Returns the signalling of this zap channel.
+     *
+     * <p>Possible values are:
      * <ul>
      * <li>E & M Immediate</li>
      * <li>E & M Wink</li>
@@ -143,8 +144,9 @@ public class ZapShowChannelsEvent extends ResponseEvent
     }
 
     /**
-     * Returns the alarm state of this zap channel.<p>
-     * This may be one of
+     * Returns the alarm state of this zap channel.
+     *
+     * <p>This may be one of
      * <ul>
      * <li>Red Alarm</li>
      * <li>Yellow Alarm</li>

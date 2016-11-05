@@ -5,10 +5,10 @@ import java.util.List;
 
 /**
  * Some static utility methods to imitate Asterisk specific logic.
- * <p>
- * See Asterisk's <code>util.c</code>.
- * <p>
- * Client code is not supposed to use this class.
+ *
+ * <p>See Asterisk's <code>util.c</code>.
+ *
+ * <p>Client code is not supposed to use this class.
  *
  * @author srt
  * @version $Id: AstUtil.java 510 2006-07-24 10:39:40Z srt $
@@ -48,8 +48,8 @@ public class AstUtil
     /**
      * Checks if a String represents <code>true</code> or <code>false</code>
      * according to Asterisk's logic.
-     * <p>
-     * The original implementation is <code>util.c</code> is as follows:
+     *
+     * <p>The original implementation is <code>util.c</code> is as follows:
      *
      * <pre>
      *     int ast_true(const char *s)
@@ -97,10 +97,10 @@ public class AstUtil
 
     /**
      * Parses a string for caller id information.
-     * <p>
-     * The caller id string should be in the form <code>"Some Name" &lt;1234&gt;</code>.
-     * <p>
-     * This resembles <code>ast_callerid_parse</code> in
+     *
+     * <p>The caller id string should be in the form <code>"Some Name" &lt;1234&gt;</code>.
+     *
+     * <p>This resembles <code>ast_callerid_parse</code> in
      * <code>callerid.c</code> but strips any whitespace.
      *
      * @param s the string to parse
@@ -159,12 +159,12 @@ public class AstUtil
 
     /**
      * Checks if the value of s was <code>null</code> in Asterisk.
-     * <p>
-     * This method is useful as Asterisk likes to replace <code>null</code>
+     *
+     * <p>This method is useful as Asterisk likes to replace <code>null</code>
      * values with different string values like "unknown", "&lt;unknown&gt;"
      * or "&lt;null&gt;".
-     * <p>
-     * To find such replacements search for <code>S_OR</code> in Asterisk's
+     *
+     * <p>To find such replacements search for <code>S_OR</code> in Asterisk's
      * source code. You will find things like
      * <pre>
      * S_OR(chan-&gt;cid.cid_num, "&lt;unknown&gt;")

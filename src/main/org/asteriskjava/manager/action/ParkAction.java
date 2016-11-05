@@ -18,9 +18,10 @@ package org.asteriskjava.manager.action;
 
 /**
  * The ParkAction parks a channel using Asterisk's park feature.
- * <p>
- * Defined in <code>res/res_features.c</code><p>
- * Available since Asterisk 1.4.
+ *
+ * <p>Defined in <code>res/res_features.c</code>
+ *
+ * <p>Available since Asterisk 1.4.
  *
  * @author srt
  * @version $Id: ParkAction.java 729 2007-05-26 05:16:57Z sprior $
@@ -94,8 +95,9 @@ public class ParkAction extends AbstractManagerAction
     }
 
     /**
-     * Sets the name of the channel to park.<p>
-     * This property is mandatory.
+     * Sets the name of the channel to park.
+     *
+     * <p>This property is mandatory.
      *
      * @param channel the name of the channel to park.
      */
@@ -118,8 +120,9 @@ public class ParkAction extends AbstractManagerAction
 
     /**
      * Sets the name of the channel to announce park info to and return to on
-     * timeout.<p>
-     * This property is mandatory.
+     * timeout.
+     *
+     * <p>This property is mandatory.
      *
      * @param channel2 the name of the channel to announce park info to and
      *            return to on timeout.

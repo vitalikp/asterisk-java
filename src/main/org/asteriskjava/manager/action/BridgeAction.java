@@ -17,9 +17,11 @@
 package org.asteriskjava.manager.action;
 
 /**
- * The BridgeAction bridges two channels that are currently active on the system.<p>
- * It is defined in <code>res/res_features.c</code>.<p>
- * Available since Asterisk 1.6
+ * The BridgeAction bridges two channels that are currently active on the system.
+ *
+ * <p>It is defined in <code>res/res_features.c</code>.
+ *
+ * <p>Available since Asterisk 1.6
  *
  * @author srt
  * @version $Id: BridgeAction.java 832 2007-07-08 00:06:07Z srt $

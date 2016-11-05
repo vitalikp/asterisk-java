@@ -17,11 +17,14 @@
 package org.asteriskjava.fastagi.command;
 
 /**
- * Receives a character of text on a channel.<p>
- * Specify timeout to be the maximum time to wait for input in milliseconds, or
- * 0 for infinite.<p>
- * Most channels do not support the reception of text.<p>
- * Returns the decimal value of the character if one is received, or 0 if the
+ * Receives a character of text on a channel.
+ *
+ * <p>Specify timeout to be the maximum time to wait for input in milliseconds, or
+ * 0 for infinite.
+ *
+ * <p>Most channels do not support the reception of text.
+ *
+ * <p>Returns the decimal value of the character if one is received, or 0 if the
  * channel does not support text reception. Returns -1 only on error/hangup.
  *
  * @author srt

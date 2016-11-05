@@ -20,11 +20,12 @@ package org.asteriskjava.fastagi.command;
  * Plays the given file, and waits for the user to press one of the given
  * digits. If none of the escape digits is pressed while streaming the file this
  * command waits for the specified timeout still waiting for the user to press a
- * digit. Streaming always begins at the beginning.<p>
- * Returns 0 if no digit being pressed, or the ASCII numerical value of the
+ * digit. Streaming always begins at the beginning.
+ *
+ * <p>Returns 0 if no digit being pressed, or the ASCII numerical value of the
  * digit if one was pressed, or -1 on error or if the channel was disconnected.
- * <p>
- * Remember, the file extension must not be included in the filename.
+ *
+ * <p>Remember, the file extension must not be included in the filename.
  *
  * @see org.asteriskjava.fastagi.command.StreamFileCommand
  * @author srt

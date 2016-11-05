@@ -17,8 +17,9 @@
 package org.asteriskjava.fastagi.command;
 
 /**
- * Turns on music on hold on the current channel.<p>
- * Always returns 0.
+ * Turns on music on hold on the current channel.
+ *
+ * <p>Always returns 0.
  *
  * @author srt
  * @version $Id: SetMusicOnCommand.java 729 2007-05-26 05:16:57Z sprior $

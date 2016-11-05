@@ -19,10 +19,12 @@ package org.asteriskjava.manager.action;
 import org.asteriskjava.manager.event.AgentsCompleteEvent;
 
 /**
- * The AgentsAction requests the state of all agents.<p>
- * For each agent an AgentsEvent is generated. After the state of all agents has been
- * reported an AgentsCompleteEvent is generated.<p>
- * Available since Asterisk 1.2
+ * The AgentsAction requests the state of all agents.
+ *
+ * <p>For each agent an AgentsEvent is generated. After the state of all agents has been
+ * reported an AgentsCompleteEvent is generated.
+ *
+ * <p>Available since Asterisk 1.2
  *
  * @see org.asteriskjava.manager.event.AgentsEvent
  * @see org.asteriskjava.manager.event.AgentsCompleteEvent

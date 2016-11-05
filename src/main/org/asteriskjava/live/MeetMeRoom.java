@@ -19,8 +19,9 @@ package org.asteriskjava.live;
 import java.util.Collection;
 
 /**
- * Represents an Asterisk MeetMe room.<p>
- * MeetMe rooms bridge multiple channels.
+ * Represents an Asterisk MeetMe room.
+ *
+ * <p>MeetMe rooms bridge multiple channels.
  *
  * @author srt
  * @since 0.3
@@ -28,8 +29,9 @@ import java.util.Collection;
 public interface MeetMeRoom
 {
     /**
-     * Returns the number of this MeetMe room.<p>
-     * This property is immutable.
+     * Returns the number of this MeetMe room.
+     *
+     * <p>This property is immutable.
      *
      * @return the number of this MeetMe room.
      */

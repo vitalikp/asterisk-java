@@ -17,8 +17,9 @@
 package org.asteriskjava.manager.action;
 
 /**
- * The AgentLogoffAction sets an agent as no longer logged in.<p>
- * Available since Asterisk 1.2
+ * The AgentLogoffAction sets an agent as no longer logged in.
+ *
+ * <p>Available since Asterisk 1.2
  *
  * @author srt
  * @version $Id: AgentLogoffAction.java 729 2007-05-26 05:16:57Z sprior $
@@ -86,8 +87,9 @@ public class AgentLogoffAction extends AbstractManagerAction
     }
 
     /**
-     * Sets the name of the agent to log off, for example "1002".<p>
-     * This is property is mandatory.
+     * Sets the name of the agent to log off, for example "1002".
+     *
+     * <p>This is property is mandatory.
      *
      * @param agent the name of the agent to log off
      */
@@ -97,8 +99,9 @@ public class AgentLogoffAction extends AbstractManagerAction
     }
 
     /**
-     * Returns whether to hangup existing calls or not.<p>
-     * Default is to hangup existing calls on logoff.
+     * Returns whether to hangup existing calls or not.
+     *
+     * <p>Default is to hangup existing calls on logoff.
      *
      * @return Boolean.TRUE if existing calls should not be hung up,
      *         Boolean.FALSE otherwise. <code>null</code> if default should be
@@ -110,8 +113,9 @@ public class AgentLogoffAction extends AbstractManagerAction
     }
 
     /**
-     * Sets whether existing calls should be hung up or not.<p>
-     * Default is to hangup existing calls on logoff.
+     * Sets whether existing calls should be hung up or not.
+     *
+     * <p>Default is to hangup existing calls on logoff.
      *
      * @param soft Boolean.TRUE if existing calls should not be hung up,
      *            Boolean.FALSE otherwise. <code>null</code> if default should

@@ -23,8 +23,9 @@ import java.util.Map;
 
 /**
  * Represents a response received from the Asterisk server as the result of a
- * previously sent ManagerAction.<p>
- * The response can be linked with the action that caused it by looking the
+ * previously sent ManagerAction.
+ *
+ * <p>The response can be linked with the action that caused it by looking the
  * action id attribute that will match the action id of the corresponding
  * action.
  *
@@ -47,8 +48,9 @@ public class ManagerResponse implements Serializable
     private Map<String, String> attributes;
 
     /**
-     * Returns a Map with all attributes of this response.<p>
-     * The keys are all lower case!
+     * Returns a Map with all attributes of this response.
+     *
+     * <p>The keys are all lower case!
      * @see #getAttribute(String)
      */
     public Map<String, String> getAttributes()
@@ -67,13 +69,16 @@ public class ManagerResponse implements Serializable
     }
 
     /**
-     * Returns the value of the attribute with the given key.<p>
-     * This is particularly important when a response contains special
-     * attributes that are dependent on the action that has been sent.<p>
-     * An example of this is the response to the GetVarAction.
+     * Returns the value of the attribute with the given key.
+     *
+     * <p>This is particularly important when a response contains special
+     * attributes that are dependent on the action that has been sent.
+     *
+     * <p>An example of this is the response to the GetVarAction.
      * It contains the value of the channel variable as an attribute
-     * stored under the key of the variable name.<p>
-     * Example:
+     * stored under the key of the variable name.
+     *
+     * <p>Example:
      * <pre>
      * GetVarAction action = new GetVarAction();
      * action.setChannel("SIP/1310-22c3");

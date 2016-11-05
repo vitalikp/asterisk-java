@@ -18,9 +18,11 @@ package org.asteriskjava.manager.action;
 
 /**
  * The QueuePauseAction makes a queue member temporarily unavailable (or
- * available again).<p>
- * It is implemented in <code>apps/app_queue.c</code><p>
- * Available since Asterisk 1.2.
+ * available again).
+ *
+ * <p>It is implemented in <code>apps/app_queue.c</code>
+ *
+ * <p>Available since Asterisk 1.2.
  *
  * @author srt
  * @version $Id: QueuePauseAction.java 729 2007-05-26 05:16:57Z sprior $
@@ -123,8 +125,9 @@ public class QueuePauseAction extends AbstractManagerAction
     }
 
     /**
-     * Sets the interface of the member to make available or unavailable.<p>
-     * This property is mandatory.
+     * Sets the interface of the member to make available or unavailable.
+     *
+     * <p>This property is mandatory.
      *
      * @param iface the interface of the member to make available or
      *            unavailable.
@@ -170,8 +173,9 @@ public class QueuePauseAction extends AbstractManagerAction
     }
 
     /**
-     * Sets if the member is made available or unavailable.<p>
-     * This property is mandatory.
+     * Sets if the member is made available or unavailable.
+     *
+     * <p>This property is mandatory.
      *
      * @param paused Boolean.TRUE to make the member unavailable, Boolean.FALSE
      *            to make the member available

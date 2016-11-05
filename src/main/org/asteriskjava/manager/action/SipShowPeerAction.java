@@ -19,10 +19,12 @@ package org.asteriskjava.manager.action;
 import org.asteriskjava.manager.event.PeerlistCompleteEvent;
 
 /**
- * Retrieves a the details about a given SIP peer.<p>
- * For a PeerEntryEvent is sent by Asterisk containing the details of the peer
- * followed by a PeerlistCompleteEvent.<p>
- * Available since Asterisk 1.2
+ * Retrieves a the details about a given SIP peer.
+ *
+ * <p>For a PeerEntryEvent is sent by Asterisk containing the details of the peer
+ * followed by a PeerlistCompleteEvent.
+ *
+ * <p>Available since Asterisk 1.2
  *
  * @see org.asteriskjava.manager.event.PeerEntryEvent
  * @see org.asteriskjava.manager.event.PeerlistCompleteEvent
@@ -51,8 +53,8 @@ public class SipShowPeerAction extends AbstractManagerAction
     /**
      * Creates a new SipShowPeerAction that requests the details about the given
      * SIP peer.
-     * <p>
-     * This is just the peer name without the channel type prefix. For example
+     *
+     * <p>This is just the peer name without the channel type prefix. For example
      * if your channel is called "SIP/john", the peer name is just "john".
      *
      * @param peer the name of the SIP peer to retrieve details for.
@@ -70,8 +72,9 @@ public class SipShowPeerAction extends AbstractManagerAction
     }
 
     /**
-     * Returns the name of the peer to retrieve.<p>
-     * This parameter is mandatory.
+     * Returns the name of the peer to retrieve.
+     *
+     * <p>This parameter is mandatory.
      *
      * @return the name of the peer to retrieve without the channel type prefix.
      */
@@ -82,11 +85,11 @@ public class SipShowPeerAction extends AbstractManagerAction
 
     /**
      * Sets the name of the peer to retrieve.
-     * <p>
-     * This is just the peer name without the channel type prefix. For example
+     *
+     * <p>This is just the peer name without the channel type prefix. For example
      * if your channel is called "SIP/john", the peer name is just "john".
-     * <p>
-     * This parameter is mandatory.
+     *
+     * <p>This parameter is mandatory.
      *
      * @param peer the name of the peer to retrieve without the channel type prefix.
      */

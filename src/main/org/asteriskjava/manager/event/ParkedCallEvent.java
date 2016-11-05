@@ -18,8 +18,9 @@ package org.asteriskjava.manager.event;
 
 /**
  * A ParkedCallEvent is triggered when a channel is parked (in this case no
- * action id is set) and in response to a ParkedCallsAction.<p>
- * It is implemented in <code>res/res_features.c</code>
+ * action id is set) and in response to a ParkedCallsAction.
+ *
+ * <p>It is implemented in <code>res/res_features.c</code>
  *
  * @see org.asteriskjava.manager.action.ParkedCallsAction
  * @author srt
@@ -60,8 +61,9 @@ public class ParkedCallEvent extends AbstractParkedCallEvent
     }
 
     /**
-     * Returns the number of seconds this call will be parked.<p>
-     * This corresponds to the <code>parkingtime</code> option in
+     * Returns the number of seconds this call will be parked.
+     *
+     * <p>This corresponds to the <code>parkingtime</code> option in
      * <code>features.conf</code>.
      */
     public Integer getTimeout()

@@ -18,9 +18,11 @@ package org.asteriskjava.manager.event;
 
 /**
  * A HoldEvent is triggered by the SIP channel driver when a channel is put on
- * hold.<p>
- * It is implemented in <code>channels/chan_sip.c</code>.<p>
- * Available since Asterisk 1.2
+ * hold.
+ *
+ * <p>It is implemented in <code>channels/chan_sip.c</code>.
+ *
+ * <p>Available since Asterisk 1.2
  *
  * @see org.asteriskjava.manager.event.UnholdEvent
  * @author srt

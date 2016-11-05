@@ -21,8 +21,8 @@ import java.util.List;
 
 /**
  * Represents an Asterisk channel.
- * <p>
- * PropertyChangeEvents are fired for the following properties:
+ *
+ * <p>PropertyChangeEvents are fired for the following properties:
  * <ul>
  * <li>name
  * <li>callerId
@@ -56,8 +56,8 @@ public interface AsteriskChannel extends LiveObject
 
     /**
      * Returns the unique id of this channel, for example "1099015093.165".
-     * <p>
-     * The unique id of an AsteriskChannel is immutable for the whole lifecycle
+     *
+     * <p>The unique id of an AsteriskChannel is immutable for the whole lifecycle
      * of the channel.
      *
      * @return the unique id of this channel.
@@ -66,8 +66,8 @@ public interface AsteriskChannel extends LiveObject
 
     /**
      * Returns the name of this channel, for example "SIP/1310-20da".
-     * <p>
-     * In contrast to the unique id the name of an AsteriskChannel can change
+     *
+     * <p>In contrast to the unique id the name of an AsteriskChannel can change
      * while the call is processed.
      *
      * @return the name of this channel.
@@ -90,8 +90,8 @@ public interface AsteriskChannel extends LiveObject
 
     /**
      * Checks if this channel was at least once in the given state.
-     * <p>
-     * For example you can use this method the check if this channel had been
+     *
+     * <p>For example you can use this method the check if this channel had been
      * answered:
      *
      * <pre>
@@ -147,8 +147,8 @@ public interface AsteriskChannel extends LiveObject
 
     /**
      * Returns the date this channel has been created.
-     * <p>
-     * This property is immutable.
+     *
+     * <p>This property is immutable.
      *
      * @return the date this channel has been created.
      */
@@ -281,8 +281,8 @@ public interface AsteriskChannel extends LiveObject
     /**
      * Sets the absolute maximum amount of time permitted for a call on a given
      * channel, it hangs up the channel after this time.
-     * <p>
-     * Time is counted from when you call setAbsoluteTimeout, not from the
+     *
+     * <p>Time is counted from when you call setAbsoluteTimeout, not from the
      * beginning of the call.
      *
      * @param seconds maximum duration of the call in seconds, 0 for unlimited
@@ -299,8 +299,8 @@ public interface AsteriskChannel extends LiveObject
 
     /**
      * Redirects this channel to a new extension.
-     * <p>
-     * If this channel is linked to another channel, the linked channel is hung
+     *
+     * <p>If this channel is linked to another channel, the linked channel is hung
      * up.
      *
      * @param context the destination context.
@@ -317,8 +317,8 @@ public interface AsteriskChannel extends LiveObject
     /**
      * Redirects this channel and the channel this channel is linked to to a new
      * extension.
-     * <p>
-     * If this channel is not linked to another channel only this channel is
+     *
+     * <p>If this channel is not linked to another channel only this channel is
      * redirected.
      *
      * @param context the destination context.
@@ -335,8 +335,8 @@ public interface AsteriskChannel extends LiveObject
 
     /**
      * Returns the value of the given channel variable.
-     * <p>
-     * Currently Asterisk does not support the retrieval of built-in variables
+     *
+     * <p>Currently Asterisk does not support the retrieval of built-in variables
      * like EXTEN or CALLERIDNUM but only custom variables set via Asterisk's
      * Set command or via {@link #setVariable(String, String)}.
      *
@@ -366,8 +366,8 @@ public interface AsteriskChannel extends LiveObject
 
     /**
      * Plays the given DTMF digit on this channel.
-     * <p>
-     * Available since Asterisk 1.2.8
+     *
+     * <p>Available since Asterisk 1.2.8
      *
      * @param digit the DTMF digit to play.
      * @throws ManagerCommunicationException if the play DTMF action cannot be
@@ -381,10 +381,10 @@ public interface AsteriskChannel extends LiveObject
 
     /**
      * Starts monitoring (recording) this channel.
-     * <p>
-     * The format of the files is "wav", they are not mixed.
-     * <p>
-     * The files are called <i>filename</i>-in.wav and <i>filename</i>-out.wav.
+     *
+     * <p>The format of the files is "wav", they are not mixed.
+     *
+     * <p>The files are called <i>filename</i>-in.wav and <i>filename</i>-out.wav.
      *
      * @param filename the basename of the files created in the monitor spool
      *            directory. If <code>null</code> the channel name (with
@@ -401,10 +401,10 @@ public interface AsteriskChannel extends LiveObject
 
     /**
      * Starts monitoring (recording) this channel using the given audio format.
-     * <p>
-     * The files are not mixed.
-     * <p>
-     * The files are called <i>filename</i>-in.<i>format</i> and <i>filename</i>-out.<i>format</i>.
+     *
+     * <p>The files are not mixed.
+     *
+     * <p>The files are called <i>filename</i>-in.<i>format</i> and <i>filename</i>-out.<i>format</i>.
      *
      * @param filename the basename of the files created in the monitor spool
      *            directory. If <code>null</code> the channel name (with
@@ -424,8 +424,8 @@ public interface AsteriskChannel extends LiveObject
     /**
      * Starts monitoring (recording) this channel using the given audio format
      * and optionally mixing input and output data after recording is finished.
-     * <p>
-     * Mixing is done by soxmix by default (which has to be installed on your
+     *
+     * <p>Mixing is done by soxmix by default (which has to be installed on your
      * Asterisk server). You can use your own script by setting the variable
      * <code>MONITOR_EXEC</code> to your custom script before starting
      * monitoring the channel. Your script is then called with 3 arguments, the
@@ -437,8 +437,8 @@ public interface AsteriskChannel extends LiveObject
      * To pass additional arguments to your script you can set the variable
      * <code>MONITOR_EXEC_ARGS</code> to a list of arguments (separated by
      * spaces).
-     * <p>
-     * Example:
+     *
+     * <p>Example:
      *
      * <pre>
      *      AsteriskChannel c;
@@ -475,11 +475,11 @@ public interface AsteriskChannel extends LiveObject
 
     /**
      * Changes the filename of a previously started monitoring.
-     * <p>
-     * If the channel exists but is not currently monitored your request is
+     *
+     * <p>If the channel exists but is not currently monitored your request is
      * ignored and a warning message is written to Asterisk's CLI.
-     * <p>
-     * Use with care, this doesn't always seem to work.
+     *
+     * <p>Use with care, this doesn't always seem to work.
      *
      * @param filename the basename of the file(s) created in the monitor spool
      *            directory.
@@ -497,8 +497,8 @@ public interface AsteriskChannel extends LiveObject
 
     /**
      * Stops monitoring this channel.
-     * <p>
-     * If the channel exists but is not currently monitored your request is
+     *
+     * <p>If the channel exists but is not currently monitored your request is
      * ignored.
      *
      * @throws ManagerCommunicationException if the stop monitor action cannot
@@ -514,11 +514,11 @@ public interface AsteriskChannel extends LiveObject
 
     /**
      * Temporarily stops monitoring this channel.
-     * <p>
-     * If the channel exists but is not currently monitored your request is
+     *
+     * <p>If the channel exists but is not currently monitored your request is
      * ignored.
-     * <p>
-     * This method is available since Asterisk 1.4.
+     *
+     * <p>This method is available since Asterisk 1.4.
      *
      * @throws ManagerCommunicationException if the pause monitor action cannot
      *             be sent to Asterisk.
@@ -532,11 +532,11 @@ public interface AsteriskChannel extends LiveObject
     /**
      * Re-enables monitoring this channel after calling
      * {@link #pauseMonitoring()}.
-     * <p>
-     * If the channel exists but monitoring has not been paused your request is
+     *
+     * <p>If the channel exists but monitoring has not been paused your request is
      * ignored.
-     * <p>
-     * This method is available since Asterisk 1.4.
+     *
+     * <p>This method is available since Asterisk 1.4.
      *
      * @throws ManagerCommunicationException if the unpasue monitor action
      *             cannot be sent to Asterisk.

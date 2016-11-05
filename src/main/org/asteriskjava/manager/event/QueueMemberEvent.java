@@ -19,8 +19,8 @@ package org.asteriskjava.manager.event;
 /**
  * A QueueMemberEvent is triggered in response to a QueueStatusAction and
  * contains information about a member of a queue.
- * <p>
- * It is implemented in <code>apps/app_queue.c</code>
+ *
+ * <p>It is implemented in <code>apps/app_queue.c</code>
  *
  * @see org.asteriskjava.manager.action.QueueStatusAction
  * @author srt
@@ -83,8 +83,8 @@ public class QueueMemberEvent extends ResponseEvent
 
     /**
      * Returns the name of the member's interface.
-     * <p>
-     * E.g. the channel name or agent group (for example "Agent/@1").
+     *
+     * <p>E.g. the channel name or agent group (for example "Agent/@1").
      *
      * @return the name of the member's interface.
      */
@@ -220,10 +220,10 @@ public class QueueMemberEvent extends ResponseEvent
 
     /**
      * Returns the status of this queue member.
-     * <p>
-     * Available since Asterisk 1.2
-     * <p>
-     * Valid status codes are:
+     *
+     * <p>Available since Asterisk 1.2
+     *
+     * <p>Valid status codes are:
      * <dl>
      * <dt>AST_DEVICE_UNKNOWN (0)</dt>
      * <dd>Queue member is available</dd>
@@ -261,8 +261,8 @@ public class QueueMemberEvent extends ResponseEvent
 
     /**
      * Is this queue member paused (not accepting calls)?
-     * <p>
-     * Available since Asterisk 1.2.
+     *
+     * <p>Available since Asterisk 1.2.
      *
      * @return <code>Boolean.TRUE</code> if this member has been paused,
      *         <code>Boolean.FALSE</code> if not or <code>null</code> if

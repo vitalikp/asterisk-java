@@ -23,8 +23,8 @@ import org.asteriskjava.util.LogFactory;
 
 /**
  * Abstract base class for common mapping strategies.
- * <p>
- * If you implement your own mapping strategy you can derive from this class.
+ *
+ * <p>If you implement your own mapping strategy you can derive from this class.
  *
  * @author srt
  * @since 0.3

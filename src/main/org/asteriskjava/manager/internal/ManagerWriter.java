@@ -23,8 +23,9 @@ import org.asteriskjava.util.SocketConnectionFacade;
 
 /**
  * The ManagerWriter transforms actions using an ActionBuilder and sends them to
- * the asterisk server.<p>
- * This class is intended to be used only by the DefaultManagerConnection.
+ * the asterisk server.
+ *
+ * <p>This class is intended to be used only by the DefaultManagerConnection.
  *
  * @see org.asteriskjava.manager.internal.ActionBuilder
  * @see org.asteriskjava.manager.DefaultManagerConnection

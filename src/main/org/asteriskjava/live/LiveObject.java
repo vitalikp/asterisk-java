@@ -20,8 +20,8 @@ import java.beans.PropertyChangeListener;
 
 /**
  * Interface for all live objects.
- * <p>
- * Allows you to retrieve the {@link org.asteriskjava.live.AsteriskServer} this
+ *
+ * <p>Allows you to retrieve the {@link org.asteriskjava.live.AsteriskServer} this
  * live object belongs to and provides support for
  * {@link java.beans.PropertyChangeEvent}s.
  *

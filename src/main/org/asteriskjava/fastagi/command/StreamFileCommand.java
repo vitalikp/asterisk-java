@@ -18,13 +18,16 @@ package org.asteriskjava.fastagi.command;
 
 /**
  * Plays the given file, allowing playback to be interrupted by the given
- * digits, if any.<p>
- * If offset is provided then the audio will seek to sample offset before play
- * starts.<p>
- * Returns 0 if playback completes without a digit being pressed, or the ASCII
+ * digits, if any.
+ *
+ * <p>If offset is provided then the audio will seek to sample offset before play
+ * starts.
+ *
+ * <p>Returns 0 if playback completes without a digit being pressed, or the ASCII
  * numerical value of the digit if one was pressed, or -1 on error or if the
- * channel was disconnected. <p>
- * Remember, the file extension must not be included in the filename.
+ * channel was disconnected.
+ *
+ * <p>Remember, the file extension must not be included in the filename.
  *
  * @author srt
  * @version $Id: StreamFileCommand.java 729 2007-05-26 05:16:57Z sprior $

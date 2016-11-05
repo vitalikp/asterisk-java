@@ -5,10 +5,10 @@ import org.asteriskjava.manager.event.QueueSummaryEvent;
 
 /**
  * The QueueSummaryAction retrieves the summary for one or all queues.
- * <p>
- * Available in Asterisk post-1.4.
- * <p>
- * This action has been added by
+ *
+ * <p>Available in Asterisk post-1.4.
+ *
+ * <p>This action has been added by
  * <a href="http://bugs.digium.com/view.php?id=8035">[Patch] Add QueueSummary command to Queue manager interface</a>.
  *
  * @see QueueSummaryEvent

@@ -17,8 +17,9 @@
 package org.asteriskjava.manager.event;
 
 /**
- * An AlarmEvent is triggered when a Zap channel leaves alarm state.<p>
- * It is implemented in <code>channels/chan_zap.c</code>
+ * An AlarmEvent is triggered when a Zap channel leaves alarm state.
+ *
+ * <p>It is implemented in <code>channels/chan_zap.c</code>
  *
  * @author srt
  * @version $Id: AlarmClearEvent.java 397 2006-05-26 12:13:32Z srt $

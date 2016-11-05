@@ -18,8 +18,9 @@ package org.asteriskjava.manager.action;
 
 /**
  * The ChangeMonitorAction changes the monitoring filename of a channel. It has
- * no effect if the channel is not monitored.<p>
- * It is implemented in <code>res/res_monitor.c</code>
+ * no effect if the channel is not monitored.
+ *
+ * <p>It is implemented in <code>res/res_monitor.c</code>
  *
  * @author srt
  * @version $Id: ChangeMonitorAction.java 729 2007-05-26 05:16:57Z sprior $
@@ -74,8 +75,9 @@ public class ChangeMonitorAction extends AbstractManagerAction
     }
 
     /**
-     * Sets the name of the monitored channel.<p>
-     * This property is mandatory.
+     * Sets the name of the monitored channel.
+     *
+     * <p>This property is mandatory.
      */
     public void setChannel(String channel)
     {
@@ -91,8 +93,9 @@ public class ChangeMonitorAction extends AbstractManagerAction
     }
 
     /**
-     * Sets the (base) name of the file(s) to which the voice data is written.<p>
-     * This property is mandatory.
+     * Sets the (base) name of the file(s) to which the voice data is written.
+     *
+     * <p>This property is mandatory.
      */
     public void setFile(String file)
     {

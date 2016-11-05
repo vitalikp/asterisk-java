@@ -17,9 +17,11 @@
 package org.asteriskjava.manager.action;
 
 /**
- * The MeetMeUnmuteAction unmutes a user in a conference.<p>
- * Defined in <code>apps/app_meetme.c</code><p>
- * Available since Asterisk 1.4.
+ * The MeetMeUnmuteAction unmutes a user in a conference.
+ *
+ * <p>Defined in <code>apps/app_meetme.c</code>
+ *
+ * <p>Available since Asterisk 1.4.
  *
  * @author srt
  * @version $Id: MeetMeUnmuteAction.java 729 2007-05-26 05:16:57Z sprior $

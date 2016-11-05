@@ -18,9 +18,11 @@ package org.asteriskjava.manager.event;
 
 /**
  * A UnparkedCallEvent is triggered when a channel that has been parked is
- * resumed.<p>
- * It is implemented in <code>res/res_features.c</code><p>
- * Available since Asterisk 1.2
+ * resumed.
+ *
+ * <p>It is implemented in <code>res/res_features.c</code>
+ *
+ * <p>Available since Asterisk 1.2
  *
  * @author srt
  * @version $Id: UnparkedCallEvent.java 397 2006-05-26 12:13:32Z srt $

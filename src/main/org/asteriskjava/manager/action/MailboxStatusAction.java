@@ -17,8 +17,9 @@
 package org.asteriskjava.manager.action;
 
 /**
- * The MailboxStatusAction checks if a mailbox contains waiting messages.<p>
- * The MailboxStatusAction returns a MailboxStatusResponse.
+ * The MailboxStatusAction checks if a mailbox contains waiting messages.
+ *
+ * <p>The MailboxStatusAction returns a MailboxStatusResponse.
  *
  * @see org.asteriskjava.manager.response.MailboxStatusResponse
  * @author srt
@@ -45,8 +46,8 @@ public class MailboxStatusAction extends AbstractManagerAction
      * Creates a new MailboxStatusAction that checks for waiting messages in the
      * given mailbox.
      *
-     * @param mailbox the name of the mailbox to check.<p>
-     *            This can either be only the number of the mailbox or a string
+     * @param mailbox the name of the mailbox to check.
+     *            <p>This can either be only the number of the mailbox or a string
      *            of the form mailboxnumber@context. If no context is specified
      *            "default" is assumed.
      * @since 0.2
@@ -74,14 +75,18 @@ public class MailboxStatusAction extends AbstractManagerAction
     }
 
     /**
-     * Sets the name of the mailbox to query.<p>
-     * This can either be only the name of the mailbox or a string of the form
-     * mailboxnumber@context. If no context is specified "default" is assumed.<p>
-     * Multiple mailboxes may be given, separated by ','. In this case the
+     * Sets the name of the mailbox to query.
+     *
+     * <p>This can either be only the name of the mailbox or a string of the form
+     * mailboxnumber@context. If no context is specified "default" is assumed.
+     *
+     * <p>Multiple mailboxes may be given, separated by ','. In this case the
      * action checks whether at least one of the given mailboxes has waiting
-     * messages.<p>
-     * This property is mandatory.<p>
-     * Example: "1234,1235@mycontext"
+     * messages.
+     *
+     * <p>This property is mandatory.
+     *
+     * <p>Example: "1234,1235@mycontext"
      */
     public void setMailbox(String mailbox)
     {

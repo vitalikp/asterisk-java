@@ -18,8 +18,8 @@ package org.asteriskjava.manager.event;
 
 /**
  * An AgentsEvent is triggered for each agent in response to an AgentsAction.
- * <p>
- * Available since Asterisk 1.2
+ *
+ * <p>Available since Asterisk 1.2
  *
  * @see org.asteriskjava.manager.action.AgentsAction
  * @author srt
@@ -106,8 +106,8 @@ public class AgentsEvent extends ResponseEvent
 
     /**
      * Returns the status of this agent.
-     * <p>
-     * This is one of
+     *
+     * <p>This is one of
      * <dl>
      * <dt>"AGENT_LOGGEDOFF"</dt>
      * <dd>Agent isn't logged in</dd>

@@ -18,8 +18,9 @@ package org.asteriskjava.manager.event;
 
 /**
  * A PeerStatusEvent is triggered when a SIP or IAX client attempts to registrer at this asterisk
- * server.<p>
- * This event is implemented in <code>channels/chan_iax2.c</code> and
+ * server.
+ *
+ * <p>This event is implemented in <code>channels/chan_iax2.c</code> and
  * <code>channels/chan_sip.c</code>
  *
  * @author srt
@@ -53,11 +54,12 @@ public class PeerStatusEvent extends ManagerEvent
     }
 
     /**
-     * Returns the name of the peer that registered.<p>
-     * The peer name includes the channel type prefix. So if you receive a PeerStatusEvent for a
+     * Returns the name of the peer that registered.
+     *
+     * <p>The peer name includes the channel type prefix. So if you receive a PeerStatusEvent for a
      * SIP peer defined as "john" in <code>sip.conf</code> this method returns "SIP/john".
-     * <p>
-     * Peer names for IAX clients start with "IAX2/", peer names for SIP clients start with "SIP/".
+     *
+     * <p>Peer names for IAX clients start with "IAX2/", peer names for SIP clients start with "SIP/".
      *
      * @return the peer's name including the channel type.
      */
@@ -75,8 +77,9 @@ public class PeerStatusEvent extends ManagerEvent
     }
 
     /**
-     * Returns the registration state.<p>
-     * This may be one of
+     * Returns the registration state.
+     *
+     * <p>This may be one of
      * <ul>
      * <li>Registered</li>
      * <li>Unregistered</li>
@@ -100,9 +103,11 @@ public class PeerStatusEvent extends ManagerEvent
     }
 
     /**
-     * Returns the cause of a rejection or unregistration.<p>
-     * For IAX peers this is set only if the status equals "Rejected".<p>
-     * For SIP peers this is set if the status equals "Unregistered" and the peer was unregistered
+     * Returns the cause of a rejection or unregistration.
+     *
+     * <p>For IAX peers this is set only if the status equals "Rejected".
+     *
+     * <p>For SIP peers this is set if the status equals "Unregistered" and the peer was unregistered
      * due to an expiration. In that case the cause is set to "Expired".
      */
     public String getCause()

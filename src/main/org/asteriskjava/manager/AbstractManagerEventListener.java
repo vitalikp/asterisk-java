@@ -73,10 +73,10 @@ import org.asteriskjava.manager.event.ZapShowChannelsEvent;
  * Utility class that provides a protected handler method for each concrete manager event.
  * Makes life easier by removing the need to code endless if-then-else constructs with instanceof
  * checking for the events you are interested in.
- * <p>
- * Kindly donated by Steve Prior.
- * <p>
- * Example based on HelloEvents from the tutorial:
+ *
+ * <p>Kindly donated by Steve Prior.
+ *
+ * <p>Example based on HelloEvents from the tutorial:
  *
  * <pre>
  * public class HelloEvents extends AbstractManagerEventListener

@@ -18,8 +18,9 @@ package org.asteriskjava.manager.action;
 
 /**
  * Adds or updates an entry in the Asterisk database for a given family, key,
- * and value.<p>
- * Available since Asterisk 1.2
+ * and value.
+ *
+ * <p>Available since Asterisk 1.2
  *
  * @author srt
  * @version $Id: DbPutAction.java 729 2007-05-26 05:16:57Z sprior $

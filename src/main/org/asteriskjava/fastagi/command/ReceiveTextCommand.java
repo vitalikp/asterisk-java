@@ -17,12 +17,16 @@
 package org.asteriskjava.fastagi.command;
 
 /**
- * Receives a string of text on a channel.<p>
- * Specify timeout to be the maximum time to wait for input in milliseconds, or
- * 0 for infinite.<p>
- * Most channels do not support the reception of text.<p>
- * Returns -1 for failure or 1 for success, and the string in parentheses.<p>
- * Available since Asterisk 1.2.
+ * Receives a string of text on a channel.
+ *
+ * <p>Specify timeout to be the maximum time to wait for input in milliseconds, or
+ * 0 for infinite.
+ *
+ * <p>Most channels do not support the reception of text.
+ *
+ * <p>Returns -1 for failure or 1 for success, and the string in parentheses.
+ *
+ * <p>Available since Asterisk 1.2.
  *
  * @since 0.2
  * @author srt

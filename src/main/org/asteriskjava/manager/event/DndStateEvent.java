@@ -18,9 +18,11 @@ package org.asteriskjava.manager.event;
 
 /**
  * A DNDStateEvent is triggered by the Zap channel driver when a channel enters
- * or leaves DND (do not disturb) state.<p>
- * It is implemented in <code>channels/chan_zap.c</code>.<p>
- * Available since Asterisk 1.2
+ * or leaves DND (do not disturb) state.
+ *
+ * <p>It is implemented in <code>channels/chan_zap.c</code>.
+ *
+ * <p>Available since Asterisk 1.2
  *
  * @author srt
  * @version $Id: DndStateEvent.java 397 2006-05-26 12:13:32Z srt $

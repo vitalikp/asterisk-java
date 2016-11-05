@@ -44,8 +44,9 @@ public abstract class AbstractChannelStateEvent extends AbstractChannelEvent
     }
 
     /**
-     * Returns the (new) state of the channel.<p>
-     * The following states are used:
+     * Returns the (new) state of the channel.
+     *
+     * <p>The following states are used:
      * <ul>
      * <li>Down</li>
      * <li>OffHook</li>

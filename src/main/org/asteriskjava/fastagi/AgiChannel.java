@@ -23,8 +23,8 @@ import org.asteriskjava.fastagi.reply.AgiReply;
 /**
  * Provides the functionality to send AgiCommands to Asterisk while handling an
  * AgiRequest.
- * <p>
- * This interface is supposed to be used by AgiScripts for interaction with the
+ *
+ * <p>This interface is supposed to be used by AgiScripts for interaction with the
  * Asterisk server.
  *
  * @author srt
@@ -82,8 +82,8 @@ public interface AgiChannel
 	 * in the future.
 	 *
 	 * @param time the number of seconds before this channel is automatically
-	 *            hung up.<p>
-	 *            0 disables the autohangup feature.
+	 *            hung up.
+	 *            <p>0 disables the autohangup feature.
 	 * @since 0.2
 	 */
 	void setAutoHangup(int time) throws IOException;
@@ -120,8 +120,9 @@ public interface AgiChannel
 	void stopMusicOnHold() throws IOException;
 
 	/**
-	 * Returns the status of the channel.<p>
-	 * Return values:
+	 * Returns the status of the channel.
+	 *
+	 * <p>Return values:
 	 * <ul>
 	 * <li>0 Channel is down and available
 	 * <li>1 Channel is down, but reserved
@@ -155,8 +156,8 @@ public interface AgiChannel
 	 * by starting to enter digits.
 	 *
 	 * @param file the name of the file to play
-	 * @param timeout the timeout in milliseconds to wait for user input.<p>
-	 *            0 means standard timeout value, -1 means "ludicrous time"
+	 * @param timeout the timeout in milliseconds to wait for user input.
+	 *            <p>0 means standard timeout value, -1 means "ludicrous time"
 	 *            (essentially never times out).
 	 * @return a String containing the DTMF the user entered
 	 * @since 0.2
@@ -170,8 +171,8 @@ public interface AgiChannel
 	 * digits.
 	 *
 	 * @param file the name of the file to play
-	 * @param timeout the timeout in milliseconds to wait for user input.<p>
-	 *            0 means standard timeout value, -1 means "ludicrous time"
+	 * @param timeout the timeout in milliseconds to wait for user input.
+	 *            <p>0 means standard timeout value, -1 means "ludicrous time"
 	 *            (essentially never times out).
 	 * @param maxDigits the maximum number of digits the user is allowed to
 	 *            enter
@@ -434,10 +435,12 @@ public interface AgiChannel
 
 	/**
 	 * Returns the value of the current channel variable, unlike getVariable()
-	 * this method understands complex variable names and builtin variables.<p>
-	 * You can also use this method to use custom Asterisk functions. Syntax is
-	 * "func(args)".<p>
-	 * Available since Asterisk 1.2.
+	 * this method understands complex variable names and builtin variables.
+	 *
+	 * <p>You can also use this method to use custom Asterisk functions. Syntax is
+	 * "func(args)".
+	 *
+	 * <p>Available since Asterisk 1.2.
 	 *
 	 * @param name the name of the variable to retrieve.
 	 * @return the value of the given variable or <code>null</code> if not
@@ -447,8 +450,9 @@ public interface AgiChannel
 	String getFullVariable(String name) throws IOException;
 
 	/**
-	 * Returns the value of the given channel variable.<p>
-	 * Available since Asterisk 1.2.
+	 * Returns the value of the given channel variable.
+	 *
+	 * <p>Available since Asterisk 1.2.
 	 *
 	 * @param name the name of the variable to retrieve.
 	 * @param channel the name of the channel.
@@ -459,8 +463,9 @@ public interface AgiChannel
 	String getFullVariable(String name, String channel) throws IOException;
 
 	/**
-	 * Says the given time.<p>
-	 * Available since Asterisk 1.2.
+	 * Says the given time.
+	 *
+	 * <p>Available since Asterisk 1.2.
 	 *
 	 * @param time the time to say in seconds elapsed since 00:00:00 on January
 	 *            1, 1970, Coordinated Universal Time (UTC)
@@ -470,8 +475,9 @@ public interface AgiChannel
 
 	/**
 	 * Says the given time and allows interruption by one of the given escape
-	 * digits.<p>
-	 * Available since Asterisk 1.2.
+	 * digits.
+	 *
+	 * <p>Available since Asterisk 1.2.
 	 *
 	 * @param time the time to say in seconds elapsed since 00:00:00 on January
 	 *            1, 1970, Coordinated Universal Time (UTC)
@@ -484,8 +490,9 @@ public interface AgiChannel
 
 	/**
 	 * Says the given time in the given format and allows interruption by one of
-	 * the given escape digits.<p>
-	 * Available since Asterisk 1.2.
+	 * the given escape digits.
+	 *
+	 * <p>Available since Asterisk 1.2.
 	 *
 	 * @param time the time to say in seconds elapsed since 00:00:00 on January
 	 *            1, 1970, Coordinated Universal Time (UTC)
@@ -500,8 +507,9 @@ public interface AgiChannel
 
 	/**
 	 * Says the given time in the given format and timezone and allows
-	 * interruption by one of the given escape digits.<p>
-	 * Available since Asterisk 1.2.
+	 * interruption by one of the given escape digits.
+	 *
+	 * <p>Available since Asterisk 1.2.
 	 *
 	 * @param time the time to say in seconds elapsed since 00:00:00 on January
 	 *            1, 1970, Coordinated Universal Time (UTC)

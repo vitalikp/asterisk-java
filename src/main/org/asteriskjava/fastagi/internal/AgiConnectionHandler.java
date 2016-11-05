@@ -29,8 +29,8 @@ import org.asteriskjava.util.LogFactory;
 /**
  * An AgiConnectionHandler is created and run by the AgiServer whenever a new
  * socket connection from an Asterisk Server is received.
- * <p>
- * It reads the request using an AgiReader and runs the AgiScript configured to
+ *
+ * <p>It reads the request using an AgiReader and runs the AgiScript configured to
  * handle this type of request. Finally it closes the socket connection.
  *
  * @author srt

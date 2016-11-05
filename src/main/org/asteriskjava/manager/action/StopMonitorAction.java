@@ -17,8 +17,9 @@
 package org.asteriskjava.manager.action;
 
 /**
- * The StopMonitorAction ends monitoring (recording) a channel.<p>
- * It is implemented in <code>res/res_monitor.c</code>
+ * The StopMonitorAction ends monitoring (recording) a channel.
+ *
+ * <p>It is implemented in <code>res/res_monitor.c</code>
  *
  * @author srt
  * @version $Id: StopMonitorAction.java 729 2007-05-26 05:16:57Z sprior $
@@ -77,8 +78,9 @@ public class StopMonitorAction extends AbstractManagerAction
     }
 
     /**
-     * Sets the name of the channel to end monitoring.<p>
-     * This property is mandatory.
+     * Sets the name of the channel to end monitoring.
+     *
+     * <p>This property is mandatory.
      *
      * @param channel the name of the channel to end monitoring.
      */

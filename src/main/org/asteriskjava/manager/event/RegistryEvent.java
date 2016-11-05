@@ -18,8 +18,9 @@ package org.asteriskjava.manager.event;
 
 /**
  * A RegistryEvent is triggered when this asterisk server attempts to register
- * as a client at another SIP or IAX server.<p>
- * This event is implemented in <code>channels/chan_iax2.c</code> and
+ * as a client at another SIP or IAX server.
+ *
+ * <p>This event is implemented in <code>channels/chan_iax2.c</code> and
  * <code>channels/chan_sip.c</code>
  *
  * @author srt
@@ -127,8 +128,9 @@ public class RegistryEvent extends ManagerEvent
     }
 
     /**
-     * Returns the domain or host name of the SIP or IAX2 server.<p>
-     * This is the host part used in the <code>register</code> lines in
+     * Returns the domain or host name of the SIP or IAX2 server.
+     *
+     * <p>This is the host part used in the <code>register</code> lines in
      * <code>iax.conf</code> and <code>sip.conf</code>.
      *
      * @return the domain or host name of the SIP or IAX2 server.
@@ -149,8 +151,9 @@ public class RegistryEvent extends ManagerEvent
     }
 
     /**
-     * Returns the username used for registration.<p>
-     * SIP send the username in case of a registration timeout, IAX2 in case of
+     * Returns the username used for registration.
+     *
+     * <p>SIP send the username in case of a registration timeout, IAX2 in case of
      * a registration failure. Otherwise the username is <code>null</code>.
      *
      * @return the username used for registration.
@@ -183,8 +186,9 @@ public class RegistryEvent extends ManagerEvent
     }
 
     /**
-     * Returns the registration state.<p>
-     * For sip this may be one of (not sure if all of these are exposed via the
+     * Returns the registration state.
+     *
+     * <p>For sip this may be one of (not sure if all of these are exposed via the
      * manager api, at least "Registered" and "Timeout" are used though)
      * <ul>
      * <li>Registered</li>

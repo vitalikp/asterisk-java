@@ -17,8 +17,9 @@
 package org.asteriskjava.manager.event;
 
 /**
- * A HangupEvent is triggered when a channel is hung up.<p>
- * It is implemented in <code>channel.c</code>
+ * A HangupEvent is triggered when a channel is hung up.
+ *
+ * <p>It is implemented in <code>channel.c</code>
  *
  * @author srt
  * @version $Id: HangupEvent.java 476 2006-07-14 11:45:58Z srt $

@@ -18,8 +18,9 @@ package org.asteriskjava.manager;
 
 /**
  * An EventTimeoutException is thrown if a ManagerResponse or some
- * ResponseEvents are not completely received within the expected time period.<p>
- * This exception allows you to retrieve the partial result, that is the events
+ * ResponseEvents are not completely received within the expected time period.
+ *
+ * <p>This exception allows you to retrieve the partial result, that is the events
  * that have been successfully received before the timeout occurred.
  *
  * @author srt
@@ -50,8 +51,9 @@ public class EventTimeoutException extends TimeoutException
 
     /**
      * Returns the partial result that has been received before the timeout
-     * occurred.<p>
-     * Note: Using the partial result in your application should be avoided
+     * occurred.
+     *
+     * <p>Note: Using the partial result in your application should be avoided
      * wherever possible. This is only a hack to handle those versions of
      * Asterisk that don't follow the Manager API conventions, for example by
      * not sending the correct ActionCompleteEvent.

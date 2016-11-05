@@ -67,8 +67,9 @@ public class ZapHangupAction extends AbstractManagerAction
     }
 
     /**
-     * Sets the number of the zap channel to hangup.<p>
-     * This property is mandatory.
+     * Sets the number of the zap channel to hangup.
+     *
+     * <p>This property is mandatory.
      */
     public void setZapChannel(Integer channel)
     {

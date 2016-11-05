@@ -5,10 +5,10 @@ import org.asteriskjava.manager.action.QueueSummaryAction;
 /**
  * A QueueSummaryEvent is triggered in response to a QueueSummaryAction and
  * contains a summary of the current state of a queue.
- * <p>
- * Available in Asterisk post-1.4.
- * <p>
- * It is implemented in <code>apps/app_queue.c</code>
+ *
+ * <p>Available in Asterisk post-1.4.
+ *
+ * <p>It is implemented in <code>apps/app_queue.c</code>
  *
  * @see QueueSummaryCompleteEvent
  * @see QueueSummaryAction
@@ -75,8 +75,8 @@ public class QueueSummaryEvent extends ResponseEvent
 
     /**
      * Returns the number of members logged in and not in a call.
-     * <p>
-     * This is the number of queue members currently available for calls.
+     *
+     * <p>This is the number of queue members currently available for calls.
      *
      * @return the number of members logged in and not in a call.
      */

@@ -18,9 +18,11 @@ package org.asteriskjava.manager.event;
 
 /**
  * A QueueMemberRemovedEvent is triggered when a queue member is removed from a
- * queue.<p>
- * It is implemented in <code>apps/app_queue.c</code>.<p>
- * Available since Asterisk 1.2
+ * queue.
+ *
+ * <p>It is implemented in <code>apps/app_queue.c</code>.
+ *
+ * <p>Available since Asterisk 1.2
  *
  * @author srt
  * @version $Id: QueueMemberRemovedEvent.java 397 2006-05-26 12:13:32Z srt $

@@ -39,8 +39,9 @@ public abstract class AbstractMeetMeEvent extends ManagerEvent
     }
 
     /**
-     * Returns the name of the channel.<p>
-     * This property is available since Asterisk 1.4.
+     * Returns the name of the channel.
+     *
+     * <p>This property is available since Asterisk 1.4.
      *
      * @return the name of the channel.
      */
@@ -50,8 +51,9 @@ public abstract class AbstractMeetMeEvent extends ManagerEvent
     }
 
     /**
-     * Sets the name of the channel.<p>
-     * This property is available since Asterisk 1.4.
+     * Sets the name of the channel.
+     *
+     * <p>This property is available since Asterisk 1.4.
      *
      * @param channel the name of the channel.
      */
@@ -61,8 +63,9 @@ public abstract class AbstractMeetMeEvent extends ManagerEvent
     }
 
     /**
-     * Returns the unique id of the channel.<p>
-     * This property is available since Asterisk 1.4.
+     * Returns the unique id of the channel.
+     *
+     * <p>This property is available since Asterisk 1.4.
      *
      * @return the unique id of the channel.
      */
@@ -72,8 +75,9 @@ public abstract class AbstractMeetMeEvent extends ManagerEvent
     }
 
     /**
-     * Sets the unique id of the channel.<p>
-     * This property is available since Asterisk 1.4.
+     * Sets the unique id of the channel.
+     *
+     * <p>This property is available since Asterisk 1.4.
      *
      * @param uniqueId the unique id of the channel.
      */
@@ -103,8 +107,9 @@ public abstract class AbstractMeetMeEvent extends ManagerEvent
     }
 
     /**
-     * Returns the index of the user in the conference.<p>
-     * This can be used for the "meetme (mute|unmute|kick)" commands.
+     * Returns the index of the user in the conference.
+     *
+     * <p>This can be used for the "meetme (mute|unmute|kick)" commands.
      *
      * @return the index of the user in the conference.
      */

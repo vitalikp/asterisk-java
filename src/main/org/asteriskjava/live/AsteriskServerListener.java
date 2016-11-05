@@ -4,8 +4,8 @@ package org.asteriskjava.live;
  * You can register an AsteriskServerListener with an
  * {@link org.asteriskjava.live.AsteriskServer} to be notified about new
  * channels and MeetMe users.
- * <p>
- * Usually it is better to extend {@link AbstractAsteriskServerListener} than to
+ *
+ * <p>Usually it is better to extend {@link AbstractAsteriskServerListener} than to
  * implement this interface directly as additional methods will probably be added
  * in future versions of Asterisk-Java.
  *

@@ -17,9 +17,11 @@
 package org.asteriskjava.manager.event;
 
 /**
- * A LogChannelEvent is triggered when logging is turned on or off.<p>
- * It is implemented in <code>logger.c</code><p>
- * Available since Asterisk 1.2
+ * A LogChannelEvent is triggered when logging is turned on or off.
+ *
+ * <p>It is implemented in <code>logger.c</code>
+ *
+ * <p>Available since Asterisk 1.2
  *
  * @author srt
  * @version $Id: LogChannelEvent.java 458 2006-07-05 22:32:02Z srt $

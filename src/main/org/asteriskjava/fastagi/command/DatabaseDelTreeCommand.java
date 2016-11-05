@@ -17,8 +17,9 @@
 package org.asteriskjava.fastagi.command;
 
 /**
- * Deletes a family or specific keytree within a family in the Asterisk database.<p>
- * Returns 1 if successful, 0 otherwise.
+ * Deletes a family or specific keytree within a family in the Asterisk database.
+ *
+ * <p>Returns 1 if successful, 0 otherwise.
  *
  * @author srt
  * @version $Id: DatabaseDelTreeCommand.java 729 2007-05-26 05:16:57Z sprior $

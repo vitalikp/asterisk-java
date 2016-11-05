@@ -23,8 +23,9 @@ import java.util.Map;
 
 /**
  * Utility class that provides helper methods for reflection that is used by the
- * fastagi and manager packages to access getter and setter methods.<p>
- * Client code is not supposed to use this class.
+ * fastagi and manager packages to access getter and setter methods.
+ *
+ * <p>Client code is not supposed to use this class.
  *
  * @author srt
  */
@@ -36,8 +37,9 @@ public class ReflectionUtil
     }
 
     /**
-     * Returns a Map of getter methods of the given class.<p>
-     * The key of the map contains the name of the attribute that can be
+     * Returns a Map of getter methods of the given class.
+     *
+     * <p>The key of the map contains the name of the attribute that can be
      * accessed by the getter, the value the getter itself (an instance of
      * java.lang.reflect.Method). A method is considered a getter if its name
      * starts with "get", it is declared public and takes no arguments.
@@ -83,8 +85,9 @@ public class ReflectionUtil
     }
 
     /**
-     * Returns a Map of setter methods of the given class.<p>
-     * The key of the map contains the name of the attribute that can be
+     * Returns a Map of setter methods of the given class.
+     *
+     * <p>The key of the map contains the name of the attribute that can be
      * accessed by the setter, the value the setter itself (an instance of
      * java.lang.reflect.Method). A method is considered a setter if its name
      * starts with "set", it is declared public and takes exactly one argument.

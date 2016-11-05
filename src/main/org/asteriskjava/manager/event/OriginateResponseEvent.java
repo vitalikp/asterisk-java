@@ -147,8 +147,8 @@ public class OriginateResponseEvent extends ResponseEvent
 
     /**
      * Returns the Caller*ID Number of the originated channel.
-     * <p>
-     * Available sind Asterisk 1.4.
+     *
+     * <p>Available sind Asterisk 1.4.
      *
      * @return the Caller*ID Number of the originated channel or
      *         "&lt;unknown&gt;" if none was set.
@@ -175,8 +175,8 @@ public class OriginateResponseEvent extends ResponseEvent
 
     /**
      * Returns the Caller*ID Name of the originated channel.
-     * <p>
-     * Available sind Asterisk 1.4.
+     *
+     * <p>Available sind Asterisk 1.4.
      *
      * @return the Caller*ID Name of the originated channel or "&lt;unknown&gt;"
      *         if none was set.

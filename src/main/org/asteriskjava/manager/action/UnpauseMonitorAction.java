@@ -19,10 +19,10 @@ package org.asteriskjava.manager.action;
 /**
  * The PauseMonitorAction re-enables monitoring (recording) of a channel after
  * calling PauseMonitor.
- * <p>
- * It is implemented in <code>res/res_monitor.c</code>
- * <p>
- * Available since Asterisk 1.4.
+ *
+ * <p>It is implemented in <code>res/res_monitor.c</code>
+ *
+ * <p>Available since Asterisk 1.4.
  *
  * @see PauseMonitorAction
  * @author srt
@@ -83,8 +83,8 @@ public class UnpauseMonitorAction extends AbstractManagerAction
 
     /**
      * Sets the name of the channel to re-enable monitoring.
-     * <p>
-     * This property is mandatory.
+     *
+     * <p>This property is mandatory.
      *
      * @param channel the name of the channel to re-enable monitoring.
      */

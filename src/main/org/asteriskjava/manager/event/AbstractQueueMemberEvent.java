@@ -62,8 +62,9 @@ public abstract class AbstractQueueMemberEvent extends ManagerEvent
     }
 
     /**
-     * Returns the name of the member's interface.<p>
-     * E.g. the channel name or agent group.
+     * Returns the name of the member's interface.
+     *
+     * <p>E.g. the channel name or agent group.
      *
      * @return the name of the member's interface.
      */
@@ -84,8 +85,8 @@ public abstract class AbstractQueueMemberEvent extends ManagerEvent
 
     /**
      * Returns the name of the queue member.
-     * <p>
-     * Available since Asterisk 1.4
+     *
+     * <p>Available since Asterisk 1.4
      *
      * @return the name of the queue member.
      * @since 0.3
@@ -97,8 +98,8 @@ public abstract class AbstractQueueMemberEvent extends ManagerEvent
 
     /**
      * Sets the name of the queue member.
-     * <p>
-     * Available since Asterisk 1.4
+     *
+     * <p>Available since Asterisk 1.4
      *
      * @param memberName the name of the queue member.
      * @since 0.3

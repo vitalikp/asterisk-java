@@ -18,10 +18,12 @@ package org.asteriskjava.manager.action;
 
 /**
  * The SetCDRUserFieldAction causes the user field of the call detail record for
- * the given channel to be changed.<p>
- * Depending on the value of the append property the value is appended or
- * overwritten.<p>
- * The SetCDRUserFieldAction is implemented in
+ * the given channel to be changed.
+ *
+ * <p>Depending on the value of the append property the value is appended or
+ * overwritten.
+ *
+ * <p>The SetCDRUserFieldAction is implemented in
  * <code>apps/app_setcdruserfield.c</code>
  *
  * @author srt
@@ -95,8 +97,9 @@ public class SetCdrUserFieldAction extends AbstractManagerAction
     }
 
     /**
-     * Sets the name of the channel to set the cdr user field on.<p>
-     * This property is mandatory.
+     * Sets the name of the channel to set the cdr user field on.
+     *
+     * <p>This property is mandatory.
      */
     public void setChannel(String channel)
     {
@@ -112,8 +115,9 @@ public class SetCdrUserFieldAction extends AbstractManagerAction
     }
 
     /**
-     * Sets the value of the cdr user field to set or append.<p>
-     * This property is mandatory.
+     * Sets the value of the cdr user field to set or append.
+     *
+     * <p>This property is mandatory.
      */
     public void setUserField(String userField)
     {

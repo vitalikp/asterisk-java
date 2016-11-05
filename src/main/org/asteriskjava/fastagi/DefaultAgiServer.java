@@ -113,10 +113,10 @@ public class DefaultAgiServer implements AgiServer
 
 	/**
 	 * Sets the number of worker threads in the thread pool.
-	 * <p>
-	 * This is the number of threads that are available even if they are idle.
-	 * <p>
-	 * The default pool size is 10.
+	 *
+	 * <p>This is the number of threads that are available even if they are idle.
+	 *
+	 * <p>The default pool size is 10.
 	 *
 	 * @param poolSize the size of the worker thread pool.
 	 */
@@ -127,10 +127,10 @@ public class DefaultAgiServer implements AgiServer
 
 	/**
 	 * Sets the maximum number of worker threads in the thread pool.
-	 * <p>
-	 * This equals the maximum number of concurrent requests this AgiServer can serve.
-	 * <p>
-	 * The default maximum pool size is 100.
+	 *
+	 * <p>This equals the maximum number of concurrent requests this AgiServer can serve.
+	 *
+	 * <p>The default maximum pool size is 100.
 	 *
 	 * @param maximumPoolSize the maximum size of the worker thread pool.
 	 */
@@ -141,8 +141,8 @@ public class DefaultAgiServer implements AgiServer
 
 	/**
 	 * Sets the TCP port to listen on for new connections.
-	 * <p>
-	 * The default port is 4573.
+	 *
+	 * <p>The default port is 4573.
 	 *
 	 * @param bindPort the port to bind to.
 	 * @deprecated use {@see #setPort(int)} instead
@@ -154,8 +154,8 @@ public class DefaultAgiServer implements AgiServer
 
 	/**
 	 * Sets the TCP port to listen on for new connections.
-	 * <p>
-	 * The default port is 4573.
+	 *
+	 * <p>The default port is 4573.
 	 *
 	 * @param port the port to bind to.
 	 * @since 0.2
@@ -167,8 +167,8 @@ public class DefaultAgiServer implements AgiServer
 
 	/**
 	 * Sets the strategy to use for mapping AgiRequests to AgiScripts that serve them.
-	 * <p>
-	 * The default mapping strategy is a ResourceBundleMappingStrategy.
+	 *
+	 * <p>The default mapping strategy is a ResourceBundleMappingStrategy.
 	 *
 	 * @param mappingStrategy the mapping strategy to use.
 	 * @see ResourceBundleMappingStrategy

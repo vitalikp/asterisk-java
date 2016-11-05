@@ -17,11 +17,12 @@
 package org.asteriskjava.manager.event;
 
 /**
- * An ExtensionStatusEvent is triggered when the state of an extension changes.<p>
- * For this to work for you must provide appropriate hints in your dialplan to
+ * An ExtensionStatusEvent is triggered when the state of an extension changes.
+ *
+ * <p>For this to work for you must provide appropriate hints in your dialplan to
  * map channels to extensions.
- * <p>
- * Example:
+ *
+ * <p>Example:
  * <pre>exten => 1234,1,Dial(SIP/myuser)
  * exten => 1234,hint,SIP/myuser</pre>
  * Hints can also be used to map the state of multiple channels to an extension:
@@ -99,8 +100,9 @@ public class ExtensionStatusEvent extends ManagerEvent
     }
 
     /**
-     * Returns the state of the extension.<p>
-     * Possible values are:
+     * Returns the state of the extension.
+     *
+     * <p>Possible values are:
      * <ul>
      * <li>RINGING
      * <li>INUSE | RINGING
@@ -125,8 +127,8 @@ public class ExtensionStatusEvent extends ManagerEvent
 
     /**
      * Returns the Caller*ID in the form <code>"Some Name" &lt;1234&gt;</code>.
-     * <p>
-     * This property is only available on BRIstuffed Asterisk servers.
+     *
+     * <p>This property is only available on BRIstuffed Asterisk servers.
      *
      * @return the Caller*ID.
      * @since 0.3

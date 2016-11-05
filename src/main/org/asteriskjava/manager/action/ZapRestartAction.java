@@ -3,8 +3,8 @@ package org.asteriskjava.manager.action;
 /**
  * Fully restarts all zaptel channels and terminates any calls on Zap
  * interfaces.
- * <p>
- * Available since Asterisk 1.4.
+ *
+ * <p>Available since Asterisk 1.4.
  *
  * @author srt
  * @since 0.3

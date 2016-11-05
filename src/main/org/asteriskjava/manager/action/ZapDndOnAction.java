@@ -68,8 +68,9 @@ public class ZapDndOnAction extends AbstractManagerAction
     }
 
     /**
-     * Sets the number of the zap channel to switch to dnd on.<p>
-     * This property is mandatory.
+     * Sets the number of the zap channel to switch to dnd on.
+     *
+     * <p>This property is mandatory.
      */
     public void setZapChannel(Integer channel)
     {

@@ -13,8 +13,9 @@ public class NewAccountCodeEvent extends AbstractChannelEvent
 	}
 
 	/**
-     * Returns the account number that is usually used to identify the party to bill for the call.<p>
-     * Corresponds to CDR field <code>accountcode</code>.
+     * Returns the account number that is usually used to identify the party to bill for the call.
+     *
+     * <p>Corresponds to CDR field <code>accountcode</code>.
      *
      * @return the account number.
      */
@@ -34,8 +35,9 @@ public class NewAccountCodeEvent extends AbstractChannelEvent
     }
 
     /**
-     * Returns the old account number that is usually used to identify the party to bill for the call.<p>
-     * Corresponds to CDR field <code>accountcode</code>.
+     * Returns the old account number that is usually used to identify the party to bill for the call.
+     *
+     * <p>Corresponds to CDR field <code>accountcode</code>.
      *
      * @return the old account number.
      */

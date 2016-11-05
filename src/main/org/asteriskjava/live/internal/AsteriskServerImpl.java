@@ -116,18 +116,18 @@ public class AsteriskServerImpl implements AsteriskServer, ManagerEventListener
 
     /**
      * The exact version string of the Asterisk server we are connected to.
-     * <p>
-     * Contains <code>null</code> until lazily initialized.
+     *
+     * <p>Contains <code>null</code> until lazily initialized.
      */
     private String version;
 
     /**
      * Holds the version of Asterisk's source files.
-     * <p>
-     * That corresponds to the output of the CLI command
+     *
+     * <p>That corresponds to the output of the CLI command
      * <code>show version files</code>.
-     * <p>
-     * Contains <code>null</code> until lazily initialized.
+     *
+     * <p>Contains <code>null</code> until lazily initialized.
      */
     private Map<String, String> versions;
 
@@ -183,8 +183,8 @@ public class AsteriskServerImpl implements AsteriskServer, ManagerEventListener
      * queue information and still run Asterisk 1.0.x you can set this to
      * <code>true</code> to circumvent the startup delay caused by the missing
      * QueueStatusComplete event.
-     * <p>
-     * Default is <code>false</code>.
+     *
+     * <p>Default is <code>false</code>.
      *
      * @param skipQueues <code>true</code> to skip queue initialization,
      *            <code>false</code> to not skip.
@@ -819,8 +819,8 @@ public class AsteriskServerImpl implements AsteriskServer, ManagerEventListener
 
     /**
      * Handles all events received from the Asterisk server.
-     * <p>
-     * Events are queued until channels and queues are initialized and then
+     *
+     * <p>Events are queued until channels and queues are initialized and then
      * delegated to the dispatchEvent method.
      */
     public void onManagerEvent(ManagerEvent event)

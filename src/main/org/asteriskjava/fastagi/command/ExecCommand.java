@@ -17,8 +17,9 @@
 package org.asteriskjava.fastagi.command;
 
 /**
- * Executes an application with the given options.<p>
- * Returns whatever the application returns, or -2 if the application was not
+ * Executes an application with the given options.
+ *
+ * <p>Returns whatever the application returns, or -2 if the application was not
  * found.
  *
  * @author srt

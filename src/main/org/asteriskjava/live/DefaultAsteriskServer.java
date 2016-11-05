@@ -101,8 +101,8 @@ public class DefaultAsteriskServer implements AsteriskServer
      * queue information and still run Asterisk 1.0.x you can set this to
      * <code>true</code> to circumvent the startup delay caused by the missing
      * QueueStatusComplete event.
-     * <p>
-     * Default is <code>false</code>.
+     *
+     * <p>Default is <code>false</code>.
      *
      * @param skipQueues <code>true</code> to skip queue initialization,
      *            <code>false</code> to not skip.

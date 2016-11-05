@@ -26,8 +26,8 @@ import java.util.TimeZone;
  * Utility class to obtain the current date and allows to override with a fixed
  * value for unit testing. Includes some convenience methods for date
  * conversion.
- * <p>
- * Client code is not supposed to use this class.
+ *
+ * <p>Client code is not supposed to use this class.
  *
  * @author srt
  * @version $Id: DateUtil.java 488 2006-07-15 11:46:52Z srt $

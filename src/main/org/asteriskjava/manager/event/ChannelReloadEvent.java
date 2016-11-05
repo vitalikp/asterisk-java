@@ -22,15 +22,15 @@ import java.util.regex.Pattern;
 /**
  * A ChannelReloadEvent is when a channel driver is reloaded, either on startup
  * or by request.
- * <p>
- * For example, <code>channels/chan_sip.c</code> triggers the channel reload
+ *
+ * <p>For example, <code>channels/chan_sip.c</code> triggers the channel reload
  * event when the SIP configuration is reloaded from sip.conf because the 'sip
  * reload' command was issued at the Manager interface, the CLI, or for another
  * reason.
- * <p>
- * Available since Asterisk 1.4.
- * <p>
- * It is implemented in <code>channels/chan_sip.c</code>
+ *
+ * <p>Available since Asterisk 1.4.
+ *
+ * <p>It is implemented in <code>channels/chan_sip.c</code>
  *
  * @author martins
  */
@@ -165,8 +165,8 @@ public class ChannelReloadEvent extends ManagerEvent
     /**
      * Returns the reason that this channel was reloaded as received from Asterisk, for
      * example "CLIRELOAD (Channel module reload by CLI command)".
-     * <p>
-     * Usually you don't want to use this method directly.
+     *
+     * <p>Usually you don't want to use this method directly.
      *
      * @see #getReloadReasonCode()
      * @see #getReloadReasonDescription()
@@ -202,8 +202,9 @@ public class ChannelReloadEvent extends ManagerEvent
     }
 
     /**
-     * Returns the reason that this channel was reloaded.<p>
-     * Only the code part of the reason is returned. This is one of
+     * Returns the reason that this channel was reloaded.
+     *
+     * <p>Only the code part of the reason is returned. This is one of
      * <ul>
      * <li>LOAD</li>
      * <li>RELOAD</li>

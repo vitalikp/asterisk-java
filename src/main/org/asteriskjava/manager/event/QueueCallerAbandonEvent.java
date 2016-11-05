@@ -19,10 +19,10 @@ package org.asteriskjava.manager.event;
 /**
  * A QueueCallerAbandonEvent is triggered when a caller abandons a queue before
  * getting connected with an agent.
- * <p>
- * It is implemented in <code>apps/app_queue.c</code>
- * <p>
- * Available since Asterisk 1.4.
+ *
+ * <p>It is implemented in <code>apps/app_queue.c</code>
+ *
+ * <p>Available since Asterisk 1.4.
  *
  * @author martins
  */

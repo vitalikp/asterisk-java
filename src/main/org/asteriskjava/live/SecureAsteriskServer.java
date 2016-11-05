@@ -4,8 +4,9 @@ import org.asteriskjava.manager.DefaultManagerConnection;
 import org.asteriskjava.manager.ManagerConnection;
 
 /**
- * Secure implementation of the AsteriskServer interface.<p>
- * Uses SSL for the connection to Asterisk.
+ * Secure implementation of the AsteriskServer interface.
+ *
+ * <p>Uses SSL for the connection to Asterisk.
  *
  * @see org.asteriskjava.live.AsteriskServer
  * @author srt

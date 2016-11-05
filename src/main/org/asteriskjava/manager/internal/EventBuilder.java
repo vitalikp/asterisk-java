@@ -35,8 +35,8 @@ interface EventBuilder
      * (if present) and stripping the suffix "Event". For example
      * <code>org.asteriskjava.manager.event.JoinEvent</code> is registered for
      * the event "Join".
-     * <p>
-     * The event class must be a concrete class with a default constructor
+     *
+     * <p>The event class must be a concrete class with a default constructor
      * (one that takes no arguments).
      *
      * @param clazz the event class to register, must extend {@link ManagerEvent}.

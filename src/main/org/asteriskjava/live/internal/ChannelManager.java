@@ -321,8 +321,8 @@ class ChannelManager
 
     /**
      * Returns the other side of a local channel.
-     * <p>
-     * Local channels consist of two sides, like
+     *
+     * <p>Local channels consist of two sides, like
      * "Local/1234@from-local-60b5,1" and "Local/1234@from-local-60b5,2"
      * this method returns the other side.
      *

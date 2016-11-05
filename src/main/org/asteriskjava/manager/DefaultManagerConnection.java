@@ -26,16 +26,16 @@ import org.asteriskjava.manager.response.ManagerResponse;
 /**
  * Default implementation of the
  * {@link org.asteriskjava.manager.ManagerConnection} interface.
- * <p>
- * Generally avoid direct use of this class. Use a
+ *
+ * <p>Generally avoid direct use of this class. Use a
  * {@link org.asteriskjava.manager.ManagerConnectionFactory} to obtain a
  * {@link org.asteriskjava.manager.ManagerConnection} instead.
- * <p>
- * When using a dependency injection framework like the Spring Framework direct
+ *
+ * <p>When using a dependency injection framework like the Spring Framework direct
  * usage for wiring up beans that require a
  * {@link org.asteriskjava.manager.ManagerConnection} property is fine though.
- * <p>
- * Note that the DefaultManagerConnection will create one new Thread for reading
+ *
+ * <p>Note that the DefaultManagerConnection will create one new Thread for reading
  * data from Asterisk once it is
  * {@link org.asteriskjava.manager.ManagerConnectionState#CONNECTING}.
  *
@@ -91,8 +91,8 @@ public class DefaultManagerConnection implements ManagerConnection
 
     /**
      * Sets the hostname of the Asterisk server to connect to.
-     * <p>
-     * Default is <code>localhost</code>.
+     *
+     * <p>Default is <code>localhost</code>.
      *
      * @param hostname the hostname to connect to
      */
@@ -104,8 +104,8 @@ public class DefaultManagerConnection implements ManagerConnection
     /**
      * Sets the port to use to connect to the Asterisk server. This is the port
      * specified in Asterisk's <code>manager.conf</code> file.
-     * <p>
-     * Default is 5038.
+     *
+     * <p>Default is 5038.
      *
      * @param port the port to connect to
      */
@@ -116,8 +116,8 @@ public class DefaultManagerConnection implements ManagerConnection
 
     /**
      * Sets whether to use SSL.
-     * <p>
-     * Default is false.
+     *
+     * <p>Default is false.
      *
      * @param ssl <code>true</code> to use SSL for the connection,
      *            <code>false</code> for a plain text connection.
@@ -154,8 +154,8 @@ public class DefaultManagerConnection implements ManagerConnection
      * Sets the time in milliseconds the synchronous sendAction methods
      * {@link #sendAction(ManagerAction)} will wait for a response before
      * throwing a TimeoutException.
-     * <p>
-     * Default is 2000.
+     *
+     * <p>Default is 2000.
      *
      * @param defaultTimeout default timeout in milliseconds
      * @deprecated use {@link #setDefaultResponseTimeout(long)} instead
@@ -169,8 +169,8 @@ public class DefaultManagerConnection implements ManagerConnection
      * Sets the time in milliseconds the synchronous method
      * {@link #sendAction(ManagerAction)} will wait for a response before
      * throwing a TimeoutException.
-     * <p>
-     * Default is 2000.
+     *
+     * <p>Default is 2000.
      *
      * @param defaultResponseTimeout default response timeout in milliseconds
      * @since 0.2
@@ -184,8 +184,8 @@ public class DefaultManagerConnection implements ManagerConnection
      * Sets the time in milliseconds the synchronous method
      * {@link #sendEventGeneratingAction(EventGeneratingAction)} will wait for a
      * response and the last response event before throwing a TimeoutException.
-     * <p>
-     * Default is 5000.
+     *
+     * <p>Default is 5000.
      *
      * @param defaultEventTimeout default event timeout in milliseconds
      * @since 0.2
@@ -197,8 +197,8 @@ public class DefaultManagerConnection implements ManagerConnection
 
     /**
      * This method is deprecated and will be removed in Asterisk-Java 0.4.
-     * <p>
-     * It does nothing.
+     *
+     * <p>It does nothing.
      *
      * @deprecated no longer needed as we now use an interrupt based response
      *             checking approach.
@@ -211,8 +211,8 @@ public class DefaultManagerConnection implements ManagerConnection
     /**
      * Set to <code>true</code> to try reconnecting to the asterisk server
      * even if the reconnection attempt threw an AuthenticationFailedException.
-     * <p>
-     * Default is <code>true</code>.
+     *
+     * <p>Default is <code>true</code>.
      */
     public void setKeepAliveAfterAuthenticationFailure(boolean keepAliveAfterAuthenticationFailure)
     {

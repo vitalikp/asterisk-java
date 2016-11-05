@@ -20,10 +20,12 @@ import java.io.IOException;
 
 /**
  * AgiScripts are used by the AsteriskServer to handle AgiRequests received from
- * the Asterisk server.<p>
- * To implement functionality using this framework you have to implement this
- * interface.<p>
- * Note: The implementation of AgiScript must be threadsafe as only one instance
+ * the Asterisk server.
+ *
+ * <p>To implement functionality using this framework you have to implement this
+ * interface.
+ *
+ * <p>Note: The implementation of AgiScript must be threadsafe as only one instance
  * is used by AsteriskServer to handle all requests to a resource.
  *
  * @author srt

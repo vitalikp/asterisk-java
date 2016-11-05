@@ -22,8 +22,8 @@ import java.util.Set;
 
 /**
  * Response that is received when sending a GetConfigAction.
- * <p>
- * Asterisk's response to the GetConfig command is ugly, and requires some
+ *
+ * <p>Asterisk's response to the GetConfig command is ugly, and requires some
  * parsing of attributes. This class lazily parses its own attributes to hide
  * the ugly details. If the file requested exists but does not contain at least
  * a line with a category, the ResponseBuilder won't create an instance of

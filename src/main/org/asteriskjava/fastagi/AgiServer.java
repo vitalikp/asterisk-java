@@ -30,10 +30,12 @@ import java.io.IOException;
 public interface AgiServer
 {
     /**
-     * Starts this AgiServer.<p>
-     * After calling startup() this AgiServer is ready to receive requests from
-     * Asterisk servers and process them.<p>
-     * Note that this method will not return until the AgiServer has been shut down.
+     * Starts this AgiServer.
+     *
+     * <p>After calling startup() this AgiServer is ready to receive requests from
+     * Asterisk servers and process them.
+     *
+     * <p>Note that this method will not return until the AgiServer has been shut down.
      * If you want to run the AgiServer in the background use wrap it with an
      * {@link AgiServerThread}.
      *
@@ -43,8 +45,9 @@ public interface AgiServer
     void startup() throws IOException, IllegalStateException;
 
     /**
-     * Stops this AgiServer.<p>
-     * The server socket is closed, new connections are refused and resources
+     * Stops this AgiServer.
+     *
+     * <p>The server socket is closed, new connections are refused and resources
      * are freed. Any running {@link AgiScript}s are finish before shutdown
      * completes.
      *

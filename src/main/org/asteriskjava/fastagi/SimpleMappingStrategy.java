@@ -19,9 +19,11 @@ package org.asteriskjava.fastagi;
 import java.util.Map;
 
 /**
- * A MappingStrategy that is configured via a fixed set of properties.<p>
- * This mapping strategy is most useful when used with the Spring framework.<p>
- * Example (using Spring):
+ * A MappingStrategy that is configured via a fixed set of properties.
+ *
+ * <p>This mapping strategy is most useful when used with the Spring framework.
+ *
+ * <p>Example (using Spring):
  *
  * <pre>
  * &lt;beans&gt;
@@ -62,8 +64,9 @@ public class SimpleMappingStrategy implements MappingStrategy
     private Map<String, AgiScript> mappings;
 
     /**
-     * Set the "path to AgiScript" mapping.<p>
-     * Use the path (for example <code>hello.agi</code>) as key and your
+     * Set the "path to AgiScript" mapping.
+     *
+     * <p>Use the path (for example <code>hello.agi</code>) as key and your
      * AgiScript (for example <code>new HelloAgiScript()</code>) as value of
      * this map.
      *

@@ -18,9 +18,11 @@ package org.asteriskjava.manager.event;
 
 /**
  * A MeetMeMuteEvent is triggered when a user in a MeetMe room is muted or
- * unmuted.<p>
- * It is implemented in <code>apps/app_meetme.c</code><p>
- * Available since Asterisk 1.4.
+ * unmuted.
+ *
+ * <p>It is implemented in <code>apps/app_meetme.c</code>
+ *
+ * <p>Available since Asterisk 1.4.
  *
  * @author srt
  * @version $Id: MeetMeMuteEvent.java 405 2006-05-26 14:22:33Z srt $

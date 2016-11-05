@@ -30,23 +30,11 @@ public class Extension implements Serializable
     private final String application;
     private final String appData;
 
-    /**
-     * @param context
-     * @param extension
-     * @param priority
-     */
     public Extension(String context, String extension, Integer priority)
     {
         this(context, extension, priority, null, null);
     }
 
-    /**
-     * @param context
-     * @param extension
-     * @param priority
-     * @param application
-     * @param appData
-     */
     public Extension(String context, String extension,
                      Integer priority, String application, String appData)
     {

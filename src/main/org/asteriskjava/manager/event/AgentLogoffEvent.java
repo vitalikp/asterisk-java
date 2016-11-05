@@ -40,9 +40,6 @@ public class AgentLogoffEvent extends ManagerEvent
     private String loginTime;
     private String uniqueId;
 
-    /**
-     * @param source
-     */
     public AgentLogoffEvent(Object source)
     {
         super(source);

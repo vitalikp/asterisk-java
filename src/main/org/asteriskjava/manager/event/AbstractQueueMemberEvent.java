@@ -33,9 +33,6 @@ public abstract class AbstractQueueMemberEvent extends ManagerEvent
     private String location;
     private String memberName;
 
-    /**
-     * @param source
-     */
     protected AbstractQueueMemberEvent(Object source)
     {
         super(source);

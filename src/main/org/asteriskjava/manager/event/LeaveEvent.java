@@ -31,9 +31,6 @@ public class LeaveEvent extends QueueEvent
      */
     static final long serialVersionUID = -7450401017732634240L;
 
-    /**
-     * @param source
-     */
     public LeaveEvent(Object source)
     {
         super(source);

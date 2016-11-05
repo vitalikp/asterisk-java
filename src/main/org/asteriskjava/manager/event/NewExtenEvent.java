@@ -39,9 +39,6 @@ public class NewExtenEvent extends ManagerEvent
     private Integer priority;
     private String channel;
 
-    /**
-     * @param source
-     */
     public NewExtenEvent(Object source)
     {
         super(source);

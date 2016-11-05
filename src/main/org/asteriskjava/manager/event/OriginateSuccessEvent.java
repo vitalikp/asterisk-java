@@ -35,9 +35,6 @@ public class OriginateSuccessEvent extends OriginateResponseEvent
      */
     private static final long serialVersionUID = -5086668438614692086L;
 
-    /**
-     * @param source
-     */
     public OriginateSuccessEvent(Object source)
     {
         super(source);

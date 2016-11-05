@@ -46,11 +46,6 @@ public class UnholdEvent extends ManagerEvent
      */
     private String uniqueId;
 
-    /**
-     * Creates a new UnholdEvent.
-     *
-     * @param source
-     */
     public UnholdEvent(Object source)
     {
         super(source);

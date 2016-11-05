@@ -56,9 +56,6 @@ public abstract class ManagerEvent extends EventObject implements Serializable
 
     private Double timestamp;
 
-    /**
-     * @param source
-     */
     public ManagerEvent(Object source)
     {
         super(source);

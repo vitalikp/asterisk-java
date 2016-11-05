@@ -33,9 +33,6 @@ public class AlarmEvent extends ManagerEvent
     private String alarm;
     private Integer channel;
 
-    /**
-     * @param source
-     */
     public AlarmEvent(Object source)
     {
         super(source);

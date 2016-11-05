@@ -38,9 +38,6 @@ public class OriginateResponseEvent extends ResponseEvent
     private String callerIdNum;
     private String callerIdName;
 
-    /**
-     * @param source
-     */
     public OriginateResponseEvent(Object source)
     {
         super(source);

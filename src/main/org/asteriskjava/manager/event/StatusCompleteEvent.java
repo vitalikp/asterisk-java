@@ -33,9 +33,6 @@ public class StatusCompleteEvent extends ResponseEvent
      */
     private static final long serialVersionUID = -1177773673509373296L;
 
-    /**
-     * @param source
-     */
     public StatusCompleteEvent(Object source)
     {
         super(source);

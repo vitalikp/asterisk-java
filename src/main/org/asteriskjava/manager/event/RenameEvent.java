@@ -51,9 +51,6 @@ public class RenameEvent extends ManagerEvent
      */
     protected String uniqueId;
 
-    /**
-     * @param source
-     */
     public RenameEvent(Object source)
     {
         super(source);

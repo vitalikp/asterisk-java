@@ -99,9 +99,6 @@ public class ChannelReloadEvent extends ManagerEvent
      */
     private Integer userCount;
 
-    /**
-     * @param source
-     */
     public ChannelReloadEvent(Object source)
     {
         super(source);

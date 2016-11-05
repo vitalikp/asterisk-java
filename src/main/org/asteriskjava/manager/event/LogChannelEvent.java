@@ -39,9 +39,6 @@ public class LogChannelEvent extends ManagerEvent
     private Integer reason;
     private String reasonTxt;
 
-    /**
-     * @param source
-     */
     public LogChannelEvent(Object source)
     {
         super(source);

@@ -53,9 +53,6 @@ public class QueueMemberEvent extends ResponseEvent
     private Integer status;
     private Boolean paused;
 
-    /**
-     * @param source
-     */
     public QueueMemberEvent(Object source)
     {
         super(source);

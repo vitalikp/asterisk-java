@@ -45,11 +45,6 @@ public class PeerEntryEvent extends ResponseEvent
     private String status;
     private String realtimeDevice;
 
-    /**
-     * Creates a new instance.
-     *
-     * @param source
-     */
     public PeerEntryEvent(Object source)
     {
         super(source);

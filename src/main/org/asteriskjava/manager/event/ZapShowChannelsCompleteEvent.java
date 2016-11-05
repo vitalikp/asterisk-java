@@ -33,9 +33,6 @@ public class ZapShowChannelsCompleteEvent extends ResponseEvent
      */
     private static final long serialVersionUID = 6323249250335886462L;
 
-    /**
-     * @param source
-     */
     public ZapShowChannelsCompleteEvent(Object source)
     {
         super(source);

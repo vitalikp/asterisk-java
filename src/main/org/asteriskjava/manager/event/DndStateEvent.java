@@ -45,11 +45,6 @@ public class DndStateEvent extends ManagerEvent
      */
     private Boolean state;
 
-    /**
-     * Creates a new DNDStateEvent.
-     *
-     * @param source
-     */
     public DndStateEvent(Object source)
     {
         super(source);

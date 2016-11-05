@@ -35,9 +35,6 @@ public class AgentLoginEvent extends ManagerEvent
     private String channel;
     private String uniqueId;
 
-    /**
-     * @param source
-     */
     public AgentLoginEvent(Object source)
     {
         super(source);

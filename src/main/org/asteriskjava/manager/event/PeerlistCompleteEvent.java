@@ -37,11 +37,6 @@ public class PeerlistCompleteEvent extends ResponseEvent
     private static final long serialVersionUID = -1177773673509373296L;
     private Integer listItems;
 
-    /**
-     * Creates a new instance.
-     *
-     * @param source
-     */
     public PeerlistCompleteEvent(Object source)
     {
         super(source);

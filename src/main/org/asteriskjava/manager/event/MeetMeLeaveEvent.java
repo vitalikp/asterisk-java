@@ -37,9 +37,6 @@ public class MeetMeLeaveEvent extends AbstractMeetMeEvent
     private String callerIdName;
     private Long duration;
 
-    /**
-     * @param source
-     */
     public MeetMeLeaveEvent(Object source)
     {
         super(source);

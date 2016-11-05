@@ -46,11 +46,6 @@ public class HoldEvent extends ManagerEvent
      */
     private String uniqueId;
 
-    /**
-     * Creates a new HoldEvent.
-     *
-     * @param source
-     */
     public HoldEvent(Object source)
     {
         super(source);

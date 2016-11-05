@@ -36,9 +36,6 @@ public class MeetMeMuteEvent extends AbstractMeetMeEvent
 
     private Boolean status;
 
-    /**
-     * @param source
-     */
     public MeetMeMuteEvent(Object source)
     {
         super(source);

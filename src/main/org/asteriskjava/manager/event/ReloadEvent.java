@@ -33,9 +33,6 @@ public class ReloadEvent extends ManagerEvent
     private static final long serialVersionUID = 7503005587022499819L;
     private String message;
 
-    /**
-     * @param source
-     */
     public ReloadEvent(Object source)
     {
         super(source);

@@ -40,9 +40,6 @@ public class ProtocolIdentifierReceivedEvent extends ManagerEvent
      */
     private String protocolIdentifier;
 
-    /**
-     * @param source
-     */
     public ProtocolIdentifierReceivedEvent(Object source)
     {
         super(source);

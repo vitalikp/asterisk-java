@@ -35,9 +35,6 @@ public class ParkedCallGiveUpEvent extends AbstractParkedCallEvent
      */
     private static final long serialVersionUID = -7437833328723536814L;
 
-    /**
-     * @param source
-     */
     public ParkedCallGiveUpEvent(Object source)
     {
         super(source);

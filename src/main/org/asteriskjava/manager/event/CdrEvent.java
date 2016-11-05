@@ -69,9 +69,6 @@ public class CdrEvent extends ManagerEvent
     private String uniqueId;
     private String userField;
 
-    /**
-     * @param source
-     */
     public CdrEvent(Object source)
     {
         super(source);

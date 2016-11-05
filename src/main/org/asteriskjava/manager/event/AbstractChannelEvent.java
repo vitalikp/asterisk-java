@@ -49,9 +49,6 @@ public abstract class AbstractChannelEvent extends ManagerEvent
      */
     private String uniqueId;
 
-    /**
-     * @param source
-     */
     protected AbstractChannelEvent(Object source)
     {
         super(source);

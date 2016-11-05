@@ -48,9 +48,6 @@ public class RegistryEvent extends ManagerEvent
     private String status;
     private String cause;
 
-    /**
-     * @param source
-     */
     public RegistryEvent(Object source)
     {
         super(source);

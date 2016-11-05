@@ -31,9 +31,6 @@ public class DisconnectEvent extends ManagerEvent
      */
     private static final long serialVersionUID = 3689355411862206518L;
 
-    /**
-     * @param source
-     */
     public DisconnectEvent(Object source)
     {
         super(source);

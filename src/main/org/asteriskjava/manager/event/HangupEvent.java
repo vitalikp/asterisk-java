@@ -47,9 +47,6 @@ public class HangupEvent extends AbstractChannelStateEvent
     private Integer cause;
     private String causeTxt;
 
-    /**
-     * @param source
-     */
     public HangupEvent(Object source)
     {
         super(source);

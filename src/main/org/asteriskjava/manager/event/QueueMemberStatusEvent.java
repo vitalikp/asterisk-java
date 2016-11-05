@@ -29,9 +29,6 @@ public class QueueMemberStatusEvent extends QueueMemberEvent
      */
     private static final long serialVersionUID = -2293926744791895763L;
 
-    /**
-     * @param source
-     */
     public QueueMemberStatusEvent(Object source)
     {
         super(source);

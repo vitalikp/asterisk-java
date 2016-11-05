@@ -36,9 +36,6 @@ public class ConnectEvent extends ManagerEvent
      */
     private String protocolIdentifier;
 
-    /**
-     * @param source
-     */
     public ConnectEvent(Object source)
     {
         super(source);

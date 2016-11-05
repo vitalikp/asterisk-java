@@ -38,9 +38,6 @@ public class DbGetResponseEvent extends ResponseEvent
      */
     private static final long serialVersionUID = -1177773673509373296L;
 
-    /**
-     * @param source
-     */
     public DbGetResponseEvent(Object source)
     {
         super(source);

@@ -34,9 +34,6 @@ public class AgentsCompleteEvent extends ResponseEvent
      */
     private static final long serialVersionUID = -1177773673509373296L;
 
-    /**
-     * @param source
-     */
     public AgentsCompleteEvent(Object source)
     {
         super(source);

@@ -40,9 +40,6 @@ public class MeetMeStopTalkingEvent extends AbstractMeetMeEvent
      */
     private static final long serialVersionUID = -8554403451985143184L;
 
-    /**
-     * @param source
-     */
     public MeetMeStopTalkingEvent(Object source)
     {
         super(source);

@@ -35,9 +35,6 @@ public class HoldedCallEvent extends ManagerEvent
     private String channel1;
     private String channel2;
 
-    /**
-     * @param source
-     */
     public HoldedCallEvent(Object source)
     {
         super(source);

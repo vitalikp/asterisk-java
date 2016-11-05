@@ -34,9 +34,6 @@ public abstract class QueueEvent extends ManagerEvent
     private String queue;
     private Integer count;
 
-    /**
-     * @param source
-     */
     public QueueEvent(Object source)
     {
         super(source);

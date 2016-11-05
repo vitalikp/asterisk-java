@@ -74,11 +74,6 @@ public class DialEvent extends ManagerEvent
 
     private String dialstring;
 
-    /**
-     * Creates a new DialEvent.
-     *
-     * @param source
-     */
     public DialEvent(Object source)
     {
         super(source);

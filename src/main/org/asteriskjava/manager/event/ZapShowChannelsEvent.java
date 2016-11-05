@@ -37,9 +37,6 @@ public class ZapShowChannelsEvent extends ResponseEvent
     private Boolean dnd;
     private String alarm;
 
-    /**
-     * @param source
-     */
     public ZapShowChannelsEvent(Object source)
     {
         super(source);

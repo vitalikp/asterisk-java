@@ -40,9 +40,6 @@ public class MeetMeTalkingEvent extends AbstractMeetMeEvent
 
     private Boolean status = Boolean.TRUE;
 
-    /**
-     * @param source
-     */
     public MeetMeTalkingEvent(Object source)
     {
         super(source);

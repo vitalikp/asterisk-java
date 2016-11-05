@@ -45,9 +45,6 @@ public class PeerStatusEvent extends ManagerEvent
     private String cause;
     private Integer time;
 
-    /**
-     * @param source
-     */
     public PeerStatusEvent(Object source)
     {
         super(source);

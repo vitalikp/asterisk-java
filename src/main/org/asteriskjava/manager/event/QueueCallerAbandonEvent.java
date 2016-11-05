@@ -37,9 +37,6 @@ public class QueueCallerAbandonEvent extends QueueEvent
     private Integer originalPosition;
     private Integer holdTime;
 
-    /**
-     * @param source
-     */
     public QueueCallerAbandonEvent(Object source)
     {
         super(source);

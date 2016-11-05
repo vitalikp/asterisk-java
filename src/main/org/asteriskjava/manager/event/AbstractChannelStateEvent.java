@@ -35,9 +35,6 @@ public abstract class AbstractChannelStateEvent extends AbstractChannelEvent
      */
     private String state;
 
-    /**
-     * @param source
-     */
     protected AbstractChannelStateEvent(Object source)
     {
         super(source);

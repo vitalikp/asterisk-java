@@ -37,9 +37,6 @@ public class UnparkedCallEvent extends AbstractParkedCallEvent
 
     private String from;
 
-    /**
-     * @param source
-     */
     public UnparkedCallEvent(Object source)
     {
         super(source);

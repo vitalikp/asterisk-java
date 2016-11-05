@@ -36,9 +36,6 @@ public abstract class AbstractAgentEvent extends ManagerEvent
     private String member;
     private String memberName;
 
-    /**
-     * @param source
-     */
     protected AbstractAgentEvent(Object source)
     {
         super(source);

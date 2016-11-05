@@ -32,9 +32,6 @@ public class UnlinkEvent extends LinkageEvent
      */
     static final long serialVersionUID = -2943257621137870024L;
 
-    /**
-     * @param source
-     */
     public UnlinkEvent(Object source)
     {
         super(source);

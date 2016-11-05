@@ -37,9 +37,6 @@ public class NewStateEvent extends AbstractChannelStateEvent
     private String connectedLineNum;
     private String connectedLineName;
 
-    /**
-     * @param source
-     */
     public NewStateEvent(Object source)
     {
         super(source);

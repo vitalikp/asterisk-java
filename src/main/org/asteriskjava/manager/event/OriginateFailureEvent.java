@@ -35,9 +35,6 @@ public class OriginateFailureEvent extends OriginateResponseEvent
      */
     private static final long serialVersionUID = -6812199688948480631L;
 
-    /**
-     * @param source
-     */
     public OriginateFailureEvent(Object source)
     {
         super(source);

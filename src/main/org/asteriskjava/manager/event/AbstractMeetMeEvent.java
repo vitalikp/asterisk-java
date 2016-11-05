@@ -30,9 +30,6 @@ public abstract class AbstractMeetMeEvent extends ManagerEvent
     private String meetMe;
     private Integer userNum;
 
-    /**
-     * @param source
-     */
     protected AbstractMeetMeEvent(Object source)
     {
         super(source);

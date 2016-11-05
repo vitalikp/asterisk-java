@@ -35,9 +35,6 @@ public abstract class AbstractParkedCallEvent extends ManagerEvent
     private String callerIdName;
     private String uniqueId;
 
-    /**
-     * @param source
-     */
     protected AbstractParkedCallEvent(Object source)
     {
         super(source);

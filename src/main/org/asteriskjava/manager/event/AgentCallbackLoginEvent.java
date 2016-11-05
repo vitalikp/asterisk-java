@@ -36,9 +36,6 @@ public class AgentCallbackLoginEvent extends ManagerEvent
     private String loginChan;
     private String uniqueId;
 
-    /**
-     * @param source
-     */
     public AgentCallbackLoginEvent(Object source)
     {
         super(source);

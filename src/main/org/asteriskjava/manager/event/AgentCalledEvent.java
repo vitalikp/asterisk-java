@@ -41,9 +41,6 @@ public class AgentCalledEvent extends ManagerEvent
     private String extension;
     private String priority;
 
-    /**
-     * @param source
-     */
     public AgentCalledEvent(Object source)
     {
         super(source);

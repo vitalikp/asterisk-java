@@ -37,9 +37,6 @@ public abstract class LinkageEvent extends ManagerEvent
     private String callerId1;
     private String callerId2;
 
-    /**
-     * @param source
-     */
     public LinkageEvent(Object source)
     {
         super(source);

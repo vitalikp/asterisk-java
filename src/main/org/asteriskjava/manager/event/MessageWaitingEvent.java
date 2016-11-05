@@ -35,9 +35,6 @@ public class MessageWaitingEvent extends ManagerEvent
     private Integer newMessages;
     private Integer oldMessages;
 
-    /**
-     * @param source
-     */
     public MessageWaitingEvent(Object source)
     {
         super(source);

@@ -36,9 +36,6 @@ public class AlarmClearEvent extends ManagerEvent
      */
     private Integer channel;
 
-    /**
-     * @param source
-     */
     public AlarmClearEvent(Object source)
     {
         super(source);

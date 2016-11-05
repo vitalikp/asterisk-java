@@ -39,9 +39,6 @@ public class NewChannelEvent extends AbstractChannelStateEvent
     private String exten;
     private String context;
 
-    /**
-     * @param source
-     */
     public NewChannelEvent(Object source)
     {
         super(source);

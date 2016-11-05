@@ -35,9 +35,6 @@ public class QueueStatusCompleteEvent extends ResponseEvent
      */
     private static final long serialVersionUID = -1177773673509373296L;
 
-    /**
-     * @param source
-     */
     public QueueStatusCompleteEvent(Object source)
     {
         super(source);

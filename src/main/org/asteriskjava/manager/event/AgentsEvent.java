@@ -60,9 +60,6 @@ public class AgentsEvent extends ResponseEvent
     private Long loggedInTime;
     private String talkingTo;
 
-    /**
-     * @param source
-     */
     public AgentsEvent(Object source)
     {
         super(source);

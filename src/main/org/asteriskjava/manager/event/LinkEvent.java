@@ -36,9 +36,6 @@ public class LinkEvent extends LinkageEvent
      */
     static final long serialVersionUID = -4023240534975776225L;
 
-    /**
-     * @param source
-     */
     public LinkEvent(Object source)
     {
         super(source);

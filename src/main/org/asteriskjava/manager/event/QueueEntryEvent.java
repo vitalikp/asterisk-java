@@ -39,9 +39,6 @@ public class QueueEntryEvent extends ResponseEvent
     private String callerIdName;
     private Long wait;
 
-    /**
-     * @param source
-     */
     public QueueEntryEvent(Object source)
     {
         super(source);

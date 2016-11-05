@@ -35,9 +35,6 @@ public class JoinEvent extends QueueEvent
     protected String callerIdName;
     protected Integer position;
 
-    /**
-     * @param source
-     */
     public JoinEvent(Object source)
     {
         super(source);

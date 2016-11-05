@@ -59,9 +59,6 @@ public class ExtensionStatusEvent extends ManagerEvent
     private Integer status;
     private String callerId;
 
-    /**
-     * @param source
-     */
     public ExtensionStatusEvent(Object source)
     {
         super(source);

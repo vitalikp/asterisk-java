@@ -34,9 +34,6 @@ public class ShutdownEvent extends ManagerEvent
     private Boolean restart = Boolean.FALSE;
     private String shutdown;
 
-    /**
-     * @param source
-     */
     public ShutdownEvent(Object source)
     {
         super(source);

@@ -36,9 +36,6 @@ public class ParkedCallEvent extends AbstractParkedCallEvent
     private String from;
     private Integer timeout;
 
-    /**
-     * @param source
-     */
     public ParkedCallEvent(Object source)
     {
         super(source);

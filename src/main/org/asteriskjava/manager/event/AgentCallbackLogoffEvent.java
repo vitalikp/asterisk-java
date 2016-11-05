@@ -38,9 +38,6 @@ public class AgentCallbackLogoffEvent extends ManagerEvent
     private String reason;
     private String uniqueId;
 
-    /**
-     * @param source
-     */
     public AgentCallbackLogoffEvent(Object source)
     {
         super(source);

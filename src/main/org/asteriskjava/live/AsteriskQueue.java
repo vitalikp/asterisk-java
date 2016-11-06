@@ -57,7 +57,8 @@ public interface AsteriskQueue
      * <li>random</li>
      * <li>rrmemory</li>
      * </ul>
-     * Available since Asterisk 1.6
+     *
+     * <p>Available since Asterisk 1.6
      *
      * @return the strategy used for this queue.
      * @since 1.0.0

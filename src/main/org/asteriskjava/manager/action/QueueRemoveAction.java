@@ -104,6 +104,8 @@ public class QueueRemoveAction extends AbstractManagerAction
      * Sets the interface to remove.
      *
      * <p>This property is mandatory.
+     *
+     * @param iface the interface.
      */
     public void setInterface(String iface)
     {

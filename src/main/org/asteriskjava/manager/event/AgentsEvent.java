@@ -75,6 +75,8 @@ public class AgentsEvent extends ResponseEvent
 
     /**
      * Sets the agentid.
+     *
+     * @param agent the agentid.
      */
     public void setAgent(String agent)
     {

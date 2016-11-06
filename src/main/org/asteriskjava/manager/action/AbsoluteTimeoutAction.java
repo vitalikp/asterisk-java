@@ -86,6 +86,8 @@ public class AbsoluteTimeoutAction extends AbstractManagerAction
 
     /**
      * Sets the name of the channel.
+     *
+     * @param channel the name of the channel.
      */
     public void setChannel(String channel)
     {
@@ -104,6 +106,8 @@ public class AbsoluteTimeoutAction extends AbstractManagerAction
      * Sets the the maximum duration of the call (in seconds) to set on channel.
      *
      * <p>Setting the timeout to 0 cancels the timeout.
+     *
+     * @param timeout the the maximum duration of the call (in seconds).
      */
     public void setTimeout(Integer timeout)
     {

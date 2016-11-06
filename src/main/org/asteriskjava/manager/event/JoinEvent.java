@@ -51,6 +51,8 @@ public class JoinEvent extends QueueEvent
 
     /**
      * Sets the Caller*ID number of the channel that joined the queue.
+     *
+     * @param callerId the Caller*ID number.
      */
     public void setCallerId(String callerId)
     {
@@ -69,6 +71,8 @@ public class JoinEvent extends QueueEvent
 
     /**
      * Sets the Caller*ID name of the channel that joined the queue.
+     *
+     * @param callerIdName the Caller*ID name of the channel.
      * @since 0.2
      */
     public void setCallerIdName(String callerIdName)
@@ -86,6 +90,8 @@ public class JoinEvent extends QueueEvent
 
     /**
      * Sets the position of the joined channel in the queue.
+     *
+     * @param position the position of the joined channel in the queue.
      */
     public void setPosition(Integer position)
     {

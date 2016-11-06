@@ -202,6 +202,7 @@ public class DefaultManagerConnection implements ManagerConnection
      *
      * @deprecated no longer needed as we now use an interrupt based response
      *             checking approach.
+     * @param sleepTime ignored
      */
     public void setSleepTime(long sleepTime)
     {
@@ -213,6 +214,10 @@ public class DefaultManagerConnection implements ManagerConnection
      * even if the reconnection attempt threw an AuthenticationFailedException.
      *
      * <p>Default is <code>true</code>.
+     *
+     * @param keepAliveAfterAuthenticationFailure
+     *             <code>true</code> to try reconnecting to the asterisk server,
+     *             <code>false</code> otherwise.
      */
     public void setKeepAliveAfterAuthenticationFailure(boolean keepAliveAfterAuthenticationFailure)
     {

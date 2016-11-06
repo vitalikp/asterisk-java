@@ -51,6 +51,8 @@ public class ParkedCallEvent extends AbstractParkedCallEvent
 
     /**
      * Sets the name of the channel that parked the call.
+     *
+     * @param from the name of the channel.
      */
     public void setFrom(String from)
     {
@@ -70,6 +72,8 @@ public class ParkedCallEvent extends AbstractParkedCallEvent
 
     /**
      * Sets the number of seconds this call will be parked.
+     *
+     * @param timeout the number of seconds.
      */
     public void setTimeout(Integer timeout)
     {
@@ -79,6 +83,8 @@ public class ParkedCallEvent extends AbstractParkedCallEvent
     /**
      * Sets the unique id of the parked channel,
      * workaround for a typo in asterisk manager event
+     *
+     * @param unqiueId the unique id of the parked channel.
      */
     public void setUnqiueId(String unqiueId)
     {

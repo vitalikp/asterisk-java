@@ -129,6 +129,8 @@ public class LoginAction extends AbstractManagerAction
 
     /**
      * Sets the username as configured in asterik's <code>manager.conf</code>.
+     *
+     * @param username the username.
      */
     public void setUsername(String username)
     {
@@ -150,6 +152,8 @@ public class LoginAction extends AbstractManagerAction
      * <code>manager.conf</code>.
      *
      * <p>The secret and key properties are mutually exclusive.
+     *
+     * @param secret the secret to use when using cleartext login.
      */
     public void setSecret(String secret)
     {
@@ -171,6 +175,8 @@ public class LoginAction extends AbstractManagerAction
      * the user's password.
      *
      * <p>Currently Asterisk supports only "MD5".
+     *
+     * @param authType the digest algorithm.
      */
     public void setAuthType(String authType)
     {
@@ -186,7 +192,9 @@ public class LoginAction extends AbstractManagerAction
     }
 
     /**
-     * @param key The key to set.
+     * Sets the key.
+     *
+     * @param key the key.
      */
     public void setKey(String key)
     {

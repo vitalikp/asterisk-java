@@ -50,6 +50,8 @@ public abstract class AbstractParkedCallEvent extends ManagerEvent
 
     /**
      * Sets the extension the channel is or was parked at.
+     *
+     * @param exten the extension.
      */
     public void setExten(String exten)
     {
@@ -66,6 +68,8 @@ public abstract class AbstractParkedCallEvent extends ManagerEvent
 
     /**
      * Sets the name of the channel that is or was parked.
+     *
+     * @param channel the name of the channel.
      */
     public void setChannel(String channel)
     {
@@ -122,6 +126,8 @@ public abstract class AbstractParkedCallEvent extends ManagerEvent
 
     /**
      * Sets the unique id of the parked channel.
+     *
+     * @param uniqueId the unique id of the parked channel.
      */
     public void setUniqueId(String uniqueId)
     {

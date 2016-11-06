@@ -87,6 +87,8 @@ public class MailboxStatusAction extends AbstractManagerAction
      * <p>This property is mandatory.
      *
      * <p>Example: "1234,1235@mycontext"
+     *
+     * @param mailbox the name of the mailbox.
      */
     public void setMailbox(String mailbox)
     {

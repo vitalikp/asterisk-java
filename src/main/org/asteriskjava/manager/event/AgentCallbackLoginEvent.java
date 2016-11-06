@@ -51,6 +51,8 @@ public class AgentCallbackLoginEvent extends ManagerEvent
 
     /**
      * Sets the name of the agent that logged in.
+     *
+     * @param agent the name of the agent.
      */
     public void setAgent(String agent)
     {

@@ -78,6 +78,8 @@ public class ChangeMonitorAction extends AbstractManagerAction
      * Sets the name of the monitored channel.
      *
      * <p>This property is mandatory.
+     *
+     * @param channel the name of the monitored channel.
      */
     public void setChannel(String channel)
     {
@@ -96,6 +98,8 @@ public class ChangeMonitorAction extends AbstractManagerAction
      * Sets the (base) name of the file(s) to which the voice data is written.
      *
      * <p>This property is mandatory.
+     *
+     * @param file the (base) name of the file(s).
      */
     public void setFile(String file)
     {

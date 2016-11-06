@@ -51,6 +51,8 @@ public class ExtensionStateAction extends AbstractManagerAction
 
     /**
      * Sets the extension to query.
+     *
+     * @param exten the extension.
      */
     public void setExten(String exten)
     {
@@ -67,6 +69,8 @@ public class ExtensionStateAction extends AbstractManagerAction
 
     /**
      * Sets the name of the context that contains the extension to query.
+     *
+     * @param context the name of the context.
      */
     public void setContext(String context)
     {

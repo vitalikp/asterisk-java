@@ -89,6 +89,8 @@ public class CommandAction extends AbstractManagerAction
 
     /**
      * Sets the CLI command to send to the Asterisk server.
+     *
+     * @param command the CLI command.
      */
     public void setCommand(String command)
     {

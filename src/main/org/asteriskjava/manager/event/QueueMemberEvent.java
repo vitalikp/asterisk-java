@@ -274,6 +274,7 @@ public class QueueMemberEvent extends ResponseEvent
     /**
      * Sets if this member has been paused.
      *
+     * @param paused true if this member has been paused.
      * @since 0.2
      */
     public void setPaused(Boolean paused)
@@ -290,7 +291,9 @@ public class QueueMemberEvent extends ResponseEvent
     }
 
     /**
-     * @param memberName the member name supplied for logging when the member is added
+     * Sets the member name supplied for logging when the member is added.
+     *
+     * @param memberName the member name.
      */
     public void setMemberName(String memberName)
     {

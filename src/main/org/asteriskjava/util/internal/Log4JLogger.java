@@ -64,6 +64,8 @@ public class Log4JLogger implements Log, Serializable
 
     /**
      * Base constructor.
+     *
+     * @param clazz class.
      */
     public Log4JLogger(Class clazz)
     {
@@ -75,6 +77,8 @@ public class Log4JLogger implements Log, Serializable
 
     /**
      * Log a message to the Log4j Logger with <code>DEBUG</code> priority.
+     *
+     * @param message message.
      */
     public void debug(Object message)
     {
@@ -90,6 +94,8 @@ public class Log4JLogger implements Log, Serializable
 
     /**
      * Log a message to the Log4j Logger with <code>INFO</code> priority.
+     *
+     * @param message message.
      */
     public void info(Object message)
     {
@@ -105,6 +111,8 @@ public class Log4JLogger implements Log, Serializable
 
     /**
      * Log a message to the Log4j Logger with <code>WARN</code> priority.
+     *
+     * @param message message.
      */
     public void warn(Object message)
     {
@@ -120,6 +128,9 @@ public class Log4JLogger implements Log, Serializable
 
     /**
      * Log an error to the Log4j Logger with <code>WARN</code> priority.
+     *
+     * @param message message.
+     * @param t exception.
      */
     public void warn(Object message, Throwable t)
     {
@@ -135,6 +146,8 @@ public class Log4JLogger implements Log, Serializable
 
     /**
      * Log a message to the Log4j Logger with <code>ERROR</code> priority.
+     *
+     * @param message message.
      */
     public void error(Object message)
     {
@@ -150,6 +163,9 @@ public class Log4JLogger implements Log, Serializable
 
     /**
      * Log an error to the Log4j Logger with <code>ERROR</code> priority.
+     *
+     * @param message message.
+     * @param t exception.
      */
     public void error(Object message, Throwable t)
     {

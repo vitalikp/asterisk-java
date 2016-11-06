@@ -77,6 +77,8 @@ public abstract class ManagerEvent extends EventObject implements Serializable
 
     /**
      * Sets the point in time this event was received from the asterisk server.
+     *
+     * @param dateReceived the point in time this event was received from the asterisk server.
      */
     public void setDateReceived(Date dateReceived)
     {
@@ -100,6 +102,8 @@ public abstract class ManagerEvent extends EventObject implements Serializable
 
     /**
      * Sets the AMI authorization class of this event.
+     *
+     * @param privilege the AMI authorization class of this event.
      *
      * @since 0.2
      */

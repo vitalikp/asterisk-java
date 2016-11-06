@@ -52,6 +52,8 @@ public class ZapShowChannelsEvent extends ResponseEvent
 
     /**
      * Sets the number of this zap channel.
+     *
+     * @param channel the number of this zap channel.
      */
     public void setChannel(Integer channel)
     {
@@ -95,6 +97,8 @@ public class ZapShowChannelsEvent extends ResponseEvent
 
     /**
      * Sets the signalling of this zap channel.
+     *
+     * @param signalling the signalling.
      */
     public void setSignalling(String signalling)
     {
@@ -111,6 +115,8 @@ public class ZapShowChannelsEvent extends ResponseEvent
 
     /**
      * Sets the context of this zap channel.
+     *
+     * @param context the context.
      */
     public void setContext(String context)
     {
@@ -161,6 +167,8 @@ public class ZapShowChannelsEvent extends ResponseEvent
 
     /**
      * Sets the alarm state of this zap channel.
+     *
+     * @param alarm the alarm state.
      */
     public void setAlarm(String alarm)
     {

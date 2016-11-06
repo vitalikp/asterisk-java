@@ -78,6 +78,8 @@ public class EventsAction extends AbstractManagerAction
      * <p>Set to "on" if all events should be send, "off" if not events should be
      * sent or a combination of "system", "call" and "log" (separated by ',') to
      * specify what kind of events should be sent.
+     *
+     * @param eventMask the event mask.
      */
     public void setEventMask(String eventMask)
     {

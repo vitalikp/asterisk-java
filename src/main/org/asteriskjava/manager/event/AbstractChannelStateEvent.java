@@ -61,6 +61,8 @@ public abstract class AbstractChannelStateEvent extends AbstractChannelEvent
 
     /**
      * Sets the (new) state of the channel.
+     *
+     * @param state the (new) state of the channel.
      */
     public void setState(String state)
     {

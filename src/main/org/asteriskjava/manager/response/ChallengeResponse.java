@@ -47,6 +47,8 @@ public class ChallengeResponse extends ManagerResponse
 
     /**
      * Sets the challenge to use when creating the key for log in.
+     *
+     * @param challenge the challenge.
      */
     public void setChallenge(String challenge)
     {

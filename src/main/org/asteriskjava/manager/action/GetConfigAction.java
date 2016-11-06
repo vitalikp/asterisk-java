@@ -69,6 +69,8 @@ public class GetConfigAction extends AbstractManagerAction
 
     /**
      * Sets filename.
+     *
+     * @param filename filename.
      */
     public void setFilename(String filename)
     {

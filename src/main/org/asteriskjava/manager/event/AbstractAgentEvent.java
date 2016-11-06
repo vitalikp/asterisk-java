@@ -51,6 +51,8 @@ public abstract class AbstractAgentEvent extends ManagerEvent
 
     /**
      * Sets the name of the channel.
+     *
+     * @param channel the name of the channel.
      */
     public void setChannel(String channel)
     {

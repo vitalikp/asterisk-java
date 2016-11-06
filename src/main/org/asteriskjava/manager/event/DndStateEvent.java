@@ -61,6 +61,8 @@ public class DndStateEvent extends ManagerEvent
 
     /**
      * Sets the name of the channel.
+     *
+     * @param channel the name of the channel.
      */
     public void setChannel(String channel)
     {
@@ -79,6 +81,8 @@ public class DndStateEvent extends ManagerEvent
 
     /**
      * Sets the DND state of the channel.
+     *
+     * @param state the DND state of the channel.
      */
     public void setState(Boolean state)
     {

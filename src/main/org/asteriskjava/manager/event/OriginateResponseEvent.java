@@ -78,6 +78,8 @@ public class OriginateResponseEvent extends ResponseEvent
 
     /**
      * Sets the name of the channel to connect to the outgoing call.
+     *
+     * @param channel the name of the channel.
      */
     public void setChannel(String channel)
     {
@@ -94,6 +96,8 @@ public class OriginateResponseEvent extends ResponseEvent
 
     /**
      * Sets the name of the context of the extension to connect to.
+     *
+     * @param context the name of the context.
      */
     public void setContext(String context)
     {
@@ -110,6 +114,8 @@ public class OriginateResponseEvent extends ResponseEvent
 
     /**
      * Sets the the extension to connect to.
+     *
+     * @param exten the extension.
      */
     public void setExten(String exten)
     {

@@ -61,6 +61,8 @@ public class UnholdEvent extends ManagerEvent
 
     /**
      * Sets the name of the channel.
+     *
+     * @param channel the name of the channel.
      */
     public void setChannel(String channel)
     {
@@ -77,6 +79,8 @@ public class UnholdEvent extends ManagerEvent
 
     /**
      * Sets the unique id of the channel.
+     *
+     * @param uniqueId the unique id of the channel.
      */
     public void setUniqueId(String uniqueId)
     {

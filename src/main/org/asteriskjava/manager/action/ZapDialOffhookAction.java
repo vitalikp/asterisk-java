@@ -74,6 +74,8 @@ public class ZapDialOffhookAction extends AbstractManagerAction
      * Sets the number of the zap channel.
      *
      * <p>This property is mandatory.
+     *
+     * @param channel the number of the zap channel.
      */
     public void setZapChannel(Integer channel)
     {
@@ -92,6 +94,8 @@ public class ZapDialOffhookAction extends AbstractManagerAction
      * Sets the number to dial.
      *
      * <p>This property is mandatory.
+     *
+     * @param number the number to dial.
      */
     public void setNumber(String number)
     {

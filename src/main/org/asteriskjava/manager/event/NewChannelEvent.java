@@ -96,6 +96,8 @@ public class NewChannelEvent extends AbstractChannelStateEvent
 
     /**
      * Sets the extension.
+     *
+     * @param exten the extension.
      */
     public void setExten(String exten)
     {
@@ -112,6 +114,8 @@ public class NewChannelEvent extends AbstractChannelStateEvent
 
     /**
      * Sets the context of the extension.
+     *
+     * @param context the context of the extension.
      */
     public void setContext(String context)
     {

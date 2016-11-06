@@ -73,6 +73,8 @@ public class ChallengeAction extends AbstractManagerAction
 
     /**
      * Sets the digest algorithm to use. Currently asterisk only supports "MD5".
+     *
+     * @param authType the digest algorithm.
      */
     public void setAuthType(String authType)
     {

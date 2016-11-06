@@ -122,6 +122,8 @@ public class HangupEvent extends AbstractChannelStateEvent
 
     /**
      * Sets the cause of the hangup.
+     *
+     * @param cause the cause of the hangup.
      */
     public void setCause(Integer cause)
     {

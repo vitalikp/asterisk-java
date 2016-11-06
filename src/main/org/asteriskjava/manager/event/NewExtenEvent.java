@@ -54,6 +54,8 @@ public class NewExtenEvent extends ManagerEvent
 
     /**
      * Sets the unique id of the channel.
+     *
+     * @param uniqueId the unique id of the channel.
      */
     public void setUniqueId(String uniqueId)
     {
@@ -70,6 +72,8 @@ public class NewExtenEvent extends ManagerEvent
 
     /**
      * Sets the name of the application that is executed.
+     *
+     * @param application the name of the application.
      */
     public void setApplication(String application)
     {
@@ -87,6 +91,8 @@ public class NewExtenEvent extends ManagerEvent
 
     /**
      * Sets the parameters passed to the application that is executed.
+     *
+     * @param appData the parameters.
      */
     public void setAppData(String appData)
     {
@@ -103,6 +109,8 @@ public class NewExtenEvent extends ManagerEvent
 
     /**
      * Sets the name of the channel.
+     *
+     * @param channel the name of the channel.
      */
     public void setChannel(String channel)
     {
@@ -119,6 +127,8 @@ public class NewExtenEvent extends ManagerEvent
 
     /**
      * Sets the name of the context of the connected extension.
+     *
+     * @param context the name of the context.
      */
     public void setContext(String context)
     {
@@ -135,6 +145,8 @@ public class NewExtenEvent extends ManagerEvent
 
     /**
      * Sets the extension.
+     *
+     * @param extension the extension.
      */
     public void setExtension(String extension)
     {
@@ -151,6 +163,8 @@ public class NewExtenEvent extends ManagerEvent
 
     /**
      * Sets the priority.
+     *
+     * @param priority the priority.
      */
     public void setPriority(Integer priority)
     {

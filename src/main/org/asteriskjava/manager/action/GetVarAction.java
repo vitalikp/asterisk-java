@@ -134,6 +134,8 @@ public class GetVarAction extends AbstractManagerAction
 
     /**
      * Sets the name of the variable to query.
+     *
+     * @param variable the name of the variable.
      */
     public void setVariable(String variable)
     {

@@ -191,6 +191,8 @@ public class OriginateAction extends AbstractManagerAction implements EventGener
      * Sets the name of the channel to connect to the outgoing call.
      *
      * <p>This property is mandatory.
+     *
+     * @param channel the name of the channel.
      */
     public void setChannel(String channel)
     {
@@ -210,6 +212,8 @@ public class OriginateAction extends AbstractManagerAction implements EventGener
      *
      * <p>If you set the context you also have to set the exten and priority
      * properties.
+     *
+     * @param context the name of the context.
      */
     public void setContext(String context)
     {
@@ -229,6 +233,8 @@ public class OriginateAction extends AbstractManagerAction implements EventGener
      *
      * <p>If you set the extension you also have to set the context and priority
      * properties.
+     *
+     * @param exten the extension.
      */
     public void setExten(String exten)
     {
@@ -246,6 +252,8 @@ public class OriginateAction extends AbstractManagerAction implements EventGener
     /**
      * Sets the priority of the extension to connect to. If you set the priority
      * you also have to set the context and exten properties.
+     *
+     * @param priority the priority of the extension.
      */
     public void setPriority(Integer priority)
     {
@@ -262,6 +270,8 @@ public class OriginateAction extends AbstractManagerAction implements EventGener
 
     /**
      * Sets the name of the application to connect to.
+     *
+     * @param application the name of the application.
      */
     public void setApplication(String application)
     {
@@ -278,6 +288,8 @@ public class OriginateAction extends AbstractManagerAction implements EventGener
 
     /**
      * Sets the parameters to pass to the application.
+     *
+     * @param data the parameters.
      */
     public void setData(String data)
     {
@@ -333,6 +345,8 @@ public class OriginateAction extends AbstractManagerAction implements EventGener
      * VAR2 to "def".
      *
      * @deprecated use {@link #setVariables(Map)} instead.
+     *
+     * @param variable the variables.
      */
     public void setVariable(String variable)
     {
@@ -413,6 +427,8 @@ public class OriginateAction extends AbstractManagerAction implements EventGener
     /**
      * Set to true for fast origination. Only with fast origination Asterisk
      * will send OriginateSuccess- and OriginateFailureEvents.
+     *
+     * @param async true for fast origination.
      */
     public void setAsync(Boolean async)
     {

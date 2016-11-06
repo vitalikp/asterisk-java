@@ -123,6 +123,8 @@ public class MonitorAction extends AbstractManagerAction
      * Sets the name of the channel to monitor.
      *
      * <p>This property is mandatory.
+     *
+     * @param channel the name of the channel.
      */
     public void setChannel(String channel)
     {
@@ -142,6 +144,8 @@ public class MonitorAction extends AbstractManagerAction
      *
      * <p>If this property is not set it defaults to to the channel name as per CLI
      * with the '/' replaced by '-'.
+     *
+     * @param file the (base) name of the file(s).
      */
     public void setFile(String file)
     {
@@ -160,6 +164,8 @@ public class MonitorAction extends AbstractManagerAction
      * Sets the format to use for encoding the voice files.
      *
      * <p>If this property is not set it defaults to "wav".
+     *
+     * @param format the format.
      */
     public void setFormat(String format)
     {
@@ -178,6 +184,8 @@ public class MonitorAction extends AbstractManagerAction
     /**
      * Set to true if the two voice files should be joined at the end of the
      * call.
+     *
+     * @param mix true if the two voice files should be joined at the end of the call.
      */
     public void setMix(Boolean mix)
     {

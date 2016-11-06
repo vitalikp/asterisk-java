@@ -67,6 +67,8 @@ public class PeerStatusEvent extends ManagerEvent
 
     /**
      * Sets the name of the peer that registered.
+     *
+     * @param peer the name of the peer.
      */
     public void setPeer(String peer)
     {
@@ -93,6 +95,8 @@ public class PeerStatusEvent extends ManagerEvent
 
     /**
      * Sets the registration state.
+     *
+     * @param peerStatus the registration state.
      */
     public void setPeerStatus(String peerStatus)
     {
@@ -114,6 +118,8 @@ public class PeerStatusEvent extends ManagerEvent
 
     /**
      * Sets the cause of the rejection or unregistration.
+     *
+     * @param cause the cause of the rejection or unregistration.
      */
     public void setCause(String cause)
     {

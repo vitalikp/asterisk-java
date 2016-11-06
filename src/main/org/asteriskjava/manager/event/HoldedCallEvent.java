@@ -50,6 +50,8 @@ public class HoldedCallEvent extends ManagerEvent
 
     /**
      * Sets the unique id of the channel that put the other channel on hold.
+     *
+     * @param uniqueId1 the unique id of the channel.
      */
     public void setUniqueId1(String uniqueId1)
     {
@@ -66,6 +68,8 @@ public class HoldedCallEvent extends ManagerEvent
 
     /**
      * Sets the unique id of the channel that has been put on hold.
+     *
+     * @param uniqueId2 the unique id of the channel.
      */
     public void setUniqueId2(String uniqueId2)
     {
@@ -82,6 +86,8 @@ public class HoldedCallEvent extends ManagerEvent
 
     /**
      * Sets the name of the channel that put the other channel on hold.
+     *
+     * @param channel1 the name of the channel.
      */
     public void setChannel1(String channel1)
     {
@@ -98,6 +104,8 @@ public class HoldedCallEvent extends ManagerEvent
 
     /**
      * Sets the name of the channel that has been put on hold.
+     *
+     * @param channel2 the name of the channel.
      */
     public void setChannel2(String channel2)
     {

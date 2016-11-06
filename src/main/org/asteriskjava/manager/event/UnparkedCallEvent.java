@@ -52,6 +52,8 @@ public class UnparkedCallEvent extends AbstractParkedCallEvent
 
     /**
      * Sets the name of the channel that parked the call.
+     *
+     * @param from the name of the channel.
      */
     public void setFrom(String from)
     {

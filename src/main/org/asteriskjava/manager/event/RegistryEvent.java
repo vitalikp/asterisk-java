@@ -95,6 +95,7 @@ public class RegistryEvent extends ManagerEvent
      * @see #setChannelType(String)
      * @since 0.3
      * @deprecated
+     * @param channelDriver the type of channel.
      */
     public void setChannelDriver(String channelDriver)
     {
@@ -118,6 +119,7 @@ public class RegistryEvent extends ManagerEvent
      *
      * @see #setChannelType(String)
      * @deprecated
+     * @param channel the type of channel.
      */
     public void setChannel(String channel)
     {
@@ -176,6 +178,7 @@ public class RegistryEvent extends ManagerEvent
      * @see #setUsername(String)
      * @deprecated Please do not use this method it is a workaround for Asterisk
      *             1.0.x servers. See Asterisk bug 4916.
+     * @param username the username.
      */
     public void setUser(String username)
     {

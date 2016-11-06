@@ -54,6 +54,8 @@ public class QueueEntryEvent extends ResponseEvent
 
     /**
      * Sets the name of the queue that contains this entry.
+     *
+     * @param queue the name of the queue.
      */
     public void setQueue(String queue)
     {
@@ -70,6 +72,8 @@ public class QueueEntryEvent extends ResponseEvent
 
     /**
      * Sets the position of this entry in the queue.
+     *
+     * @param position the position of this entry.
      */
     public void setPosition(Integer position)
     {
@@ -86,6 +90,8 @@ public class QueueEntryEvent extends ResponseEvent
 
     /**
      * Sets the name of the channel of this entry.
+     *
+     * @param channel the name of the channel.
      */
     public void setChannel(String channel)
     {
@@ -144,6 +150,8 @@ public class QueueEntryEvent extends ResponseEvent
 
     /**
      * Sets the number of seconds this entry has spent in the queue.
+     *
+     * @param wait the number of seconds.
      */
     public void setWait(Long wait)
     {

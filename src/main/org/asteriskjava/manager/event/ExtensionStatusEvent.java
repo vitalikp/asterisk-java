@@ -74,6 +74,8 @@ public class ExtensionStatusEvent extends ManagerEvent
 
     /**
      * Sets the extension.
+     *
+     * @param exten the extension.
      */
     public void setExten(String exten)
     {
@@ -90,6 +92,8 @@ public class ExtensionStatusEvent extends ManagerEvent
 
     /**
      * Sets the context of the extension.
+     *
+     * @param context the context of the extension.
      */
     public void setContext(String context)
     {
@@ -116,6 +120,8 @@ public class ExtensionStatusEvent extends ManagerEvent
 
     /**
      * Sets the state of the extension.
+     *
+     * @param status the state of the extension.
      */
     public void setStatus(Integer status)
     {

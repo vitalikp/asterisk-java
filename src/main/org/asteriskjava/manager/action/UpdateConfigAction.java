@@ -79,6 +79,8 @@ public class UpdateConfigAction extends AbstractManagerAction
      * Creates a new UpdateConfigAction with the given parameters.
      *
      * @param srcFilename the name of the file to get.
+     * @param dstFilename the name of the file to set.
+     * @param reload the reload parameter to set
      */
     public UpdateConfigAction(String srcFilename, String dstFilename, boolean reload)
     {
@@ -156,6 +158,8 @@ public class UpdateConfigAction extends AbstractManagerAction
 
     /**
      * Sets the source filename.
+     *
+     * @param filename the source filename.
      */
     public void setSrcFilename(String filename)
     {
@@ -171,7 +175,9 @@ public class UpdateConfigAction extends AbstractManagerAction
     }
 
     /**
-     * Sets the source filename.
+     * Sets the destination filename.
+     *
+     * @param filename the destination filename.
      */
     public void setDstFilename(String filename)
     {

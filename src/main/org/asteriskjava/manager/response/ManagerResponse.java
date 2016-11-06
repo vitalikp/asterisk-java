@@ -110,6 +110,9 @@ public class ManagerResponse implements Serializable
     /**
      * Sets the point in time this response was received from the asterisk
      * server.
+     *
+     * @param dateReceived the point in time this response was received from the asterisk
+     * server.
      */
     public void setDateReceived(Date dateReceived)
     {
@@ -152,6 +155,8 @@ public class ManagerResponse implements Serializable
 
     /**
      * Sets the message.
+     *
+     * @param message the message.
      */
     public void setMessage(String message)
     {
@@ -170,6 +175,8 @@ public class ManagerResponse implements Serializable
 
     /**
      * Sets the response.
+     *
+     * @param response the response.
      */
     public void setResponse(String response)
     {
@@ -188,6 +195,8 @@ public class ManagerResponse implements Serializable
 
     /**
      * Sets the unique id received with this response.
+     *
+     * @param uniqueId the unique id received with this response.
      */
     public void setUniqueId(String uniqueId)
     {

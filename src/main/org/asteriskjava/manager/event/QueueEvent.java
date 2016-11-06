@@ -77,6 +77,8 @@ public abstract class QueueEvent extends ManagerEvent
 
     /**
      * Sets the name of the channel that joins or leaves the queue.
+     *
+     * @param channel the name of the channel.
      */
     public void setChannel(String channel)
     {
@@ -94,6 +96,8 @@ public abstract class QueueEvent extends ManagerEvent
 
     /**
      * Sets the number of elements in the queue.
+     *
+     * @param count the number of elements in the queue.
      */
     public void setCount(Integer count)
     {
@@ -110,6 +114,8 @@ public abstract class QueueEvent extends ManagerEvent
 
     /**
      * Sets the name of the queue.
+     *
+     * @param queue the name of the queue.
      */
     public void setQueue(String queue)
     {

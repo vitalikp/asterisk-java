@@ -53,6 +53,8 @@ public class AgentCallbackLogoffEvent extends ManagerEvent
 
     /**
      * Sets the name of the agent that logged off.
+     *
+     * @param agent the name of the agent.
      */
     public void setAgent(String agent)
     {
@@ -91,6 +93,8 @@ public class AgentCallbackLogoffEvent extends ManagerEvent
 
     /**
      * Sets the reason for the logoff.
+     *
+     * @param reason the reason for the logoff.
      */
     public void setReason(String reason)
     {

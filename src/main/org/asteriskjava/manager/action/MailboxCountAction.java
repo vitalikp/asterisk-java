@@ -71,6 +71,8 @@ public class MailboxCountAction extends AbstractManagerAction
      * mailboxnumber@context.If no context is specified "default" is assumed.
      *
      * <p>This property is mandatory.
+     *
+     * @param mailbox the name of the mailbox.
      */
     public void setMailbox(String mailbox)
     {

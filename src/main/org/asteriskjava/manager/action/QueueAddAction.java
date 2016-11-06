@@ -98,6 +98,8 @@ public class QueueAddAction extends AbstractManagerAction
      * Sets the name of the queue the new member will be added to.
      *
      * <p>This property is mandatory.
+     *
+     * @param queue the name of the queue.
      */
     public void setQueue(String queue)
     {
@@ -118,6 +120,8 @@ public class QueueAddAction extends AbstractManagerAction
      * <p>To add a specific channel just use the channel name, e.g. "SIP/1234".
      *
      * <p>This property is mandatory.
+     *
+     * @param iface the interface.
      */
     public void setInterface(String iface)
     {
@@ -140,6 +144,8 @@ public class QueueAddAction extends AbstractManagerAction
      *
      * <p>When calls are distributed members with higher penalties are considered
      * last.
+     *
+     * @param penalty the penalty.
      */
     public void setPenalty(Integer penalty)
     {

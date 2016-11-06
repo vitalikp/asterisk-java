@@ -50,6 +50,8 @@ public class CommandResponse extends ManagerResponse
 
     /**
      * Sets the result.
+     *
+     * @param result the result.
      */
     public void setResult(List<String> result)
     {

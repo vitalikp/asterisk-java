@@ -45,6 +45,8 @@ public class MailboxCountResponse extends ManagerResponse
 
     /**
      * Sets the name of the mailbox.
+     *
+     * @param mailbox the name of the mailbox.
      */
     public void setMailbox(String mailbox)
     {
@@ -61,6 +63,8 @@ public class MailboxCountResponse extends ManagerResponse
 
     /**
      * Sets the number of new messages in the mailbox.
+     *
+     * @param newMessages the number of new messages.
      */
     public void setNewMessages(Integer newMessages)
     {
@@ -77,6 +81,8 @@ public class MailboxCountResponse extends ManagerResponse
 
     /**
      * Sets the number of old messages in the mailbox.
+     *
+     * @param oldMessages the number of old messages.
      */
     public void setOldMessages(Integer oldMessages)
     {

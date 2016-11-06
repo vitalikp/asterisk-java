@@ -58,6 +58,8 @@ public class AlarmEvent extends ManagerEvent
 
     /**
      * Sets the kind of alarm that happened.
+     *
+     * @param alarm the kind of alarm.
      */
     public void setAlarm(String alarm)
     {
@@ -74,6 +76,8 @@ public class AlarmEvent extends ManagerEvent
 
     /**
      * Sets the number of the channel the alarm occurred on.
+     *
+     * @param channel the number of the channel.
      */
     public void setChannel(Integer channel)
     {

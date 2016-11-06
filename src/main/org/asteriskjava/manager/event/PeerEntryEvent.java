@@ -151,7 +151,11 @@ public class PeerEntryEvent extends ResponseEvent
     }
 
     /**
+     * Sets true if video is supported.
+     *
      * Available since Asterisk 1.4.
+     *
+     * @param videoSupport true if video is supported.
      *
      * @since 0.3
      */
@@ -210,7 +214,11 @@ public class PeerEntryEvent extends ResponseEvent
     }
 
     /**
+     * Sets true if peer is realtime.
+     *
      * Available since Asterisk 1.4.
+     *
+     * @param realtimeDevice true if peer is realtime.
      *
      * @since 0.3
      */

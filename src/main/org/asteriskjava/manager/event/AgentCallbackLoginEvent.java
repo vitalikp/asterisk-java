@@ -43,6 +43,8 @@ public class AgentCallbackLoginEvent extends ManagerEvent
 
     /**
      * Returns the name of the agent that logged in.
+     *
+     * @return the name of the agent.
      */
     public String getAgent()
     {

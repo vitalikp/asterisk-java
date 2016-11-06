@@ -43,6 +43,8 @@ public class ExtensionStateAction extends AbstractManagerAction
 
     /**
      * Returns the extension to query.
+     *
+     * @return the extension.
      */
     public String getExten()
     {
@@ -61,6 +63,8 @@ public class ExtensionStateAction extends AbstractManagerAction
 
     /**
      * Returns the name of the context that contains the extension to query.
+     *
+     * @return the name of the context.
      */
     public String getContext()
     {

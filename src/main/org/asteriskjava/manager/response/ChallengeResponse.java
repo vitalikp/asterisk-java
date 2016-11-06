@@ -39,6 +39,8 @@ public class ChallengeResponse extends ManagerResponse
      * Returns the challenge to use when creating the key for log in.
      *
      * @see org.asteriskjava.manager.action.LoginAction#key
+     *
+     * @return the challenge.
      */
     public String getChallenge()
     {

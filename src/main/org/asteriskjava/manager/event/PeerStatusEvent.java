@@ -87,6 +87,8 @@ public class PeerStatusEvent extends ManagerEvent
      * <li>Unreachable</li>
      * <li>Rejected (IAX only)</li>
      * </ul>
+     *
+     * @return the registration state.
      */
     public String getPeerStatus()
     {
@@ -110,6 +112,8 @@ public class PeerStatusEvent extends ManagerEvent
      *
      * <p>For SIP peers this is set if the status equals "Unregistered" and the peer was unregistered
      * due to an expiration. In that case the cause is set to "Expired".
+     *
+     * @return the cause of a rejection or unregistration.
      */
     public String getCause()
     {
@@ -130,6 +134,8 @@ public class PeerStatusEvent extends ManagerEvent
      * Returns the ping time of the client if status equals "Reachable" or "Lagged"; if the status
      * equals "Unreachable" it returns how long the last response took (in ms) for IAX peers or -1
      * for SIP peers.
+     *
+     * @return the ping time.
      */
     public Integer getTime()
     {

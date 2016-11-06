@@ -45,6 +45,8 @@ public class AgentCallbackLogoffEvent extends ManagerEvent
 
     /**
      * Returns the name of the agent that logged off.
+     *
+     * @return the name of the agent.
      */
     public String getAgent()
     {
@@ -85,6 +87,8 @@ public class AgentCallbackLogoffEvent extends ManagerEvent
      * Returns the reason for the logoff. The reason is set to Autologoff if the agent has been
      * logged off due to not answering the phone in time. Autologoff is configured by setting
      * <code>autologoff</code> to the appropriate number of seconds in <code>agents.conf</code>.
+     *
+     * @return the reason for the logoff.
      */
     public String getReason()
     {

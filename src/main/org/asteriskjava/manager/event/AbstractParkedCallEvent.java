@@ -42,6 +42,8 @@ public abstract class AbstractParkedCallEvent extends ManagerEvent
 
     /**
      * Returns the extension the channel is or was parked at.
+     *
+     * @return the extension the channel.
      */
     public String getExten()
     {
@@ -60,6 +62,8 @@ public abstract class AbstractParkedCallEvent extends ManagerEvent
 
     /**
      * Returns the name of the channel that is or was parked.
+     *
+     * @return the name of the channel.
      */
     public String getChannel()
     {
@@ -118,6 +122,8 @@ public abstract class AbstractParkedCallEvent extends ManagerEvent
 
     /**
      * Returns the unique id of the parked channel.
+     *
+     * @return the unique id of the parked channel.
      */
     public String getUniqueId()
     {

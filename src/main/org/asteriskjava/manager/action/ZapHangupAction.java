@@ -60,6 +60,8 @@ public class ZapHangupAction extends AbstractManagerAction
 
     /**
      * Returns the number of the zap channel to hangup.
+     *
+     * @return the number of the zap channel.
      */
     public Integer getZapChannel()
     {

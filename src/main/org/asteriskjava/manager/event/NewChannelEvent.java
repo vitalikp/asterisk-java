@@ -88,6 +88,8 @@ public class NewChannelEvent extends AbstractChannelStateEvent
 
     /**
      * Returns the extension.
+     *
+     * @return the extension.
      */
     public String getExten()
     {
@@ -106,6 +108,8 @@ public class NewChannelEvent extends AbstractChannelStateEvent
 
     /**
      * Returns the context of the extension.
+     *
+     * @return the context of the extension.
      */
     public String getContext()
     {

@@ -65,6 +65,8 @@ public class ChallengeAction extends AbstractManagerAction
 
     /**
      * Returns the digest algorithm to use.
+     *
+     * @return the digest algorithm.
      */
     public String getAuthType()
     {

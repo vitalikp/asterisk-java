@@ -58,6 +58,8 @@ public class MailboxCountAction extends AbstractManagerAction
 
     /**
      * Returns the name of the mailbox to query.
+     *
+     * @return the name of the mailbox.
      */
     public String getMailbox()
     {

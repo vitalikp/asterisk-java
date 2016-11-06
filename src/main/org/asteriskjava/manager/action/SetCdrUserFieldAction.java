@@ -90,6 +90,8 @@ public class SetCdrUserFieldAction extends AbstractManagerAction
 
     /**
      * Returns the name of the channel to set the cdr user field on.
+     *
+     * @return the name of the channel.
      */
     public String getChannel()
     {
@@ -110,6 +112,8 @@ public class SetCdrUserFieldAction extends AbstractManagerAction
 
     /**
      * Returns the value of the cdr user field to set or append.
+     *
+     * @return the value of the cdr user field.
      */
     public String getUserField()
     {
@@ -129,7 +133,9 @@ public class SetCdrUserFieldAction extends AbstractManagerAction
     }
 
     /**
-     * Returns if the value of the cdr user field is appended or overwritten.
+     * Returns true if the value of the cdr user field is appended or overwritten.
+     *
+     * @return true if the value of the cdr user field is appended or overwritten.
      */
     public Boolean getAppend()
     {

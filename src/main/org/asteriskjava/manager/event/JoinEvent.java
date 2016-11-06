@@ -43,6 +43,8 @@ public class JoinEvent extends QueueEvent
     /**
      * Returns the Caller*ID number of the channel that joined the queue if set.
      * If the channel has no caller id set "unknown" is returned.
+     *
+     * @return the Caller*ID number.
      */
     public String getCallerId()
     {
@@ -62,6 +64,8 @@ public class JoinEvent extends QueueEvent
     /**
      * Returns the Caller*ID name of the channel that joined the queue if set.
      * If the channel has no caller id set "unknown" is returned.
+     *
+     * @return the Caller*ID name.
      * @since 0.2
      */
     public String getCallerIdName()
@@ -72,7 +76,7 @@ public class JoinEvent extends QueueEvent
     /**
      * Sets the Caller*ID name of the channel that joined the queue.
      *
-     * @param callerIdName the Caller*ID name of the channel.
+     * @param callerIdName the Caller*ID name.
      * @since 0.2
      */
     public void setCallerIdName(String callerIdName)
@@ -82,6 +86,8 @@ public class JoinEvent extends QueueEvent
 
     /**
      * Returns the position of the joined channel in the queue.
+     *
+     * @return the position of the joined channel in the queue.
      */
     public Integer getPosition()
     {

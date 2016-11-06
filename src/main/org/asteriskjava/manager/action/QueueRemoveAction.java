@@ -94,6 +94,8 @@ public class QueueRemoveAction extends AbstractManagerAction
 
     /**
      * Returns the interface to remove.
+     *
+     * @return the interface.
      */
     public String getInterface()
     {

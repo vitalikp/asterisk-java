@@ -150,6 +150,8 @@ public class UpdateConfigAction extends AbstractManagerAction
 
     /**
      * Returns the source filename.
+     *
+     * @return the source filename.
      */
     public String getSrcFilename()
     {
@@ -168,6 +170,8 @@ public class UpdateConfigAction extends AbstractManagerAction
 
     /**
      * Returns the destination filename.
+     *
+     * @return the destination filename.
      */
     public String getDstFilename()
     {

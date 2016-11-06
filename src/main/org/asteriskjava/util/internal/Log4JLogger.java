@@ -181,6 +181,8 @@ public class Log4JLogger implements Log, Serializable
 
     /**
      * Return the native Logger instance we are using.
+     *
+     * @return the native Logger instance.
      */
     public final Logger getLogger()
     {

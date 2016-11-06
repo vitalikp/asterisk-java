@@ -106,6 +106,8 @@ public class GetVarAction extends AbstractManagerAction
     /**
      * Returns the name of the channel if you query for a local channel variable
      * or <code>null</code> if it is a global variable.
+     *
+     * @return the name of the channel.
      */
     public String getChannel()
     {
@@ -126,6 +128,8 @@ public class GetVarAction extends AbstractManagerAction
 
     /**
      * Returns the name of the variable to query.
+     *
+     * @return the name of the variable.
      */
     public String getVariable()
     {

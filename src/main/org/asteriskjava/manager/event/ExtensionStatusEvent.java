@@ -66,6 +66,8 @@ public class ExtensionStatusEvent extends ManagerEvent
 
     /**
      * Returns the extension.
+     *
+     * @return the extension.
      */
     public String getExten()
     {
@@ -84,6 +86,8 @@ public class ExtensionStatusEvent extends ManagerEvent
 
     /**
      * Returns the context of the extension.
+     *
+     * @return the context of the extension.
      */
     public String getContext()
     {
@@ -112,6 +116,8 @@ public class ExtensionStatusEvent extends ManagerEvent
      * <li>BUSY
      * <li>UNAVAILABLE
      * </ul>
+     *
+     * @return the state of the extension.
      */
     public Integer getStatus()
     {

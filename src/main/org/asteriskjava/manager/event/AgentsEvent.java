@@ -67,6 +67,8 @@ public class AgentsEvent extends ResponseEvent
 
     /**
      * Returns the agentid.
+     *
+     * @return the agentid.
      */
     public String getAgent()
     {

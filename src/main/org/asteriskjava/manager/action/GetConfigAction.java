@@ -61,6 +61,8 @@ public class GetConfigAction extends AbstractManagerAction
 
     /**
      * Returns the filename.
+     *
+     * @return the filename.
      */
     public String getFilename()
     {

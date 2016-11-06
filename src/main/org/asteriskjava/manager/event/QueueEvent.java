@@ -69,6 +69,8 @@ public abstract class QueueEvent extends ManagerEvent
 
     /**
      * Returns the name of the channel that joins or leaves the queue.
+     *
+     * @return the name of the channel.
      */
     public String getChannel()
     {
@@ -88,6 +90,8 @@ public abstract class QueueEvent extends ManagerEvent
     /**
      * Returns the number of elements in the queue, i.e. the number of calls waiting to be answered
      * by an agent.
+     *
+     * @return the number of elements in the queue.
      */
     public Integer getCount()
     {
@@ -106,6 +110,8 @@ public abstract class QueueEvent extends ManagerEvent
 
     /**
      * Returns the name of the queue.
+     *
+     * @return the name of the queue.
      */
     public String getQueue()
     {

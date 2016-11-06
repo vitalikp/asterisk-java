@@ -44,6 +44,8 @@ public class UnparkedCallEvent extends AbstractParkedCallEvent
 
     /**
      * Returns the name of the channel that parked the call.
+     *
+     * @return the name of the channel.
      */
     public String getFrom()
     {

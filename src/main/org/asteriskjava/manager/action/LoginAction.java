@@ -121,6 +121,8 @@ public class LoginAction extends AbstractManagerAction
 
     /**
      * Returns the username.
+     *
+     * @return the username.
      */
     public String getUsername()
     {
@@ -139,6 +141,8 @@ public class LoginAction extends AbstractManagerAction
 
     /**
      * Returns the secret.
+     *
+     * @return the secret.
      */
     public String getSecret()
     {
@@ -162,6 +166,8 @@ public class LoginAction extends AbstractManagerAction
 
     /**
      * Returns the digest algorithm when using challenge/response.
+     *
+     * @return the digest algorithm.
      */
     public String getAuthType()
     {
@@ -184,7 +190,9 @@ public class LoginAction extends AbstractManagerAction
     }
 
     /**
-     * @return Returns the key.
+     * Returns the key.
+     *
+     * @return the key.
      */
     public String getKey()
     {

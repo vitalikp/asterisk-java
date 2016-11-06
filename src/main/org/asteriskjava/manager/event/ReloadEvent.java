@@ -40,6 +40,8 @@ public class ReloadEvent extends ManagerEvent
 
     /**
      * Always returns "Reload Requested".
+     *
+     * @return "Reload Requested".
      */
     public String getMessage()
     {

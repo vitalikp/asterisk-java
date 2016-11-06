@@ -37,6 +37,8 @@ public class MailboxCountResponse extends ManagerResponse
 
     /**
      * Returns the name of the mailbox.
+     *
+     * @return the name of the mailbox.
      */
     public String getMailbox()
     {
@@ -55,6 +57,8 @@ public class MailboxCountResponse extends ManagerResponse
 
     /**
      * Returns the number of new messages in the mailbox.
+     *
+     * @return the number of new messages.
      */
     public Integer getNewMessages()
     {
@@ -73,6 +77,8 @@ public class MailboxCountResponse extends ManagerResponse
 
     /**
      * Returns the number of old messages in the mailbox.
+     *
+     * @return the number of old messages.
      */
     public Integer getOldMessages()
     {

@@ -66,6 +66,8 @@ public class EventsAction extends AbstractManagerAction
 
     /**
      * Returns the event mask.
+     *
+     * @return the event mask.
      */
     public String getEventMask()
     {

@@ -70,6 +70,8 @@ public class OriginateResponseEvent extends ResponseEvent
 
     /**
      * Returns the name of the channel to connect to the outgoing call.
+     *
+     * @return the name of the channel.
      */
     public String getChannel()
     {
@@ -88,6 +90,8 @@ public class OriginateResponseEvent extends ResponseEvent
 
     /**
      * Returns the name of the context of the extension to connect to.
+     *
+     * @return the name of the context.
      */
     public String getContext()
     {
@@ -105,7 +109,9 @@ public class OriginateResponseEvent extends ResponseEvent
     }
 
     /**
-     * Returns the the extension to connect to.
+     * Returns the extension to connect to.
+     *
+     * @return the extension.
      */
     public String getExten()
     {
@@ -113,7 +119,7 @@ public class OriginateResponseEvent extends ResponseEvent
     }
 
     /**
-     * Sets the the extension to connect to.
+     * Sets the extension to connect to.
      *
      * @param exten the extension.
      */

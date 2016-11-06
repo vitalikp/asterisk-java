@@ -83,6 +83,7 @@ public class RegistryEvent extends ManagerEvent
      * @see #getChannelType()
      * @since 0.3
      * @deprecated
+     * @return the type of channel.
      */
     public String getChannelDriver()
     {
@@ -108,6 +109,7 @@ public class RegistryEvent extends ManagerEvent
      *
      * @see #getChannelType()
      * @deprecated
+     * @return the type of channel.
      */
     public String getChannel()
     {

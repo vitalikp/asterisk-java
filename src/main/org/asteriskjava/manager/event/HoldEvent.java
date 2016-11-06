@@ -53,6 +53,8 @@ public class HoldEvent extends ManagerEvent
 
     /**
      * Returns the name of the channel.
+     *
+     * @return the name of the channel.
      */
     public String getChannel()
     {
@@ -71,6 +73,8 @@ public class HoldEvent extends ManagerEvent
 
     /**
      * Returns the unique id of the channel.
+     *
+     * @return the unique id of the channel.
      */
     public String getUniqueId()
     {

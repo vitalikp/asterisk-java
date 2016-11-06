@@ -81,6 +81,8 @@ public class CommandAction extends AbstractManagerAction
 
     /**
      * Returns the command.
+     *
+     * @return the command.
      */
     public String getCommand()
     {

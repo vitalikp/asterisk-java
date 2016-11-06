@@ -50,6 +50,8 @@ public class AlarmEvent extends ManagerEvent
      * <li>Loopback</li>
      * <li>Not Open</li>
      * </ul>
+     *
+     * @return the kind of alarm.
      */
     public String getAlarm()
     {
@@ -68,6 +70,8 @@ public class AlarmEvent extends ManagerEvent
 
     /**
      * Returns the number of the channel the alarm occurred on.
+     *
+     * @return the number of the channel.
      */
     public Integer getChannel()
     {

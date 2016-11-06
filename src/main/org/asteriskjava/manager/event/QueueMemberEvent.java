@@ -283,7 +283,9 @@ public class QueueMemberEvent extends ResponseEvent
     }
 
     /**
-     * @return the member name supplied for logging when the member is added
+     * Returns the member name supplied for logging when the member is added.
+     *
+     * @return the member name.
      */
     public String getMemberName()
     {

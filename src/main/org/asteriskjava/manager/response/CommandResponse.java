@@ -42,6 +42,8 @@ public class CommandResponse extends ManagerResponse
 
     /**
      * Returns a List containing strings representing the lines returned by the CLI command.
+     *
+     * @return a List containing strings representing the lines returned by the CLI command.
      */
     public List<String> getResult()
     {

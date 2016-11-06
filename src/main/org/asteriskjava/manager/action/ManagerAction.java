@@ -37,6 +37,8 @@ public interface ManagerAction extends Serializable
 {
     /**
      * Returns the name of the action for example "Hangup".
+     *
+     * @return the name of the action.
      */
     String getAction();
 

@@ -41,6 +41,8 @@ public class ZapTransferAction extends AbstractManagerAction
 
     /**
      * Returns the number of the zap channel to transfer.
+     *
+     * @return the number of the zap channel.
      */
     public Integer getZapChannel()
     {

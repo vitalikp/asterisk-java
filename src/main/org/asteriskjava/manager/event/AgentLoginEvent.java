@@ -42,6 +42,8 @@ public class AgentLoginEvent extends ManagerEvent
 
     /**
      * Returns the name of the agent that logged in.
+     *
+     * @return the name of the agent.
      */
     public String getAgent()
     {
@@ -62,6 +64,8 @@ public class AgentLoginEvent extends ManagerEvent
      * Returns the name of the channel associated with the logged in agent.
      *
      * @deprecated use {@link #getChannel()} instead.
+     *
+     * @return the name of the channel.
      */
     public String getLoginChan()
     {

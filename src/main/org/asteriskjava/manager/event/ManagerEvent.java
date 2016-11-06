@@ -69,6 +69,9 @@ public abstract class ManagerEvent extends EventObject implements Serializable
      * <p>Pseudo events that are not directly received from the asterisk server
      * (for example ConnectEvent and DisconnectEvent) may return
      * <code>null</code>.
+     *
+     * @return the point in time this event was received from the Asterisk
+     * server.
      */
     public Date getDateReceived()
     {
@@ -93,6 +96,7 @@ public abstract class ManagerEvent extends EventObject implements Serializable
      *
      * <p>Note: This property is not available from Asterisk 1.0 servers.
      *
+     * @return the AMI authorization class of this event.
      * @since 0.2
      */
     public String getPrivilege()
@@ -122,7 +126,7 @@ public abstract class ManagerEvent extends EventObject implements Serializable
      *
      * <p>Example: 1159310429.569108
      *
-     * @return
+     * @return the timestamp for this event.
      * @since 0.3
      */
     public final Double getTimestamp()

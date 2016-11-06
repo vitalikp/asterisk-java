@@ -78,6 +78,8 @@ public class AbsoluteTimeoutAction extends AbstractManagerAction
 
     /**
      * Returns the name of the channel.
+     *
+     * @return the name of the channel.
      */
     public String getChannel()
     {
@@ -96,6 +98,8 @@ public class AbsoluteTimeoutAction extends AbstractManagerAction
 
     /**
      * Returns the the maximum duration of the call (in seconds) to set.
+     *
+     * @return the the maximum duration of the call (in seconds).
      */
     public Integer getTimeout()
     {

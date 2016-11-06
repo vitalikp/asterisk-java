@@ -46,6 +46,8 @@ public class QueueEntryEvent extends ResponseEvent
 
     /**
      * Returns the name of the queue that contains this entry.
+     *
+     * @return the name of the queue.
      */
     public String getQueue()
     {
@@ -64,6 +66,8 @@ public class QueueEntryEvent extends ResponseEvent
 
     /**
      * Returns the position of this entry in the queue.
+     *
+     * @return the position of this entry.
      */
     public Integer getPosition()
     {
@@ -82,6 +86,8 @@ public class QueueEntryEvent extends ResponseEvent
 
     /**
      * Returns the name of the channel of this entry.
+     *
+     * @return the name of the channel.
      */
     public String getChannel()
     {
@@ -142,6 +148,8 @@ public class QueueEntryEvent extends ResponseEvent
 
     /**
      * Returns the number of seconds this entry has spent in the queue.
+     *
+     * @return the number of seconds.
      */
     public Long getWait()
     {

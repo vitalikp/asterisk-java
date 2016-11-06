@@ -53,6 +53,8 @@ public abstract class AbstractChannelStateEvent extends AbstractChannelEvent
      * <li>Up</li>
      * <li>Busy</li>
      * </ul>
+     *
+     * @return the (new) state of the channel.
      */
     public String getState()
     {

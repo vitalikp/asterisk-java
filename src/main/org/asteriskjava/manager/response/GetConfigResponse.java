@@ -43,7 +43,7 @@ public class GetConfigResponse extends ManagerResponse
     /**
      * Returns the map of category numbers to category names
      *
-     * @returns the map of category numbers to names
+     * @return the map of category numbers to names
      * @see org.asteriskjava.manager.response.GetConfigResponse#getLines
      */
     public Map<Integer, String> getCategories()
@@ -87,7 +87,7 @@ public class GetConfigResponse extends ManagerResponse
      * Returns the map of line number to line value for a given category
      *
      * @param categoryNumber a valid category number from getCategories
-     * @returns the map of category numbers to names
+     * @return the map of category numbers to names
      * @see org.asteriskjava.manager.response.GetConfigResponse#getCategories
      */
     public Map<Integer, String> getLines(int categoryNumber)

@@ -63,6 +63,9 @@ public class MailboxStatusResponse extends ManagerResponse
     /**
      * Returns Boolean.TRUE if at least one of the given mailboxes contains new messages;
      * Boolean.FALSE otherwise.
+     *
+     * @return Boolean.TRUE if at least one of the given mailboxes contains new messages;
+     *         Boolean.FALSE otherwise.
      */
     public Boolean getWaiting()
     {

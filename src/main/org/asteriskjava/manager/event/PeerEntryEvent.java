@@ -53,7 +53,7 @@ public class PeerEntryEvent extends ResponseEvent
     /**
      * For SIP peers this is "SIP".
      *
-     * @return
+     * @return "SIP".
      */
     public String getChannelType()
     {
@@ -78,7 +78,7 @@ public class PeerEntryEvent extends ResponseEvent
     /**
      * For SIP peers this is either "peer" or "user".
      *
-     * @return
+     * @return "peer" or "user".
      */
     public String getChanObjectType()
     {
@@ -141,7 +141,11 @@ public class PeerEntryEvent extends ResponseEvent
     }
 
     /**
+     * Returns true if video is supported.
+     *
      * Available since Asterisk 1.4.
+     *
+     * @return true if video is supported.
      *
      * @since 0.3
      */
@@ -204,7 +208,11 @@ public class PeerEntryEvent extends ResponseEvent
     }
 
     /**
+     * Returns true if peer is realtime.
+     *
      * Available since Asterisk 1.4.
+     *
+     * @return true if peer is realtime.
      *
      * @since 0.3
      */

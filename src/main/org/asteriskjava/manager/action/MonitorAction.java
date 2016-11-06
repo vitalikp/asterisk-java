@@ -113,6 +113,8 @@ public class MonitorAction extends AbstractManagerAction
 
     /**
      * Returns the name of the channel to monitor.
+     *
+     * @return the name of the channel.
      */
     public String getChannel()
     {
@@ -133,6 +135,8 @@ public class MonitorAction extends AbstractManagerAction
 
     /**
      * Returns the name of the file to which the voice data is written.
+     *
+     * @return the name of the file.
      */
     public String getFile()
     {
@@ -154,6 +158,8 @@ public class MonitorAction extends AbstractManagerAction
 
     /**
      * Returns the format to use for encoding the voice files.
+     *
+     * @return the format.
      */
     public String getFormat()
     {
@@ -174,6 +180,9 @@ public class MonitorAction extends AbstractManagerAction
 
     /**
      * Returns true if the two voice files should be joined at the end of the
+     * call.
+     *
+     * @return true if the two voice files should be joined at the end of the
      * call.
      */
     public Boolean getMix()

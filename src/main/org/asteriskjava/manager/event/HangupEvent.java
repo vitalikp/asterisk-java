@@ -113,6 +113,8 @@ public class HangupEvent extends AbstractChannelStateEvent
 
     /**
      * Returns the cause of the hangup.
+     *
+     * @return the cause of the hangup.
      * @see org.asteriskjava.live.HangupCause
      */
     public Integer getCause()

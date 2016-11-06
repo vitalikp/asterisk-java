@@ -52,6 +52,8 @@ public class ManagerResponse implements Serializable
      *
      * <p>The keys are all lower case!
      * @see #getAttribute(String)
+     *
+     * @return a Map with all attributes of this response.
      */
     public Map<String, String> getAttributes()
     {
@@ -101,6 +103,9 @@ public class ManagerResponse implements Serializable
     /**
      * Returns the point in time this response was received from the asterisk
      * server.
+     *
+     * @return the point in time this response was received from the asterisk
+     * server.
      */
     public Date getDateReceived()
     {
@@ -147,6 +152,8 @@ public class ManagerResponse implements Serializable
     /**
      * Returns the message received with this response. The content depends on
      * the action that generated this response.
+     *
+     * @return the message received with this response.
      */
     public String getMessage()
     {
@@ -167,6 +174,8 @@ public class ManagerResponse implements Serializable
      * Returns the value of the "Response:" line. This typically a String like
      * "Success" or "Error" but depends on the action that generated this
      * response.
+     *
+     * @return the value of the "Response:" line.
      */
     public String getResponse()
     {
@@ -187,6 +196,8 @@ public class ManagerResponse implements Serializable
      * Returns the unique id received with this response. The unique id is used
      * to keep track of channels created by the action sent, for example an
      * OriginateAction.
+     *
+     * @return the unique id received with this response.
      */
     public String getUniqueId()
     {

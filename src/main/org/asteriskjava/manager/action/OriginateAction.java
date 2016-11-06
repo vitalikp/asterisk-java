@@ -101,6 +101,8 @@ public class OriginateAction extends AbstractManagerAction implements EventGener
 
     /**
      * Returns the caller id to set on the outgoing channel.
+     *
+     * @return the caller id.
      */
     public String getCallerId()
     {
@@ -181,6 +183,8 @@ public class OriginateAction extends AbstractManagerAction implements EventGener
 
     /**
      * Returns the name of the channel to connect to the outgoing call.
+     *
+     * @return the name of the channel.
      */
     public String getChannel()
     {
@@ -201,6 +205,8 @@ public class OriginateAction extends AbstractManagerAction implements EventGener
 
     /**
      * Returns the name of the context of the extension to connect to.
+     *
+     * @return the name of the context.
      */
     public String getContext()
     {
@@ -222,6 +228,8 @@ public class OriginateAction extends AbstractManagerAction implements EventGener
 
     /**
      * Returns the extension to connect to.
+     *
+     * @return the extension.
      */
     public String getExten()
     {
@@ -243,6 +251,8 @@ public class OriginateAction extends AbstractManagerAction implements EventGener
 
     /**
      * Returns the priority of the extension to connect to.
+     *
+     * @return the priority.
      */
     public Integer getPriority()
     {
@@ -262,6 +272,8 @@ public class OriginateAction extends AbstractManagerAction implements EventGener
 
     /**
      * Returns the name of the application to connect to.
+     *
+     * @return the name of the application.
      */
     public String getApplication()
     {
@@ -280,6 +292,8 @@ public class OriginateAction extends AbstractManagerAction implements EventGener
 
     /**
      * Returns the parameters to pass to the application.
+     *
+     * @return the parameters.
      */
     public String getData()
     {
@@ -298,6 +312,8 @@ public class OriginateAction extends AbstractManagerAction implements EventGener
 
     /**
      * Returns the timeout for the origination.
+     *
+     * @return the timeout for the origination.
      */
     public Long getTimeout()
     {
@@ -418,6 +434,8 @@ public class OriginateAction extends AbstractManagerAction implements EventGener
 
     /**
      * Returns true if this is a fast origination.
+     *
+     * @return true if this is a fast origination.
      */
     public Boolean getAsync()
     {

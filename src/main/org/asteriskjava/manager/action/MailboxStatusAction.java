@@ -68,6 +68,8 @@ public class MailboxStatusAction extends AbstractManagerAction
 
     /**
      * Returns the name of the mailbox to query.
+     *
+     * @return the name of the mailbox.
      */
     public String getMailbox()
     {

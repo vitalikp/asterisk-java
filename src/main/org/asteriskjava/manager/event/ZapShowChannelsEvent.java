@@ -44,6 +44,8 @@ public class ZapShowChannelsEvent extends ResponseEvent
 
     /**
      * Returns the number of this zap channel.
+     *
+     * @return the number of this zap channel.
      */
     public Integer getChannel()
     {
@@ -89,6 +91,8 @@ public class ZapShowChannelsEvent extends ResponseEvent
      * <li>GR-303 Signalling with FXSKS</li>
      * <li>Pseudo Signalling</li>
      * </ul>
+     *
+     * @return the signalling.
      */
     public String getSignalling()
     {
@@ -107,6 +111,8 @@ public class ZapShowChannelsEvent extends ResponseEvent
 
     /**
      * Returns the context of this zap channel as defined in <code>zapata.conf</code>.
+     *
+     * @return the context.
      */
     public String getContext()
     {
@@ -159,6 +165,8 @@ public class ZapShowChannelsEvent extends ResponseEvent
      * <li>Not Open</li>
      * <li>No Alarm</li>
      * </ul>
+     *
+     * @return the alarm state.
      */
     public String getAlarm()
     {

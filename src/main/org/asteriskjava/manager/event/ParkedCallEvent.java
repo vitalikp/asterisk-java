@@ -43,6 +43,8 @@ public class ParkedCallEvent extends AbstractParkedCallEvent
 
     /**
      * Returns the name of the channel that parked the call.
+     *
+     * @return the name of the channel.
      */
     public String getFrom()
     {
@@ -64,6 +66,8 @@ public class ParkedCallEvent extends AbstractParkedCallEvent
      *
      * <p>This corresponds to the <code>parkingtime</code> option in
      * <code>features.conf</code>.
+     *
+     * @return the number of seconds.
      */
     public Integer getTimeout()
     {

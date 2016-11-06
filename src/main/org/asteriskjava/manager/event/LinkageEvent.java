@@ -44,6 +44,8 @@ public abstract class LinkageEvent extends ManagerEvent
 
     /**
      * Returns the unique id of the first channel.
+     *
+     * @return the unique id of the first channel.
      */
     public String getUniqueId1()
     {
@@ -62,6 +64,8 @@ public abstract class LinkageEvent extends ManagerEvent
 
     /**
      * Returns the unique id of the second channel.
+     *
+     * @return the unique id of the second channel.
      */
     public String getUniqueId2()
     {
@@ -80,6 +84,8 @@ public abstract class LinkageEvent extends ManagerEvent
 
     /**
      * Returns the name of the first channel.
+     *
+     * @return the name of the first channel.
      */
     public String getChannel1()
     {
@@ -98,6 +104,8 @@ public abstract class LinkageEvent extends ManagerEvent
 
     /**
      * Returns the name of the second channel.
+     *
+     * @return the name of the second channel.
      */
     public String getChannel2()
     {

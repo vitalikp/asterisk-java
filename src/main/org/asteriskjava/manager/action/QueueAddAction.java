@@ -88,6 +88,8 @@ public class QueueAddAction extends AbstractManagerAction
 
     /**
      * Returns the name of the queue the new member will be added to.
+     *
+     * @return the name of the queue.
      */
     public String getQueue()
     {
@@ -108,6 +110,8 @@ public class QueueAddAction extends AbstractManagerAction
 
     /**
      * Returns the interface to add.
+     *
+     * @return the interface.
      */
     public String getInterface()
     {
@@ -130,6 +134,8 @@ public class QueueAddAction extends AbstractManagerAction
 
     /**
      * Returns the penalty for this member.
+     *
+     * @return the penalty.
      */
     public Integer getPenalty()
     {

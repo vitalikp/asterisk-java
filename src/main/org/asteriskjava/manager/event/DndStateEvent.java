@@ -53,6 +53,8 @@ public class DndStateEvent extends ManagerEvent
     /**
      * Returns the name of the channel. The channel name is of the form
      * "Zap/&lt;channel number&gt;".
+     *
+     * @return the name of the channel.
      */
     public String getChannel()
     {

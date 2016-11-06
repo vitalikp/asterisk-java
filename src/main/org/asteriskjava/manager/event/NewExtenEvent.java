@@ -46,6 +46,8 @@ public class NewExtenEvent extends ManagerEvent
 
     /**
      * Returns the unique id of the channel.
+     *
+     * @return the unique id of the channel.
      */
     public String getUniqueId()
     {
@@ -64,6 +66,8 @@ public class NewExtenEvent extends ManagerEvent
 
     /**
      * Returns the name of the application that is executed.
+     *
+     * @return the name of the application.
      */
     public String getApplication()
     {
@@ -83,6 +87,8 @@ public class NewExtenEvent extends ManagerEvent
     /**
      * Returns the parameters passed to the application that is executed. The parameters are
      * separated by a '|' character.
+     *
+     * @return the parameters.
      */
     public String getAppData()
     {
@@ -101,6 +107,8 @@ public class NewExtenEvent extends ManagerEvent
 
     /**
      * Returns the name of the channel.
+     *
+     * @return the name of the channel.
      */
     public String getChannel()
     {
@@ -119,6 +127,8 @@ public class NewExtenEvent extends ManagerEvent
 
     /**
      * Returns the name of the context of the connected extension.
+     *
+     * @return the name of the context.
      */
     public String getContext()
     {
@@ -137,6 +147,8 @@ public class NewExtenEvent extends ManagerEvent
 
     /**
      * Returns the extension.
+     *
+     * @return the extension.
      */
     public String getExtension()
     {
@@ -155,6 +167,8 @@ public class NewExtenEvent extends ManagerEvent
 
     /**
      * Returns the priority.
+     *
+     * @return the priority.
      */
     public Integer getPriority()
     {

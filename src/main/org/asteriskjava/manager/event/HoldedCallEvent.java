@@ -42,6 +42,8 @@ public class HoldedCallEvent extends ManagerEvent
 
     /**
      * Returns the unique id of the channel that put the other channel on hold.
+     *
+     * @return the unique id of the channel.
      */
     public String getUniqueId1()
     {
@@ -60,6 +62,8 @@ public class HoldedCallEvent extends ManagerEvent
 
     /**
      * Returns the unique id of the channel that has been put on hold.
+     *
+     * @return the unique id of the channel.
      */
     public String getUniqueId2()
     {
@@ -78,6 +82,8 @@ public class HoldedCallEvent extends ManagerEvent
 
     /**
      * Returns the name of the channel that put the other channel on hold.
+     *
+     * @return the name of the channel.
      */
     public String getChannel1()
     {
@@ -96,6 +102,8 @@ public class HoldedCallEvent extends ManagerEvent
 
     /**
      * Returns the name of the channel that has been put on hold.
+     *
+     * @return the name of the channel.
      */
     public String getChannel2()
     {

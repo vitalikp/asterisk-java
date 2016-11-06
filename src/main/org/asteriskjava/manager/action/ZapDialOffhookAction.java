@@ -64,6 +64,8 @@ public class ZapDialOffhookAction extends AbstractManagerAction
 
     /**
      * Returns the number of the zap channel.
+     *
+     * @return the number of the zap channel.
      */
     public Integer getZapChannel()
     {
@@ -84,6 +86,8 @@ public class ZapDialOffhookAction extends AbstractManagerAction
 
     /**
      * Returns the number to dial.
+     *
+     * @return the number to dial.
      */
     public String getNumber()
     {

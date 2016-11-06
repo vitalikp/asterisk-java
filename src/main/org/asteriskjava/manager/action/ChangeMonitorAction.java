@@ -68,6 +68,8 @@ public class ChangeMonitorAction extends AbstractManagerAction
 
     /**
      * Returns the name of the monitored channel.
+     *
+     * @return the name of the monitored channel.
      */
     public String getChannel()
     {
@@ -88,6 +90,8 @@ public class ChangeMonitorAction extends AbstractManagerAction
 
     /**
      * Returns the name of the file to which the voice data is written.
+     *
+     * @return the name of the file.
      */
     public String getFile()
     {

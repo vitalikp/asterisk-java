@@ -43,6 +43,8 @@ public abstract class AbstractAgentEvent extends ManagerEvent
 
     /**
      * Returns the name of the channel.
+     *
+     * @return the name of the channel.
      */
     public String getChannel()
     {

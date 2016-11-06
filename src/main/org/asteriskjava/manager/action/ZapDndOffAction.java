@@ -61,6 +61,8 @@ public class ZapDndOffAction extends AbstractManagerAction
 
     /**
      * Returns the number of the zap channel to switch to dnd off.
+     *
+     * @return the number of the zap channel.
      */
     public Integer getZapChannel()
     {

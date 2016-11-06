@@ -52,7 +52,7 @@ public class SocketConnectionFacadeImpl implements SocketConnectionFacade
 	 * @param ssl <code>true</code> to use SSL, <code>false</code> otherwise.
 	 * @param timeout 0 indicates default
 	 * @param readTimeout see {@link Socket#setSoTimeout(int)}
-	 * @throws IOException
+	 * @throws IOException if there is an i/o problem.
 	 */
 	public SocketConnectionFacadeImpl(String host, int port, boolean ssl, int timeout, int readTimeout) throws IOException
 	{

@@ -66,6 +66,7 @@ public interface AgiChannel
 	/**
 	 * Answers the channel.
 	 *
+	 * @throws IOException if there is an i/o problem.
 	 * @since 0.2
 	 */
 	void answer() throws IOException;
@@ -73,6 +74,7 @@ public interface AgiChannel
 	/**
 	 * Hangs the channel up.
 	 *
+	 * @throws IOException if there is an i/o problem.
 	 * @since 0.2
 	 */
 	void hangup() throws IOException;
@@ -84,6 +86,7 @@ public interface AgiChannel
 	 * @param time the number of seconds before this channel is automatically
 	 *            hung up.
 	 *            <p>0 disables the autohangup feature.
+	 * @throws IOException if there is an i/o problem.
 	 * @since 0.2
 	 */
 	void setAutoHangup(int time) throws IOException;
@@ -92,6 +95,7 @@ public interface AgiChannel
 	 * Sets the caller id on the current channel.
 	 *
 	 * @param callerId the raw caller id to set, for example "John Doe<1234>".
+	 * @throws IOException if there is an i/o problem.
 	 * @since 0.2
 	 */
 	void setCallerId(String callerId) throws IOException;
@@ -99,6 +103,7 @@ public interface AgiChannel
 	/**
 	 * Plays music on hold from the default music on hold class.
 	 *
+	 * @throws IOException if there is an i/o problem.
 	 * @since 0.2
 	 */
 	void playMusicOnHold() throws IOException;
@@ -108,6 +113,7 @@ public interface AgiChannel
 	 *
 	 * @param musicOnHoldClass the music on hold class to play music from as
 	 *            configures in Asterisk's <code>musiconhold.conf</code>.
+	 * @throws IOException if there is an i/o problem.
 	 * @since 0.2
 	 */
 	void playMusicOnHold(String musicOnHoldClass) throws IOException;
@@ -115,6 +121,7 @@ public interface AgiChannel
 	/**
 	 * Stops playing music on hold.
 	 *
+	 * @throws IOException if there is an i/o problem.
 	 * @since 0.2
 	 */
 	void stopMusicOnHold() throws IOException;
@@ -135,6 +142,7 @@ public interface AgiChannel
 	 * </ul>
 	 *
 	 * @return the status of the channel.
+	 * @throws IOException if there is an i/o problem.
 	 * @since 0.2
 	 */
 	int getChannelStatus() throws IOException;
@@ -146,6 +154,7 @@ public interface AgiChannel
 	 *
 	 * @param file the name of the file to play
 	 * @return a String containing the DTMF the user entered
+	 * @throws IOException if there is an i/o problem.
 	 * @since 0.2
 	 */
 	String getData(String file) throws IOException;
@@ -160,6 +169,7 @@ public interface AgiChannel
 	 *            <p>0 means standard timeout value, -1 means "ludicrous time"
 	 *            (essentially never times out).
 	 * @return a String containing the DTMF the user entered
+	 * @throws IOException if there is an i/o problem.
 	 * @since 0.2
 	 */
 	String getData(String file, long timeout) throws IOException;
@@ -177,6 +187,7 @@ public interface AgiChannel
 	 * @param maxDigits the maximum number of digits the user is allowed to
 	 *            enter
 	 * @return a String containing the DTMF the user entered
+	 * @throws IOException if there is an i/o problem.
 	 * @since 0.2
 	 */
 	String getData(String file, long timeout, int maxDigits)
@@ -192,6 +203,7 @@ public interface AgiChannel
 	 * @param escapeDigits contains the digits that the user is expected to
 	 *            press.
 	 * @return the DTMF digit pressed or 0x0 if none was pressed.
+	 * @throws IOException if there is an i/o problem.
 	 * @since 0.2
 	 */
 	char getOption(String file, String escapeDigits) throws IOException;
@@ -208,6 +220,7 @@ public interface AgiChannel
 	 * @param timeout the timeout in seconds to wait if none of the defined
 	 *            escape digits was presses while streaming.
 	 * @return the DTMF digit pressed or 0x0 if none was pressed.
+	 * @throws IOException if there is an i/o problem.
 	 * @since 0.2
 	 */
 	char getOption(String file, String escapeDigits, int timeout)
@@ -220,6 +233,7 @@ public interface AgiChannel
 	 *            "Dial".
 	 * @return the return code of the application of -2 if the application was
 	 *         not found.
+	 * @throws IOException if there is an i/o problem.
 	 * @since 0.2
 	 */
 	int exec(String application) throws IOException;
@@ -233,6 +247,7 @@ public interface AgiChannel
 	 *            "SIP/123".
 	 * @return the return code of the application of -2 if the application was
 	 *         not found.
+	 * @throws IOException if there is an i/o problem.
 	 * @since 0.2
 	 */
 	int exec(String application, String options) throws IOException;
@@ -245,6 +260,7 @@ public interface AgiChannel
 	 *
 	 * @return the return code of the application or
 	 *         -2 if the application was not found.
+	 * @throws IOException if there is an i/o problem.
 	 */
 	int playback(String ... filenames) throws IOException;
 
@@ -255,6 +271,7 @@ public interface AgiChannel
 	 *
 	 * @return the return code of the application or
 	 *         -2 if the application was not found.
+	 * @throws IOException if there is an i/o problem.
 	 */
 	int background(String ... filenames) throws IOException;
 
@@ -262,6 +279,7 @@ public interface AgiChannel
 	 * Sets the context for continuation upon exiting the application.
 	 *
 	 * @param context the context for continuation upon exiting the application.
+	 * @throws IOException if there is an i/o problem.
 	 * @since 0.2
 	 */
 	void setContext(String context) throws IOException;
@@ -271,6 +289,7 @@ public interface AgiChannel
 	 *
 	 * @param extension the extension for continuation upon exiting the
 	 *            application.
+	 * @throws IOException if there is an i/o problem.
 	 * @since 0.2
 	 */
 	void setExtension(String extension) throws IOException;
@@ -280,6 +299,7 @@ public interface AgiChannel
 	 *
 	 * @param priority the priority or label for continuation upon exiting the
 	 *            application.
+	 * @throws IOException if there is an i/o problem.
 	 * @since 0.2
 	 */
 	void setPriority(String priority) throws IOException;
@@ -288,6 +308,7 @@ public interface AgiChannel
 	 * Plays the given file.
 	 *
 	 * @param file name of the file to play.
+	 * @throws IOException if there is an i/o problem.
 	 * @since 0.2
 	 */
 	void streamFile(String file) throws IOException;
@@ -300,6 +321,7 @@ public interface AgiChannel
 	 * @param escapeDigits a String containing the DTMF digits that allow the
 	 *            user to escape.
 	 * @return the DTMF digit pressed or 0x0 if none was pressed.
+	 * @throws IOException if there is an i/o problem.
 	 * @since 0.2
 	 */
 	char streamFile(String file, String escapeDigits) throws IOException;
@@ -308,6 +330,7 @@ public interface AgiChannel
 	 * Says the given digit string.
 	 *
 	 * @param digits the digit string to say.
+	 * @throws IOException if there is an i/o problem.
 	 * @since 0.2
 	 */
 	void sayDigits(String digits) throws IOException;
@@ -320,6 +343,7 @@ public interface AgiChannel
 	 * @param escapeDigits a String containing the DTMF digits that allow the
 	 *            user to escape.
 	 * @return the DTMF digit pressed or 0x0 if none was pressed.
+	 * @throws IOException if there is an i/o problem.
 	 * @since 0.2
 	 */
 	char sayDigits(String digits, String escapeDigits) throws IOException;
@@ -328,6 +352,7 @@ public interface AgiChannel
 	 * Says the given number.
 	 *
 	 * @param number the number to say.
+	 * @throws IOException if there is an i/o problem.
 	 * @since 0.2
 	 */
 	void sayNumber(String number) throws IOException;
@@ -340,6 +365,7 @@ public interface AgiChannel
 	 * @param escapeDigits a String containing the DTMF digits that allow the
 	 *            user to escape.
 	 * @return the DTMF digit pressed or 0x0 if none was pressed.
+	 * @throws IOException if there is an i/o problem.
 	 * @since 0.2
 	 */
 	char sayNumber(String number, String escapeDigits) throws IOException;
@@ -348,6 +374,7 @@ public interface AgiChannel
 	 * Says the given character string with phonetics.
 	 *
 	 * @param text the text to say.
+	 * @throws IOException if there is an i/o problem.
 	 * @since 0.2
 	 */
 	void sayPhonetic(String text) throws IOException;
@@ -360,6 +387,7 @@ public interface AgiChannel
 	 * @param escapeDigits a String containing the DTMF digits that allow the
 	 *            user to escape.
 	 * @return the DTMF digit pressed or 0x0 if none was pressed.
+	 * @throws IOException if there is an i/o problem.
 	 * @since 0.2
 	 */
 	char sayPhonetic(String text, String escapeDigits) throws IOException;
@@ -368,6 +396,7 @@ public interface AgiChannel
 	 * Says the given character string.
 	 *
 	 * @param text the text to say.
+	 * @throws IOException if there is an i/o problem.
 	 * @since 0.2
 	 */
 	void sayAlpha(String text) throws IOException;
@@ -380,6 +409,7 @@ public interface AgiChannel
 	 * @param escapeDigits a String containing the DTMF digits that allow the
 	 *            user to escape.
 	 * @return the DTMF digit pressed or 0x0 if none was pressed.
+	 * @throws IOException if there is an i/o problem.
 	 * @since 0.2
 	 */
 	char sayAlpha(String text, String escapeDigits) throws IOException;
@@ -388,6 +418,7 @@ public interface AgiChannel
 	 * Says the given time.
 	 *
 	 * @param time the time to say in seconds since 00:00:00 on January 1, 1970.
+	 * @throws IOException if there is an i/o problem.
 	 * @since 0.2
 	 */
 	void sayTime(long time) throws IOException;
@@ -400,6 +431,7 @@ public interface AgiChannel
 	 * @param escapeDigits a String containing the DTMF digits that allow the
 	 *            user to escape.
 	 * @return the DTMF digit pressed or 0x0 if none was pressed.
+	 * @throws IOException if there is an i/o problem.
 	 * @since 0.2
 	 */
 	char sayTime(long time, String escapeDigits) throws IOException;
@@ -410,6 +442,7 @@ public interface AgiChannel
 	 * @param name the name of the variable to retrieve.
 	 * @return the value of the given variable or <code>null</code> if not
 	 *         set.
+	 * @throws IOException if there is an i/o problem.
 	 * @since 0.2
 	 */
 	String getVariable(String name) throws IOException;
@@ -419,6 +452,7 @@ public interface AgiChannel
 	 *
 	 * @param name the name of the variable to retrieve.
 	 * @param value the new value to set.
+	 * @throws IOException if there is an i/o problem.
 	 * @since 0.2
 	 */
 	void setVariable(String name, String value) throws IOException;
@@ -429,6 +463,7 @@ public interface AgiChannel
 	 * @param timeout timeout the milliseconds to wait for the channel to
 	 *            receive a DTMF digit, -1 will wait forever.
 	 * @return the DTMF digit pressed or 0x0 if none was pressed.
+	 * @throws IOException if there is an i/o problem.
 	 * @since 0.2
 	 */
 	char waitForDigit(int timeout) throws IOException;
@@ -445,6 +480,7 @@ public interface AgiChannel
 	 * @param name the name of the variable to retrieve.
 	 * @return the value of the given variable or <code>null</code> if not
 	 *         set.
+	 * @throws IOException if there is an i/o problem.
 	 * @since 0.2
 	 */
 	String getFullVariable(String name) throws IOException;
@@ -458,6 +494,7 @@ public interface AgiChannel
 	 * @param channel the name of the channel.
 	 * @return the value of the given variable or <code>null</code> if not
 	 *         set.
+	 * @throws IOException if there is an i/o problem.
 	 * @since 0.2
 	 */
 	String getFullVariable(String name, String channel) throws IOException;
@@ -469,6 +506,7 @@ public interface AgiChannel
 	 *
 	 * @param time the time to say in seconds elapsed since 00:00:00 on January
 	 *            1, 1970, Coordinated Universal Time (UTC)
+	 * @throws IOException if there is an i/o problem.
 	 * @since 0.2
 	 */
 	void sayDateTime(long time) throws IOException;
@@ -484,6 +522,7 @@ public interface AgiChannel
 	 * @param escapeDigits the digits that allow the user to interrupt this
 	 *            command or <code>null</code> for none.
 	 * @return the DTMF digit pressed or 0x0 if none was pressed.
+	 * @throws IOException if there is an i/o problem.
 	 * @since 0.2
 	 */
 	char sayDateTime(long time, String escapeDigits) throws IOException;
@@ -500,6 +539,7 @@ public interface AgiChannel
 	 *            command or <code>null</code> for none.
 	 * @param format the format the time should be said in
 	 * @return the DTMF digit pressed or 0x0 if none was pressed.
+	 * @throws IOException if there is an i/o problem.
 	 * @since 0.2
 	 */
 	char sayDateTime(long time, String escapeDigits, String format)
@@ -519,6 +559,7 @@ public interface AgiChannel
 	 * @param timezone the timezone to use when saying the time, for example
 	 *            "UTC" or "Europe/Berlin".
 	 * @return the DTMF digit pressed or 0x0 if none was pressed.
+	 * @throws IOException if there is an i/o problem.
 	 * @since 0.2
 	 */
 	char sayDateTime(long time, String escapeDigits, String format,
@@ -531,6 +572,7 @@ public interface AgiChannel
 	 * @param key the key of the entry to retrieve.
 	 * @return the value of the given family and key or <code>null</code> if there
 	 *         is no such value.
+	 * @throws IOException if there is an i/o problem.
 	 * @since 0.3
 	 */
 	String databaseGet(String family, String key) throws IOException;
@@ -542,6 +584,7 @@ public interface AgiChannel
 	 * @param family the family of the entry to add or update.
 	 * @param key the key of the entry to add or update.
 	 * @param value the new value of the entry.
+	 * @throws IOException if there is an i/o problem.
 	 * @since 0.3
 	 */
 	void databasePut(String family, String key, String value) throws IOException;
@@ -551,6 +594,7 @@ public interface AgiChannel
 	 *
 	 * @param family the family of the entry to delete.
 	 * @param key the key of the entry to delete.
+	 * @throws IOException if there is an i/o problem.
 	 * @since 0.3
 	 */
 	void databaseDel(String family, String key) throws IOException;
@@ -559,6 +603,7 @@ public interface AgiChannel
 	 * Deletes a whole family of entries in the Asterisk database.
 	 *
 	 * @param family the family to delete.
+	 * @throws IOException if there is an i/o problem.
 	 * @since 0.3
 	 */
 	void databaseDelTree(String family) throws IOException;
@@ -569,6 +614,7 @@ public interface AgiChannel
 	 *
 	 * @param family the family of the entries to delete.
 	 * @param keytree the prefix of the keys of the entries to delete.
+	 * @throws IOException if there is an i/o problem.
 	 * @since 0.3
 	 */
 	void databaseDelTree(String family, String keytree) throws IOException;
@@ -578,6 +624,7 @@ public interface AgiChannel
 	 *
 	 * @param message the message to send.
 	 * @param level the verbosity level to use. Must be in [1..4].
+	 * @throws IOException if there is an i/o problem.
 	 * @since 0.3
 	 */
 	void verbose(String message, int level) throws IOException;
@@ -591,6 +638,7 @@ public interface AgiChannel
 	 *            recording.
 	 * @param timeout the maximum record time in milliseconds, or -1 for no
 	 *            timeout.
+	 * @throws IOException if there is an i/o problem.
 	 * @since 0.3
 	 */
 	void recordFile(String file, String format, String escapeDigits,
@@ -610,6 +658,7 @@ public interface AgiChannel
 	 *            recording.
 	 * @param maxSilence The amount of silence (in seconds) to allow before
 	 *            returning despite the lack of dtmf digits or reaching timeout.
+	 * @throws IOException if there is an i/o problem.
 	 * @since 0.3
 	 */
 	void recordFile(String file, String format, String escapeDigits,
@@ -620,6 +669,7 @@ public interface AgiChannel
 	 * using "#" for forward and "*" for rewind.
 	 *
 	 * @param file the name of the file to stream, must not include extension.
+	 * @throws IOException if there is an i/o problem.
 	 * @since 0.3
 	 */
 	void controlStreamFile(String file) throws IOException;
@@ -633,6 +683,7 @@ public interface AgiChannel
 	 * @param escapeDigits contains the digits that allow the user to interrupt
 	 *            this command.
 	 * @return the DTMF digit pressed or 0x0 if none was pressed.
+	 * @throws IOException if there is an i/o problem.
 	 * @since 0.3
 	 */
 	char controlStreamFile(String file, String escapeDigits) throws IOException;
@@ -649,6 +700,7 @@ public interface AgiChannel
 	 *            user to interrupt.
 	 * @param offset the offset samples to skip before streaming.
 	 * @return the DTMF digit pressed or 0x0 if none was pressed.
+	 * @throws IOException if there is an i/o problem.
 	 * @since 0.3
 	 */
 	char controlStreamFile(String file, String escapeDigits, int offset) throws IOException;
@@ -669,6 +721,7 @@ public interface AgiChannel
 	 * @param rewindDigit the digit for rewind.
 	 * @param pauseDigit the digit for pause and unpause.
 	 * @return the DTMF digit pressed or 0x0 if none was pressed.
+	 * @throws IOException if there is an i/o problem.
 	 * @since 0.3
 	 */
 	char controlStreamFile(String file, String escapeDigits,

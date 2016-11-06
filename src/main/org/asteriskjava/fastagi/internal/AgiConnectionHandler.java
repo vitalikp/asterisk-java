@@ -65,6 +65,7 @@ public class AgiConnectionHandler implements Runnable
 	 * @param socket the socket connection to handle.
 	 * @param mappingStrategy the strategy to use to determine which script to
 	 *            run.
+	 * @throws IOException if there is an i/o problem.
 	 */
 	public AgiConnectionHandler(Socket socket, MappingStrategy mappingStrategy)
 		throws IOException

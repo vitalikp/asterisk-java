@@ -21,7 +21,7 @@ package org.asteriskjava.manager.action;
  *
  * <p>Setting global variables is supported since Asterisk 1.2.
  *
- * @author Asteria Solutions Group, Inc. <http://www.asteriasgi.com>
+ * @author Asteria Solutions Group, Inc. <a href="http://www.asteriasgi.com">www.asteriasgi.com</a>
  * @author srt
  * @version $Id: SetVarAction.java 729 2007-05-26 05:16:57Z sprior $
  */

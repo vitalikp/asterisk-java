@@ -145,7 +145,7 @@ public class DefaultAgiServer implements AgiServer
 	 * <p>The default port is 4573.
 	 *
 	 * @param bindPort the port to bind to.
-	 * @deprecated use {@see #setPort(int)} instead
+	 * @deprecated use {@link #setPort(int)} instead
 	 */
 	public void setBindPort(int bindPort)
 	{

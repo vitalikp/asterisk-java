@@ -94,7 +94,7 @@ public interface AgiChannel
 	/**
 	 * Sets the caller id on the current channel.
 	 *
-	 * @param callerId the raw caller id to set, for example "John Doe<1234>".
+	 * @param callerId the raw caller id to set, for example "John Doe&lt;1234&gt;".
 	 * @throws IOException if there is an i/o problem.
 	 * @since 0.2
 	 */

@@ -23,11 +23,13 @@ package org.asteriskjava.manager.event;
  * map channels to extensions.
  *
  * <p>Example:
- * <pre>exten => 1234,1,Dial(SIP/myuser)
- * exten => 1234,hint,SIP/myuser</pre>
+ * <pre>
+ *    exten =&gt; 1234,1,Dial(SIP/myuser)
+ *    exten =&gt; 1234,hint,SIP/myuser
+ * </pre>
  * Hints can also be used to map the state of multiple channels to an extension:
  * <pre>
- *    exten => 6789,hint,SIP/user1&SIP/user2
+ *    exten =&gt; 6789,hint,SIP/user1&amp;SIP/user2
  * </pre>
  *
  * <p>It is implemented in <code>manager.c</code>, values for state are defined in

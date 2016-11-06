@@ -329,7 +329,7 @@ public class OriginateAction extends AbstractManagerAction implements EventGener
      * <p>If not set, Asterisk assumes a default value of 30000 meaning 30 seconds.
      *
      * @param timeout the timeout in milliseconds
-     * @deprecated use {@see #setTimeout(Long)} instead.
+     * @deprecated use {@link #setTimeout(Long)} instead.
      */
     public void setTimeout(Integer timeout)
     {

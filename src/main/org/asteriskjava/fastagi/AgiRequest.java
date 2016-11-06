@@ -49,10 +49,10 @@ public interface AgiRequest
 
     /**
      * Returns the full URL of the requestURL in the form
-     * agi://host[:port][/script][?param1=value1&param2=value2].
+     * agi://host[:port][/script][?param1=value1&amp;param2=value2].
      *
      * @return the full URL of the requestURL in the form
-     *         agi://host[:port][/script][?param1=value1&param2=value2].
+     *         agi://host[:port][/script][?param1=value1&amp;param2=value2].
      */
     String getRequestURL();
 

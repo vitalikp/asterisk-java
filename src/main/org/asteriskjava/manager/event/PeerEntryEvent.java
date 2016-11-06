@@ -17,7 +17,7 @@
 package org.asteriskjava.manager.event;
 
 /**
- * A PeerEntryEvent is triggered in response to a SIPPeersAction or SIPShowPeerAction and contains
+ * A PeerEntryEvent is triggered in response to a SipPeersAction or SipShowPeerAction and contains
  * information about a peer.
  *
  * <p>It is implemented in <code>channels/chan_sip.c</code>

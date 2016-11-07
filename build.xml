@@ -41,14 +41,10 @@
 		<jar destfile="build/jar/${ant.project.name}-${asterisk.ver}-src.jar">
 			<manifest>
 				<attribute name="Built-By" value="${user.name}"/>
-				<attribute name="Implementation-Version" value="${asterisk.ver}"/>
-			</manifest>
-			<fileset dir="${src}"/>
-		</jar>
-		<jar destfile="build/jar/${ant.project.name}-${asterisk.ver}-src.jar">
-			<manifest>
-				<attribute name="Built-By" value="${user.name}"/>
-				<attribute name="Implementation-Version" value="${asterisk.ver}"/>
+				<section name="org/asteriskjava/">
+					<attribute name="Implementation-Title" value="${ant.project.name}"/>
+					<attribute name="Implementation-Version" value="${asterisk.ver}"/>
+				</section>
 			</manifest>
 			<fileset dir="${src}"/>
 			<fileset dir="build" includes="doc/"/>

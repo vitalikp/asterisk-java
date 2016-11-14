@@ -70,7 +70,7 @@ public class AgiChannelImpl implements AgiChannel
 {
 	private final AgiRequest request;
 	private final AgiWriter agiWriter;
-	private final AgiReader agiReader;
+	private final AgiReaderImpl agiReader;
 
 	public AgiChannelImpl(Socket socket)
 		throws IOException

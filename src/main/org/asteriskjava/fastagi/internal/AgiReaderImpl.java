@@ -34,7 +34,7 @@ import org.asteriskjava.fastagi.reply.AgiReply;
  * @author srt
  * @version $Id: AgiReaderImpl.java 580 2006-12-27 22:21:49Z srt $
  */
-public class AgiReaderImpl implements AgiReader
+public class AgiReaderImpl
 {
 	private final Socket socket;
 	private final BufferedReader reader;

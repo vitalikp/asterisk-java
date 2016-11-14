@@ -28,7 +28,7 @@ import java.net.Socket;
  * @author srt
  * @version $Id: AgiWriterImpl.java 458 2006-07-05 22:32:02Z srt $
  */
-class AgiWriterImpl implements AgiWriter
+class AgiWriterImpl
 {
 	private final Socket socket;
 	private final BufferedWriter writer;

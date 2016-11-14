@@ -69,7 +69,7 @@ import org.asteriskjava.fastagi.reply.AgiReply;
 public class AgiChannelImpl implements AgiChannel
 {
 	private final AgiRequest request;
-	private final AgiWriter agiWriter;
+	private final AgiWriterImpl agiWriter;
 	private final AgiReader agiReader;
 
 	public AgiChannelImpl(Socket socket)

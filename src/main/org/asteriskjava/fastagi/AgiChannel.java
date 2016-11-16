@@ -18,8 +18,6 @@ package org.asteriskjava.fastagi;
 
 import java.io.IOException;
 
-import org.asteriskjava.fastagi.reply.AgiReply;
-
 /**
  * Provides the functionality to send AgiCommands to Asterisk while handling an
  * AgiRequest.
@@ -52,16 +50,6 @@ public interface AgiChannel
 	 * @return the unique id of the channel.
 	 */
 	String getUniqueId();
-
-	/**
-	 * Sends a command to asterisk and returns the corresponding reply.
-	 *
-	 * @param command the command to send.
-	 * @return the reply of the asterisk server containing the return value.
-	 * @throws IOException if the command can't be sent to Asterisk (for
-	 *             example because the channel has been hung up)
-	 */
-	AgiReply sendCommand(String command) throws IOException;
 
 	/**
 	 * Answers the channel.

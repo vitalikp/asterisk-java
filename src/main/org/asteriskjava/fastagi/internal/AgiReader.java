@@ -74,6 +74,20 @@ public class AgiReader
 		return request;
 	}
 
+	public List<String> readEOF()
+		throws IOException
+	{
+		List<String> lines = new ArrayList<String>();
+
+		String line;
+
+		// read the remaining data
+    	while ((line = reader.readLine()) != null)
+    		lines.add(line);
+
+    	return lines;
+	}
+
 	public AgiReply readReply() throws IOException
 	{
 		AgiReply reply;
@@ -92,9 +106,7 @@ public class AgiReader
 			// shutdown output stream
         	socket.shutdownOutput();
 
-        	// read the remaining data
-        	while ((line = reader.readLine()) != null)
-        		lines.add(line);
+        	readEOF();
 
         	throw new AgiHangupException();
 		}

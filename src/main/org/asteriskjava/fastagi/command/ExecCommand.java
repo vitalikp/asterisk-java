@@ -115,9 +115,12 @@ public class ExecCommand extends AbstractAgiCommand
 
 		cmd.append(application);
 
-		// options
-		cmd.append(' ');
-		cmd.append(escapeAndQuote(options));
+		if (options != null)
+		{
+			// options
+			cmd.append(' ');
+			cmd.append(escapeAndQuote(options));
+		}
 
 		return  cmd.toString();
     }

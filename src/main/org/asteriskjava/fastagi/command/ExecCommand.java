@@ -27,90 +27,99 @@ package org.asteriskjava.fastagi.command;
  */
 public class ExecCommand extends AbstractAgiCommand
 {
-    /**
-     * Serial version identifier.
-     */
-    private static final long serialVersionUID = 3904959746380281145L;
+	/**
+	 * Serial version identifier.
+	 */
+	private static final long serialVersionUID = 3904959746380281145L;
 
-    /**
-     * The name of the application to execute.
-     */
-    private String application;
+	/**
+	 * The name of the application to execute.
+	 */
+	private String application;
 
-    /**
-     * The options to pass to the application.
-     */
-    private String options;
+	/**
+	 * The options to pass to the application.
+	 */
+	private String options;
 
-    /**
-     * Creates a new ExecCommand.
-     *
-     * @param application the name of the application to execute.
-     */
-    public ExecCommand(String application)
-    {
-        super();
-        this.application = application;
-    }
+	/**
+	 * Creates a new ExecCommand.
+	 *
+	 * @param application the name of the application to execute.
+	 */
+	public ExecCommand(String application)
+	{
+		super();
+		this.application = application;
+	}
 
-    /**
-     * Creates a new ExecCommand.
-     *
-     * @param application the name of the application to execute.
-     * @param options the options to pass to the application.
-     */
-    public ExecCommand(String application, String options)
-    {
-        super();
-        this.application = application;
-        this.options = options;
-    }
+	/**
+	 * Creates a new ExecCommand.
+	 *
+	 * @param application the name of the application to execute.
+	 * @param options the options to pass to the application.
+	 */
+	public ExecCommand(String application, String options)
+	{
+		super();
+		this.application = application;
+		this.options = options;
+	}
 
-    /**
-     * Returns the name of the application to execute.
-     *
-     * @return the name of the application to execute.
-     */
-    public String getApplication()
-    {
-        return application;
-    }
+	/**
+	 * Returns the name of the application to execute.
+	 *
+	 * @return the name of the application to execute.
+	 */
+	public String getApplication()
+	{
+		return application;
+	}
 
-    /**
-     * Sets the name of the application to execute.
-     *
-     * @param application the name of the application to execute.
-     */
-    public void setApplication(String application)
-    {
-        this.application = application;
-    }
+	/**
+	 * Sets the name of the application to execute.
+	 *
+	 * @param application the name of the application to execute.
+	 */
+	public void setApplication(String application)
+	{
+		this.application = application;
+	}
 
-    /**
-     * Returns the options to pass to the application.
-     *
-     * @return the options to pass to the application.
-     */
-    public String getOptions()
-    {
-        return options;
-    }
+	/**
+	 * Returns the options to pass to the application.
+	 *
+	 * @return the options to pass to the application.
+	 */
+	public String getOptions()
+	{
+		return options;
+	}
 
-    /**
-     * Sets the options to pass to the application. Multiple options are
-     * separated by the pipe character ('|').
-     *
-     * @param options the options to pass to the application.
-     */
-    public void setOptions(String options)
-    {
-        this.options = options;
-    }
+	/**
+	 * Sets the options to pass to the application. Multiple options are
+	 * separated by the pipe character ('|').
+	 *
+	 * @param options the options to pass to the application.
+	 */
+	public void setOptions(String options)
+	{
+		this.options = options;
+	}
 
-    @Override
-    public String buildCommand()
-    {
-        return "EXEC " + escapeAndQuote(application) + " "
-                + escapeAndQuote(options);
+	@Override
+	public String buildCommand()
+	{
+		StringBuilder cmd = new StringBuilder();
+
+		cmd.append("EXEC ");
+
+		cmd.append(escapeAndQuote(application));
+
+		// options
+		cmd.append(' ');
+		cmd.append(escapeAndQuote(options));
+
+		return  cmd.toString();
     }
 }

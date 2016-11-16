@@ -96,16 +96,12 @@ public class AgiChannelImpl implements AgiChannel
 		return request.getUniqueId();
 	}
 
-	private AgiReply sendCommand(AgiCommand command)
-		throws IOException
-	{
-		return sendCommand(command.buildCommand());
-	}
-
-	public synchronized AgiReply sendCommand(String command)
+	private AgiReply sendCommand(AgiCommand agiCmd)
 		throws IOException
 	{
 		AgiReply reply;
+
+		String command = agiCmd.buildCommand();
 
 		agiWriter.sendCommand(command);
 		reply = agiReader.readReply();

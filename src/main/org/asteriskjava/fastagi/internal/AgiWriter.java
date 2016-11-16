@@ -48,4 +48,10 @@ class AgiWriter
 		writer.write(command + "\n");
 		writer.flush();
 	}
+
+	public void shutdownOutput()
+		throws IOException
+	{
+    	socket.shutdownOutput();
+	}
 }

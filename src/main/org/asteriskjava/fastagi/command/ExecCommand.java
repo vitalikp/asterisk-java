@@ -111,9 +111,9 @@ public class ExecCommand extends AbstractAgiCommand
 	{
 		StringBuilder cmd = new StringBuilder();
 
-		cmd.append("EXEC ");
+		cmd.append("Exec ");
 
-		cmd.append(escapeAndQuote(application));
+		cmd.append(application);
 
 		// options
 		cmd.append(' ');

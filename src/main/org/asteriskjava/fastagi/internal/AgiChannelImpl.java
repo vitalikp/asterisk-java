@@ -126,6 +126,9 @@ public class AgiChannelImpl implements AgiChannel
 	public void hangup() throws IOException
 	{
 		sendCommand(new HangupCommand());
+		agiWriter.shutdownOutput();
+
+		agiReader.readEOF();
 	}
 
 	public void setAutoHangup(int time) throws IOException

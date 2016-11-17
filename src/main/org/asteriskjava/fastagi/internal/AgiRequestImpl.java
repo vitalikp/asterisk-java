@@ -69,6 +69,30 @@ public class AgiRequestImpl implements Serializable, AgiRequest
 
 	}
 
+	void set(String name, String value)
+	{
+		if ("network_script".equals(name))
+		{
+			script = value;
+			return;
+		}
+
+		if (name.startsWith("arg_"))
+		{
+			int pos = value.indexOf('=');
+			if (pos > 0)
+			{
+				name = value.substring(0, pos).trim();
+				value = value.substring(pos + 1).trim();
+			}
+
+			setParam(name, value);
+			return;
+		}
+
+		request.put(name, value);
+	}
+
 	void setParam(String name, String value)
 	{
 		parameterMap.put(name, value);

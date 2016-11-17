@@ -69,6 +69,11 @@ public class AgiRequestImpl implements Serializable, AgiRequest
 
 	}
 
+	void setParam(String name, String value)
+	{
+		parameterMap.put(name, value);
+	}
+
 	public InetAddress getLocalAddress()
 	{
 		return localAddress;

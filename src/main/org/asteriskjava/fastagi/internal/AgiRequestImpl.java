@@ -190,6 +190,11 @@ public class AgiRequestImpl implements Serializable, AgiRequest
 		return request.get("uniqueid");
 	}
 
+	public String getVersion()
+	{
+		return request.get("version");
+	}
+
 	public String getCallerId()
 	{
 		return getCallerIdNumber();
@@ -411,6 +416,7 @@ public class AgiRequestImpl implements Serializable, AgiRequest
 		sb.append("requestURL='" + getRequestURL() + "',");
 		sb.append("channel='" + getChannel() + "',");
 		sb.append("uniqueId='" + getUniqueId() + "',");
+		sb.append("version='" + getVersion() + "',");
 		sb.append("type='" + getType() + "',");
 		sb.append("language='" + getLanguage() + "',");
 		sb.append("callerId='" + getCallerId() + "',");

@@ -113,6 +113,13 @@ public interface AgiRequest
     String getUniqueId();
 
     /**
+     * Returns the asterisk version.
+     *
+     * @return the asterisk version
+     */
+    String getVersion();
+
+    /**
      * Returns the Caller*ID number, for example "1234".
      *
      * <p>Note: even with Asterisk 1.0 is contains only the numerical part

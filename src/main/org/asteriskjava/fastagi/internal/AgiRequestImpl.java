@@ -17,23 +17,14 @@
 package org.asteriskjava.fastagi.internal;
 
 import java.io.Serializable;
-import java.io.UnsupportedEncodingException;
 import java.net.InetAddress;
-import java.net.URLDecoder;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import java.util.StringTokenizer;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import org.asteriskjava.fastagi.AgiRequest;
 import org.asteriskjava.util.AstUtil;
-import org.asteriskjava.util.Log;
-import org.asteriskjava.util.LogFactory;
 
 /**
  * Default implementation of the AGIRequest interface.
@@ -43,12 +34,6 @@ import org.asteriskjava.util.LogFactory;
  */
 public class AgiRequestImpl implements Serializable, AgiRequest
 {
-    private final Log logger = LogFactory.getLog(getClass());
-    private static final Pattern SCRIPT_PATTERN = Pattern
-            .compile("^([^\\?]*)\\?(.*)$");
-    private static final Pattern PARAMETER_PATTERN = Pattern
-            .compile("^(.*)=(.*)$");
-
     private String rawCallerId;
 
     /**
@@ -62,9 +47,8 @@ public class AgiRequestImpl implements Serializable, AgiRequest
      * A map assigning the values of a parameter (an array of Strings) to the
      * name of the parameter.
      */
-    private Map<String, String[]> parameterMap;
+    private final Map<String, String[]> parameterMap = new HashMap<String, String[]>();
 
-    private String parameters;
     private String script;
     private boolean callerIdCreated;
     private InetAddress localAddress;
@@ -87,15 +71,6 @@ public class AgiRequestImpl implements Serializable, AgiRequest
         request = buildMap(environment);
 
         script = (String) request.get("network_script");
-        if (script != null)
-        {
-            Matcher scriptMatcher = SCRIPT_PATTERN.matcher(script);
-            if (scriptMatcher.matches())
-            {
-                script = scriptMatcher.group(1);
-                parameters = scriptMatcher.group(2);
-            }
-        }
     }
 
     /**
@@ -443,7 +418,7 @@ public class AgiRequestImpl implements Serializable, AgiRequest
     {
         String[] values;
 
-        values = getParameterValues(name);
+        values = parameterMap.get(name);
 
         if (values == null || values.length == 0)
         {
@@ -465,99 +440,7 @@ public class AgiRequestImpl implements Serializable, AgiRequest
 
     public synchronized Map getParameterMap()
     {
-        if (parameterMap == null)
-        {
-            parameterMap = parseParameters(parameters);
-        }
         return parameterMap;
-    }
-
-    /**
-     * Parses the given parameter string and caches the result.
-     *
-     * @param s the parameter string to parse
-     * @return a Map made up of parameter names their values
-     */
-    private synchronized Map<String, String[]> parseParameters(String s)
-    {
-        Map<String, List<String>> parameterMap;
-        Map<String, String[]> result;
-        StringTokenizer st;
-
-        parameterMap = new HashMap<String, List<String>>();
-        result = new HashMap<String, String[]>();
-
-        if (s == null)
-        {
-            return result;
-        }
-
-        st = new StringTokenizer(s, "&");
-        while (st.hasMoreTokens())
-        {
-            String parameter;
-            Matcher parameterMatcher;
-            String name;
-            String value;
-            List<String> values;
-
-            parameter = st.nextToken();
-            parameterMatcher = PARAMETER_PATTERN.matcher(parameter);
-            if (parameterMatcher.matches())
-            {
-                try
-                {
-                    name = URLDecoder
-                            .decode(parameterMatcher.group(1), "UTF-8");
-                    value = URLDecoder.decode(parameterMatcher.group(2),
-                            "UTF-8");
-                }
-                catch (UnsupportedEncodingException e)
-                {
-                    logger.error("Unable to decode parameter '" + parameter
-                            + "'", e);
-                    continue;
-                }
-            }
-            else
-            {
-                try
-                {
-                    name = URLDecoder.decode(parameter, "UTF-8");
-                    value = "";
-                }
-                catch (UnsupportedEncodingException e)
-                {
-                    logger.error("Unable to decode parameter '" + parameter
-                            + "'", e);
-                    continue;
-                }
-            }
-
-            if (parameterMap.get(name) == null)
-            {
-                values = new ArrayList<String>();
-                values.add(value);
-                parameterMap.put(name, values);
-            }
-            else
-            {
-                values = parameterMap.get(name);
-                values.add(value);
-            }
-        }
-
-        for (String name : parameterMap.keySet())
-        {
-            List<String> values;
-            String[] valueArray;
-
-            values = parameterMap.get(name);
-            valueArray = new String[values.size()];
-            result.put(name, values.toArray(valueArray));
-        }
-
-        return result;
     }
 
     public InetAddress getLocalAddress()

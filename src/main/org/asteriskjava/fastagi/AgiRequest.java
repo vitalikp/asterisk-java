@@ -17,7 +17,6 @@
 package org.asteriskjava.fastagi;
 
 import java.net.InetAddress;
-import java.util.Map;
 
 /**
  * Provides client request information to an {@link org.asteriskjava.fastagi.AgiScript}.
@@ -229,15 +228,6 @@ public interface AgiRequest
      * @see #getParameterValues(String)
      */
     String getParameter(String name);
-
-    /**
-     * Returns a java.util.Map of the parameters of this request.
-     *
-     * @return a java.util.Map containing parameter names as keys and parameter
-     *         values as map values. The keys in the parameter map are of type
-     *         String. The values in the parameter map are of type String array.
-     */
-    Map getParameterMap();
 
     /**
      * Returns the local address this channel, that is the IP address of the AGI

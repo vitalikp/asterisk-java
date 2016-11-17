@@ -428,11 +428,6 @@ public class AgiRequestImpl implements Serializable, AgiRequest
         return values[0];
     }
 
-    public synchronized Map getParameterMap()
-    {
-        return parameterMap;
-    }
-
     public InetAddress getLocalAddress()
     {
         return localAddress;

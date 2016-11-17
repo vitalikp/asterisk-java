@@ -52,24 +52,35 @@ public class AgiReader
 	public AgiRequest readRequest() throws IOException
 	{
 		AgiRequestImpl request;
-		String line;
-		List<String> lines;
-
-		lines = new ArrayList<String>();
-
-		while ((line = reader.readLine()) != null)
-		{
-			if (line.length() == 0)
-				break;
-
-			lines.add(line);
-		}
 
 		request = new AgiRequestImpl();
 		request.setLocalAddress(socket.getLocalAddress());
 		request.setLocalPort(socket.getLocalPort());
 		request.setRemoteAddress(socket.getInetAddress());
 		request.setRemotePort(socket.getPort());
+
+		String line;
+
+		int pos;
+		String name;
+		String value;
+		while ((line = reader.readLine()) != null)
+		{
+			if (line.length() == 0)
+				break;
+
+			if (!line.startsWith("agi_"))
+				continue;
+
+			pos = line.indexOf(':');
+			if (pos < 0)
+				continue;
+
+			name = line.substring(4, pos).trim();
+			value = line.substring(pos + 1).trim();
+
+			request.set(name, value);
+		}
 
 		return request;
 	}

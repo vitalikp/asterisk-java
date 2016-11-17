@@ -47,7 +47,7 @@ public class AgiRequestImpl implements Serializable, AgiRequest
      * A map assigning the values of a parameter (an array of Strings) to the
      * name of the parameter.
      */
-    private final Map<String, String[]> parameterMap = new HashMap<String, String[]>();
+    private final Map<String, String> parameterMap = new HashMap<String, String>();
 
     private String script;
     private boolean callerIdCreated;
@@ -416,16 +416,7 @@ public class AgiRequestImpl implements Serializable, AgiRequest
 
     public String getParameter(String name)
     {
-        String[] values;
-
-        values = parameterMap.get(name);
-
-        if (values == null || values.length == 0)
-        {
-            return null;
-        }
-
-        return values[0];
+        return parameterMap.get(name);
     }
 
     public InetAddress getLocalAddress()

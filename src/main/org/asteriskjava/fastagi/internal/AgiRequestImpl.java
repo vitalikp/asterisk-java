@@ -32,399 +32,371 @@ import org.asteriskjava.util.AstUtil;
  */
 public class AgiRequestImpl implements Serializable, AgiRequest
 {
-    /**
-     * Serial version identifier.
-     */
-    private static final long serialVersionUID = 3257001047145789496L;
+	/**
+	 * Serial version identifier.
+	 */
+	private static final long serialVersionUID = 3257001047145789496L;
 
 	/**
 	 * Socket data
 	 */
 	private InetAddress localAddress;
-    private int localPort;
-    private InetAddress remoteAddress;
-    private int remotePort;
+	private int localPort;
+	private InetAddress remoteAddress;
+	private int remotePort;
 
-    /**
-     * Request data
-     */
-    private String script;
-    
-    private boolean callerIdCreated;
-    private String rawCallerId;
+	/**
+	 * Request data
+	 */
+	private String script;
 
-    private Map<String, String> request = new HashMap<String, String>();
+	private boolean callerIdCreated;
+	private String rawCallerId;
 
-    /**
-     * A map assigning the values of a parameter (an array of Strings) to the
-     * name of the parameter.
-     */
-    private final Map<String, String> parameterMap = new HashMap<String, String>();
+	private Map<String, String> request = new HashMap<String, String>();
 
-    /**
-     * Creates a new AGIRequestImpl.
-     */
-    AgiRequestImpl()
-    {
+	/**
+	 * A map assigning the values of a parameter (an array of Strings) to the
+	 * name of the parameter.
+	 */
+	private final Map<String, String> parameterMap = new HashMap<String, String>();
 
-    }
+	/**
+	 * Creates a new AGIRequestImpl.
+	 */
+	AgiRequestImpl()
+	{
 
-    public InetAddress getLocalAddress()
-    {
-        return localAddress;
-    }
+	}
 
-    void setLocalAddress(InetAddress localAddress)
-    {
-        this.localAddress = localAddress;
-    }
+	public InetAddress getLocalAddress()
+	{
+		return localAddress;
+	}
 
-    public int getLocalPort()
-    {
-        return localPort;
-    }
+	void setLocalAddress(InetAddress localAddress)
+	{
+		this.localAddress = localAddress;
+	}
 
-    void setLocalPort(int localPort)
-    {
-        this.localPort = localPort;
-    }
+	public int getLocalPort()
+	{
+		return localPort;
+	}
 
-    public InetAddress getRemoteAddress()
-    {
-        return remoteAddress;
-    }
+	void setLocalPort(int localPort)
+	{
+		this.localPort = localPort;
+	}
 
-    void setRemoteAddress(InetAddress remoteAddress)
-    {
-        this.remoteAddress = remoteAddress;
-    }
+	public InetAddress getRemoteAddress()
+	{
+		return remoteAddress;
+	}
 
-    public int getRemotePort()
-    {
-        return remotePort;
-    }
+	void setRemoteAddress(InetAddress remoteAddress)
+	{
+		this.remoteAddress = remoteAddress;
+	}
 
-    void setRemotePort(int remotePort)
-    {
-        this.remotePort = remotePort;
-    }
+	public int getRemotePort()
+	{
+		return remotePort;
+	}
 
-    /**
-     * Returns the name of the script to execute.
-     *
-     * @return the name of the script to execute.
-     */
-    public synchronized String getScript()
-    {
-        return script;
-    }
+	void setRemotePort(int remotePort)
+	{
+		this.remotePort = remotePort;
+	}
 
-    /**
-     * Returns the full URL of the request in the form
-     * agi://host[:port][/script].
-     *
-     * @return the full URL of the request in the form
-     *         agi://host[:port][/script].
-     */
-    public String getRequestURL()
-    {
-        return (String) request.get("request");
-    }
+	/**
+	 * Returns the name of the script to execute.
+	 *
+	 * @return the name of the script to execute.
+	 */
+	public synchronized String getScript()
+	{
+		return script;
+	}
 
-    /**
-     * Returns the name of the channel.
-     *
-     * @return the name of the channel.
-     */
-    public String getChannel()
-    {
-        return (String) request.get("channel");
-    }
+	/**
+	 * Returns the full URL of the request in the form
+	 * agi://host[:port][/script].
+	 *
+	 * @return the full URL of the request in the form
+	 *         agi://host[:port][/script].
+	 */
+	public String getRequestURL()
+	{
+		return request.get("request");
+	}
 
-    public String getLanguage()
-    {
-        return (String) request.get("language");
-    }
+	/**
+	 * Returns the name of the channel.
+	 *
+	 * @return the name of the channel.
+	 */
+	public String getChannel()
+	{
+		return request.get("channel");
+	}
 
-    public String getType()
-    {
-        return (String) request.get("type");
-    }
+	public String getLanguage()
+	{
+		return request.get("language");
+	}
 
-    /**
-     * Returns the unique id of the channel.
-     *
-     * @return the unique id of the channel.
-     */
-    public String getUniqueId()
-    {
-        return (String) request.get("uniqueid");
-    }
+	public String getType()
+	{
+		return request.get("type");
+	}
 
-    public String getCallerId()
-    {
-        return getCallerIdNumber();
-    }
+	/**
+	 * Returns the unique id of the channel.
+	 *
+	 * @return the unique id of the channel.
+	 */
+	public String getUniqueId()
+	{
+		return request.get("uniqueid");
+	}
 
-    public String getCallerIdNumber()
-    {
-        String callerIdName;
-        String callerId;
+	public String getCallerId()
+	{
+		return getCallerIdNumber();
+	}
 
-        callerIdName = (String) request.get("calleridname");
-        callerId = (String) request.get("callerid");
-        if (callerIdName != null)
-        {
-            // Asterisk 1.2
-            if (callerId == null || "unknown".equals(callerId))
-            {
-                return null;
-            }
+	public String getCallerIdNumber()
+	{
+		String callerIdName;
+		String callerId;
 
-            return callerId;
-        }
-        else
-        {
-            // Asterisk 1.0
-            return getCallerId10();
-        }
-    }
+		callerIdName = request.get("calleridname");
+		callerId = request.get("callerid");
+		if (callerIdName != null)
+		{
+			// Asterisk 1.2
+			if (callerId == null || "unknown".equals(callerId))
+				return null;
 
-    public String getCallerIdName()
-    {
-        String callerIdName;
+			return callerId;
+		}
 
-        callerIdName = (String) request.get("calleridname");
-        if (callerIdName != null)
-        {
-            // Asterisk 1.2
-            if ("unknown".equals(callerIdName))
-            {
-                return null;
-            }
+		// Asterisk 1.0
+		return getCallerId10();
+	}
 
-            return callerIdName;
-        }
-        else
-        {
-            // Asterisk 1.0
-            return getCallerIdName10();
-        }
-    }
+	public String getCallerIdName()
+	{
+		String callerIdName;
 
-    /**
-     * Returns the Caller*ID number using Asterisk 1.0 logic.
-     *
-     * @return the Caller*ID number
-     */
-    private synchronized String getCallerId10()
-    {
-        final String[] parsedCallerId;
+		callerIdName = request.get("calleridname");
+		if (callerIdName != null)
+		{
+			// Asterisk 1.2
+			if ("unknown".equals(callerIdName))
+				return null;
 
-        if (!callerIdCreated)
-        {
-            rawCallerId = (String) request.get("callerid");
-            callerIdCreated = true;
-        }
+			return callerIdName;
+		}
 
-        parsedCallerId = AstUtil.parseCallerId(rawCallerId);
-        if (parsedCallerId[1] == null)
-        {
-            return parsedCallerId[0];
-        }
-        else
-        {
-            return parsedCallerId[1];
-        }
-    }
+		// Asterisk 1.0
+		return getCallerIdName10();
+	}
 
-    /**
-     * Returns the Caller*ID name using Asterisk 1.0 logic.
-     *
-     * @return the Caller*ID name
-     */
-    private synchronized String getCallerIdName10()
-    {
-        if (!callerIdCreated)
-        {
-            rawCallerId = (String) request.get("callerid");
-            callerIdCreated = true;
-        }
+	/**
+	 * Returns the Caller*ID number using Asterisk 1.0 logic.
+	 *
+	 * @return the Caller*ID number
+	 */
+	private synchronized String getCallerId10()
+	{
+		final String[] parsedCallerId;
 
-        if (!callerIdCreated)
-        {
-            rawCallerId = (String) request.get("callerid");
-            callerIdCreated = true;
-        }
+		if (!callerIdCreated)
+		{
+			rawCallerId = request.get("callerid");
+			callerIdCreated = true;
+		}
 
-        return AstUtil.parseCallerId(rawCallerId)[0];
-    }
+		parsedCallerId = AstUtil.parseCallerId(rawCallerId);
+		if (parsedCallerId[1] == null)
+			return parsedCallerId[0];
 
-    public Integer getCallingPres()
-    {
-        if (request.get("callingpres") == null)
-        {
-            return null;
-        }
+		return parsedCallerId[1];
+	}
 
-        try
-        {
-            return Integer.valueOf(request.get("callingpres"));
-        }
-        catch (NumberFormatException e)
-        {
-            return null;
-        }
-    }
+	/**
+	 * Returns the Caller*ID name using Asterisk 1.0 logic.
+	 *
+	 * @return the Caller*ID name
+	 */
+	private synchronized String getCallerIdName10()
+	{
+		if (!callerIdCreated)
+		{
+			rawCallerId = request.get("callerid");
+			callerIdCreated = true;
+		}
 
-    public Integer getCallingAni2()
-    {
-        if (request.get("callingani2") == null)
-        {
-            return null;
-        }
+		if (!callerIdCreated)
+		{
+			rawCallerId = request.get("callerid");
+			callerIdCreated = true;
+		}
 
-        try
-        {
-            return Integer.valueOf(request.get("callingani2"));
-        }
-        catch (NumberFormatException e)
-        {
-            return null;
-        }
-    }
+		return AstUtil.parseCallerId(rawCallerId)[0];
+	}
 
-    public Integer getCallingTon()
-    {
-        if (request.get("callington") == null)
-        {
-            return null;
-        }
+	public Integer getCallingPres()
+	{
+		if (request.get("callingpres") == null)
+			return null;
 
-        try
-        {
-            return Integer.valueOf(request.get("callington"));
-        }
-        catch (NumberFormatException e)
-        {
-            return null;
-        }
-    }
+		try
+		{
+			return Integer.valueOf(request.get("callingpres"));
+		}
+		catch (NumberFormatException e)
+		{
+			return null;
+		}
+	}
 
-    public Integer getCallingTns()
-    {
-        if (request.get("callingtns") == null)
-        {
-            return null;
-        }
+	public Integer getCallingAni2()
+	{
+		if (request.get("callingani2") == null)
+			return null;
 
-        try
-        {
-            return Integer.valueOf(request.get("callingtns"));
-        }
-        catch (NumberFormatException e)
-        {
-            return null;
-        }
-    }
+		try
+		{
+			return Integer.valueOf(request.get("callingani2"));
+		}
+		catch (NumberFormatException e)
+		{
+			return null;
+		}
+	}
 
-    public String getDnid()
-    {
-        String dnid;
+	public Integer getCallingTon()
+	{
+		if (request.get("callington") == null)
+			return null;
 
-        dnid = (String) request.get("dnid");
+		try
+		{
+			return Integer.valueOf(request.get("callington"));
+		}
+		catch (NumberFormatException e)
+		{
+			return null;
+		}
+	}
 
-        if (dnid == null || "unknown".equals(dnid))
-        {
-            return null;
-        }
+	public Integer getCallingTns()
+	{
+		if (request.get("callingtns") == null)
+			return null;
 
-        return dnid;
-    }
+		try
+		{
+			return Integer.valueOf(request.get("callingtns"));
+		}
+		catch (NumberFormatException e)
+		{
+			return null;
+		}
+	}
 
-    public String getRdnis()
-    {
-        String rdnis;
+	public String getDnid()
+	{
+		String dnid;
 
-        rdnis = (String) request.get("rdnis");
+		dnid = request.get("dnid");
 
-        if (rdnis == null || "unknown".equals(rdnis))
-        {
-            return null;
-        }
+		if (dnid == null || "unknown".equals(dnid))
+			return null;
 
-        return rdnis;
-    }
+		return dnid;
+	}
 
-    public String getContext()
-    {
-        return (String) request.get("context");
-    }
+	public String getRdnis()
+	{
+		String rdnis;
 
-    public String getExtension()
-    {
-        return (String) request.get("extension");
-    }
+		rdnis = request.get("rdnis");
 
-    public Integer getPriority()
-    {
-        if (request.get("priority") != null)
-        {
-            return Integer.valueOf((String) request.get("priority"));
-        }
-        return null;
-    }
+		if (rdnis == null || "unknown".equals(rdnis))
+			return null;
 
-    public Boolean getEnhanced()
-    {
-        if (request.get("enhanced") != null)
-        {
-            if ("1.0".equals((String) request.get("enhanced")))
-            {
-                return Boolean.TRUE;
-            }
-            else
-            {
-                return Boolean.FALSE;
-            }
-        }
-        return null;
-    }
+		return rdnis;
+	}
 
-    public String getAccountCode()
-    {
-        return request.get("accountcode");
-    }
+	public String getContext()
+	{
+		return request.get("context");
+	}
 
-    public String getParameter(String name)
-    {
-        return parameterMap.get(name);
-    }
+	public String getExtension()
+	{
+		return request.get("extension");
+	}
 
-    @Override
-    public String toString()
-    {
-        StringBuffer sb;
+	public Integer getPriority()
+	{
+		if (request.get("priority") != null)
+			return Integer.valueOf(request.get("priority"));
 
-        sb = new StringBuffer("AgiRequest[");
-        sb.append("script='" + getScript() + "',");
-        sb.append("requestURL='" + getRequestURL() + "',");
-        sb.append("channel='" + getChannel() + "',");
-        sb.append("uniqueId='" + getUniqueId() + "',");
-        sb.append("type='" + getType() + "',");
-        sb.append("language='" + getLanguage() + "',");
-        sb.append("callerId='" + getCallerId() + "',");
-        sb.append("callerIdName='" + getCallerIdName() + "',");
-        sb.append("dnid='" + getDnid() + "',");
-        sb.append("rdnis='" + getRdnis() + "',");
-        sb.append("context='" + getContext() + "',");
-        sb.append("extension='" + getExtension() + "',");
-        sb.append("priority='" + getPriority() + "',");
-        sb.append("enhanced='" + getEnhanced() + "',");
-        sb.append("accountCode='" + getAccountCode() + "',");
-        sb.append("systemHashcode=" + System.identityHashCode(this));
-        sb.append("]");
+		return null;
+	}
 
-        return sb.toString();
-    }
+	public Boolean getEnhanced()
+	{
+		if (request.get("enhanced") != null)
+		{
+			if ("1.0".equals(request.get("enhanced")))
+				return Boolean.TRUE;
+
+			return Boolean.FALSE;
+		}
+
+		return null;
+	}
+
+	public String getAccountCode()
+	{
+		return request.get("accountcode");
+	}
+
+	public String getParameter(String name)
+	{
+		return parameterMap.get(name);
+	}
+
+	@Override
+	public String toString()
+	{
+		StringBuffer sb;
+
+		sb = new StringBuffer("AgiRequest[");
+		sb.append("script='" + getScript() + "',");
+		sb.append("requestURL='" + getRequestURL() + "',");
+		sb.append("channel='" + getChannel() + "',");
+		sb.append("uniqueId='" + getUniqueId() + "',");
+		sb.append("type='" + getType() + "',");
+		sb.append("language='" + getLanguage() + "',");
+		sb.append("callerId='" + getCallerId() + "',");
+		sb.append("callerIdName='" + getCallerIdName() + "',");
+		sb.append("dnid='" + getDnid() + "',");
+		sb.append("rdnis='" + getRdnis() + "',");
+		sb.append("context='" + getContext() + "',");
+		sb.append("extension='" + getExtension() + "',");
+		sb.append("priority='" + getPriority() + "',");
+		sb.append("enhanced='" + getEnhanced() + "',");
+		sb.append("accountCode='" + getAccountCode() + "',");
+		sb.append("systemHashcode=" + System.identityHashCode(this));
+		sb.append("]");
+
+		return sb.toString();
+	}
 }

@@ -65,7 +65,7 @@ public class AgiReader
 			lines.add(line);
 		}
 
-		request = new AgiRequestImpl(lines);
+		request = new AgiRequestImpl();
 		request.setLocalAddress(socket.getLocalAddress());
 		request.setLocalPort(socket.getLocalPort());
 		request.setRemoteAddress(socket.getInetAddress());

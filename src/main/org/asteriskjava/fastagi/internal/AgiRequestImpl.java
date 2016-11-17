@@ -55,7 +55,7 @@ public class AgiRequestImpl implements Serializable, AgiRequest
     private boolean callerIdCreated;
     private String rawCallerId;
 
-    private Map<String, String> request;
+    private Map<String, String> request = new HashMap<String, String>();
 
     /**
      * A map assigning the values of a parameter (an array of Strings) to the
@@ -65,19 +65,10 @@ public class AgiRequestImpl implements Serializable, AgiRequest
 
     /**
      * Creates a new AGIRequestImpl.
-     *
-     * @param environment the first lines as received from Asterisk containing
-     *            the environment.
      */
-    AgiRequestImpl(final Collection<String> environment)
+    AgiRequestImpl()
     {
-        if (environment == null)
-        {
-            throw new IllegalArgumentException("Environment must not be null.");
-        }
-        request = buildMap(environment);
 
-        script = (String) request.get("network_script");
     }
 
     /**

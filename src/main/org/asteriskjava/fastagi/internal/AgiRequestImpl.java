@@ -134,6 +134,46 @@ public class AgiRequestImpl implements Serializable, AgiRequest
         return map;
     }
 
+    public InetAddress getLocalAddress()
+    {
+        return localAddress;
+    }
+
+    void setLocalAddress(InetAddress localAddress)
+    {
+        this.localAddress = localAddress;
+    }
+
+    public int getLocalPort()
+    {
+        return localPort;
+    }
+
+    void setLocalPort(int localPort)
+    {
+        this.localPort = localPort;
+    }
+
+    public InetAddress getRemoteAddress()
+    {
+        return remoteAddress;
+    }
+
+    void setRemoteAddress(InetAddress remoteAddress)
+    {
+        this.remoteAddress = remoteAddress;
+    }
+
+    public int getRemotePort()
+    {
+        return remotePort;
+    }
+
+    void setRemotePort(int remotePort)
+    {
+        this.remotePort = remotePort;
+    }
+
     /**
      * Returns the name of the script to execute.
      *
@@ -166,6 +206,16 @@ public class AgiRequestImpl implements Serializable, AgiRequest
         return (String) request.get("channel");
     }
 
+    public String getLanguage()
+    {
+        return (String) request.get("language");
+    }
+
+    public String getType()
+    {
+        return (String) request.get("type");
+    }
+
     /**
      * Returns the unique id of the channel.
      *
@@ -174,16 +224,6 @@ public class AgiRequestImpl implements Serializable, AgiRequest
     public String getUniqueId()
     {
         return (String) request.get("uniqueid");
-    }
-
-    public String getType()
-    {
-        return (String) request.get("type");
-    }
-
-    public String getLanguage()
-    {
-        return (String) request.get("language");
     }
 
     public String getCallerId()
@@ -285,6 +325,74 @@ public class AgiRequestImpl implements Serializable, AgiRequest
         return AstUtil.parseCallerId(rawCallerId)[0];
     }
 
+    public Integer getCallingPres()
+    {
+        if (request.get("callingpres") == null)
+        {
+            return null;
+        }
+
+        try
+        {
+            return Integer.valueOf(request.get("callingpres"));
+        }
+        catch (NumberFormatException e)
+        {
+            return null;
+        }
+    }
+
+    public Integer getCallingAni2()
+    {
+        if (request.get("callingani2") == null)
+        {
+            return null;
+        }
+
+        try
+        {
+            return Integer.valueOf(request.get("callingani2"));
+        }
+        catch (NumberFormatException e)
+        {
+            return null;
+        }
+    }
+
+    public Integer getCallingTon()
+    {
+        if (request.get("callington") == null)
+        {
+            return null;
+        }
+
+        try
+        {
+            return Integer.valueOf(request.get("callington"));
+        }
+        catch (NumberFormatException e)
+        {
+            return null;
+        }
+    }
+
+    public Integer getCallingTns()
+    {
+        if (request.get("callingtns") == null)
+        {
+            return null;
+        }
+
+        try
+        {
+            return Integer.valueOf(request.get("callingtns"));
+        }
+        catch (NumberFormatException e)
+        {
+            return null;
+        }
+    }
+
     public String getDnid()
     {
         String dnid;
@@ -353,117 +461,9 @@ public class AgiRequestImpl implements Serializable, AgiRequest
         return request.get("accountcode");
     }
 
-    public Integer getCallingAni2()
-    {
-        if (request.get("callingani2") == null)
-        {
-            return null;
-        }
-
-        try
-        {
-            return Integer.valueOf(request.get("callingani2"));
-        }
-        catch (NumberFormatException e)
-        {
-            return null;
-        }
-    }
-
-    public Integer getCallingPres()
-    {
-        if (request.get("callingpres") == null)
-        {
-            return null;
-        }
-
-        try
-        {
-            return Integer.valueOf(request.get("callingpres"));
-        }
-        catch (NumberFormatException e)
-        {
-            return null;
-        }
-    }
-
-    public Integer getCallingTns()
-    {
-        if (request.get("callingtns") == null)
-        {
-            return null;
-        }
-
-        try
-        {
-            return Integer.valueOf(request.get("callingtns"));
-        }
-        catch (NumberFormatException e)
-        {
-            return null;
-        }
-    }
-
-    public Integer getCallingTon()
-    {
-        if (request.get("callington") == null)
-        {
-            return null;
-        }
-
-        try
-        {
-            return Integer.valueOf(request.get("callington"));
-        }
-        catch (NumberFormatException e)
-        {
-            return null;
-        }
-    }
-
     public String getParameter(String name)
     {
         return parameterMap.get(name);
-    }
-
-    public InetAddress getLocalAddress()
-    {
-        return localAddress;
-    }
-
-    void setLocalAddress(InetAddress localAddress)
-    {
-        this.localAddress = localAddress;
-    }
-
-    public int getLocalPort()
-    {
-        return localPort;
-    }
-
-    void setLocalPort(int localPort)
-    {
-        this.localPort = localPort;
-    }
-
-    public InetAddress getRemoteAddress()
-    {
-        return remoteAddress;
-    }
-
-    void setRemoteAddress(InetAddress remoteAddress)
-    {
-        this.remoteAddress = remoteAddress;
-    }
-
-    public int getRemotePort()
-    {
-        return remotePort;
-    }
-
-    void setRemotePort(int remotePort)
-    {
-        this.remotePort = remotePort;
     }
 
     @Override

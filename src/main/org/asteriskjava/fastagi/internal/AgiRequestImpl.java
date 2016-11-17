@@ -34,12 +34,26 @@ import org.asteriskjava.util.AstUtil;
  */
 public class AgiRequestImpl implements Serializable, AgiRequest
 {
-    private String rawCallerId;
-
     /**
      * Serial version identifier.
      */
     private static final long serialVersionUID = 3257001047145789496L;
+
+	/**
+	 * Socket data
+	 */
+	private InetAddress localAddress;
+    private int localPort;
+    private InetAddress remoteAddress;
+    private int remotePort;
+
+    /**
+     * Request data
+     */
+    private String script;
+    
+    private boolean callerIdCreated;
+    private String rawCallerId;
 
     private Map<String, String> request;
 
@@ -48,13 +62,6 @@ public class AgiRequestImpl implements Serializable, AgiRequest
      * name of the parameter.
      */
     private final Map<String, String> parameterMap = new HashMap<String, String>();
-
-    private String script;
-    private boolean callerIdCreated;
-    private InetAddress localAddress;
-    private int localPort;
-    private InetAddress remoteAddress;
-    private int remotePort;
 
     /**
      * Creates a new AGIRequestImpl.

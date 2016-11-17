@@ -18,9 +18,7 @@ package org.asteriskjava.fastagi.internal;
 
 import java.io.Serializable;
 import java.net.InetAddress;
-import java.util.Collection;
 import java.util.HashMap;
-import java.util.Locale;
 import java.util.Map;
 
 import org.asteriskjava.fastagi.AgiRequest;
@@ -69,60 +67,6 @@ public class AgiRequestImpl implements Serializable, AgiRequest
     AgiRequestImpl()
     {
 
-    }
-
-    /**
-     * Builds a map containing variable names as key (with the "agi_" prefix
-     * stripped) and the corresponding values.
-     *
-     * <p>Syntactically invalid and empty variables are skipped.
-     *
-     * @param lines the environment to transform.
-     * @return a map with the variables set corresponding to the given
-     *         environment.
-     */
-    private Map<String, String> buildMap(final Collection<String> lines)
-    {
-        Map<String, String> map;
-
-        map = new HashMap<String, String>();
-
-        for (String line : lines)
-        {
-            int colonPosition;
-            String key;
-            String value;
-
-            colonPosition = line.indexOf(':');
-
-            // no colon on the line?
-            if (colonPosition < 0)
-            {
-                continue;
-            }
-
-            // key doesn't start with agi_?
-            if (!line.startsWith("agi_"))
-            {
-                continue;
-            }
-
-            // first colon in line is last character -> no value present?
-            if (line.length() < colonPosition + 2)
-            {
-                continue;
-            }
-
-            key = line.substring(4, colonPosition).toLowerCase(Locale.ENGLISH);
-            value = line.substring(colonPosition + 2);
-
-            if (value.length() != 0)
-            {
-                map.put(key, value);
-            }
-        }
-
-        return map;
     }
 
     public InetAddress getLocalAddress()

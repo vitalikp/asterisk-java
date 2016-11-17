@@ -231,18 +231,6 @@ public interface AgiRequest
     String getParameter(String name);
 
     /**
-     * Returns an array of String objects containing all of the values the given
-     * request parameter has, or
-     * <code>null</code> if the parameter does not exist.
-     *
-     * <p>If the parameter has a single value, the array has a length of 1.
-     *
-     * @param name a String containing the name of the parameter whose value is requested.
-     * @return an array of String objects containing the parameter's values.
-     */
-    String[] getParameterValues(String name);
-
-    /**
      * Returns a java.util.Map of the parameters of this request.
      *
      * @return a java.util.Map containing parameter names as keys and parameter

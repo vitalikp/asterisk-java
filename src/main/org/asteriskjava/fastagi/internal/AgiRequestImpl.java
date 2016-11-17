@@ -428,16 +428,6 @@ public class AgiRequestImpl implements Serializable, AgiRequest
         return values[0];
     }
 
-    public String[] getParameterValues(String name)
-    {
-        if (getParameterMap().isEmpty())
-        {
-            return null;
-        }
-
-        return parameterMap.get(name);
-    }
-
     public synchronized Map getParameterMap()
     {
         return parameterMap;

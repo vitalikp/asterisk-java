@@ -93,10 +93,10 @@ public class AgiReader
 		String line;
 
 		// read the remaining data
-    	while ((line = reader.readLine()) != null)
-    		lines.add(line);
+		while ((line = reader.readLine()) != null)
+			lines.add(line);
 
-    	return lines;
+		return lines;
 	}
 
 	public AgiReply readReply() throws IOException
@@ -115,11 +115,11 @@ public class AgiReader
 		if ("HANGUP".equals(line))
 		{
 			// shutdown output stream
-        	socket.shutdownOutput();
+			socket.shutdownOutput();
 
-        	readEOF();
+			readEOF();
 
-        	throw new AgiHangupException();
+			throw new AgiHangupException();
 		}
 
 		lines.add(line);

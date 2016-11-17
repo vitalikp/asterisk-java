@@ -30,6 +30,42 @@ import java.net.InetAddress;
 public interface AgiRequest
 {
     /**
+     * Returns the local address this channel, that is the IP address of the AGI
+     * server.
+     *
+     * @return the local address this channel.
+     * @since 0.2
+     */
+    InetAddress getLocalAddress();
+
+    /**
+     * Returns the local port of this channel, that is the port the AGI server
+     * is listening on.
+     *
+     * @return the local port of this socket channel.
+     * @since 0.2
+     */
+    int getLocalPort();
+
+    /**
+     * Returns the remote address of this channel, that is the IP address of the
+     * Asterisk server.
+     *
+     * @return the remote address of this channel.
+     * @since 0.2
+     */
+    InetAddress getRemoteAddress();
+
+    /**
+     * Returns the remote port of this channel, that is the client port the
+     * Asterisk server is using for the AGI connection.
+     *
+     * @return the remote port of this channel.
+     * @since 0.2
+     */
+    int getRemotePort();
+
+    /**
      * Returns the name of the script to execute including its full path.
      *
      * <p>This corresponds to the request url with protocol, host, port and
@@ -56,11 +92,11 @@ public interface AgiRequest
     String getChannel();
 
     /**
-     * Returns the unique id of the channel.
+     * Returns the language set for the current channel, for example "en".
      *
-     * @return the unique id of the channel.
+     * @return the language set for the current channel, for example "en".
      */
-    String getUniqueId();
+    String getLanguage();
 
     /**
      * Returns the type of the channel, for example "SIP".
@@ -70,11 +106,11 @@ public interface AgiRequest
     String getType();
 
     /**
-     * Returns the language set for the current channel, for example "en".
+     * Returns the unique id of the channel.
      *
-     * @return the language set for the current channel, for example "en".
+     * @return the unique id of the channel.
      */
-    String getLanguage();
+    String getUniqueId();
 
     /**
      * Returns the Caller*ID number, for example "1234".
@@ -106,6 +142,46 @@ public interface AgiRequest
      *         Name is set or it is "unknown" <code>null</code> is returned.
      */
     String getCallerIdName();
+
+    /**
+     * Returns the Callerid presentation/screening.
+     *
+     * <p>Available since Asterisk 1.2.
+     *
+     * @return the Callerid presentation/screening.
+     * @since 0.2
+     */
+    Integer getCallingPres();
+
+    /**
+     * Returns the Callerid ANI 2 (Info digits).
+     *
+     * <p>Available since Asterisk 1.2.
+     *
+     * @return the Callerid ANI 2 (Info digits).
+     * @since 0.2
+     */
+    Integer getCallingAni2();
+
+    /**
+     * Returns the Callerid Type of Number.
+     *
+     * <p>Available since Asterisk 1.2.
+     *
+     * @return the Callerid Type of Number.
+     * @since 0.2
+     */
+    Integer getCallingTon();
+
+    /**
+     * Returns the Callerid Transit Network Select.
+     *
+     * <p>Available since Asterisk 1.2.
+     *
+     * @return the Callerid Transit Network Select.
+     * @since 0.2
+     */
+    Integer getCallingTns();
 
     /**
      * Returns the number, that has been dialed by the user.
@@ -171,46 +247,6 @@ public interface AgiRequest
     String getAccountCode();
 
     /**
-     * Returns the Callerid presentation/screening.
-     *
-     * <p>Available since Asterisk 1.2.
-     *
-     * @return the Callerid presentation/screening.
-     * @since 0.2
-     */
-    Integer getCallingPres();
-
-    /**
-     * Returns the Callerid ANI 2 (Info digits).
-     *
-     * <p>Available since Asterisk 1.2.
-     *
-     * @return the Callerid ANI 2 (Info digits).
-     * @since 0.2
-     */
-    Integer getCallingAni2();
-
-    /**
-     * Returns the Callerid Type of Number.
-     *
-     * <p>Available since Asterisk 1.2.
-     *
-     * @return the Callerid Type of Number.
-     * @since 0.2
-     */
-    Integer getCallingTon();
-
-    /**
-     * Returns the Callerid Transit Network Select.
-     *
-     * <p>Available since Asterisk 1.2.
-     *
-     * @return the Callerid Transit Network Select.
-     * @since 0.2
-     */
-    Integer getCallingTns();
-
-    /**
      * Returns the value of a request parameter as a String, or
      * <code>null</code> if the parameter does not exist. You should only use
      * this method when you are sure the parameter has only one value.
@@ -228,40 +264,4 @@ public interface AgiRequest
      * @see #getParameterValues(String)
      */
     String getParameter(String name);
-
-    /**
-     * Returns the local address this channel, that is the IP address of the AGI
-     * server.
-     *
-     * @return the local address this channel.
-     * @since 0.2
-     */
-    InetAddress getLocalAddress();
-
-    /**
-     * Returns the local port of this channel, that is the port the AGI server
-     * is listening on.
-     *
-     * @return the local port of this socket channel.
-     * @since 0.2
-     */
-    int getLocalPort();
-
-    /**
-     * Returns the remote address of this channel, that is the IP address of the
-     * Asterisk server.
-     *
-     * @return the remote address of this channel.
-     * @since 0.2
-     */
-    InetAddress getRemoteAddress();
-
-    /**
-     * Returns the remote port of this channel, that is the client port the
-     * Asterisk server is using for the AGI connection.
-     *
-     * @return the remote port of this channel.
-     * @since 0.2
-     */
-    int getRemotePort();
 }

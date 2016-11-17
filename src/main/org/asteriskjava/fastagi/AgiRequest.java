@@ -31,13 +31,6 @@ import java.util.Map;
 public interface AgiRequest
 {
     /**
-     * Returns a Map containing the raw request name/value pairs.
-     *
-     * @return Map contain raw request name/value pairs.
-     */
-    Map getRequest();
-
-    /**
      * Returns the name of the script to execute including its full path.
      *
      * <p>This corresponds to the request url with protocol, host, port and

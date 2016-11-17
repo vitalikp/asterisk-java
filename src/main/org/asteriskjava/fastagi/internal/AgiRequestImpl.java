@@ -152,11 +152,6 @@ public class AgiRequestImpl implements Serializable, AgiRequest
         return map;
     }
 
-    public Map<String, String> getRequest()
-    {
-        return request;
-    }
-
     /**
      * Returns the name of the script to execute.
      *

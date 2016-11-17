@@ -255,20 +255,11 @@ public interface AgiRequest
 
 	/**
 	 * Returns the value of a request parameter as a String, or
-	 * <code>null</code> if the parameter does not exist. You should only use
-	 * this method when you are sure the parameter has only one value.
+	 * <code>null</code> if the parameter does not exist.
 	 *
-	 * <p>If the parameter might have more than one value, use
-	 * {@link #getParameterValues(String)}.
-	 *
-	 * <p>If you use this method with a multivalued parameter, the value returned
-	 * is equal to the first value in the array returned by
-	 * <code>getParameterValues</code>.
-	 *
-	 * @param name a String containing the name of the parameter whose value is
+	 * @param name the name of the parameter whose value is
 	 *            requested.
-	 * @return a String representing the single value of the parameter.
-	 * @see #getParameterValues(String)
+	 * @return the value of the parameter.
 	 */
 	String getParameter(String name);
 }

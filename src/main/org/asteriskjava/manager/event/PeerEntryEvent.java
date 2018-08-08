@@ -41,6 +41,7 @@ public class PeerEntryEvent extends ResponseEvent
     private Boolean dynamic;
     private Boolean natSupport;
     private Boolean videoSupport;
+    private Boolean textSupport;
     private Boolean acl;
     private String status;
     private String realtimeDevice;
@@ -167,6 +168,16 @@ public class PeerEntryEvent extends ResponseEvent
     {
         this.videoSupport = videoSupport;
     }
+
+	public Boolean getTextSupport()
+	{
+		return textSupport;
+	}
+
+	public void setTextSupport(Boolean textSupport)
+	{
+		this.textSupport = textSupport;
+	}
 
     public Boolean getAcl()
     {

@@ -84,6 +84,7 @@ import org.asteriskjava.manager.event.QueueParamsEvent;
 import org.asteriskjava.manager.event.QueueStatusCompleteEvent;
 import org.asteriskjava.manager.event.QueueSummaryCompleteEvent;
 import org.asteriskjava.manager.event.QueueSummaryEvent;
+import org.asteriskjava.manager.event.RTcpSentEvent;
 import org.asteriskjava.manager.event.RegistryEvent;
 import org.asteriskjava.manager.event.ReloadEvent;
 import org.asteriskjava.manager.event.RenameEvent;
@@ -186,6 +187,7 @@ class EventBuilderImpl implements EventBuilder
         registerEventClass(RegistryEvent.class);
         registerEventClass(ReloadEvent.class);
         registerEventClass(RenameEvent.class);
+        registerEventClass(RTcpSentEvent.class);
         registerEventClass(ShutdownEvent.class);
         registerEventClass(StatusEvent.class);
         registerEventClass(StatusCompleteEvent.class);

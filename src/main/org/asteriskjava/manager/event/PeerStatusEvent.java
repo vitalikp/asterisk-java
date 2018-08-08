@@ -40,6 +40,7 @@ public class PeerStatusEvent extends ManagerEvent
     public static final String STATUS_UNREACHABLE = "Unreachable";
     public static final String STATUS_REJECTED = "Rejected";
 
+    private String channelType;
     private String peer;
     private String peerStatus;
     private String cause;
@@ -49,6 +50,16 @@ public class PeerStatusEvent extends ManagerEvent
     {
         super(source);
     }
+
+	public String getChannelType()
+	{
+		return channelType;
+	}
+
+	public void setChannelType(String channelType)
+	{
+		this.channelType = channelType;
+	}
 
     /**
      * Returns the name of the peer that registered.

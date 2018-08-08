@@ -40,6 +40,7 @@ public class PeerEntryEvent extends ResponseEvent
     private Integer ipPort;
     private Boolean dynamic;
     private Boolean natSupport;
+    private Boolean forceRPort;
     private Boolean videoSupport;
     private Boolean textSupport;
     private Boolean acl;
@@ -140,6 +141,16 @@ public class PeerEntryEvent extends ResponseEvent
     {
         this.natSupport = natSupport;
     }
+
+	public Boolean getForceRPort()
+	{
+		return forceRPort;
+	}
+
+	public void setForceRPort(Boolean forceRPort)
+	{
+		this.forceRPort = forceRPort;
+	}
 
     /**
      * Returns true if video is supported.

@@ -35,12 +35,24 @@ public class PeerlistCompleteEvent extends ResponseEvent
      * Serial version identifier
      */
     private static final long serialVersionUID = -1177773673509373296L;
+
+    private String eventList;
     private Integer listItems;
 
     public PeerlistCompleteEvent(Object source)
     {
         super(source);
     }
+
+	public String getEventList()
+	{
+		return eventList;
+	}
+
+	public void setEventList(String eventList)
+	{
+		this.eventList = eventList;
+	}
 
     /**
      * Returns the number of PeerEvents that have been reported.

@@ -207,40 +207,12 @@ class EventBuilderImpl implements EventBuilder
     public ManagerEvent buildEvent(Object source, Map<String, String> attributes)
     {
         ManagerEvent event;
-        String eventType;
         Class eventClass;
         Constructor constructor;
 
-        if (attributes.get("event") == null)
-        {
-            logger.error("No event event type in properties");
-            return null;
-        }
-
-        eventType = attributes.get("event").toLowerCase();
-
-        // Change in Asterisk 1.4 where the name of the UserEvent is sent as property instead
-        // of the event name (AJ-48)
-        if ("userevent".equals(eventType))
-        {
-            String userEventType;
-
-            if (attributes.get("userevent") == null)
-            {
-                logger.error("No user event type in properties");
-                return null;
-            }
-
-            userEventType = attributes.get("userevent").toLowerCase();
-            eventType = eventType + userEventType;
-        }
-
-        eventClass = registeredEventClasses.get(eventType);
+        eventClass = registeredEventClasses.get(attributes);
         if (eventClass == null)
-        {
-            logger.info("No event class registered for event type '" + eventType + "', attributes: " + attributes);
             return null;
-        }
 
         try
         {

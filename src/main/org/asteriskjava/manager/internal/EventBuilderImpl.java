@@ -18,7 +18,6 @@ package org.asteriskjava.manager.internal;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
-import java.util.Locale;
 import java.util.Map;
 
 import org.asteriskjava.manager.event.AgentCallbackLoginEvent;
@@ -198,38 +197,8 @@ class EventBuilderImpl implements EventBuilder
         registerEventClass(ZapShowChannelsCompleteEvent.class);
     }
 
-    public final void registerEventClass(Class clazz) throws IllegalArgumentException
-    {
-        String className;
-        String eventType;
-
-        className = clazz.getName();
-        eventType = className.substring(className.lastIndexOf('.') + 1).toLowerCase(Locale.ENGLISH);
-
-        if (eventType.endsWith("event"))
-        {
-            eventType = eventType.substring(0, eventType.length() - "event".length());
-        }
-
-        if (UserEvent.class.isAssignableFrom(clazz) && !eventType.startsWith("userevent"))
-        {
-            eventType = "userevent" + eventType;
-        }
-
-        registerEventClass(eventType, clazz);
-    }
-
-    /**
-     * Registers a new event class for the event given by eventType.
-     *
-     * @param eventType the name of the event to register the class for. For
-     *            example "Join".
-     * @param clazz the event class to register, must extend
-     *            {@link ManagerEvent}.
-     * @throws IllegalArgumentException if clazz is not a valid event class.
-     */
     @SuppressWarnings("unchecked")
-    public final void registerEventClass(String eventType, Class clazz) throws IllegalArgumentException
+    public final void registerEventClass(Class clazz) throws IllegalArgumentException
     {
         registeredEventClasses.regClass(clazz);
     }

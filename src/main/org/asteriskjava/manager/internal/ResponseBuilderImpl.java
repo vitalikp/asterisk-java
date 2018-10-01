@@ -21,12 +21,14 @@ import java.util.Map;
 
 import org.asteriskjava.manager.response.GetConfigResponse;
 import org.asteriskjava.manager.response.ChallengeResponse;
+import org.asteriskjava.manager.response.CoreSettingsResponse;
 import org.asteriskjava.manager.response.CoreStatusResponse;
 import org.asteriskjava.manager.response.ExtensionStateResponse;
 import org.asteriskjava.manager.response.MailboxCountResponse;
 import org.asteriskjava.manager.response.MailboxStatusResponse;
 import org.asteriskjava.manager.response.ManagerError;
 import org.asteriskjava.manager.response.ManagerResponse;
+import org.asteriskjava.util.AstUtil;
 import org.asteriskjava.util.DateUtil;
 
 /**
@@ -99,6 +101,25 @@ class ResponseBuilderImpl implements ResponseBuilder
             extensionStateResponse.setHint((String) attributes.get("hint"));
             extensionStateResponse.setStatus(Integer.valueOf((String) attributes.get("status")));
             response = extensionStateResponse;
+        }
+        else if (attributes.containsKey("asteriskversion"))
+        {
+            CoreSettingsResponse coreResp;
+
+            coreResp = new CoreSettingsResponse();
+            coreResp.setAmiVer(attributes.get("amiversion"));
+            coreResp.setAstVer(attributes.get("asteriskversion"));
+            coreResp.setSysName(attributes.get("systemname"));
+            coreResp.setMaxCalls(Integer.valueOf(attributes.get("coremaxcalls")));
+            coreResp.setMaxLoadAvg(Double.valueOf(attributes.get("coremaxloadavg")));
+            coreResp.setRunUser(attributes.get("corerunuser"));
+            coreResp.setRunGroup(attributes.get("corerungroup"));
+            coreResp.setMaxFilehandles(Integer.valueOf(attributes.get("coremaxfilehandles")));
+            coreResp.setRealtimeEnabled(AstUtil.isTrue(attributes.get("corerealtimeenabled")));
+            coreResp.setCdrEnabled(AstUtil.isTrue(attributes.get("corecdrenabled")));
+            coreResp.setHttpEnabled(AstUtil.isTrue(attributes.get("corehttpenabled")));
+
+            response = coreResp;
         }
         else if (attributes.containsKey("corestartupdate"))
         {

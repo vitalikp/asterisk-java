@@ -229,16 +229,6 @@ public class ManagerReaderImpl implements ManagerReader
             // main loop
             while ((line = socket.readLine()) != null && !this.die)
             {
-                // Response: Follows indicates that the output starting on the next line until
-                // --END COMMAND-- must be treated as raw output of a command executed by a
-                // CommandAction.
-                if ("Response: Follows".equalsIgnoreCase(line))
-                {
-                    commandResult.clear();
-                    readCmdResp(commandResult);
-                    continue;
-                }
-
                 // an empty line indicates a normal response's or event's end so we build
                 // the corresponding value object and dispatch it through the ManagerConnection.
                 if (line.length() == 0)
@@ -289,6 +279,16 @@ public class ManagerReaderImpl implements ManagerReader
 
                         name = line.substring(0, delimiterIndex).toLowerCase(Locale.ENGLISH);
                         value = line.substring(delimiterIndex + 2);
+
+                        // Response: Follows indicates that the output starting on the next line until
+                        // --END COMMAND-- must be treated as raw output of a command executed by a
+                        // CommandAction.
+                        if ("Follows".equalsIgnoreCase(value))
+                        {
+                            commandResult.clear();
+                            readCmdResp(commandResult);
+                            continue;
+                        }
 
                         buffer.put(name, value);
                         // TODO tracing

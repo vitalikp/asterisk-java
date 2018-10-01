@@ -1,5 +1,7 @@
 package org.asteriskjava.manager.internal;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Modifier;
 import java.util.HashMap;
 import java.util.Locale;
 
@@ -23,10 +25,35 @@ class ClassMap<C> extends HashMap<String, Class<? extends C>>
 		this.params = params;
 	}
 
+	protected void check(Class<? extends C> cls)
+	{
+		Constructor<? extends C> constructor;
+
+		if (!baseClass.isAssignableFrom(cls))
+			throw new IllegalArgumentException(String.format("%s is not a %s", cls, baseClass));
+
+		if ((cls.getModifiers() & Modifier.ABSTRACT) != 0)
+			throw new IllegalArgumentException(cls + " is abstract");
+
+		try
+		{
+			constructor = cls.getConstructor(params);
+		}
+		catch (NoSuchMethodException ex)
+		{
+			throw new IllegalArgumentException(cls + " has no usable constructor");
+		}
+
+		if ((constructor.getModifiers() & Modifier.PUBLIC) == 0)
+			throw new IllegalArgumentException(cls + " has no public default constructor");
+	}
+
 	public void regClass(Class<? extends C> cls)
 	{
 		String className;
 		String type;
+
+		check(cls);
 
 		className = cls.getSimpleName();
 		type = className.toLowerCase(Locale.ENGLISH);

@@ -18,7 +18,6 @@ package org.asteriskjava.manager.internal;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
-import java.lang.reflect.Modifier;
 import java.util.Locale;
 import java.util.Map;
 
@@ -232,32 +231,6 @@ class EventBuilderImpl implements EventBuilder
     @SuppressWarnings("unchecked")
     public final void registerEventClass(String eventType, Class clazz) throws IllegalArgumentException
     {
-        Constructor defaultConstructor;
-
-        if (!ManagerEvent.class.isAssignableFrom(clazz))
-        {
-            throw new IllegalArgumentException(clazz + " is not a ManagerEvent");
-        }
-
-        if ((clazz.getModifiers() & Modifier.ABSTRACT) != 0)
-        {
-            throw new IllegalArgumentException(clazz + " is abstract");
-        }
-
-        try
-        {
-            defaultConstructor = clazz.getConstructor(new Class[]{Object.class});
-        }
-        catch (NoSuchMethodException ex)
-        {
-            throw new IllegalArgumentException(clazz + " has no usable constructor");
-        }
-
-        if ((defaultConstructor.getModifiers() & Modifier.PUBLIC) == 0)
-        {
-            throw new IllegalArgumentException(clazz + " has no public default constructor");
-        }
-
         registeredEventClasses.regClass(clazz);
     }
 

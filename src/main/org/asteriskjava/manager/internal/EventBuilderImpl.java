@@ -258,9 +258,7 @@ class EventBuilderImpl implements EventBuilder
             throw new IllegalArgumentException(clazz + " has no public default constructor");
         }
 
-        registeredEventClasses.put(eventType.toLowerCase(), clazz);
-
-        logger.debug("Registered event type '" + eventType + "' (" + clazz + ")");
+        registeredEventClasses.regClass(clazz);
     }
 
     @SuppressWarnings("unchecked")

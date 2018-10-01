@@ -21,11 +21,13 @@ import java.util.Map;
 
 import org.asteriskjava.manager.response.GetConfigResponse;
 import org.asteriskjava.manager.response.ChallengeResponse;
+import org.asteriskjava.manager.response.CoreStatusResponse;
 import org.asteriskjava.manager.response.ExtensionStateResponse;
 import org.asteriskjava.manager.response.MailboxCountResponse;
 import org.asteriskjava.manager.response.MailboxStatusResponse;
 import org.asteriskjava.manager.response.ManagerError;
 import org.asteriskjava.manager.response.ManagerResponse;
+import org.asteriskjava.util.DateUtil;
 
 /**
  * Default implementation of the ResponseBuilder interface.
@@ -97,6 +99,17 @@ class ResponseBuilderImpl implements ResponseBuilder
             extensionStateResponse.setHint((String) attributes.get("hint"));
             extensionStateResponse.setStatus(Integer.valueOf((String) attributes.get("status")));
             response = extensionStateResponse;
+        }
+        else if (attributes.containsKey("corestartupdate"))
+        {
+            String strDate;
+
+            response = new CoreStatusResponse();
+            strDate = attributes.get("corestartupdate") + " " + attributes.get("corestartuptime");
+            ((CoreStatusResponse)response).setStartupDate(DateUtil.parseDateTime(strDate));
+            strDate = attributes.get("corereloaddate") + " " + attributes.get("corereloadtime");
+            ((CoreStatusResponse)response).setReloadDate(DateUtil.parseDateTime(strDate));
+            ((CoreStatusResponse)response).setCurrentCalls(Integer.valueOf(attributes.get("corecurrentcalls")));
         }
         else if(attributes.containsKey("line-000000-000000"))
         {

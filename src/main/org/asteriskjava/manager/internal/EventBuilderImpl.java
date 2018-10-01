@@ -19,7 +19,6 @@ package org.asteriskjava.manager.internal;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
-import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
@@ -118,7 +117,7 @@ class EventBuilderImpl implements EventBuilder
 
     EventBuilderImpl()
     {
-        registeredEventClasses = new ClassMap<ManagerEvent>();
+        registeredEventClasses = new ClassMap<ManagerEvent>("Event");
         registerBuiltinEventClasses();
     }
 

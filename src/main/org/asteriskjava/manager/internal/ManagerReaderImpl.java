@@ -114,6 +114,31 @@ public class ManagerReaderImpl implements ManagerReader
         eventBuilder.registerEventClass(eventClass);
     }
 
+    private void readPrompt()
+        throws IOException
+    {
+        ProtocolIdentifierReceivedEvent event;
+        String line;
+
+        line = socket.readLine();
+
+        // maybe we will find a better way to identify the protocol identifier but for now
+        // this works quite well.
+        if (line.startsWith("Asterisk Call Manager/") ||
+                line.startsWith("Asterisk Call Manager Proxy/") ||
+                line.startsWith("OpenPBX Call Manager/") ||
+                line.startsWith("CallWeaver Call Manager/"))
+        {
+            event = new ProtocolIdentifierReceivedEvent(source);
+            event.setProtocolIdentifier(line);
+            event.setDateReceived(DateUtil.getDate());
+            dispatcher.dispatchEvent(event);
+            return;
+        }
+
+        throw new IOException("AMI welcome prompt is missing!");
+    }
+
     /**
      * Reads line by line from the asterisk server, sets the protocol identifier (using a
      * generated {@link org.asteriskjava.manager.event.ProtocolIdentifierReceivedEvent}) as soon as it is
@@ -139,6 +164,9 @@ public class ManagerReaderImpl implements ManagerReader
 
         try
         {
+            // welcome prompt
+            readPrompt();
+
             // main loop
             while ((line = socket.readLine()) != null && !this.die)
             {
@@ -205,21 +233,6 @@ public class ManagerReaderImpl implements ManagerReader
                 {
                     processingCommandResult = true;
                     commandResult.clear();
-                    continue;
-                }
-
-                // maybe we will find a better way to identify the protocol identifier but for now
-                // this works quite well.
-                if (line.startsWith("Asterisk Call Manager/") ||
-                        line.startsWith("Asterisk Call Manager Proxy/") ||
-                        line.startsWith("OpenPBX Call Manager/") ||
-                        line.startsWith("CallWeaver Call Manager/"))
-                {
-                    ProtocolIdentifierReceivedEvent protocolIdentifierReceivedEvent;
-                    protocolIdentifierReceivedEvent = new ProtocolIdentifierReceivedEvent(source);
-                    protocolIdentifierReceivedEvent.setProtocolIdentifier(line);
-                    protocolIdentifierReceivedEvent.setDateReceived(DateUtil.getDate());
-                    dispatcher.dispatchEvent(protocolIdentifierReceivedEvent);
                     continue;
                 }
 

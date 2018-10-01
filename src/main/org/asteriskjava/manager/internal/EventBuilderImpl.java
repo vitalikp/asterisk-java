@@ -198,7 +198,7 @@ class EventBuilderImpl implements EventBuilder
     }
 
     @SuppressWarnings("unchecked")
-    public final void registerEventClass(Class clazz) throws IllegalArgumentException
+    public final void registerEventClass(Class clazz)
     {
         classMap.regClass(clazz);
     }

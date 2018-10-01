@@ -111,11 +111,11 @@ import org.asteriskjava.util.ReflectionUtil;
 class EventBuilderImpl implements EventBuilder
 {
     private final Log logger = LogFactory.getLog(getClass());
-    private EventClassMap registeredEventClasses;
+    private EventClassMap classMap;
 
     EventBuilderImpl()
     {
-        registeredEventClasses = new EventClassMap();
+        classMap = new EventClassMap();
         registerBuiltinEventClasses();
     }
 
@@ -200,14 +200,14 @@ class EventBuilderImpl implements EventBuilder
     @SuppressWarnings("unchecked")
     public final void registerEventClass(Class clazz) throws IllegalArgumentException
     {
-        registeredEventClasses.regClass(clazz);
+        classMap.regClass(clazz);
     }
 
     public ManagerEvent buildEvent(Object source, Map<String, String> attributes)
     {
         ManagerEvent event;
 
-        event = registeredEventClasses.newInstance(attributes, source);
+        event = classMap.newInstance(attributes, source);
         if (event == null)
             return null;
 

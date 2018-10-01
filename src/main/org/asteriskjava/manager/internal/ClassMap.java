@@ -74,11 +74,17 @@ class ClassMap<C> extends HashMap<String, Class<? extends C>>
 	public C newInstance(String type, Object ... params)
 	{
 		Class<? extends C> regClass;
-		Constructor<? extends C> constructor;
 
 		regClass = get(type);
 		if (regClass == null)
 			return null;
+
+		return newInstance(regClass);
+	}
+
+	protected C newInstance(Class<? extends C> regClass, Object ... params)
+	{
+		Constructor<? extends C> constructor;
 
 		try
 		{

@@ -70,4 +70,34 @@ class ClassMap<C> extends HashMap<String, Class<? extends C>>
 
 		log.debug(String.format("Registered %s type '%s' (%s)", suffix, type, cls));
 	}
+
+	public C newInstance(String type, Object ... params)
+	{
+		Class<? extends C> regClass;
+		Constructor<? extends C> constructor;
+
+		regClass = get(type);
+		if (regClass == null)
+			return null;
+
+		try
+		{
+			constructor = regClass.getConstructor(this.params);
+		}
+		catch (NoSuchMethodException e)
+		{
+			log.error(String.format("Unable to get constructor of '%s':", regClass.getName()), e);
+			return null;
+		}
+
+		try
+		{
+			return constructor.newInstance(params);
+		}
+		catch (Exception e)
+		{
+			log.error(String.format("Unable to create new instance of '%s':", regClass.getName()), e);
+			return null;
+		}
+	}
 }

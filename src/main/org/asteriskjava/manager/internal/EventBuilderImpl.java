@@ -203,36 +203,13 @@ class EventBuilderImpl implements EventBuilder
         registeredEventClasses.regClass(clazz);
     }
 
-    @SuppressWarnings("unchecked")
     public ManagerEvent buildEvent(Object source, Map<String, String> attributes)
     {
         ManagerEvent event;
-        Class eventClass;
-        Constructor constructor;
 
-        eventClass = registeredEventClasses.get(attributes);
-        if (eventClass == null)
+        event = registeredEventClasses.newInstance(attributes, source);
+        if (event == null)
             return null;
-
-        try
-        {
-            constructor = eventClass.getConstructor(new Class[]{Object.class});
-        }
-        catch (NoSuchMethodException ex)
-        {
-            logger.error("Unable to get constructor of " + eventClass.getName(), ex);
-            return null;
-        }
-
-        try
-        {
-            event = (ManagerEvent) constructor.newInstance(source);
-        }
-        catch (Exception ex)
-        {
-            logger.error("Unable to create new instance of " + eventClass.getName(), ex);
-            return null;
-        }
 
         setAttributes(event, attributes);
 

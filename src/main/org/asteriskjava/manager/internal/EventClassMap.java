@@ -55,4 +55,15 @@ class EventClassMap extends ClassMap<ManagerEvent>
 
 		return cls;
 	}
+
+	public ManagerEvent newInstance(Map<String, String> attrs, Object source)
+	{
+		Class<? extends ManagerEvent> regClass;
+
+		regClass = get(attrs);
+		if (regClass == null)
+			return null;
+
+		return super.newInstance(regClass, source);
+	}
 }

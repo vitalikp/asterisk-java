@@ -61,6 +61,11 @@ class ClassMap<C> extends HashMap<String, Class<? extends C>>
 		if (type.endsWith(suffix))
 			type = type.substring(0, type.length() - suffix.length());
 
+		regClass(type, cls);
+	}
+
+	protected void regClass(String type, Class<? extends C> cls)
+	{
 		put(type, cls);
 
 		log.debug(String.format("Registered %s type '%s' (%s)", suffix, type, cls));

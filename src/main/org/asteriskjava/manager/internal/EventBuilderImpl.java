@@ -114,11 +114,11 @@ import org.asteriskjava.util.ReflectionUtil;
 class EventBuilderImpl implements EventBuilder
 {
     private final Log logger = LogFactory.getLog(getClass());
-    private Map<String, Class> registeredEventClasses;
+    private ClassMap<ManagerEvent> registeredEventClasses;
 
     EventBuilderImpl()
     {
-        this.registeredEventClasses = new HashMap<String, Class>();
+        registeredEventClasses = new ClassMap<ManagerEvent>();
         registerBuiltinEventClasses();
     }
 

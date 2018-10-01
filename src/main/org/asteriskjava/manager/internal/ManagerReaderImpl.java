@@ -139,6 +139,66 @@ public class ManagerReaderImpl implements ManagerReader
         throw new IOException("AMI welcome prompt is missing!");
     }
 
+    private void readCmdResp(List<String> cmdRes)
+        throws IOException
+    {
+        CommandResponse cmdResp = new CommandResponse();
+        String line;
+        int crIdx;
+
+        while ((line = socket.readLine()) != null && !die)
+        {
+            // in case of an error Asterisk sends a Usage: and an END COMMAND
+            // that is prepended by a space :(
+            if ("--END COMMAND--".equals(line) || " --END COMMAND--".equals(line))
+                break;
+
+            cmdRes.add(line);
+        }
+
+        crIdx = 0;
+        while (crIdx < cmdRes.size())
+        {
+            String[] crNVPair = cmdRes.get(crIdx).split(" *: *", 2);
+
+            if (crNVPair[0].equalsIgnoreCase("ActionID"))
+            {
+                // Remove the command response nvpair from the
+                // command result array and decrement index so we
+                // don't skip the "new" current line
+                cmdRes.remove(crIdx--);
+
+                // Register the action id with the command result
+                cmdResp.setActionId(crNVPair[1]);
+            }
+            else if (crNVPair[0].equalsIgnoreCase("Privilege"))
+            {
+                // Remove the command response nvpair from the
+                // command result array and decrement index so we
+                // don't skip the "new" current line
+                cmdRes.remove(crIdx--);
+            }
+            else
+            {
+                // Didn't find a name:value pattern, so we're now in the
+                // command results.  Stop processing the nv pairs.
+                break;
+            }
+
+            crIdx++;
+        }
+
+        cmdResp.setResponse("Follows");
+        cmdResp.setDateReceived(DateUtil.getDate());
+        // clone commandResult as it is reused
+        cmdResp.setResult(new ArrayList<String>(cmdRes));
+        Map<String, String> attributes = new HashMap<String, String>();
+        attributes.put("actionid", cmdResp.getActionId());
+        attributes.put("response", cmdResp.getResponse());
+        cmdResp.setAttributes(attributes);
+        dispatcher.dispatchResponse(cmdResp);
+    }
+
     /**
      * Reads line by line from the asterisk server, sets the protocol identifier (using a
      * generated {@link org.asteriskjava.manager.event.ProtocolIdentifierReceivedEvent}) as soon as it is
@@ -152,7 +212,6 @@ public class ManagerReaderImpl implements ManagerReader
         final Map<String, String> buffer = new HashMap<String, String>();
         final List<String> commandResult = new ArrayList<String>();
         String line;
-        boolean processingCommandResult = false;
 
         if (socket == null)
         {
@@ -170,69 +229,13 @@ public class ManagerReaderImpl implements ManagerReader
             // main loop
             while ((line = socket.readLine()) != null && !this.die)
             {
-                // dirty hack for handling the CommandAction. Needs fix when manager protocol is
-                // enhanced.
-                if (processingCommandResult)
-                {
-                    // in case of an error Asterisk sends a Usage: and an END COMMAND
-                    // that is prepended by a space :(
-                    if ("--END COMMAND--".equals(line) || " --END COMMAND--".equals(line))
-                    {
-                        CommandResponse commandResponse = new CommandResponse();
-
-                        for (int crIdx = 0; crIdx < commandResult.size(); crIdx++)
-                        {
-                            String[] crNVPair = commandResult.get(crIdx).split(" *: *", 2);
-
-                            if (crNVPair[0].equalsIgnoreCase("ActionID"))
-                            {
-                                // Remove the command response nvpair from the
-                                // command result array and decrement index so we
-                                // don't skip the "new" current line
-                                commandResult.remove(crIdx--);
-
-                                // Register the action id with the command result
-                                commandResponse.setActionId(crNVPair[1]);
-                            }
-                            else if (crNVPair[0].equalsIgnoreCase("Privilege"))
-                            {
-                                // Remove the command response nvpair from the
-                                // command result array and decrement index so we
-                                // don't skip the "new" current line
-                                commandResult.remove(crIdx--);
-                            }
-                            else
-                            {
-                                // Didn't find a name:value pattern, so we're now in the
-                                // command results.  Stop processing the nv pairs.
-                                break;
-                            }
-                        }
-                        commandResponse.setResponse("Follows");
-                        commandResponse.setDateReceived(DateUtil.getDate());
-                        // clone commandResult as it is reused
-                        commandResponse.setResult(new ArrayList<String>(commandResult));
-                        Map<String, String> attributes = new HashMap<String, String>();
-                        attributes.put("actionid", commandResponse.getActionId());
-                        attributes.put("response", commandResponse.getResponse());
-                        commandResponse.setAttributes(attributes);
-                        dispatcher.dispatchResponse(commandResponse);
-                        processingCommandResult = false;
-                    }
-                    else
-                    {
-                        commandResult.add(line);
-                    }
-                    continue;
-                }
-
                 // Response: Follows indicates that the output starting on the next line until
                 // --END COMMAND-- must be treated as raw output of a command executed by a
                 // CommandAction.
                 if ("Response: Follows".equalsIgnoreCase(line))
                 {
-                    processingCommandResult = true;
                     commandResult.clear();
+                    readCmdResp(commandResult);
                     continue;
                 }
 

@@ -117,7 +117,7 @@ class EventBuilderImpl implements EventBuilder
 
     EventBuilderImpl()
     {
-        registeredEventClasses = new ClassMap<ManagerEvent>("Event");
+        registeredEventClasses = new ClassMap<ManagerEvent>("Event", ManagerEvent.class);
         registerBuiltinEventClasses();
     }
 

@@ -261,7 +261,7 @@ class EventBuilderImpl implements EventBuilder
             }
             else
             {
-                setter = setters.get(stripIllegalCharacters(name));
+                setter = setters.get(name);
             }
 
             // it seems silly to warn if it's a user event -- maybe it was intentional

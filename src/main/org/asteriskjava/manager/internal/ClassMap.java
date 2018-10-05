@@ -4,19 +4,20 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Modifier;
 import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
 
 import org.asteriskjava.util.Log;
 import org.asteriskjava.util.LogFactory;
 
-class ClassMap<C> extends HashMap<String, Class<? extends C>>
+class ClassMap<C>
 {
-	private static final long serialVersionUID = 1l;
-
 	protected static final Log log = LogFactory.getLog(ClassMap.class);
 
 	private final String suffix;
 	private final Class<C> baseClass;
 	private final Class<?> params[];
+
+	protected final Map<String, Class<? extends C>> classes = new HashMap<String, Class<? extends C>>();
 
 	public ClassMap(String suffix, Class<C> baseClass, Class<?> params[])
 	{
@@ -66,7 +67,7 @@ class ClassMap<C> extends HashMap<String, Class<? extends C>>
 
 	protected void regClass(String type, Class<? extends C> cls)
 	{
-		put(type, cls);
+		classes.put(type, cls);
 
 		log.debug(String.format("Registered %s type '%s' (%s)", suffix, type, cls));
 	}
@@ -75,7 +76,7 @@ class ClassMap<C> extends HashMap<String, Class<? extends C>>
 	{
 		Class<? extends C> regClass;
 
-		regClass = get(type);
+		regClass = classes.get(type);
 		if (regClass == null)
 			return null;
 

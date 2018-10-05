@@ -8,8 +8,6 @@ import org.asteriskjava.manager.event.UserEvent;
 
 class EventClassMap extends ClassMap<ManagerEvent>
 {
-	private static final long serialVersionUID = 1l;
-
 	public EventClassMap()
 	{
 		super("Event", ManagerEvent.class, new Class[]{Object.class});
@@ -23,7 +21,7 @@ class EventClassMap extends ClassMap<ManagerEvent>
 		super.regClass(type, cls);
 	}
 
-	public Class<? extends ManagerEvent> get(Map<String, String> attrs)
+	private Class<? extends ManagerEvent> get(Map<String, String> attrs)
 	{
 		Class<? extends ManagerEvent> cls;
 		String type;
@@ -49,7 +47,7 @@ class EventClassMap extends ClassMap<ManagerEvent>
 			type += attrs.get("userevent").toLowerCase(Locale.ENGLISH);
 		}
 
-		cls = get(type);
+		cls = classes.get(type);
 		if (cls == null)
 			log.info(String.format("No class registered for event type '%s', attributes: %s", type, attrs));
 

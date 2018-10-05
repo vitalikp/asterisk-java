@@ -17,7 +17,7 @@ class ClassMap<C>
 	private final Class<C> baseClass;
 	private final Class<?> params[];
 
-	protected final Map<String, Class<? extends C>> classes = new HashMap<String, Class<? extends C>>();
+	protected final Map<String, ClassType<C>> classes = new HashMap<String, ClassType<C>>();
 
 	public ClassMap(String suffix, Class<C> baseClass, Class<?> params[])
 	{
@@ -67,44 +67,37 @@ class ClassMap<C>
 
 	protected void regClass(String type, Class<? extends C> cls)
 	{
-		classes.put(type, cls);
+		classes.put(type, new ClassType<C>(cls, this.params));
 
 		log.debug(String.format("Registered %s type '%s' (%s)", suffix, type, cls));
 	}
 
 	public C newInstance(String type, Object ... params)
 	{
-		Class<? extends C> regClass;
+		ClassType<C> clsType;
 
-		regClass = classes.get(type);
-		if (regClass == null)
+		clsType = classes.get(type);
+		if (clsType == null)
 			return null;
 
-		return newInstance(regClass);
+		return newInstance(clsType);
 	}
 
-	protected C newInstance(Class<? extends C> regClass, Object ... params)
+	protected C newInstance(ClassType<C> clsType, Object ... params)
 	{
-		Constructor<? extends C> constructor;
-
 		try
 		{
-			constructor = regClass.getConstructor(this.params);
+			return clsType.newInstance(params);
 		}
 		catch (NoSuchMethodException e)
 		{
-			log.error(String.format("Unable to get constructor of '%s':", regClass.getName()), e);
-			return null;
-		}
-
-		try
-		{
-			return constructor.newInstance(params);
+			log.error(String.format("Unable to get constructor of '%s':", clsType), e);
 		}
 		catch (Exception e)
 		{
-			log.error(String.format("Unable to create new instance of '%s':", regClass.getName()), e);
-			return null;
+			log.error(String.format("Unable to create new instance of '%s':", clsType), e);
 		}
+
+		return null;
 	}
 }

@@ -21,9 +21,9 @@ class EventClassMap extends ClassMap<ManagerEvent>
 		super.regClass(type, cls);
 	}
 
-	private Class<? extends ManagerEvent> get(Map<String, String> attrs)
+	private ClassType<ManagerEvent> get(Map<String, String> attrs)
 	{
-		Class<? extends ManagerEvent> cls;
+		ClassType<ManagerEvent> clsType;
 		String type;
 
 		type = attrs.get("event");
@@ -47,21 +47,21 @@ class EventClassMap extends ClassMap<ManagerEvent>
 			type += attrs.get("userevent").toLowerCase(Locale.ENGLISH);
 		}
 
-		cls = classes.get(type);
-		if (cls == null)
+		clsType = classes.get(type);
+		if (clsType == null)
 			log.info(String.format("No class registered for event type '%s', attributes: %s", type, attrs));
 
-		return cls;
+		return clsType;
 	}
 
 	public ManagerEvent newInstance(Map<String, String> attrs, Object source)
 	{
-		Class<? extends ManagerEvent> regClass;
+		ClassType<ManagerEvent> clsType;
 
-		regClass = get(attrs);
-		if (regClass == null)
+		clsType = get(attrs);
+		if (clsType == null)
 			return null;
 
-		return super.newInstance(regClass, source);
+		return super.newInstance(clsType, source);
 	}
 }

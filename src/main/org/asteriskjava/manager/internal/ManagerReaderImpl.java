@@ -42,11 +42,7 @@ public class ManagerReaderImpl implements ManagerReader
      */
     private final Log logger = LogFactory.getLog(getClass());
 
-    /**
-     * The event builder utility to convert a map of attributes received from asterisk to instances
-     * of registered event classes.
-     */
-    private final EventBuilder eventBuilder;
+    private final EventClassMap classMap;
 
     /**
      * The response builder utility to convert a map of attributes received from asterisk to
@@ -95,7 +91,7 @@ public class ManagerReaderImpl implements ManagerReader
         this.dispatcher = dispatcher;
         this.source = source;
 
-        this.eventBuilder = new EventBuilder();
+        classMap = new EventClassMap();
         this.responseBuilder = new ResponseBuilderImpl();
     }
 
@@ -109,9 +105,10 @@ public class ManagerReaderImpl implements ManagerReader
         this.socket = socket;
     }
 
+    @SuppressWarnings("unchecked")
     public void registerEventClass(Class eventClass)
     {
-        eventBuilder.registerEventClass(eventClass);
+        classMap.regClass(eventClass);
     }
 
     private void readPrompt()
@@ -348,7 +345,7 @@ public class ManagerReaderImpl implements ManagerReader
     {
         ManagerEvent event;
 
-        event = eventBuilder.buildEvent(source, buffer);
+        event = classMap.newInstance(buffer, source);
 
         if (event != null)
         {

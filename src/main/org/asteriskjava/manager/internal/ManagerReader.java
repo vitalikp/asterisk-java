@@ -29,7 +29,6 @@ import org.asteriskjava.util.SocketConnectionFacade;
  * <p>Do not use this interface in your code, it is intended to be used only by the
  * DefaultManagerConnection.
  *
- * @see org.asteriskjava.manager.internal.EventBuilder
  * @see org.asteriskjava.manager.internal.ResponseBuilder
  * @see org.asteriskjava.manager.DefaultManagerConnection
  * @author srt
@@ -50,7 +49,6 @@ public interface ManagerReader extends Runnable
      *
      * <p>The eventClass must extend ManagerEvent.
      *
-     * @see EventBuilder
      * @see ManagerEvent
      * @param event class of the event to register.
      */

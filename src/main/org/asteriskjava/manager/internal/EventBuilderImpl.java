@@ -93,8 +93,6 @@ import org.asteriskjava.manager.event.UnlinkEvent;
 import org.asteriskjava.manager.event.UnparkedCallEvent;
 import org.asteriskjava.manager.event.ZapShowChannelsCompleteEvent;
 import org.asteriskjava.manager.event.ZapShowChannelsEvent;
-import org.asteriskjava.util.Log;
-import org.asteriskjava.util.LogFactory;
 
 /**
  * Default implementation of the EventBuilder interface.
@@ -105,7 +103,6 @@ import org.asteriskjava.util.LogFactory;
  */
 class EventBuilderImpl implements EventBuilder
 {
-    private final Log logger = LogFactory.getLog(getClass());
     private EventClassMap classMap;
 
     EventBuilderImpl()

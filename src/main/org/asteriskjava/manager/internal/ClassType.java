@@ -99,6 +99,9 @@ class ClassType<C>
 		if (Long.class == type || long.class == type)
 			return Long.valueOf(value);
 
+		if (Float.class == type || float.class == type)
+			return Float.valueOf(value);
+
 		if (Double.class == type || double.class == type)
 			return Double.valueOf(value);
 

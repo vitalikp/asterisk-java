@@ -19,7 +19,6 @@ package org.asteriskjava.manager.internal;
 import java.util.Map;
 
 import org.asteriskjava.manager.event.ManagerEvent;
-import org.asteriskjava.manager.event.ResponseEvent;
 
 /**
  * Default implementation of the EventBuilder interface.
@@ -45,29 +44,6 @@ class EventBuilder
 
     public ManagerEvent buildEvent(Object source, Map<String, String> attributes)
     {
-        ManagerEvent event;
-
-        event = classMap.newInstance(attributes, source);
-        if (event == null)
-            return null;
-
-        // ResponseEvents are sent in response to a ManagerAction if the
-        // response contains lots of data. They include the actionId of
-        // the corresponding ManagerAction.
-        if (event instanceof ResponseEvent)
-        {
-            ResponseEvent responseEvent;
-            String actionId;
-
-            responseEvent = (ResponseEvent) event;
-            actionId = responseEvent.getActionId();
-            if (actionId != null)
-            {
-                responseEvent.setActionId(ManagerUtil.stripInternalActionId(actionId));
-                responseEvent.setInternalActionId(ManagerUtil.getInternalActionId(actionId));
-            }
-        }
-
-        return event;
+        return classMap.newInstance(attributes, source);
     }
 }

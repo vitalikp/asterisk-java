@@ -226,6 +226,15 @@ class EventClassMap extends ClassMap<ManagerEvent>
 
 			value = props.get(name);
 
+			// ResponseEvents are sent in response to a ManagerAction if the
+			// response contains lots of data. They include the actionId of
+			// the corresponding ManagerAction.
+			if ("actionID".equalsIgnoreCase(name))
+			{
+				clsType.setProp(event, "internal" + name, ManagerUtil.getInternalActionId(value));
+				value = ManagerUtil.stripInternalActionId(value);
+			}
+
 			try
 			{
 				clsType.setProp(event, name, value);

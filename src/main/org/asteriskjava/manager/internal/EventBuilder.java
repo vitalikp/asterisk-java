@@ -35,12 +35,6 @@ class EventBuilder
     EventBuilder()
     {
         classMap = new EventClassMap();
-        registerBuiltinEventClasses();
-    }
-
-    private void registerBuiltinEventClasses()
-    {
-
     }
 
     @SuppressWarnings("unchecked")

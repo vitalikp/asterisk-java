@@ -16,8 +16,6 @@
  */
 package org.asteriskjava.manager.internal;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Method;
 import java.util.Map;
 
 import org.asteriskjava.manager.event.AgentCallbackLoginEvent;
@@ -95,10 +93,8 @@ import org.asteriskjava.manager.event.UnlinkEvent;
 import org.asteriskjava.manager.event.UnparkedCallEvent;
 import org.asteriskjava.manager.event.ZapShowChannelsCompleteEvent;
 import org.asteriskjava.manager.event.ZapShowChannelsEvent;
-import org.asteriskjava.util.AstUtil;
 import org.asteriskjava.util.Log;
 import org.asteriskjava.util.LogFactory;
-import org.asteriskjava.util.ReflectionUtil;
 
 /**
  * Default implementation of the EventBuilder interface.
@@ -210,8 +206,6 @@ class EventBuilderImpl implements EventBuilder
         if (event == null)
             return null;
 
-        setAttributes(event, attributes);
-
         // ResponseEvents are sent in response to a ManagerAction if the
         // response contains lots of data. They include the actionId of
         // the corresponding ManagerAction.
@@ -230,83 +224,5 @@ class EventBuilderImpl implements EventBuilder
         }
 
         return event;
-    }
-
-    @SuppressWarnings("unchecked")
-    private void setAttributes(ManagerEvent event, Map<String, String> attributes)
-    {
-        Map<String, Method> setters;
-
-        setters = ReflectionUtil.getSetters(event.getClass());
-        for (String name : attributes.keySet())
-        {
-            Object value;
-            Class dataType;
-            Method setter;
-
-            if ("event".equals(name))
-            {
-                continue;
-            }
-
-            /*
-             * The source property needs special handling as it is already
-             * defined in java.util.EventObject (the base class of
-             * ManagerEvent), so we have to translate it.
-             */
-            if ("source".equals(name))
-            {
-                setter = setters.get("src");
-            }
-            else
-            {
-                setter = setters.get(name);
-            }
-
-            if (setter == null)
-            {
-                logger.error("Unable to set property '" + name + "' to '" + attributes.get(name) + "' on "
-                        + event.getClass().getName() + ": no setter");
-            }
-
-            if(setter == null) {
-                continue;
-            }
-
-            dataType = setter.getParameterTypes()[0];
-
-            if (dataType == Boolean.class)
-            {
-                value = AstUtil.isTrue(attributes.get(name));
-            }
-            else if (dataType.isAssignableFrom(String.class))
-            {
-                value = attributes.get(name);
-            }
-            else
-            {
-                try
-                {
-                    Constructor constructor = dataType.getConstructor(new Class[]{String.class});
-                    value = constructor.newInstance(attributes.get(name));
-                }
-                catch (Exception e)
-                {
-                    logger.error("Unable to convert value '" + attributes.get(name) + "' of property '" + name + "' on "
-                            + event.getClass().getName() + " to required type " + dataType, e);
-                    continue;
-                }
-            }
-
-            try
-            {
-                setter.invoke(event, value);
-            }
-            catch (Exception e)
-            {
-                logger.error("Unable to set property '" + name + "' to '" + attributes.get(name) + "' on "
-                        + event.getClass().getName(), e);
-            }
-        }
     }
 }

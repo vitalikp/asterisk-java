@@ -54,14 +54,51 @@ class EventClassMap extends ClassMap<ManagerEvent>
 		return clsType;
 	}
 
+	private void setProps(ManagerEvent event, ClassType<ManagerEvent> clsType, Map<String, String> props)
+	{
+		String value;
+
+		for (String name: props.keySet())
+		{
+			if ("event".equals(name))
+				continue;
+
+			/*
+			 * The source property needs special handling as it is already
+			 * defined in java.util.EventObject (the base class of
+			 * ManagerEvent), so we have to translate it.
+			 */
+			if ("source".equals(name))
+				name = "src";
+
+			value = props.get(name);
+
+			try
+			{
+				clsType.setProp(event, name, value);
+			}
+			catch (Exception e)
+			{
+				log.error(String.format("Unable to set property '%s' to '%s' on %s: %s", name, value, event.getClass().getName(), e.getMessage()), e.getCause());
+			}
+		}
+	}
+
 	public ManagerEvent newInstance(Map<String, String> attrs, Object source)
 	{
 		ClassType<ManagerEvent> clsType;
+		ManagerEvent event;
 
 		clsType = get(attrs);
 		if (clsType == null)
 			return null;
 
-		return super.newInstance(clsType, source);
+		event = super.newInstance(clsType, source);
+		if (event == null)
+			return null;
+
+		setProps(event, clsType, attrs);
+
+		return event;
 	}
 }

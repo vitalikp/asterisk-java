@@ -1,5 +1,7 @@
 package org.asteriskjava.manager.response;
 
+import org.asteriskjava.manager.annotation.Property;
+
 public class CoreSettingsResponse extends ManagerResponse
 {
 	private static final long serialVersionUID = 1l;
@@ -21,6 +23,7 @@ public class CoreSettingsResponse extends ManagerResponse
 		return amiVer;
 	}
 
+	@Property(name = "AMIversion")
 	public void setAmiVer(String amiVer)
 	{
 		this.amiVer = amiVer;
@@ -31,6 +34,7 @@ public class CoreSettingsResponse extends ManagerResponse
 		return astVer;
 	}
 
+	@Property(name = "AsteriskVersion")
 	public void setAstVer(String astVer)
 	{
 		this.astVer = astVer;
@@ -41,6 +45,7 @@ public class CoreSettingsResponse extends ManagerResponse
 		return sysName;
 	}
 
+	@Property(name = "SystemName")
 	public void setSysName(String sysName)
 	{
 		this.sysName = sysName;
@@ -51,6 +56,7 @@ public class CoreSettingsResponse extends ManagerResponse
 		return maxCalls;
 	}
 
+	@Property(name = "CoreMaxCalls")
 	public void setMaxCalls(Integer maxCalls)
 	{
 		this.maxCalls = maxCalls;
@@ -61,6 +67,7 @@ public class CoreSettingsResponse extends ManagerResponse
 		return maxLoadAvg;
 	}
 
+	@Property(name = "CoreMaxLoadAvg")
 	public void setMaxLoadAvg(Double maxLoadAvg)
 	{
 		this.maxLoadAvg = maxLoadAvg;
@@ -71,6 +78,7 @@ public class CoreSettingsResponse extends ManagerResponse
 		return runUser;
 	}
 
+	@Property(name = "CoreRunUser")
 	public void setRunUser(String runUser)
 	{
 		this.runUser = runUser;
@@ -81,6 +89,7 @@ public class CoreSettingsResponse extends ManagerResponse
 		return runGroup;
 	}
 
+	@Property(name = "CoreRunGroup")
 	public void setRunGroup(String runGroup)
 	{
 		this.runGroup = runGroup;
@@ -91,6 +100,7 @@ public class CoreSettingsResponse extends ManagerResponse
 		return maxFilehandles;
 	}
 
+	@Property(name = "CoreMaxFilehandles")
 	public void setMaxFilehandles(Integer maxFilehandles)
 	{
 		this.maxFilehandles = maxFilehandles;
@@ -101,6 +111,7 @@ public class CoreSettingsResponse extends ManagerResponse
 		return realtimeEnabled;
 	}
 
+	@Property(name = "CoreRealTimeEnabled")
 	public void setRealtimeEnabled(Boolean realtimeEnabled)
 	{
 		this.realtimeEnabled = realtimeEnabled;
@@ -111,6 +122,7 @@ public class CoreSettingsResponse extends ManagerResponse
 		return cdrEnabled;
 	}
 
+	@Property(name = "CoreCDRenabled")
 	public void setCdrEnabled(Boolean cdrEnabled)
 	{
 		this.cdrEnabled = cdrEnabled;
@@ -121,6 +133,7 @@ public class CoreSettingsResponse extends ManagerResponse
 		return httpEnabled;
 	}
 
+	@Property(name = "CoreHTTPenabled")
 	public void setHttpEnabled(Boolean httpEnabled)
 	{
 		this.httpEnabled = httpEnabled;

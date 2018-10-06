@@ -93,7 +93,6 @@ import org.asteriskjava.manager.event.StatusEvent;
 import org.asteriskjava.manager.event.UnholdEvent;
 import org.asteriskjava.manager.event.UnlinkEvent;
 import org.asteriskjava.manager.event.UnparkedCallEvent;
-import org.asteriskjava.manager.event.UserEvent;
 import org.asteriskjava.manager.event.ZapShowChannelsCompleteEvent;
 import org.asteriskjava.manager.event.ZapShowChannelsEvent;
 import org.asteriskjava.util.AstUtil;
@@ -264,8 +263,7 @@ class EventBuilderImpl implements EventBuilder
                 setter = setters.get(name);
             }
 
-            // it seems silly to warn if it's a user event -- maybe it was intentional
-            if (setter == null && !(event instanceof UserEvent))
+            if (setter == null)
             {
                 logger.error("Unable to set property '" + name + "' to '" + attributes.get(name) + "' on "
                         + event.getClass().getName() + ": no setter");

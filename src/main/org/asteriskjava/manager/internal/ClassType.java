@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
+import org.asteriskjava.manager.annotation.Property;
 import org.asteriskjava.util.AstUtil;
 
 class ClassType<C>
@@ -33,6 +34,7 @@ class ClassType<C>
 	{
 		Method[] methods;
 		Method method;
+		Property prop;
 		String name;
 		int i;
 
@@ -43,6 +45,7 @@ class ClassType<C>
 		{
 			method = methods[i++];
 			name = method.getName();
+			prop = method.getAnnotation(Property.class);
 
 			if (name.startsWith("get"))
 			{
@@ -50,6 +53,8 @@ class ClassType<C>
 					continue;
 
 				name = name.substring(3);
+				if (prop != null && !prop.name().isEmpty())
+					name = prop.name().toLowerCase(Locale.ENGLISH);
 				name = name.toLowerCase(Locale.ENGLISH);
 
 				getters.put(name, method);
@@ -61,6 +66,8 @@ class ClassType<C>
 					continue;
 
 				name = name.substring(3);
+				if (prop != null && !prop.name().isEmpty())
+					name = prop.name().toLowerCase(Locale.ENGLISH);
 				name = name.toLowerCase(Locale.ENGLISH);
 
 				setters.put(name, method);

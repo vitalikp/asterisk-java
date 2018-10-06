@@ -101,7 +101,7 @@ import org.asteriskjava.manager.event.ZapShowChannelsEvent;
  * @author srt
  * @version $Id: EventBuilderImpl.java 815 2007-07-01 20:30:31Z srt $
  */
-class EventBuilderImpl implements EventBuilder
+class EventBuilderImpl
 {
     private EventClassMap classMap;
 

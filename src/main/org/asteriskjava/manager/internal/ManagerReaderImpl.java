@@ -46,7 +46,7 @@ public class ManagerReaderImpl implements ManagerReader
      * The event builder utility to convert a map of attributes received from asterisk to instances
      * of registered event classes.
      */
-    private final EventBuilder eventBuilder;
+    private final EventBuilderImpl eventBuilder;
 
     /**
      * The response builder utility to convert a map of attributes received from asterisk to

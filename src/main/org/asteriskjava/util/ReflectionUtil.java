@@ -83,46 +83,4 @@ public class ReflectionUtil
 
         return accessors;
     }
-
-    /**
-     * Returns a Map of setter methods of the given class.
-     *
-     * <p>The key of the map contains the name of the attribute that can be
-     * accessed by the setter, the value the setter itself (an instance of
-     * java.lang.reflect.Method). A method is considered a setter if its name
-     * starts with "set", it is declared public and takes exactly one argument.
-     *
-     * @param clazz the class to return the setters for
-     * @return a Map of attributes and their accessor methods (setters)
-     */
-    public static Map<String, Method> getSetters(Class clazz)
-    {
-        final Map<String, Method> accessors = new HashMap<String, Method>();
-        final Method[] methods = clazz.getMethods();
-
-        for (int i = 0; i < methods.length; i++)
-        {
-            String name;
-            String methodName;
-            Method method = methods[i];
-
-            methodName = method.getName();
-            if (!methodName.startsWith("set"))
-            {
-                continue;
-            }
-
-            // skip methods with != 1 parameters
-            if (method.getParameterTypes().length != 1)
-            {
-                continue;
-            }
-
-            // ok seems to be an accessor
-            name = methodName.substring("set".length()).toLowerCase();
-            accessors.put(name, method);
-        }
-
-        return accessors;
-    }
 }

@@ -6,6 +6,8 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
+import org.asteriskjava.util.AstUtil;
+
 class ClassType<C>
 {
 	private final Class<? extends C> cls;
@@ -78,19 +80,51 @@ class ClassType<C>
 		return constructor.newInstance(params);
 	}
 
+	private Object getValue(Class<?> type, String value)
+		throws ReflectiveOperationException
+	{
+		if (Boolean.class == type || boolean.class == type)
+			return AstUtil.isTrue(value);
+
+		if (Integer.class == type || int.class == type)
+			return Integer.valueOf(value);
+
+		if (Long.class == type || long.class == type)
+			return Long.valueOf(value);
+
+		if (Double.class == type || double.class == type)
+			return Double.valueOf(value);
+
+		if (type.isAssignableFrom(String.class))
+			return value;
+
+		return type.getConstructor(new Class[]{String.class}).newInstance(value);
+	}
+
 	public void setProp(Object obj, String name, String value)
 	{
 		Method setter;
+		Class<?> type;
+		Object objVal;
 
 		setter = setters.get(name);
 		if (setter == null)
 			throw new RuntimeException("no setter");
 
-
+		type = setter.getParameterTypes()[0];
 
 		try
 		{
-			setter.invoke(obj, value);
+			objVal = getValue(type, value);
+		}
+		catch (Exception e)
+		{
+			throw new RuntimeException("unable to convert value to required type " + type, e);
+		}
+
+		try
+		{
+			setter.invoke(obj, objVal);
 		}
 		catch (Exception e)
 		{

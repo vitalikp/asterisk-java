@@ -46,7 +46,7 @@ public class ManagerReaderImpl implements ManagerReader
      * The event builder utility to convert a map of attributes received from asterisk to instances
      * of registered event classes.
      */
-    private final EventBuilderImpl eventBuilder;
+    private final EventBuilder eventBuilder;
 
     /**
      * The response builder utility to convert a map of attributes received from asterisk to
@@ -95,7 +95,7 @@ public class ManagerReaderImpl implements ManagerReader
         this.dispatcher = dispatcher;
         this.source = source;
 
-        this.eventBuilder = new EventBuilderImpl();
+        this.eventBuilder = new EventBuilder();
         this.responseBuilder = new ResponseBuilderImpl();
     }
 

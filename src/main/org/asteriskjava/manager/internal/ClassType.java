@@ -78,6 +78,26 @@ class ClassType<C>
 		return constructor.newInstance(params);
 	}
 
+	public void setProp(Object obj, String name, String value)
+	{
+		Method setter;
+
+		setter = setters.get(name);
+		if (setter == null)
+			throw new RuntimeException("no setter");
+
+
+
+		try
+		{
+			setter.invoke(obj, value);
+		}
+		catch (Exception e)
+		{
+			throw new RuntimeException("invoke setter is fail", e);
+		}
+	}
+
 	public String toString()
 	{
 		return cls.getName();

@@ -18,6 +18,8 @@ package org.asteriskjava.manager.event;
 
 import java.util.Date;
 
+import org.asteriskjava.manager.annotation.Property;
+
 /**
  * A CdrEvent is triggered when a call detail record is generated, usually at the end of a call.
  *
@@ -88,6 +90,7 @@ public class CdrEvent extends ManagerEvent
      *
      * @param accountCode the account number.
      */
+    @Property(name = "AccountCode")
     public void setAccountCode(String accountCode)
     {
         this.accountCode = accountCode;
@@ -110,6 +113,7 @@ public class CdrEvent extends ManagerEvent
      *
      * @param source the Caller*ID number.
      */
+    @Property(name = "Source")
     public void setSrc(String source)
     {
         this.src = source;
@@ -132,6 +136,7 @@ public class CdrEvent extends ManagerEvent
      *
      * @param destination the destination extension.
      */
+    @Property(name = "Destination")
     public void setDestination(String destination)
     {
         this.destination = destination;
@@ -154,6 +159,7 @@ public class CdrEvent extends ManagerEvent
      *
      * @param destinationContext the destination context.
      */
+    @Property(name = "DestinationContext")
     public void setDestinationContext(String destinationContext)
     {
         this.destinationContext = destinationContext;
@@ -176,6 +182,7 @@ public class CdrEvent extends ManagerEvent
      *
      * @param callerId the Caller*ID with text.
      */
+    @Property(name = "CallerID")
     public void setCallerId(String callerId)
     {
         this.callerId = callerId;
@@ -198,6 +205,7 @@ public class CdrEvent extends ManagerEvent
      *
      * @param channel the name of the channel.
      */
+    @Property(name = "Channel")
     public void setChannel(String channel)
     {
         this.channel = channel;
@@ -220,6 +228,7 @@ public class CdrEvent extends ManagerEvent
      *
      * @param destinationChannel the name of the destination channel.
      */
+    @Property(name = "DestinationChannel")
     public void setDestinationChannel(String destinationChannel)
     {
         this.destinationChannel = destinationChannel;
@@ -242,6 +251,7 @@ public class CdrEvent extends ManagerEvent
      *
      * @param lastApplication the last application.
      */
+    @Property(name = "LastApplication")
     public void setLastApplication(String lastApplication)
     {
         this.lastApplication = lastApplication;
@@ -264,6 +274,7 @@ public class CdrEvent extends ManagerEvent
      *
      * @param lastData the last application's data.
      */
+    @Property(name = "LastData")
     public void setLastData(String lastData)
     {
         this.lastData = lastData;
@@ -287,6 +298,7 @@ public class CdrEvent extends ManagerEvent
      *
      * @param startTime the date/time when the call has started.
      */
+    @Property(name = "StartTime")
     public void setStartTime(Date startTime)
     {
         this.startTime = startTime;
@@ -310,6 +322,7 @@ public class CdrEvent extends ManagerEvent
      *
      * @param answerTime the date/time when the call was answered.
      */
+    @Property(name = "AnswerTime")
     public void setAnswerTime(Date answerTime)
     {
         this.answerTime = answerTime;
@@ -333,6 +346,7 @@ public class CdrEvent extends ManagerEvent
      *
      * @param endTime the date/time when the call has ended.
      */
+    @Property(name = "EndTime")
     public void setEndTime(Date endTime)
     {
         this.endTime = endTime;
@@ -355,6 +369,7 @@ public class CdrEvent extends ManagerEvent
      *
      * @param duration total time in system in seconds.
      */
+    @Property(name = "Duration")
     public void setDuration(Integer duration)
     {
         this.duration = duration;
@@ -377,6 +392,7 @@ public class CdrEvent extends ManagerEvent
      *
      * @param billableSeconds the total time in call in seconds.
      */
+    @Property(name = "BillableSeconds")
     public void setBillableSeconds(Integer billableSeconds)
     {
         this.billableSeconds = billableSeconds;
@@ -407,6 +423,7 @@ public class CdrEvent extends ManagerEvent
      *
      * @param disposition the disposition.
      */
+    @Property(name = "Disposition")
     public void setDisposition(String disposition)
     {
         this.disposition = disposition;
@@ -436,6 +453,7 @@ public class CdrEvent extends ManagerEvent
      *
      * @param amaFlags the AMA (Automated Message Accounting) flags.
      */
+    @Property(name = "AMAFlags")
     public void setAmaFlags(String amaFlags)
     {
         this.amaFlags = amaFlags;
@@ -456,6 +474,7 @@ public class CdrEvent extends ManagerEvent
      *
      * @param uniqueId the unique id of the channel.
      */
+    @Property(name = "UniqueID")
     public void setUniqueId(String uniqueId)
     {
         this.uniqueId = uniqueId;
@@ -478,6 +497,7 @@ public class CdrEvent extends ManagerEvent
      *
      * @param userField the user-defined field
      */
+    @Property(name = "UserField")
     public void setUserField(String userField)
     {
         this.userField = userField;

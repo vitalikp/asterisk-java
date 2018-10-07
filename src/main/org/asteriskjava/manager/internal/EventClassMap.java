@@ -231,8 +231,15 @@ class EventClassMap extends ClassMap<ManagerEvent>
 			// the corresponding ManagerAction.
 			if ("actionID".equalsIgnoreCase(name))
 			{
-				clsType.setProp(event, "internal" + name, ManagerUtil.getInternalActionId(value));
-				value = ManagerUtil.stripInternalActionId(value);
+				try
+				{
+					clsType.setProp(event, "internal" + name, ManagerUtil.getInternalActionId(value));
+					value = ManagerUtil.stripInternalActionId(value);
+				}
+				catch (Exception e)
+				{
+					log.error(String.format("Unable to set property '%s' to '%s' on %s: %s", "internal" + name, value, event.getClass().getName(), e.getMessage()), e.getCause());
+				}
 			}
 
 			try

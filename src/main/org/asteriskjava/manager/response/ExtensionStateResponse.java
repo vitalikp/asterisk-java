@@ -16,6 +16,8 @@
  */
 package org.asteriskjava.manager.response;
 
+import org.asteriskjava.manager.annotation.Property;
+
 /**
  * @author srt
  * @version $Id: ExtensionStateResponse.java 729 2007-05-26 05:16:57Z sprior $
@@ -36,6 +38,7 @@ public class ExtensionStateResponse extends ManagerResponse
         return exten;
     }
 
+    @Property(name = "Exten")
     public void setExten(String exten)
     {
         this.exten = exten;
@@ -46,6 +49,7 @@ public class ExtensionStateResponse extends ManagerResponse
         return context;
     }
 
+    @Property(name = "Context")
     public void setContext(String context)
     {
         this.context = context;
@@ -56,6 +60,7 @@ public class ExtensionStateResponse extends ManagerResponse
         return hint;
     }
 
+    @Property(name = "Hint")
     public void setHint(String hint)
     {
         this.hint = hint;
@@ -66,6 +71,7 @@ public class ExtensionStateResponse extends ManagerResponse
         return status;
     }
 
+    @Property(name = "Status")
     public void setStatus(Integer status)
     {
         this.status = status;

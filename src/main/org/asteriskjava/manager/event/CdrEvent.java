@@ -309,32 +309,6 @@ public class CdrEvent extends ManagerEvent
     }
 
     /**
-     * Returns the answer time as Date object.
-     *
-     * <p>This method assumes that the Asterisk server's timezone equals the default
-     * timezone of your JVM.
-     *
-     * @return the answer time as Date object.
-     * @since 0.3
-     */
-    public Date getAnswerTimeAsDate()
-    {
-        return answerTime;
-    }
-
-    /**
-     * Returns the answer time as Date object.
-     *
-     * @param tz the timezone of the Asterisk server.
-     * @return the answer time as Date object.
-     * @since 0.3
-     */
-    public Date getAnswerTimeAsDate(TimeZone tz)
-    {
-        return answerTime;
-    }
-
-    /**
      * Sets the date/time when the call was answered.
      *
      * @param answerTime the date/time when the call was answered.

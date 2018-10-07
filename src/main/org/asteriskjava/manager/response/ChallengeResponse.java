@@ -16,6 +16,8 @@
  */
 package org.asteriskjava.manager.response;
 
+import org.asteriskjava.manager.annotation.Property;
+
 /**
  * Corresponds to a ChallengeAction and contains the challenge needed to log in using
  * challenge/response.
@@ -52,6 +54,7 @@ public class ChallengeResponse extends ManagerResponse
      *
      * @param challenge the challenge.
      */
+    @Property(name = "Challenge")
     public void setChallenge(String challenge)
     {
         this.challenge = challenge;

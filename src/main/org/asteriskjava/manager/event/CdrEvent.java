@@ -17,9 +17,6 @@
 package org.asteriskjava.manager.event;
 
 import java.util.Date;
-import java.util.TimeZone;
-
-import org.asteriskjava.util.DateUtil;
 
 /**
  * A CdrEvent is triggered when a call detail record is generated, usually at the end of a call.
@@ -327,32 +324,6 @@ public class CdrEvent extends ManagerEvent
      * call has ended, for example "2006-05-19 11:58:21"
      */
     public Date getEndTime()
-    {
-        return endTime;
-    }
-
-    /**
-     * Returns the end time as Date object.
-     *
-     * <p>This method assumes that the Asterisk server's timezone equals the default
-     * timezone of your JVM.
-     *
-     * @return the end time as Date object.
-     * @since 0.3
-     */
-    public Date getEndTimeAsDate()
-    {
-        return endTime;
-    }
-
-    /**
-     * Returns the end time as Date object.
-     *
-     * @param tz the timezone of the Asterisk server.
-     * @return the end time as Date object.
-     * @since 0.3
-     */
-    public Date getEndTimeAsDate(TimeZone tz)
     {
         return endTime;
     }

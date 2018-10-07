@@ -75,7 +75,7 @@ public class CallDetailRecordImpl implements CallDetailRecord
         lastAppData = cdrEvent.getLastData();
         startDate = cdrEvent.getStartTime();
         answerDate = cdrEvent.getAnswerTime();
-        endDate = cdrEvent.getEndTimeAsDate();
+        endDate = cdrEvent.getEndTime();
         duration = cdrEvent.getDuration();
         billableSeconds = cdrEvent.getBillableSeconds();
         if (cdrEvent.getAmaFlags() != null)

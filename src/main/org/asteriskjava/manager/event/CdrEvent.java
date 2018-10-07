@@ -60,7 +60,7 @@ public class CdrEvent extends ManagerEvent
     private String lastApplication;
     private String lastData;
     private Date startTime;
-    private String answerTime;
+    private Date answerTime;
     private String endTime;
     private Integer duration;
     private Integer billableSeconds;
@@ -303,7 +303,7 @@ public class CdrEvent extends ManagerEvent
      * @return A string of the format "%Y-%m-%d %T" (strftime(3)) representing the date/time the
      * call was answered, for example "2006-05-19 11:55:01"
      */
-    public String getAnswerTime()
+    public Date getAnswerTime()
     {
         return answerTime;
     }
@@ -319,7 +319,7 @@ public class CdrEvent extends ManagerEvent
      */
     public Date getAnswerTimeAsDate()
     {
-        return DateUtil.parseDateTime(answerTime);
+        return answerTime;
     }
 
     /**
@@ -331,7 +331,7 @@ public class CdrEvent extends ManagerEvent
      */
     public Date getAnswerTimeAsDate(TimeZone tz)
     {
-        return DateUtil.parseDateTime(answerTime, tz);
+        return answerTime;
     }
 
     /**
@@ -339,7 +339,7 @@ public class CdrEvent extends ManagerEvent
      *
      * @param answerTime the date/time when the call was answered.
      */
-    public void setAnswerTime(String answerTime)
+    public void setAnswerTime(Date answerTime)
     {
         this.answerTime = answerTime;
     }

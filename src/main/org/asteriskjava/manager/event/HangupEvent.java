@@ -16,6 +16,8 @@
  */
 package org.asteriskjava.manager.event;
 
+import org.asteriskjava.manager.annotation.Property;
+
 /**
  * A HangupEvent is triggered when a channel is hung up.
  *
@@ -66,6 +68,7 @@ public class HangupEvent extends AbstractChannelStateEvent
      *
      * @param callerIdNum the caller*ID Num.
      */
+    @Property(name = "CallerIDNum")
     public void setCallerIdNum(String callerIdNum)
     {
         this.callerIdNum = callerIdNum;
@@ -86,6 +89,7 @@ public class HangupEvent extends AbstractChannelStateEvent
      *
      * @param callerIdName the Caller*Id Name to set.
      */
+    @Property(name = "CallerIDName")
     public void setCallerIdName(String callerIdName)
     {
         this.callerIdName = callerIdName;
@@ -96,6 +100,7 @@ public class HangupEvent extends AbstractChannelStateEvent
 		return connectedLineNum;
 	}
 
+	@Property(name = "ConnectedLineNum")
 	public void setConnectedLineNum(String connectedLineNum)
 	{
 		this.connectedLineNum = connectedLineNum;
@@ -106,6 +111,7 @@ public class HangupEvent extends AbstractChannelStateEvent
 		return connectedLineName;
 	}
 
+	@Property(name = "ConnectedLineName")
 	public void setConnectedLineName(String connectedLineName)
 	{
 		this.connectedLineName = connectedLineName;
@@ -127,6 +133,7 @@ public class HangupEvent extends AbstractChannelStateEvent
      *
      * @param cause the cause of the hangup.
      */
+    @Property(name = "Cause")
     public void setCause(Integer cause)
     {
         this.cause = cause;
@@ -149,6 +156,7 @@ public class HangupEvent extends AbstractChannelStateEvent
      * @param causeTxt the textual representation of the hangup cause.
      * @since 0.2
      */
+    @Property(name = "Cause-txt")
     public void setCauseTxt(String causeTxt)
     {
         this.causeTxt = causeTxt;

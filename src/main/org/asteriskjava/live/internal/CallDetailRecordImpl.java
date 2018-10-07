@@ -19,7 +19,6 @@ package org.asteriskjava.live.internal;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.TimeZone;
 
 import org.asteriskjava.live.AmaFlags;
 import org.asteriskjava.live.AsteriskChannel;
@@ -66,8 +65,6 @@ public class CallDetailRecordImpl implements CallDetailRecord
 
     CallDetailRecordImpl(AsteriskChannelImpl channel, AsteriskChannelImpl destinationChannel, CdrEvent cdrEvent)
     {
-        //TODO add timezone to AsteriskServer
-        TimeZone tz = TimeZone.getDefault();
         this.channel = channel;
         this.destinationChannel = destinationChannel;
 
@@ -76,9 +73,9 @@ public class CallDetailRecordImpl implements CallDetailRecord
         destinationExtension = cdrEvent.getDestination();
         lastApplication = cdrEvent.getLastApplication();
         lastAppData = cdrEvent.getLastData();
-        startDate = cdrEvent.getStartTimeAsDate(tz);
-        answerDate = cdrEvent.getAnswerTimeAsDate(tz);
-        endDate = cdrEvent.getEndTimeAsDate(tz);
+        startDate = cdrEvent.getStartTimeAsDate();
+        answerDate = cdrEvent.getAnswerTimeAsDate();
+        endDate = cdrEvent.getEndTimeAsDate();
         duration = cdrEvent.getDuration();
         billableSeconds = cdrEvent.getBillableSeconds();
         if (cdrEvent.getAmaFlags() != null)

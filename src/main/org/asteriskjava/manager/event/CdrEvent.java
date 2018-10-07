@@ -61,7 +61,7 @@ public class CdrEvent extends ManagerEvent
     private String lastData;
     private Date startTime;
     private Date answerTime;
-    private String endTime;
+    private Date endTime;
     private Integer duration;
     private Integer billableSeconds;
     private String disposition;
@@ -326,7 +326,7 @@ public class CdrEvent extends ManagerEvent
      * @return A string of the format "%Y-%m-%d %T" (strftime(3)) representing the date/time the
      * call has ended, for example "2006-05-19 11:58:21"
      */
-    public String getEndTime()
+    public Date getEndTime()
     {
         return endTime;
     }
@@ -342,7 +342,7 @@ public class CdrEvent extends ManagerEvent
      */
     public Date getEndTimeAsDate()
     {
-        return DateUtil.parseDateTime(endTime);
+        return endTime;
     }
 
     /**
@@ -354,7 +354,7 @@ public class CdrEvent extends ManagerEvent
      */
     public Date getEndTimeAsDate(TimeZone tz)
     {
-        return DateUtil.parseDateTime(endTime, tz);
+        return endTime;
     }
 
     /**
@@ -362,7 +362,7 @@ public class CdrEvent extends ManagerEvent
      *
      * @param endTime the date/time when the call has ended.
      */
-    public void setEndTime(String endTime)
+    public void setEndTime(Date endTime)
     {
         this.endTime = endTime;
     }

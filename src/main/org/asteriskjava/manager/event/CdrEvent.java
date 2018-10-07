@@ -286,32 +286,6 @@ public class CdrEvent extends ManagerEvent
     }
 
     /**
-     * Returns the start time as Date object.
-     *
-     * <p>This method assumes that the Asterisk server's timezone equals the default
-     * timezone of your JVM.
-     *
-     * @return the start time as Date object.
-     * @since 0.3
-     */
-    public Date getStartTimeAsDate()
-    {
-        return startTime;
-    }
-
-    /**
-     * Returns the start time as Date object.
-     *
-     * @param tz the timezone of the Asterisk server.
-     * @return the start time as Date object.
-     * @since 0.3
-     */
-    public Date getStartTimeAsDate(TimeZone tz)
-    {
-        return startTime;
-    }
-
-    /**
      * Sets the date/time when the call has started.
      *
      * @param startTime the date/time when the call has started.

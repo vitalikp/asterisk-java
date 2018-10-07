@@ -16,6 +16,8 @@
  */
 package org.asteriskjava.manager.response;
 
+import org.asteriskjava.manager.annotation.Property;
+
 /**
  * A MailboxStatusResponse is sent in response to a MailboxStatusAction and indicates if a set
  * of mailboxes contains waiting messages.
@@ -55,6 +57,7 @@ public class MailboxStatusResponse extends ManagerResponse
      * Sets the names of the mailboxes.
      * @param mailbox the names of the mailboxes.
      */
+    @Property(name = "Mailbox")
     public void setMailbox(String mailbox)
     {
         this.mailbox = mailbox;
@@ -79,6 +82,7 @@ public class MailboxStatusResponse extends ManagerResponse
      * @param waiting Boolean.TRUE if at least one of the mailboxes contains new messages;
      * Boolean.FALSE otherwise.
      */
+    @Property(name = "Waiting")
     public void setWaiting(Boolean waiting)
     {
         this.waiting = waiting;

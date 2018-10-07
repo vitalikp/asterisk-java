@@ -59,7 +59,7 @@ public class CdrEvent extends ManagerEvent
     private String destinationChannel;
     private String lastApplication;
     private String lastData;
-    private String startTime;
+    private Date startTime;
     private String answerTime;
     private String endTime;
     private Integer duration;
@@ -280,7 +280,7 @@ public class CdrEvent extends ManagerEvent
      * @return A string of the format "%Y-%m-%d %T" (strftime(3)) representing the date/time the
      * call has started, for example "2006-05-19 11:54:48".
      */
-    public String getStartTime()
+    public Date getStartTime()
     {
         return startTime;
     }
@@ -296,7 +296,7 @@ public class CdrEvent extends ManagerEvent
      */
     public Date getStartTimeAsDate()
     {
-        return DateUtil.parseDateTime(startTime);
+        return startTime;
     }
 
     /**
@@ -308,7 +308,7 @@ public class CdrEvent extends ManagerEvent
      */
     public Date getStartTimeAsDate(TimeZone tz)
     {
-        return DateUtil.parseDateTime(startTime, tz);
+        return startTime;
     }
 
     /**
@@ -316,7 +316,7 @@ public class CdrEvent extends ManagerEvent
      *
      * @param startTime the date/time when the call has started.
      */
-    public void setStartTime(String startTime)
+    public void setStartTime(Date startTime)
     {
         this.startTime = startTime;
     }

@@ -2,6 +2,8 @@ package org.asteriskjava.manager.response;
 
 import java.util.Date;
 
+import org.asteriskjava.manager.annotation.Property;
+
 public class CoreStatusResponse extends ManagerResponse
 {
 	private static final long serialVersionUID = 1l;
@@ -15,6 +17,7 @@ public class CoreStatusResponse extends ManagerResponse
 		return startupDate;
 	}
 
+	@Property(name = "CoreStartupDate")
 	public void setStartupDate(Date startupDate)
 	{
 		this.startupDate = startupDate;
@@ -25,6 +28,7 @@ public class CoreStatusResponse extends ManagerResponse
 		return reloadDate;
 	}
 
+	@Property(name = "CoreReloadDate")
 	public void setReloadDate(Date reloadDate)
 	{
 		this.reloadDate = reloadDate;
@@ -35,6 +39,7 @@ public class CoreStatusResponse extends ManagerResponse
 		return currentCalls;
 	}
 
+	@Property(name = "CoreCurrentCalls")
 	public void setCurrentCalls(Integer currentCalls)
 	{
 		this.currentCalls = currentCalls;

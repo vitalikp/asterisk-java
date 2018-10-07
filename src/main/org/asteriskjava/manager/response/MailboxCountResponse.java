@@ -16,6 +16,8 @@
  */
 package org.asteriskjava.manager.response;
 
+import org.asteriskjava.manager.annotation.Property;
+
 /**
  * A MailboxCountResponse is sent in response to a MailboxCountAction and contains the number of old
  * and new messages in a mailbox.
@@ -50,6 +52,7 @@ public class MailboxCountResponse extends ManagerResponse
      *
      * @param mailbox the name of the mailbox.
      */
+    @Property(name = "Mailbox")
     public void setMailbox(String mailbox)
     {
         this.mailbox = mailbox;
@@ -70,6 +73,7 @@ public class MailboxCountResponse extends ManagerResponse
      *
      * @param newMessages the number of new messages.
      */
+    @Property(name = "NewMessages")
     public void setNewMessages(Integer newMessages)
     {
         this.newMessages = newMessages;
@@ -90,6 +94,7 @@ public class MailboxCountResponse extends ManagerResponse
      *
      * @param oldMessages the number of old messages.
      */
+    @Property(name = "OldMessages")
     public void setOldMessages(Integer oldMessages)
     {
         this.oldMessages = oldMessages;

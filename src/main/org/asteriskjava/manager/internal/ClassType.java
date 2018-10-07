@@ -2,12 +2,14 @@ package org.asteriskjava.manager.internal;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
 import org.asteriskjava.manager.annotation.Property;
 import org.asteriskjava.util.AstUtil;
+import org.asteriskjava.util.DateUtil;
 
 class ClassType<C>
 {
@@ -104,6 +106,9 @@ class ClassType<C>
 
 		if (Double.class == type || double.class == type)
 			return Double.valueOf(value);
+
+		if (Date.class == type)
+			return DateUtil.parseDateTime(value);
 
 		if (type.isAssignableFrom(String.class))
 			return value;

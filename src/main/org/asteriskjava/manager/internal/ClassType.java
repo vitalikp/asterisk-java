@@ -32,6 +32,11 @@ class ClassType<C>
 		return cls.getName();
 	}
 
+	public boolean isClass(Class<? extends C> cls)
+	{
+		return this.cls == cls;
+	}
+
 	private void init()
 	{
 		Method[] methods;

@@ -16,6 +16,8 @@
  */
 package org.asteriskjava.manager.event;
 
+import org.asteriskjava.manager.annotation.Property;
+
 /**
  * A NewCallerIdEvent is triggered when the caller id of a channel changes.
  *
@@ -72,6 +74,7 @@ public class NewCallerIdEvent extends AbstractChannelEvent
      * @param s the CallerId presentation/screening in the form "%d (%s)".
      * @since 0.2
      */
+    @Property(name = "CID-CallingPres")
     public void setCidCallingPres(String s)
     {
         int spaceIdx;

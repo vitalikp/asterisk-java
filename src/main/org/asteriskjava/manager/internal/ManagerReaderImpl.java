@@ -236,7 +236,7 @@ public class ManagerReaderImpl implements ManagerReader
                         case Event:
                             // TODO tracing
                             //logger.debug("attempting to build event: " + buffer.get("event"));
-                            ManagerEvent event = buildEvent(source, buffer);
+                            ManagerEvent event = buildEvent(buffer);
                             if (event != null)
                             {
                                 dispatcher.dispatchEvent(event);
@@ -353,11 +353,11 @@ public class ManagerReaderImpl implements ManagerReader
         return response;
     }
 
-    private ManagerEvent buildEvent(Object source, Map<String, String> buffer)
+    private ManagerEvent buildEvent(Map<String, String> buffer)
     {
         ManagerEvent event;
 
-        event = classMap.newInstance(buffer, source);
+        event = classMap.newInstance(buffer);
 
         if (event != null)
         {

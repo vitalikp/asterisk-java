@@ -209,6 +209,7 @@ public class ManagerReaderImpl implements ManagerReader
         final Map<String, String> buffer = new HashMap<String, String>();
         final List<String> commandResult = new ArrayList<String>();
         String line;
+        PackType packType = PackType.None;
 
         if (socket == null)
         {
@@ -230,38 +231,41 @@ public class ManagerReaderImpl implements ManagerReader
                 // the corresponding value object and dispatch it through the ManagerConnection.
                 if (line.length() == 0)
                 {
-                    if (buffer.containsKey("event"))
+                    switch (packType)
                     {
-                        // TODO tracing
-                        //logger.debug("attempting to build event: " + buffer.get("event"));
-                        ManagerEvent event = buildEvent(source, buffer);
-                        if (event != null)
-                        {
-                            dispatcher.dispatchEvent(event);
-                        }
-                        else
-                        {
-                            logger.debug("buildEvent returned null");
-                        }
-                    }
-                    else if (buffer.containsKey("response"))
-                    {
-                        ManagerResponse response = buildResponse(buffer);
-                        // TODO tracing
-                        //logger.debug("attempting to build response");
-                        if (response != null)
-                        {
-                            dispatcher.dispatchResponse(response);
-                        }
-                    }
-                    else
-                    {
-                        if (buffer.size() > 0)
-                        {
-                            logger.debug("buffer contains neither response nor event");
-                        }
+                        case Event:
+                            // TODO tracing
+                            //logger.debug("attempting to build event: " + buffer.get("event"));
+                            ManagerEvent event = buildEvent(source, buffer);
+                            if (event != null)
+                            {
+                                dispatcher.dispatchEvent(event);
+                            }
+                            else
+                            {
+                                logger.debug("buildEvent returned null");
+                            }
+                            break;
+
+                        case Response:
+                            ManagerResponse response = buildResponse(buffer);
+                            // TODO tracing
+                            //logger.debug("attempting to build response");
+                            if (response != null)
+                            {
+                                dispatcher.dispatchResponse(response);
+                            }
+                            break;
+
+                        default:
+                            if (buffer.size() > 0)
+                            {
+                                logger.debug("buffer contains neither response nor event");
+                            }
                     }
 
+                    // end packet
+                    packType = PackType.None;
                     buffer.clear();
                 }
                 else
@@ -277,15 +281,23 @@ public class ManagerReaderImpl implements ManagerReader
                         name = line.substring(0, delimiterIndex).toLowerCase(Locale.ENGLISH);
                         value = line.substring(delimiterIndex + 2);
 
-                        // Response: Follows indicates that the output starting on the next line until
-                        // --END COMMAND-- must be treated as raw output of a command executed by a
-                        // CommandAction.
-                        if ("Follows".equalsIgnoreCase(value))
+                        if ("Response".equalsIgnoreCase(name))
                         {
-                            commandResult.clear();
-                            readCmdResp(commandResult);
-                            continue;
+                            // Response: Follows indicates that the output starting on the next line until
+                            // --END COMMAND-- must be treated as raw output of a command executed by a
+                            // CommandAction.
+                            if ("Follows".equalsIgnoreCase(value))
+                            {
+                                commandResult.clear();
+                                readCmdResp(commandResult);
+                                continue;
+                            }
+
+                            packType = PackType.Response;
                         }
+                        else
+                            if ("Event".equalsIgnoreCase(name))
+                                packType = PackType.Event;
 
                         buffer.put(name, value);
                         // TODO tracing

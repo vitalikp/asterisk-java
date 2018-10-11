@@ -91,7 +91,7 @@ public class ManagerReaderImpl implements ManagerReader
         this.dispatcher = dispatcher;
         this.source = source;
 
-        classMap = new EventClassMap();
+        classMap = new EventClassMap(source);
         this.responseBuilder = new ResponseBuilderImpl();
     }
 

@@ -62,6 +62,10 @@ class ClassType<C>
 				name = name.substring(3);
 				if (prop != null && !prop.name().isEmpty())
 					name = prop.name().toLowerCase(Locale.ENGLISH);
+				else
+					if ("Source".equals(name))
+						continue;
+
 				name = name.toLowerCase(Locale.ENGLISH);
 
 				getters.put(name, method);

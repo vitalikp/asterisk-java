@@ -42,7 +42,7 @@ public class ManagerReaderImpl implements ManagerReader
      */
     private final Log logger = LogFactory.getLog(getClass());
 
-    private final EventClassMap classMap;
+    private final EventClassMap eventClassMap;
 
     /**
      * The response builder utility to convert a map of attributes received from asterisk to
@@ -91,7 +91,7 @@ public class ManagerReaderImpl implements ManagerReader
         this.dispatcher = dispatcher;
         this.source = source;
 
-        classMap = new EventClassMap(source);
+        eventClassMap = new EventClassMap(source);
         this.responseBuilder = new ResponseBuilderImpl();
     }
 
@@ -108,7 +108,7 @@ public class ManagerReaderImpl implements ManagerReader
     @SuppressWarnings("unchecked")
     public void registerEventClass(Class eventClass)
     {
-        classMap.regClass(eventClass);
+        eventClassMap.regClass(eventClass);
     }
 
     private void readPrompt()
@@ -351,7 +351,7 @@ public class ManagerReaderImpl implements ManagerReader
     {
         ManagerEvent event;
 
-        event = classMap.newInstance(buffer);
+        event = eventClassMap.newInstance(buffer);
 
         if (event != null)
         {

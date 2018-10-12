@@ -234,8 +234,6 @@ public class ManagerReaderImpl implements ManagerReader
                     switch (packType)
                     {
                         case Event:
-                            // TODO tracing
-                            //logger.debug("attempting to build event: " + buffer.get("event"));
                             ManagerEvent event = buildEvent(buffer);
                             if (event != null)
                             {
@@ -249,8 +247,6 @@ public class ManagerReaderImpl implements ManagerReader
 
                         case Response:
                             ManagerResponse response = buildResponse(buffer);
-                            // TODO tracing
-                            //logger.debug("attempting to build response");
                             if (response != null)
                             {
                                 dispatcher.dispatchResponse(response);
@@ -300,8 +296,6 @@ public class ManagerReaderImpl implements ManagerReader
                                 packType = PackType.Event;
 
                         buffer.put(name, value);
-                        // TODO tracing
-                        //logger.debug("Got name [" + name + "], value: [" + value + "]");
                     }
                 }
             }

@@ -219,14 +219,6 @@ class EventClassMap extends ClassMap<ManagerEvent>
 			if ("event".equals(name))
 				continue;
 
-			/*
-			 * The source property needs special handling as it is already
-			 * defined in java.util.EventObject (the base class of
-			 * ManagerEvent), so we have to translate it.
-			 */
-			if ("source".equals(name))
-				name = "src";
-
 			value = props.get(name);
 
 			// ResponseEvents are sent in response to a ManagerAction if the

@@ -67,9 +67,15 @@ class ClassMap<C>
 
 	protected void regClass(String type, Class<? extends C> cls)
 	{
-		classes.put(type, new ClassType<C>(cls, this.params));
+		ClassType<C> clsType;
+
+		clsType = new ClassType<C>(cls, this.params);
+		classes.put(type, clsType);
 
 		log.debug(String.format("Registered %s type '%s' (%s)", suffix, type, cls));
+
+		type = Integer.toHexString(type.hashCode());
+		classes.put(type, clsType);
 	}
 
 	public C newInstance(String type, Object ... params)

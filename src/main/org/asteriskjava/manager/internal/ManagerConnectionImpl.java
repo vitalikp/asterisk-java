@@ -31,6 +31,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -747,7 +748,7 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
             throw new IllegalStateException("Unable to send " + action.getAction() + " action: socket not connected.");
         }
 
-        internalActionId = createInternalActionId();
+        internalActionId = createInternalActionId(action.getAction());
 
         // if the callbackHandler is null the user is obviously not interested
         // in the response, thats fine.
@@ -803,7 +804,7 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
         responseEvents = new ResponseEventsImpl();
         responseEventHandler = new ResponseEventHandler(responseEvents, action.getActionCompleteEventClass());
 
-        internalActionId = createInternalActionId();
+        internalActionId = createInternalActionId(action.getAction());
 
         // register response handler...
         synchronized (this.responseListeners)
@@ -867,12 +868,14 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
      * @see ManagerUtil#getInternalActionId(String)
      * @see ManagerUtil#stripInternalActionId(String)
      */
-    private String createInternalActionId()
+    private String createInternalActionId(String action)
     {
         final StringBuffer sb;
 
+        action = action.toLowerCase(Locale.ENGLISH);
+
         sb = new StringBuffer();
-        sb.append(this.hashCode());
+        sb.append(Integer.toHexString(action.hashCode()));
         sb.append("_");
         sb.append(actionIdCounter.getAndIncrement());
 

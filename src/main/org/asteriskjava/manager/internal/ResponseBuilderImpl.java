@@ -51,10 +51,8 @@ class ResponseBuilderImpl implements ResponseBuilder
     {
         ManagerResponse response;
         String responseType;
-        String proxyResponseType;
 
         responseType = attributes.get("response");
-        proxyResponseType = attributes.get("proxyresponse");
 
         // determine type
         if ("error".equalsIgnoreCase(responseType))
@@ -144,14 +142,7 @@ class ResponseBuilderImpl implements ResponseBuilder
         }
 
         // fill known attributes
-        if (responseType != null)
-        {
-            response.setResponse(responseType);
-        }
-        else if (proxyResponseType != null)
-        {
-            response.setResponse(proxyResponseType);
-        }
+        response.setResponse(responseType);
 
         // clone this map as it is reused by the ManagerReader
         response.setAttributes(new HashMap<String, String>(attributes));

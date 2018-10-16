@@ -154,10 +154,6 @@ class ResponseBuilderImpl implements ResponseBuilder
         {
             response.setMessage(attributes.get("message"));
         }
-        if (attributes.containsKey("uniqueid"))
-        {
-            response.setUniqueId(attributes.get("uniqueid"));
-        }
 
         return response;
     }

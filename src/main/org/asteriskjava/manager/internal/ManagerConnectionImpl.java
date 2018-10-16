@@ -53,6 +53,7 @@ import org.asteriskjava.manager.event.DisconnectEvent;
 import org.asteriskjava.manager.event.ManagerEvent;
 import org.asteriskjava.manager.event.ProtocolIdentifierReceivedEvent;
 import org.asteriskjava.manager.event.ResponseEvent;
+import org.asteriskjava.manager.exceptions.ResponseException;
 import org.asteriskjava.manager.response.ChallengeResponse;
 import org.asteriskjava.manager.response.ManagerError;
 import org.asteriskjava.manager.response.ManagerResponse;
@@ -664,7 +665,7 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
     }
 
     public ManagerResponse sendAction(ManagerAction action) throws IOException, TimeoutException, IllegalArgumentException,
-            IllegalStateException
+            IllegalStateException, ResponseException
     {
         return sendAction(action, defaultResponseTimeout);
     }
@@ -673,10 +674,11 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
      * Implements synchronous sending of "simple" actions.
      */
     public ManagerResponse sendAction(ManagerAction action, long timeout) throws IOException, TimeoutException,
-            IllegalArgumentException, IllegalStateException
+            IllegalArgumentException, IllegalStateException, ResponseException
     {
         ResponseHandlerResult result;
         SendActionCallback callbackHandler;
+        ManagerResponse response;
 
         result = new ResponseHandlerResult();
         callbackHandler = new DefaultSendActionCallback(result);
@@ -694,12 +696,17 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
             result.waitResp(timeout);
         }
 
+        response = result.getResponse();
+
         // still no response?
-        if (result.getResponse() == null)
+        if (response == null)
         {
             throw new TimeoutException("Timeout waiting for response to " + action.getAction()
                     + (action.getActionId() == null ? "" : " (actionId: " + action.getActionId() + ")"));
         }
+
+        if ("Error".equalsIgnoreCase(response.getResponse()))
+            throw new ResponseException(response);
 
         return result.getResponse();
     }

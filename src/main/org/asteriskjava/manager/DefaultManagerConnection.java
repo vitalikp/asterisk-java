@@ -20,6 +20,7 @@ import java.io.IOException;
 
 import org.asteriskjava.manager.action.EventGeneratingAction;
 import org.asteriskjava.manager.action.ManagerAction;
+import org.asteriskjava.manager.exceptions.ResponseException;
 import org.asteriskjava.manager.internal.ManagerConnectionImpl;
 import org.asteriskjava.manager.response.ManagerResponse;
 
@@ -283,13 +284,13 @@ public class DefaultManagerConnection implements ManagerConnection
     }
 
     public ManagerResponse sendAction(ManagerAction action) throws IOException, TimeoutException, IllegalArgumentException,
-            IllegalStateException
+            IllegalStateException, ResponseException
     {
         return impl.sendAction(action);
     }
 
     public ManagerResponse sendAction(ManagerAction action, long timeout) throws IOException, TimeoutException,
-            IllegalArgumentException, IllegalStateException
+            IllegalArgumentException, IllegalStateException, ResponseException
     {
         return impl.sendAction(action, timeout);
     }

@@ -21,6 +21,7 @@ import java.io.IOException;
 import org.asteriskjava.manager.action.EventGeneratingAction;
 import org.asteriskjava.manager.action.ManagerAction;
 import org.asteriskjava.manager.event.ManagerEvent;
+import org.asteriskjava.manager.exceptions.ResponseException;
 import org.asteriskjava.manager.response.ManagerResponse;
 
 /**
@@ -220,11 +221,12 @@ public interface ManagerConnection
      * @throws IllegalArgumentException if the action is <code>null</code>.
      * @throws IllegalStateException if you are not connected to an Asterisk
      *             server.
+     * @throws ResponseException if response is error
      * @see #sendAction(ManagerAction, long)
      * @see #sendAction(ManagerAction, SendActionCallback)
      */
     ManagerResponse sendAction(ManagerAction action) throws IOException, TimeoutException, IllegalArgumentException,
-            IllegalStateException;
+            IllegalStateException, ResponseException;
 
     /**
      * Sends a ManagerAction to the Asterisk server and waits for the
@@ -240,10 +242,11 @@ public interface ManagerConnection
      * @throws IllegalArgumentException if the action is <code>null</code>.
      * @throws IllegalStateException if you are not connected to an Asterisk
      *             server.
+     * @throws ResponseException if response is error
      * @see #sendAction(ManagerAction, SendActionCallback)
      */
     ManagerResponse sendAction(ManagerAction action, long timeout) throws IOException, TimeoutException,
-            IllegalArgumentException, IllegalStateException;
+            IllegalArgumentException, IllegalStateException, ResponseException;
 
     /**
      * Sends a ManagerAction to the Asterisk server and registers a callback

@@ -691,19 +691,7 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
                 return null;
             }
 
-            // only wait if we did not yet receive the response.
-            // Responses may be returned really fast.
-            if (result.getResponse() == null)
-            {
-                try
-                {
-                    result.wait(timeout);
-                }
-                catch (InterruptedException ex)
-                {
-                    logger.warn("Interrupted while waiting for result");
-                }
-            }
+            result.waitResp(timeout);
         }
 
         // still no response?
@@ -1268,6 +1256,23 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
         public void setResponse(ManagerResponse response)
         {
             this.response = response;
+        }
+
+        public void waitResp(long timeout)
+        {
+            // only wait if we did not yet receive the response.
+            // Responses may be returned really fast.
+            if (response != null)
+                return;
+            
+            try
+            {
+                this.wait(timeout);
+            }
+            catch (InterruptedException ex)
+            {
+                logger.warn("Interrupted while waiting for result");
+            }
         }
     }
 

@@ -34,6 +34,7 @@ public class MailboxCountResponse extends ManagerResponse
      */
     private static final long serialVersionUID = 7820598941277275838L;
     private String mailbox;
+    private int urgMessages;
     private Integer newMessages;
     private Integer oldMessages;
 
@@ -58,7 +59,18 @@ public class MailboxCountResponse extends ManagerResponse
         this.mailbox = mailbox;
     }
 
-    /**
+    public int getUrgMessages()
+    {
+        return urgMessages;
+    }
+
+    @Property(name = "UrgMessages")
+    public void setUrgMessages(int urgMessages)
+    {
+        this.urgMessages = urgMessages;
+    }
+
+	/**
      * Returns the number of new messages in the mailbox.
      *
      * @return the number of new messages.

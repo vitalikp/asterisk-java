@@ -86,7 +86,6 @@ public class ExtensionStateResponse extends ManagerResponse
         sb.append("actionId='" + getActionId() + "'; ");
         sb.append("message='" + getMessage() + "'; ");
         sb.append("response='" + getResponse() + "'; ");
-        sb.append("uniqueId='" + getUniqueId() + "'; ");
         sb.append("exten='" + getExten() + "'; ");
         sb.append("context='" + getContext() + "'; ");
         sb.append("hint='" + getHint() + "'; ");

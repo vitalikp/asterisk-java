@@ -44,7 +44,6 @@ public class ManagerResponse implements Serializable
     private String actionId;
     private String response;
     private String message;
-    private String uniqueId;
     private Map<String, String> attributes;
 
     /**
@@ -192,28 +191,6 @@ public class ManagerResponse implements Serializable
         this.response = response;
     }
 
-    /**
-     * Returns the unique id received with this response. The unique id is used
-     * to keep track of channels created by the action sent, for example an
-     * OriginateAction.
-     *
-     * @return the unique id received with this response.
-     */
-    public String getUniqueId()
-    {
-        return uniqueId;
-    }
-
-    /**
-     * Sets the unique id received with this response.
-     *
-     * @param uniqueId the unique id received with this response.
-     */
-    public void setUniqueId(String uniqueId)
-    {
-        this.uniqueId = uniqueId;
-    }
-
     @Override
     public String toString()
     {
@@ -224,7 +201,6 @@ public class ManagerResponse implements Serializable
         sb.append("actionId='" + getActionId() + "'; ");
         sb.append("message='" + getMessage() + "'; ");
         sb.append("response='" + getResponse() + "'; ");
-        sb.append("uniqueId='" + getUniqueId() + "'; ");
         sb.append("systemHashcode=" + System.identityHashCode(this));
 
         return sb.toString();

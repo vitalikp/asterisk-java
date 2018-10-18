@@ -25,7 +25,7 @@ public class RespClassMap extends ClassMap<ManagerResponse>
 
 		regEventClasses();
 
-		nullType = new ClassType<ManagerResponse>(ManagerResponse.class, null);
+		nullType = new ClassType<ManagerResponse>(ManagerResponse.class);
 	}
 
 	private void regEventClasses()

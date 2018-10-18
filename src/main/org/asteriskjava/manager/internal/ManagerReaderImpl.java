@@ -339,7 +339,7 @@ public class ManagerReaderImpl implements ManagerReader
     {
         ManagerResponse response;
 
-        response = responseBuilder.buildResponse(buffer);
+        response = respClassMap.buildResp(buffer);
 
         if (response != null)
         {

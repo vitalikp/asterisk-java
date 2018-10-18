@@ -29,7 +29,6 @@ import org.asteriskjava.util.SocketConnectionFacade;
  * <p>Do not use this interface in your code, it is intended to be used only by the
  * DefaultManagerConnection.
  *
- * @see org.asteriskjava.manager.internal.ResponseBuilder
  * @see org.asteriskjava.manager.DefaultManagerConnection
  * @author srt
  * @version $Id: ManagerReader.java 527 2006-08-08 01:48:16Z srt $

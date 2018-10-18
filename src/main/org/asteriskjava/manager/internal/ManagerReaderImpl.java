@@ -46,12 +46,6 @@ public class ManagerReaderImpl implements ManagerReader
     private final EventClassMap eventClassMap;
 
     /**
-     * The response builder utility to convert a map of attributes received from asterisk to
-     * instances of well known response classes.
-     */
-    private final ResponseBuilder responseBuilder;
-
-    /**
      * The dispatcher to use for dispatching events and responses.
      */
     private final Dispatcher dispatcher;
@@ -94,7 +88,6 @@ public class ManagerReaderImpl implements ManagerReader
 
         respClassMap = new RespClassMap();
         eventClassMap = new EventClassMap(source);
-        this.responseBuilder = new ResponseBuilderImpl();
     }
 
     /**

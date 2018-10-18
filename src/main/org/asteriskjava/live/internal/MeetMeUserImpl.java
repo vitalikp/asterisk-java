@@ -22,6 +22,7 @@ import org.asteriskjava.live.ManagerCommunicationException;
 import org.asteriskjava.live.MeetMeUser;
 import org.asteriskjava.live.MeetMeUserState;
 import org.asteriskjava.manager.action.CommandAction;
+import org.asteriskjava.manager.exceptions.ResponseException;
 
 class MeetMeUserImpl extends AbstractLiveObject implements MeetMeUser
 {
@@ -150,7 +151,14 @@ class MeetMeUserImpl extends AbstractLiveObject implements MeetMeUser
         sb.append(" ");
         sb.append(userNumber);
 
-        server.sendAction(new CommandAction(sb.toString()));
+        try
+        {
+            server.sendAction(new CommandAction(sb.toString()));
+        }
+        catch (ResponseException e)
+        {
+            // ignore response error
+        }
     }
 
     @Override

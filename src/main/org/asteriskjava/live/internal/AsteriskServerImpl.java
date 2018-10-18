@@ -69,9 +69,9 @@ import org.asteriskjava.manager.event.NewStateEvent;
 import org.asteriskjava.manager.event.RenameEvent;
 import org.asteriskjava.manager.event.ResponseEvent;
 import org.asteriskjava.manager.event.UnlinkEvent;
+import org.asteriskjava.manager.exceptions.ResponseException;
 import org.asteriskjava.manager.response.CommandResponse;
 import org.asteriskjava.manager.response.MailboxCountResponse;
-import org.asteriskjava.manager.response.ManagerError;
 import org.asteriskjava.manager.response.ManagerResponse;
 import org.asteriskjava.util.DateUtil;
 import org.asteriskjava.util.Log;
@@ -436,7 +436,14 @@ public class AsteriskServerImpl implements AsteriskServer, ManagerEventListener
         }
 
         initializeIfNeeded();
-        sendActionOnEventConnection(originateAction);
+        try
+        {
+            sendActionOnEventConnection(originateAction);
+        }
+        catch (ResponseException e)
+        {
+            // ignore response error
+        }
     }
 
     public Collection<AsteriskChannel> getChannels() throws ManagerCommunicationException
@@ -482,10 +489,11 @@ public class AsteriskServerImpl implements AsteriskServer, ManagerEventListener
         initializeIfNeeded();
         if (version == null)
         {
-            response = sendAction(new CommandAction(SHOW_VERSION_COMMAND));
-            if (response instanceof CommandResponse)
+            final List result;
+
+            try
             {
-                final List result;
+                response = sendAction(new CommandAction(SHOW_VERSION_COMMAND));
 
                 result = ((CommandResponse) response).getResult();
                 if (result.size() > 0)
@@ -493,10 +501,10 @@ public class AsteriskServerImpl implements AsteriskServer, ManagerEventListener
                     version = (String) result.get(0);
                 }
             }
-            else
+            catch (ResponseException e)
             {
                 logger.error("Response to CommandAction(\"" + SHOW_VERSION_COMMAND + "\") was not a CommandResponse but "
-                        + response);
+                        + e.getMessage());
             }
         }
 
@@ -591,8 +599,11 @@ public class AsteriskServerImpl implements AsteriskServer, ManagerEventListener
         String value;
 
         initializeIfNeeded();
-        response = sendAction(new GetVarAction(variable));
-        if (response instanceof ManagerError)
+        try
+        {
+            response = sendAction(new GetVarAction(variable));
+        }
+        catch (ResponseException e)
         {
             return null;
         }
@@ -606,13 +617,14 @@ public class AsteriskServerImpl implements AsteriskServer, ManagerEventListener
 
     public void setGlobalVariable(String variable, String value) throws ManagerCommunicationException
     {
-        ManagerResponse response;
-
         initializeIfNeeded();
-        response = sendAction(new SetVarAction(variable, value));
-        if (response instanceof ManagerError)
+        try
         {
-            logger.error("Unable to set global variable '" + variable + "' to '" + value + "':" + response.getMessage());
+            sendAction(new SetVarAction(variable, value));
+        }
+        catch (ResponseException e)
+        {
+            logger.error("Unable to set global variable '" + variable + "' to '" + value + "':" + e.getMessage());
         }
     }
 
@@ -624,11 +636,14 @@ public class AsteriskServerImpl implements AsteriskServer, ManagerEventListener
 
         initializeIfNeeded();
         voicemailboxes = new ArrayList<Voicemailbox>();
-        response = sendAction(new CommandAction(SHOW_VOICEMAIL_USERS_COMMAND));
-        if (!(response instanceof CommandResponse))
+        try
+        {
+            response = sendAction(new CommandAction(SHOW_VOICEMAIL_USERS_COMMAND));
+        }
+        catch (ResponseException e)
         {
             logger.error("Response to CommandAction(\"" + SHOW_VOICEMAIL_USERS_COMMAND
-                    + "\") was not a CommandResponse but " + response);
+                    + "\") contains an error: " + e.getMessage());
             return voicemailboxes;
         }
 
@@ -669,19 +684,20 @@ public class AsteriskServerImpl implements AsteriskServer, ManagerEventListener
             final String fullname;
 
             fullname = voicemailbox.getMailbox() + "@" + voicemailbox.getContext();
-            response = sendAction(new MailboxCountAction(fullname));
-            if (response instanceof MailboxCountResponse)
+            try
             {
-                MailboxCountResponse mailboxCountResponse;
+                response = sendAction(new MailboxCountAction(fullname));
+            }
+            catch (ResponseException e)
+            {
+                logger.error("Response to MailboxCountAction contains an error: " + e.getMessage());
+            }
 
-                mailboxCountResponse = (MailboxCountResponse) response;
-                voicemailbox.setNewMessages(mailboxCountResponse.getNewMessages());
-                voicemailbox.setOldMessages(mailboxCountResponse.getOldMessages());
-            }
-            else
-            {
-                logger.error("Response to MailboxCountAction was not a MailboxCountResponse but " + response);
-            }
+            MailboxCountResponse mailboxCountResponse;
+
+            mailboxCountResponse = (MailboxCountResponse) response;
+            voicemailbox.setNewMessages(mailboxCountResponse.getNewMessages());
+            voicemailbox.setOldMessages(mailboxCountResponse.getOldMessages());
         }
 
         return voicemailboxes;
@@ -692,11 +708,14 @@ public class AsteriskServerImpl implements AsteriskServer, ManagerEventListener
         final ManagerResponse response;
 
         initializeIfNeeded();
-        response = sendAction(new CommandAction(command));
-        if (!(response instanceof CommandResponse))
+        try
+        {
+            response = sendAction(new CommandAction(command));
+        }
+        catch (ResponseException e)
         {
             throw new ManagerCommunicationException("Response to CommandAction(\"" + command
-                    + "\") was not a CommandResponse but " + response, null);
+                    + "\") contains an error: " + e.getMessage(), null);
         }
 
         return ((CommandResponse) response).getResult();
@@ -755,11 +774,15 @@ public class AsteriskServerImpl implements AsteriskServer, ManagerEventListener
         }
     }
 
-    ManagerResponse sendActionOnEventConnection(ManagerAction action) throws ManagerCommunicationException
+    ManagerResponse sendActionOnEventConnection(ManagerAction action) throws ManagerCommunicationException, ResponseException
     {
         try
         {
             return eventConnection.sendAction(action);
+        }
+        catch (ResponseException e)
+        {
+            throw e;
         }
         catch (Exception e)
         {
@@ -767,12 +790,16 @@ public class AsteriskServerImpl implements AsteriskServer, ManagerEventListener
         }
     }
 
-    ManagerResponse sendAction(ManagerAction action) throws ManagerCommunicationException
+    ManagerResponse sendAction(ManagerAction action) throws ManagerCommunicationException, ResponseException
     {
         // return connectionPool.sendAction(action);
         try
         {
             return eventConnection.sendAction(action);
+        }
+        catch (ResponseException e)
+        {
+            throw e;
         }
         catch (Exception e)
         {

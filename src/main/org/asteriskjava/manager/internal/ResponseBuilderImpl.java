@@ -26,7 +26,6 @@ import org.asteriskjava.manager.response.CoreStatusResponse;
 import org.asteriskjava.manager.response.ExtensionStateResponse;
 import org.asteriskjava.manager.response.MailboxCountResponse;
 import org.asteriskjava.manager.response.MailboxStatusResponse;
-import org.asteriskjava.manager.response.ManagerError;
 import org.asteriskjava.manager.response.ManagerResponse;
 import org.asteriskjava.util.AstUtil;
 import org.asteriskjava.util.DateUtil;
@@ -55,11 +54,7 @@ class ResponseBuilderImpl implements ResponseBuilder
         responseType = attributes.get("response");
 
         // determine type
-        if ("error".equalsIgnoreCase(responseType))
-        {
-            response = new ManagerError();
-        }
-        else if (attributes.containsKey("challenge"))
+        if (attributes.containsKey("challenge"))
         {
             final ChallengeResponse challengeResponse = new ChallengeResponse();
             challengeResponse.setChallenge((String) attributes.get("challenge"));

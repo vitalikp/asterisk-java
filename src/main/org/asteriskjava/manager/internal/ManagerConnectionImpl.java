@@ -55,7 +55,6 @@ import org.asteriskjava.manager.event.ProtocolIdentifierReceivedEvent;
 import org.asteriskjava.manager.event.ResponseEvent;
 import org.asteriskjava.manager.exceptions.ResponseException;
 import org.asteriskjava.manager.response.ChallengeResponse;
-import org.asteriskjava.manager.response.ManagerError;
 import org.asteriskjava.manager.response.ManagerResponse;
 import org.asteriskjava.util.DateUtil;
 import org.asteriskjava.util.Log;
@@ -470,7 +469,6 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
         String challenge;
         String key;
         LoginAction loginAction;
-        ManagerResponse loginResponse;
 
         if (socket == null)
         {
@@ -551,18 +549,17 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
         loginAction = new LoginAction(username, "MD5", key, eventMask);
         try
         {
-            loginResponse = sendAction(loginAction);
+            sendAction(loginAction);
+        }
+        catch (ResponseException e)
+        {
+            disconnect();
+            throw new AuthenticationFailedException(e.getMessage());
         }
         catch (Exception e)
         {
             disconnect();
             throw new AuthenticationFailedException("Unable to send login action", e);
-        }
-
-        if (loginResponse instanceof ManagerError)
-        {
-            disconnect();
-            throw new AuthenticationFailedException(loginResponse.getMessage());
         }
 
         state = CONNECTED;
@@ -1374,7 +1371,7 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
             synchronized (events)
             {
                 events.setRepsonse(response);
-                if (response instanceof ManagerError)
+                if ("Error".equalsIgnoreCase(response.getResponse()))
                 {
                     events.setComplete(true);
                 }

@@ -27,7 +27,6 @@ package org.asteriskjava.manager.action;
  * closed by Asterisk.
  *
  * @see org.asteriskjava.manager.action.ChallengeAction
- * @see org.asteriskjava.manager.response.ManagerError
  * @author srt
  * @version $Id: LoginAction.java 729 2007-05-26 05:16:57Z sprior $
  */

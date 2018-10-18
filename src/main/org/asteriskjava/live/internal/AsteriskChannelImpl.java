@@ -43,7 +43,7 @@ import org.asteriskjava.manager.action.RedirectAction;
 import org.asteriskjava.manager.action.SetVarAction;
 import org.asteriskjava.manager.action.StopMonitorAction;
 import org.asteriskjava.manager.action.UnpauseMonitorAction;
-import org.asteriskjava.manager.response.ManagerError;
+import org.asteriskjava.manager.exceptions.ResponseException;
 import org.asteriskjava.manager.response.ManagerResponse;
 
 /**
@@ -541,12 +541,13 @@ class AsteriskChannelImpl extends AbstractLiveObject implements AsteriskChannel
 
     public void hangup() throws ManagerCommunicationException, NoSuchChannelException
     {
-        ManagerResponse response;
-
-        response = server.sendAction(new HangupAction(name));
-        if (response instanceof ManagerError)
+        try
         {
-            throw new NoSuchChannelException("Channel '" + name + "' is not available: " + response.getMessage());
+            server.sendAction(new HangupAction(name));
+        }
+        catch (ResponseException e)
+        {
+            throw new NoSuchChannelException("Channel '" + name + "' is not available: " + e.getMessage());
         }
     }
 
@@ -561,45 +562,47 @@ class AsteriskChannelImpl extends AbstractLiveObject implements AsteriskChannel
 
     public void setAbsoluteTimeout(int seconds) throws ManagerCommunicationException, NoSuchChannelException
     {
-        ManagerResponse response;
-
-        response = server.sendAction(new AbsoluteTimeoutAction(name, seconds));
-        if (response instanceof ManagerError)
+        try
         {
-            throw new NoSuchChannelException("Channel '" + name + "' is not available: " + response.getMessage());
+            server.sendAction(new AbsoluteTimeoutAction(name, seconds));
+        }
+        catch (ResponseException e)
+        {
+            throw new NoSuchChannelException("Channel '" + name + "' is not available: " + e.getMessage());
         }
     }
 
     public void redirect(String context, String exten, int priority) throws ManagerCommunicationException,
             NoSuchChannelException
     {
-        ManagerResponse response;
-
-        response = server.sendAction(new RedirectAction(name, context, exten, priority));
-        if (response instanceof ManagerError)
+        try
         {
-            throw new NoSuchChannelException("Channel '" + name + "' is not available: " + response.getMessage());
+            server.sendAction(new RedirectAction(name, context, exten, priority));
+        }
+        catch (ResponseException e)
+        {
+            throw new NoSuchChannelException("Channel '" + name + "' is not available: " + e.getMessage());
         }
     }
 
     public void redirectBothLegs(String context, String exten, int priority) throws ManagerCommunicationException,
             NoSuchChannelException
     {
-        ManagerResponse response;
-
-        if (linkedChannel == null)
+        try
         {
-            response = server.sendAction(new RedirectAction(name, context, exten, priority));
+            if (linkedChannel == null)
+            {
+                server.sendAction(new RedirectAction(name, context, exten, priority));
+            }
+            else
+            {
+                server.sendAction(new RedirectAction(name, linkedChannel.getName(), context, exten, priority,
+                        context, exten, priority));
+            }
         }
-        else
+        catch (ResponseException e)
         {
-            response = server.sendAction(new RedirectAction(name, linkedChannel.getName(), context, exten, priority,
-                    context, exten, priority));
-        }
-
-        if (response instanceof ManagerError)
-        {
-            throw new NoSuchChannelException("Channel '" + name + "' is not available: " + response.getMessage());
+            throw new NoSuchChannelException("Channel '" + name + "' is not available: " + e.getMessage());
         }
     }
 
@@ -608,10 +611,13 @@ class AsteriskChannelImpl extends AbstractLiveObject implements AsteriskChannel
         ManagerResponse response;
         String value;
 
-        response = server.sendAction(new GetVarAction(name, variable));
-        if (response instanceof ManagerError)
+        try
         {
-            throw new NoSuchChannelException("Channel '" + name + "' is not available: " + response.getMessage());
+            response = server.sendAction(new GetVarAction(name, variable));
+        }
+        catch (ResponseException e)
+        {
+            throw new NoSuchChannelException("Channel '" + name + "' is not available: " + e.getMessage());
         }
         value = response.getAttribute("Value");
         if (value == null)
@@ -623,29 +629,31 @@ class AsteriskChannelImpl extends AbstractLiveObject implements AsteriskChannel
 
     public void setVariable(String variable, String value) throws ManagerCommunicationException, NoSuchChannelException
     {
-        ManagerResponse response;
-
-        response = server.sendAction(new SetVarAction(name, variable, value));
-        if (response instanceof ManagerError)
+        try
         {
-            throw new NoSuchChannelException("Channel '" + name + "' is not available: " + response.getMessage());
+            server.sendAction(new SetVarAction(name, variable, value));
+        }
+        catch (ResponseException e)
+        {
+            throw new NoSuchChannelException("Channel '" + name + "' is not available: " + e.getMessage());
         }
     }
 
     public void playDtmf(String digit) throws ManagerCommunicationException, NoSuchChannelException,
             IllegalArgumentException
     {
-        ManagerResponse response;
-
         if (digit == null)
         {
             throw new IllegalArgumentException("DTMF digit to send must not be null");
         }
 
-        response = server.sendAction(new PlayDtmfAction(name, digit));
-        if (response instanceof ManagerError)
+        try
         {
-            throw new NoSuchChannelException("Channel '" + name + "' is not available: " + response.getMessage());
+            server.sendAction(new PlayDtmfAction(name, digit));
+        }
+        catch (ResponseException e)
+        {
+            throw new NoSuchChannelException("Channel '" + name + "' is not available: " + e.getMessage());
         }
     }
 
@@ -662,62 +670,67 @@ class AsteriskChannelImpl extends AbstractLiveObject implements AsteriskChannel
     public void startMonitoring(String filename, String format, boolean mix) throws ManagerCommunicationException,
             NoSuchChannelException
     {
-        ManagerResponse response;
-
-        response = server.sendAction(new MonitorAction(name, filename, format, mix));
-        if (response instanceof ManagerError)
+        try
         {
-            throw new NoSuchChannelException("Channel '" + name + "' is not available: " + response.getMessage());
+            server.sendAction(new MonitorAction(name, filename, format, mix));
+        }
+        catch (ResponseException e)
+        {
+            throw new NoSuchChannelException("Channel '" + name + "' is not available: " + e.getMessage());
         }
     }
 
     public void changeMonitoring(String filename) throws ManagerCommunicationException, NoSuchChannelException,
             IllegalArgumentException
     {
-        ManagerResponse response;
-
         if (filename == null)
         {
             throw new IllegalArgumentException("New filename must not be null");
         }
 
-        response = server.sendAction(new ChangeMonitorAction(name, filename));
-        if (response instanceof ManagerError)
+        try
         {
-            throw new NoSuchChannelException("Channel '" + name + "' is not available: " + response.getMessage());
+            server.sendAction(new ChangeMonitorAction(name, filename));
+        }
+        catch (ResponseException e)
+        {
+            throw new NoSuchChannelException("Channel '" + name + "' is not available: " + e.getMessage());
         }
     }
 
     public void stopMonitoring() throws ManagerCommunicationException, NoSuchChannelException
     {
-        ManagerResponse response;
-
-        response = server.sendAction(new StopMonitorAction(name));
-        if (response instanceof ManagerError)
+        try
         {
-            throw new NoSuchChannelException("Channel '" + name + "' is not available: " + response.getMessage());
+            server.sendAction(new StopMonitorAction(name));
+        }
+        catch (ResponseException e)
+        {
+            throw new NoSuchChannelException("Channel '" + name + "' is not available: " + e.getMessage());
         }
     }
 
     public void pauseMonitoring() throws ManagerCommunicationException, NoSuchChannelException
     {
-        ManagerResponse response;
-
-        response = server.sendAction(new PauseMonitorAction(name));
-        if (response instanceof ManagerError)
+        try
         {
-            throw new NoSuchChannelException("Channel '" + name + "' is not available: " + response.getMessage());
+            server.sendAction(new PauseMonitorAction(name));
+        }
+        catch (ResponseException e)
+        {
+            throw new NoSuchChannelException("Channel '" + name + "' is not available: " + e.getMessage());
         }
     }
 
     public void unpauseMonitoring() throws ManagerCommunicationException, NoSuchChannelException
     {
-        ManagerResponse response;
-
-        response = server.sendAction(new UnpauseMonitorAction(name));
-        if (response instanceof ManagerError)
+        try
         {
-            throw new NoSuchChannelException("Channel '" + name + "' is not available: " + response.getMessage());
+            server.sendAction(new UnpauseMonitorAction(name));
+        }
+        catch (ResponseException e)
+        {
+            throw new NoSuchChannelException("Channel '" + name + "' is not available: " + e.getMessage());
         }
     }
 

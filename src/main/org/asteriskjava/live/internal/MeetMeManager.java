@@ -32,8 +32,8 @@ import org.asteriskjava.manager.event.MeetMeLeaveEvent;
 import org.asteriskjava.manager.event.MeetMeMuteEvent;
 import org.asteriskjava.manager.event.MeetMeStopTalkingEvent;
 import org.asteriskjava.manager.event.MeetMeTalkingEvent;
+import org.asteriskjava.manager.exceptions.ResponseException;
 import org.asteriskjava.manager.response.CommandResponse;
-import org.asteriskjava.manager.response.ManagerError;
 import org.asteriskjava.manager.response.ManagerResponse;
 import org.asteriskjava.util.DateUtil;
 import org.asteriskjava.util.Log;
@@ -204,9 +204,9 @@ class MeetMeManager
             logger.error("Unable to send \"" + MEETME_LIST_COMMAND + "\" command", e);
             return;
         }
-        if (response instanceof ManagerError)
+        catch (ResponseException e)
         {
-            logger.error("Unable to send \"" + MEETME_LIST_COMMAND + "\" command: " + response.getMessage());
+            logger.error("Unable to send \"" + MEETME_LIST_COMMAND + "\" command: " + e.getMessage());
             return;
         }
         if (!(response instanceof CommandResponse))

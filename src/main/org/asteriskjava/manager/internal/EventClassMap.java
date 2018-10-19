@@ -248,7 +248,7 @@ class EventClassMap extends ClassMap<ManagerEvent>
 		}
 	}
 
-	public ManagerEvent newInstance(Map<String, String> attrs)
+	public ManagerEvent newInstance(Map<String, String> attrs, Object source)
 	{
 		ClassType<ManagerEvent> clsType;
 		ManagerEvent event;

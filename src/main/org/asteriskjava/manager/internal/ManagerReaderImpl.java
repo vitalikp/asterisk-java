@@ -346,7 +346,7 @@ public class ManagerReaderImpl implements ManagerReader
     {
         ManagerEvent event;
 
-        event = eventClassMap.newInstance(buffer);
+        event = eventClassMap.newInstance(buffer, source);
 
         if (event != null)
         {

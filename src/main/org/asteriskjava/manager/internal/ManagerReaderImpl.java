@@ -87,7 +87,7 @@ public class ManagerReaderImpl implements ManagerReader
         this.source = source;
 
         respClassMap = new RespClassMap();
-        eventClassMap = new EventClassMap(source);
+        eventClassMap = new EventClassMap();
     }
 
     /**

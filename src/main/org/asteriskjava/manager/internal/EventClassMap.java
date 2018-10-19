@@ -81,12 +81,9 @@ import org.asteriskjava.manager.event.ZapShowChannelsEvent;
 
 class EventClassMap extends ClassMap<ManagerEvent>
 {
-	private final Object source;
-
-	public EventClassMap(Object source)
+	public EventClassMap()
 	{
 		super("Event", ManagerEvent.class, new Class[]{Object.class});
-		this.source = source;
 
 		regEventClasses();
 	}

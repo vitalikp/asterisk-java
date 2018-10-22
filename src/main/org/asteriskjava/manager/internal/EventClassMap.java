@@ -174,39 +174,6 @@ class EventClassMap extends ClassMap<ManagerEvent>
 		super.regClass(type, cls);
 	}
 
-	private ClassType<ManagerEvent> get(Map<String, String> attrs)
-	{
-		ClassType<ManagerEvent> clsType;
-		String type;
-
-		type = attrs.get("event");
-		if (type == null)
-		{
-			log.error("No event type in properties");
-			return null;
-		}
-		type = type.toLowerCase(Locale.ENGLISH);
-
-		// Change in Asterisk 1.4 where the name of the UserEvent is sent as property instead
-		// of the event name (AJ-48)
-		if ("userevent".equals(type))
-		{
-			if (attrs.get("userevent") == null)
-			{
-				log.error("No user event type in properties");
-				return null;
-			}
-
-			type += attrs.get("userevent").toLowerCase(Locale.ENGLISH);
-		}
-
-		clsType = classes.get(type);
-		if (clsType == null)
-			log.info(String.format("No class registered for event type '%s', attributes: %s", type, attrs));
-
-		return clsType;
-	}
-
 	private void setProps(ManagerEvent event, ClassType<ManagerEvent> clsType, Map<String, String> props)
 	{
 		String value;
@@ -249,10 +216,35 @@ class EventClassMap extends ClassMap<ManagerEvent>
 	{
 		ClassType<ManagerEvent> clsType;
 		ManagerEvent event;
+		String type;
 
-		clsType = get(attrs);
-		if (clsType == null)
+		type = attrs.get("event");
+		if (type == null)
+		{
+			log.error("No event type in properties");
 			return null;
+		}
+		type = type.toLowerCase(Locale.ENGLISH);
+
+		// Change in Asterisk 1.4 where the name of the UserEvent is sent as property instead
+		// of the event name (AJ-48)
+		if ("UserEvent".equalsIgnoreCase(type))
+		{
+			if (attrs.get("userevent") == null)
+			{
+				log.error("No user event type in properties");
+				return null;
+			}
+
+			type += attrs.get("userevent").toLowerCase(Locale.ENGLISH);
+		}
+
+		clsType = classes.get(type);
+		if (clsType == null)
+		{
+			log.info(String.format("No class registered for event type '%s', attributes: %s", type, attrs));
+			return null;
+		}
 
 		event = super.newInstance(clsType, source);
 		if (event == null)

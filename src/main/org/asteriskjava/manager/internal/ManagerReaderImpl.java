@@ -135,6 +135,7 @@ public class ManagerReaderImpl implements ManagerReader
         throws IOException
     {
         CommandResponse cmdResp = new CommandResponse();
+        String ID = null;
         String line;
         int crIdx;
 
@@ -160,6 +161,12 @@ public class ManagerReaderImpl implements ManagerReader
                 // don't skip the "new" current line
                 cmdRes.remove(crIdx--);
 
+                if (crNVPair[1] != null)
+                {
+                    ID = ManagerUtil.getInternalActionId(crNVPair[1]);
+                    crNVPair[1] = ManagerUtil.stripInternalActionId(crNVPair[1]);
+                }
+
                 // Register the action id with the command result
                 cmdResp.setActionId(crNVPair[1]);
             }
@@ -180,6 +187,12 @@ public class ManagerReaderImpl implements ManagerReader
             crIdx++;
         }
 
+        if (ID == null)
+        {
+            logger.error("Unable to retrieve internalActionId from response: " + "actionId '" + cmdResp.getActionId() + "':\n" + cmdResp);
+            return;
+        }
+
         cmdResp.setResponse("Follows");
         cmdResp.setDateReceived(DateUtil.getDate());
         // clone commandResult as it is reused
@@ -188,7 +201,7 @@ public class ManagerReaderImpl implements ManagerReader
         attributes.put("actionid", cmdResp.getActionId());
         attributes.put("response", cmdResp.getResponse());
         cmdResp.setAttributes(attributes);
-        dispatcher.dispatchResponse(cmdResp);
+        dispatcher.dispatchResponse(ID, cmdResp);
     }
 
     /**
@@ -203,6 +216,7 @@ public class ManagerReaderImpl implements ManagerReader
     {
         final Map<String, String> buffer = new HashMap<String, String>();
         final List<String> commandResult = new ArrayList<String>();
+        String ID;
         String line;
         PackType packType = PackType.None;
 
@@ -244,7 +258,17 @@ public class ManagerReaderImpl implements ManagerReader
                             ManagerResponse response = buildResponse(buffer);
                             if (response != null)
                             {
-                                dispatcher.dispatchResponse(response);
+                                ID = response.getActionId();
+                                if (ID != null)
+                                {
+                                    response.setActionId(ManagerUtil.stripInternalActionId(ID));
+                                    ID = ManagerUtil.getInternalActionId(ID);
+                                }
+
+                                if (ID == null)
+                                    logger.error("Unable to retrieve internalActionId from response: " + "actionId '" + response.getActionId() + "':\n" + response);
+
+                                dispatcher.dispatchResponse(ID, response);
                             }
                             break;
 

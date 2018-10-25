@@ -917,11 +917,13 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
      * @param response the response received by the reader
      * @see ManagerReader
      */
-    public void dispatchResponse(ManagerResponse response)
+    public void dispatchResponse(String ID, ManagerResponse response)
     {
-        final String actionId;
         String internalActionId;
         SendActionCallback listener;
+
+        if (ID == null)
+            return;
 
         // shouldn't happen
         if (response == null)
@@ -930,38 +932,24 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
             return;
         }
 
-        actionId = response.getActionId();
-        internalActionId = null;
+        internalActionId = ID;
         listener = null;
-
-        if (actionId != null)
-        {
-            internalActionId = ManagerUtil.getInternalActionId(actionId);
-            response.setActionId(ManagerUtil.stripInternalActionId(actionId));
-        }
 
         logger.debug("Dispatching response with internalActionId '" + internalActionId + "':\n" + response);
 
-        if (internalActionId != null)
+        synchronized (this.responseListeners)
         {
-            synchronized (this.responseListeners)
+            listener = responseListeners.get(internalActionId);
+            if (listener != null)
             {
-                listener = responseListeners.get(internalActionId);
-                if (listener != null)
-                {
-                    this.responseListeners.remove(internalActionId);
-                }
-                else
-                {
-                    // when using the async sendAction it's ok not to register a
-                    // callback so if we don't find a response handler thats ok
-                    logger.debug("No response listener registered for " + "internalActionId '" + internalActionId + "'");
-                }
+                this.responseListeners.remove(internalActionId);
             }
-        }
-        else
-        {
-            logger.error("Unable to retrieve internalActionId from response: " + "actionId '" + actionId + "':\n" + response);
+            else
+            {
+                // when using the async sendAction it's ok not to register a
+                // callback so if we don't find a response handler thats ok
+                logger.debug("No response listener registered for " + "internalActionId '" + internalActionId + "'");
+            }
         }
 
         if (listener != null)

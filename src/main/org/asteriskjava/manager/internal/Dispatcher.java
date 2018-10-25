@@ -39,7 +39,7 @@ interface Dispatcher
      * @param response the response received by the reader
      * @see ManagerReader
      */
-    void dispatchResponse(ManagerResponse response);
+    void dispatchResponse(String ID, ManagerResponse response);
 
     /**
      * This method is called by the reader whenever a ManagerEvent is received.

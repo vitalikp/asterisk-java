@@ -174,6 +174,7 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
     private final AtomicLong reconnectThreadCounter = new AtomicLong(0);
 
     private final EventClassMap eventClassMap;
+    private final RespClassMap respClassMap;
 
     /**
      * The reader to use to receive events and responses from asterisk.
@@ -229,6 +230,7 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
     {
         this.id = idCounter.getAndIncrement();
         eventClassMap = new EventClassMap();
+        respClassMap = new RespClassMap();
         this.responseListeners = new HashMap<String, SendActionCallback>();
         this.responseEventListeners = new HashMap<String, ManagerEventListener>();
         this.eventListeners = new ArrayList<ManagerEventListener>();

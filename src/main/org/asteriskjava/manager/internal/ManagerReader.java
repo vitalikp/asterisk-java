@@ -22,7 +22,7 @@ import org.asteriskjava.util.SocketConnectionFacade;
 
 import java.io.IOException;
 
-public class ManagerReaderImpl implements Runnable
+public class ManagerReader implements Runnable
 {
     /**
      * Instance logger.
@@ -49,7 +49,7 @@ public class ManagerReaderImpl implements Runnable
      *
      * @param dispatcher the dispatcher to use for dispatching events and responses.
      */
-    public ManagerReaderImpl(final Dispatcher dispatcher)
+    public ManagerReader(final Dispatcher dispatcher)
     {
         this.dispatcher = dispatcher;
     }

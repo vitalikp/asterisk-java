@@ -178,7 +178,7 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
     /**
      * The reader to use to receive events and responses from asterisk.
      */
-    private ManagerReaderImpl reader;
+    private ManagerReader reader;
 
     /**
      * The writer to use to send actions to asterisk.
@@ -238,9 +238,9 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
 
     // the following two methods can be overridden when running test cases to
     // return a mock object
-    protected ManagerReaderImpl createReader(Dispatcher dispatcher)
+    protected ManagerReader createReader(Dispatcher dispatcher)
     {
-        return new ManagerReaderImpl(dispatcher);
+        return new ManagerReader(dispatcher);
     }
 
     protected ManagerWriter createWriter()

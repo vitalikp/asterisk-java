@@ -1015,6 +1015,44 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
         fireEvent(disconnectEvent);
     }
 
+    private void onResponse(ResponseEvent event)
+    {
+        ResponseEvent responseEvent;
+        String internalActionId;
+
+        responseEvent = (ResponseEvent) event;
+        internalActionId = responseEvent.getInternalActionId();
+        if (internalActionId == null)
+        {
+            // ResponseEvent without internalActionId:
+            // this happens if the same event class is used as response
+            // event
+            // and as an event that is not triggered by a Manager command
+            // Example: QueueMemberStatusEvent.
+            // logger.debug("ResponseEvent without "
+            // + "internalActionId:\n" + responseEvent);
+            return;
+        }
+
+        synchronized (responseEventListeners)
+        {
+            ManagerEventListener listener;
+
+            listener = responseEventListeners.get(internalActionId);
+            if (listener == null)
+                return;
+
+            try
+            {
+                listener.onManagerEvent(event);
+            }
+            catch (Exception e)
+            {
+                logger.warn("Unexpected exception in response event listener " + listener.getClass().getName(), e);
+            }
+        }
+    }
+
     /**
      * This method is called by the reader whenever a ManagerEvent is received.
      * The event is dispatched to all registered ManagerEventHandlers.
@@ -1042,42 +1080,7 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
         // Dispatch ResponseEvents to the appropriate responseEventListener
         if (event instanceof ResponseEvent)
         {
-            ResponseEvent responseEvent;
-            String internalActionId;
-
-            responseEvent = (ResponseEvent) event;
-            internalActionId = responseEvent.getInternalActionId();
-            if (internalActionId != null)
-            {
-                synchronized (responseEventListeners)
-                {
-                    ManagerEventListener listener;
-
-                    listener = responseEventListeners.get(internalActionId);
-                    if (listener != null)
-                    {
-                        try
-                        {
-                            listener.onManagerEvent(event);
-                        }
-                        catch (Exception e)
-                        {
-                            logger.warn("Unexpected exception in response event listener " + listener.getClass().getName(),
-                                    e);
-                        }
-                    }
-                }
-            }
-            else
-            {
-                // ResponseEvent without internalActionId:
-                // this happens if the same event class is used as response
-                // event
-                // and as an event that is not triggered by a Manager command
-                // Example: QueueMemberStatusEvent.
-                // logger.debug("ResponseEvent without "
-                // + "internalActionId:\n" + responseEvent);
-            } // NOPMD
+            onResponse((ResponseEvent)event);
         }
 
         fireEvent(event);

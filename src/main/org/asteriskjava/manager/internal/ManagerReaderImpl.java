@@ -22,13 +22,7 @@ import org.asteriskjava.util.SocketConnectionFacade;
 
 import java.io.IOException;
 
-/**
- * Default implementation of the ManagerReader interface.
- *
- * @author srt
- * @version $Id: ManagerReaderImpl.java 878 2007-08-01 22:04:11Z srt $
- */
-public class ManagerReaderImpl implements ManagerReader
+public class ManagerReaderImpl implements Runnable
 {
     /**
      * Instance logger.

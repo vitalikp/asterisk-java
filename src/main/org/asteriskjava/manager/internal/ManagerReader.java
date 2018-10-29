@@ -42,8 +42,6 @@ public interface ManagerReader extends Runnable
      */
     void setSocket(final SocketConnectionFacade socket);
 
-    boolean isDead();
-
     /**
      * Returns the Exception that caused this reader to terminate if any.
      *

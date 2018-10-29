@@ -597,7 +597,7 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
         logger.debug("Passing socket to reader");
         reader.setSocket(socket);
 
-        if (readerThread == null || !readerThread.isAlive() || reader.isDead())
+        if (readerThread == null || !readerThread.isAlive() || !socket.isConnected())
         {
             logger.debug("Creating and starting reader thread");
             readerThread = new Thread(reader);

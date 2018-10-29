@@ -16,8 +16,6 @@
  */
 package org.asteriskjava.manager.internal;
 
-import org.asteriskjava.manager.event.ManagerEvent;
-
 /**
  * The Dispatcher defines the interface used for communication between
  * ManagerConnection and ManagerReader.
@@ -30,15 +28,6 @@ import org.asteriskjava.manager.event.ManagerEvent;
  */
 interface Dispatcher
 {
-    /**
-     * This method is called by the reader whenever a ManagerEvent is received.
-     * The event is dispatched to all registered ManagerEventHandlers.
-     *
-     * @param event the event received by the reader
-     * @see ManagerReader
-     */
-    void dispatchEvent(ManagerEvent event);
-
     void onPrompt(String protoId);
 
     void onDisconnect();

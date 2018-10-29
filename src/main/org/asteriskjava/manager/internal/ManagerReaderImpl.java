@@ -16,8 +16,6 @@
  */
 package org.asteriskjava.manager.internal;
 
-import org.asteriskjava.manager.event.ManagerEvent;
-import org.asteriskjava.manager.response.ManagerResponse;
 import org.asteriskjava.util.Log;
 import org.asteriskjava.util.LogFactory;
 import org.asteriskjava.util.SocketConnectionFacade;
@@ -96,9 +94,6 @@ public class ManagerReaderImpl implements ManagerReader
     /**
      * Reads line by line from the asterisk server, sets the protocol identifier as soon as it is
      * received and dispatches the received events and responses via the associated dispatcher.
-     *
-     * @see org.asteriskjava.manager.internal.Dispatcher#dispatchEvent(ManagerEvent)
-     * @see org.asteriskjava.manager.internal.Dispatcher#dispatchResponse(ManagerResponse)
      */
     public void run()
     {

@@ -56,11 +56,6 @@ public class ManagerReaderImpl implements ManagerReader
     private SocketConnectionFacade socket;
 
     /**
-     * <code>true</code> if the main loop has finished.
-     */
-    private boolean dead = false;
-
-    /**
      * Exception that caused this reader to terminate if any.
      */
     private IOException terminationException;
@@ -129,8 +124,6 @@ public class ManagerReaderImpl implements ManagerReader
             throw new IllegalStateException("Unable to run: socket is null.");
         }
 
-        this.dead = false;
-
         try
         {
             // welcome prompt
@@ -143,18 +136,16 @@ public class ManagerReaderImpl implements ManagerReader
                 packet.read(socket);
                 dispatcher.dispatch(packet);
             }
-            this.dead = true;
+
             logger.debug("Reached end of stream, terminating reader.");
         }
         catch (IOException e)
         {
             this.terminationException = e;
-            this.dead = true;
             logger.info("Terminating reader thread: " + e.getMessage());
         }
         finally
         {
-            this.dead = true;
             // cleans resources and reconnects if needed
             DisconnectEvent disconnectEvent = new DisconnectEvent(source);
             disconnectEvent.setDateReceived(DateUtil.getDate());
@@ -164,7 +155,7 @@ public class ManagerReaderImpl implements ManagerReader
 
     public boolean isDead()
     {
-        return dead;
+        return socket.isConnected();
     }
 
     public IOException getTerminationException()

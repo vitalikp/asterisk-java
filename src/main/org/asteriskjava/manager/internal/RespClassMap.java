@@ -1,7 +1,8 @@
 package org.asteriskjava.manager.internal;
 
+import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Locale;
+import java.util.List;
 import java.util.Map;
 import org.asteriskjava.manager.response.ChallengeResponse;
 import org.asteriskjava.manager.response.CommandResponse;
@@ -65,17 +66,13 @@ public class RespClassMap extends ClassMap<ManagerResponse>
 		}
 	}
 
-	private ManagerResponse newInstance(Map<String, String> props)
+	private ManagerResponse newInstance(Packet packet)
 	{
 		ClassType<ManagerResponse> clsType;
 		ManagerResponse resp;
 		String actionId;
 
-		actionId = props.get("ActionID".toLowerCase(Locale.ENGLISH));
-		if (actionId == null)
-			return null;
-
-		actionId = ManagerUtil.getInternalActionId(actionId);
+		actionId = packet.getID();
 		if (actionId == null)
 			return null;
 
@@ -85,24 +82,35 @@ public class RespClassMap extends ClassMap<ManagerResponse>
 
 		resp = newInstance(clsType);
 
-		setProps(resp, clsType, props);
+		setProps(resp, clsType, packet.getProps());
 
 		return resp;
 	}
 
-	public ManagerResponse buildResp(Map<String, String> props)
+	public ManagerResponse buildResp(Packet packet)
 	{
 		ManagerResponse resp;
 
-		resp = newInstance(props);
+		resp = newInstance(packet);
 		if (resp == null)
 		{
 			resp = newInstance(nullType);
-			setProps(resp, nullType, props);
+			setProps(resp, nullType, packet.getProps());
 		}
 
 		// clone this map as it is reused by the ManagerReader
-		resp.setAttributes(new HashMap<String, String>(props));
+		resp.setAttributes(new HashMap<String, String>(packet.getProps()));
+
+		if (resp instanceof CommandResponse)
+		{
+			List<String> result;
+
+			result = Arrays.asList(packet.getOutput().split("\0"));
+			((CommandResponse)resp).setResult(result);
+		}
+
+		if (packet.getID() == null)
+			log.error("Unable to retrieve internalActionId from response: " + "actionId '" + resp.getActionId() + "':\n" + resp);
 
 		return resp;
 	}

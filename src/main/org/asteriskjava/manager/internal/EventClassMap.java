@@ -69,6 +69,7 @@ import org.asteriskjava.manager.event.RTcpSentEvent;
 import org.asteriskjava.manager.event.RegistryEvent;
 import org.asteriskjava.manager.event.ReloadEvent;
 import org.asteriskjava.manager.event.RenameEvent;
+import org.asteriskjava.manager.event.ResponseEvent;
 import org.asteriskjava.manager.event.ShutdownEvent;
 import org.asteriskjava.manager.event.StatusCompleteEvent;
 import org.asteriskjava.manager.event.StatusEvent;
@@ -185,22 +186,6 @@ class EventClassMap extends ClassMap<ManagerEvent>
 
 			value = props.get(name);
 
-			// ResponseEvents are sent in response to a ManagerAction if the
-			// response contains lots of data. They include the actionId of
-			// the corresponding ManagerAction.
-			if ("actionID".equalsIgnoreCase(name))
-			{
-				try
-				{
-					clsType.setProp(event, "internal" + name, ManagerUtil.getInternalActionId(value));
-					value = ManagerUtil.stripInternalActionId(value);
-				}
-				catch (Exception e)
-				{
-					log.error(String.format("Unable to set property '%s' to '%s' on %s: %s", "internal" + name, value, event.getClass().getName(), e.getMessage()), e.getCause());
-				}
-			}
-
 			try
 			{
 				clsType.setProp(event, name, value);
@@ -212,13 +197,13 @@ class EventClassMap extends ClassMap<ManagerEvent>
 		}
 	}
 
-	public ManagerEvent newInstance(Map<String, String> attrs, Object source)
+	public ManagerEvent newInstance(Packet packet, Object source)
 	{
 		ClassType<ManagerEvent> clsType;
 		ManagerEvent event;
 		String type;
 
-		type = attrs.get("event");
+		type = packet.getType();
 		if (type == null)
 		{
 			log.error("No event type in properties");
@@ -226,23 +211,10 @@ class EventClassMap extends ClassMap<ManagerEvent>
 		}
 		type = type.toLowerCase(Locale.ENGLISH);
 
-		// Change in Asterisk 1.4 where the name of the UserEvent is sent as property instead
-		// of the event name (AJ-48)
-		if ("UserEvent".equalsIgnoreCase(type))
-		{
-			if (attrs.get("userevent") == null)
-			{
-				log.error("No user event type in properties");
-				return null;
-			}
-
-			type += attrs.get("userevent").toLowerCase(Locale.ENGLISH);
-		}
-
 		clsType = classes.get(type);
 		if (clsType == null)
 		{
-			log.info(String.format("No class registered for event type '%s', attributes: %s", type, attrs));
+			log.info(String.format("No class registered for event type '%s', attributes: %s", type, packet.getProps()));
 			return null;
 		}
 
@@ -250,7 +222,15 @@ class EventClassMap extends ClassMap<ManagerEvent>
 		if (event == null)
 			return null;
 
-		setProps(event, clsType, attrs);
+		setProps(event, clsType, packet.getProps());
+
+		event.setPrivilege(packet.getPrivilege());
+
+		// ResponseEvents are sent in response to a ManagerAction if the
+		// response contains lots of data. They include the actionId of
+		// the corresponding ManagerAction.
+		if (event instanceof ResponseEvent)
+			((ResponseEvent)event).setInternalActionId(packet.getID());
 
 		return event;
 	}

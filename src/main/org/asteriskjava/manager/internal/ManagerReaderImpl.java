@@ -19,7 +19,6 @@ package org.asteriskjava.manager.internal;
 import org.asteriskjava.manager.event.DisconnectEvent;
 import org.asteriskjava.manager.event.ManagerEvent;
 import org.asteriskjava.manager.event.ProtocolIdentifierReceivedEvent;
-import org.asteriskjava.manager.response.CommandResponse;
 import org.asteriskjava.manager.response.ManagerResponse;
 import org.asteriskjava.util.DateUtil;
 import org.asteriskjava.util.Log;
@@ -27,7 +26,6 @@ import org.asteriskjava.util.LogFactory;
 import org.asteriskjava.util.SocketConnectionFacade;
 
 import java.io.IOException;
-import java.util.*;
 
 /**
  * Default implementation of the ManagerReader interface.
@@ -131,79 +129,6 @@ public class ManagerReaderImpl implements ManagerReader
         throw new IOException("AMI welcome prompt is missing!");
     }
 
-    private void readCmdResp(List<String> cmdRes)
-        throws IOException
-    {
-        CommandResponse cmdResp = new CommandResponse();
-        String ID = null;
-        String line;
-        int crIdx;
-
-        while ((line = socket.readLine()) != null && !die)
-        {
-            // in case of an error Asterisk sends a Usage: and an END COMMAND
-            // that is prepended by a space :(
-            if ("--END COMMAND--".equals(line) || " --END COMMAND--".equals(line))
-                break;
-
-            cmdRes.add(line);
-        }
-
-        crIdx = 0;
-        while (crIdx < cmdRes.size())
-        {
-            String[] crNVPair = cmdRes.get(crIdx).split(" *: *", 2);
-
-            if (crNVPair[0].equalsIgnoreCase("ActionID"))
-            {
-                // Remove the command response nvpair from the
-                // command result array and decrement index so we
-                // don't skip the "new" current line
-                cmdRes.remove(crIdx--);
-
-                if (crNVPair[1] != null)
-                {
-                    ID = ManagerUtil.getInternalActionId(crNVPair[1]);
-                    crNVPair[1] = ManagerUtil.stripInternalActionId(crNVPair[1]);
-                }
-
-                // Register the action id with the command result
-                cmdResp.setActionId(crNVPair[1]);
-            }
-            else if (crNVPair[0].equalsIgnoreCase("Privilege"))
-            {
-                // Remove the command response nvpair from the
-                // command result array and decrement index so we
-                // don't skip the "new" current line
-                cmdRes.remove(crIdx--);
-            }
-            else
-            {
-                // Didn't find a name:value pattern, so we're now in the
-                // command results.  Stop processing the nv pairs.
-                break;
-            }
-
-            crIdx++;
-        }
-
-        if (ID == null)
-        {
-            logger.error("Unable to retrieve internalActionId from response: " + "actionId '" + cmdResp.getActionId() + "':\n" + cmdResp);
-            return;
-        }
-
-        cmdResp.setResponse("Follows");
-        cmdResp.setDateReceived(DateUtil.getDate());
-        // clone commandResult as it is reused
-        cmdResp.setResult(new ArrayList<String>(cmdRes));
-        Map<String, String> attributes = new HashMap<String, String>();
-        attributes.put("actionid", cmdResp.getActionId());
-        attributes.put("response", cmdResp.getResponse());
-        cmdResp.setAttributes(attributes);
-        dispatcher.dispatchResponse(ID, cmdResp);
-    }
-
     /**
      * Reads line by line from the asterisk server, sets the protocol identifier (using a
      * generated {@link org.asteriskjava.manager.event.ProtocolIdentifierReceivedEvent}) as soon as it is
@@ -214,11 +139,7 @@ public class ManagerReaderImpl implements ManagerReader
      */
     public void run()
     {
-        final Map<String, String> buffer = new HashMap<String, String>();
-        final List<String> commandResult = new ArrayList<String>();
-        String ID;
-        String line;
-        PackType packType = PackType.None;
+        AmiPacket packet;
 
         if (socket == null)
         {
@@ -234,89 +155,11 @@ public class ManagerReaderImpl implements ManagerReader
             readPrompt();
 
             // main loop
-            while ((line = socket.readLine()) != null && !this.die)
+            while (!this.die)
             {
-                // an empty line indicates a normal response's or event's end so we build
-                // the corresponding value object and dispatch it through the ManagerConnection.
-                if (line.length() == 0)
-                {
-                    switch (packType)
-                    {
-                        case Event:
-                            ManagerEvent event = buildEvent(buffer);
-                            if (event != null)
-                            {
-                                dispatcher.dispatchEvent(event);
-                            }
-                            else
-                            {
-                                logger.debug("buildEvent returned null");
-                            }
-                            break;
-
-                        case Response:
-                            ManagerResponse response = buildResponse(buffer);
-                            if (response != null)
-                            {
-                                ID = response.getActionId();
-                                if (ID != null)
-                                {
-                                    response.setActionId(ManagerUtil.stripInternalActionId(ID));
-                                    ID = ManagerUtil.getInternalActionId(ID);
-                                }
-
-                                if (ID == null)
-                                    logger.error("Unable to retrieve internalActionId from response: " + "actionId '" + response.getActionId() + "':\n" + response);
-
-                                dispatcher.dispatchResponse(ID, response);
-                            }
-                            break;
-
-                        default:
-                            if (buffer.size() > 0)
-                            {
-                                logger.debug("buffer contains neither response nor event");
-                            }
-                    }
-
-                    // end packet
-                    packType = PackType.None;
-                    buffer.clear();
-                }
-                else
-                {
-                    int delimiterIndex;
-
-                    delimiterIndex = line.indexOf(":");
-                    if (delimiterIndex > 0 && line.length() > delimiterIndex + 2)
-                    {
-                        String name;
-                        String value;
-
-                        name = line.substring(0, delimiterIndex).toLowerCase(Locale.ENGLISH);
-                        value = line.substring(delimiterIndex + 2);
-
-                        if ("Response".equalsIgnoreCase(name))
-                        {
-                            // Response: Follows indicates that the output starting on the next line until
-                            // --END COMMAND-- must be treated as raw output of a command executed by a
-                            // CommandAction.
-                            if ("Follows".equalsIgnoreCase(value))
-                            {
-                                commandResult.clear();
-                                readCmdResp(commandResult);
-                                continue;
-                            }
-
-                            packType = PackType.Response;
-                        }
-                        else
-                            if ("Event".equalsIgnoreCase(name))
-                                packType = PackType.Event;
-
-                        buffer.put(name, value);
-                    }
-                }
+                packet = new AmiPacket();
+                packet.read(socket);
+                dispatcher.dispatch(packet);
             }
             this.dead = true;
             logger.debug("Reached end of stream, terminating reader.");
@@ -350,33 +193,5 @@ public class ManagerReaderImpl implements ManagerReader
     public IOException getTerminationException()
     {
         return terminationException;
-    }
-
-    private ManagerResponse buildResponse(Map<String, String> buffer)
-    {
-        ManagerResponse response;
-
-        response = respClassMap.buildResp(buffer);
-
-        if (response != null)
-        {
-            response.setDateReceived(DateUtil.getDate());
-        }
-
-        return response;
-    }
-
-    private ManagerEvent buildEvent(Map<String, String> buffer)
-    {
-        ManagerEvent event;
-
-        event = eventClassMap.newInstance(buffer, source);
-
-        if (event != null)
-        {
-            event.setDateReceived(DateUtil.getDate());
-        }
-
-        return event;
     }
 }

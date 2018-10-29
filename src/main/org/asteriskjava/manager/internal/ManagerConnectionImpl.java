@@ -1096,11 +1096,15 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
                 {
                     ManagerEvent event;
 
-                    event = eventClassMap.newInstance(packet.getProps(), this);
+                    event = eventClassMap.newInstance(packet, this);
                     if (event != null)
                     {
                         event.setDateReceived(packet.getDateReceived());
                         dispatchEvent(event);
+                    }
+                    else
+                    {
+                        logger.debug("buildEvent returned null");
                     }
                 }
                 break;
@@ -1109,7 +1113,7 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
                 {
                     ManagerResponse resp;
 
-                    resp = respClassMap.buildResp(packet.getProps());
+                    resp = respClassMap.buildResp(packet);
                     if (resp != null)
                     {
                         resp.setDateReceived(DateUtil.getDate());

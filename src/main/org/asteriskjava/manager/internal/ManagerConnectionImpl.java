@@ -966,6 +966,11 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
         }
     }
 
+    public void onPrompt(String protoId)
+    {
+        setProtocolIdentifier(protoId);
+    }
+
     public void onDisconnect()
     {
         // When we receive get disconnected while we are connected start
@@ -1077,7 +1082,7 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
 
             protocolIdentifierReceivedEvent = (ProtocolIdentifierReceivedEvent) event;
             protocolIdentifier = protocolIdentifierReceivedEvent.getProtocolIdentifier();
-            setProtocolIdentifier(protocolIdentifier);
+            onPrompt(protocolIdentifier);
             // no need to send this event to clients
             return;
         }

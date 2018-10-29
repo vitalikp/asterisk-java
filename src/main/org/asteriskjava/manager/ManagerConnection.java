@@ -116,7 +116,7 @@ public interface ManagerConnection
      * @see org.asteriskjava.manager.event.UserEvent
      * @see ManagerEvent
      */
-    void registerUserEventClass(Class userEventClass);
+    void registerUserEventClass(Class<? extends ManagerEvent> userEventClass);
 
     /**
      * The timeout to use when connecting the the Asterisk server.

@@ -389,8 +389,7 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
         return ssl;
     }
 
-    @SuppressWarnings("unchecked")
-    public void registerUserEventClass(Class userEventClass)
+    public void registerUserEventClass(Class<? extends ManagerEvent> userEventClass)
     {
         eventClassMap.regClass(userEventClass);
     }

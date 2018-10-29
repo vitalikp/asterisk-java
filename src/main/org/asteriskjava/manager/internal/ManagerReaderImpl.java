@@ -153,11 +153,6 @@ public class ManagerReaderImpl implements ManagerReader
         }
     }
 
-    public boolean isDead()
-    {
-        return socket.isConnected();
-    }
-
     public IOException getTerminationException()
     {
         return terminationException;

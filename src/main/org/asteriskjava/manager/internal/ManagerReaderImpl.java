@@ -17,9 +17,7 @@
 package org.asteriskjava.manager.internal;
 
 import org.asteriskjava.manager.event.ManagerEvent;
-import org.asteriskjava.manager.event.ProtocolIdentifierReceivedEvent;
 import org.asteriskjava.manager.response.ManagerResponse;
-import org.asteriskjava.util.DateUtil;
 import org.asteriskjava.util.Log;
 import org.asteriskjava.util.LogFactory;
 import org.asteriskjava.util.SocketConnectionFacade;
@@ -84,7 +82,6 @@ public class ManagerReaderImpl implements ManagerReader
     private void readPrompt()
         throws IOException
     {
-        ProtocolIdentifierReceivedEvent event;
         String line;
 
         line = socket.readLine();
@@ -96,10 +93,7 @@ public class ManagerReaderImpl implements ManagerReader
                 line.startsWith("OpenPBX Call Manager/") ||
                 line.startsWith("CallWeaver Call Manager/"))
         {
-            event = new ProtocolIdentifierReceivedEvent(source);
-            event.setProtocolIdentifier(line);
-            event.setDateReceived(DateUtil.getDate());
-            dispatcher.dispatchEvent(event);
+            dispatcher.onPrompt(line);
             return;
         }
 

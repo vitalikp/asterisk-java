@@ -39,6 +39,8 @@ interface Dispatcher
      */
     void dispatchEvent(ManagerEvent event);
 
+    void onPrompt(String protoId);
+
     void onDisconnect();
 
     void dispatch(Packet packet);

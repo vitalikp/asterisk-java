@@ -51,7 +51,6 @@ import org.asteriskjava.manager.action.ManagerAction;
 import org.asteriskjava.manager.event.ConnectEvent;
 import org.asteriskjava.manager.event.DisconnectEvent;
 import org.asteriskjava.manager.event.ManagerEvent;
-import org.asteriskjava.manager.event.ProtocolIdentifierReceivedEvent;
 import org.asteriskjava.manager.event.ResponseEvent;
 import org.asteriskjava.manager.exceptions.ResponseException;
 import org.asteriskjava.manager.response.ChallengeResponse;
@@ -1073,18 +1072,6 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
                 // logger.debug("ResponseEvent without "
                 // + "internalActionId:\n" + responseEvent);
             } // NOPMD
-        }
-
-        if (event instanceof ProtocolIdentifierReceivedEvent)
-        {
-            ProtocolIdentifierReceivedEvent protocolIdentifierReceivedEvent;
-            String protocolIdentifier;
-
-            protocolIdentifierReceivedEvent = (ProtocolIdentifierReceivedEvent) event;
-            protocolIdentifier = protocolIdentifierReceivedEvent.getProtocolIdentifier();
-            onPrompt(protocolIdentifier);
-            // no need to send this event to clients
-            return;
         }
 
         fireEvent(event);

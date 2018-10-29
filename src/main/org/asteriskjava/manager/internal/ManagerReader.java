@@ -42,8 +42,6 @@ public interface ManagerReader extends Runnable
      */
     void setSocket(final SocketConnectionFacade socket);
 
-    void die();
-
     boolean isDead();
 
     /**

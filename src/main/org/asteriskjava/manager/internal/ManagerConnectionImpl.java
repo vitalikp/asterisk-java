@@ -966,6 +966,45 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
         }
     }
 
+    public void onDisconnect()
+    {
+        // When we receive get disconnected while we are connected start
+        // a new reconnect thread and set the state to RECONNECTING.
+
+        // when we receive a DisconnectEvent while not connected we
+        // ignore it and do not send it to clients
+        if (state != CONNECTED)
+            return;
+
+        state = RECONNECTING;
+        // close socket if still open and remove reference to
+        // readerThread
+        // After sending the DisconnectThread that thread will die
+        // anyway.
+        cleanup();
+        reconnectThread = new Thread(new Runnable()
+        {
+            public void run()
+            {
+                reconnect();
+            }
+        });
+        reconnectThread.setName("Asterisk-Java ManagerConnection-" + id + "-Reconnect-"
+                + reconnectThreadCounter.getAndIncrement());
+        reconnectThread.setDaemon(true);
+        reconnectThread.start();
+        // now the DisconnectEvent is dispatched to registered
+        // eventListeners
+        // (clients) and after that the ManagerReaderThread is gone.
+        // So effectively we replaced the reader thread by a
+        // ReconnectThread.
+
+        DisconnectEvent disconnectEvent = new DisconnectEvent(this);
+        disconnectEvent.setDateReceived(DateUtil.getDate());
+
+        fireEvent(disconnectEvent);
+    }
+
     /**
      * This method is called by the reader whenever a ManagerEvent is received.
      * The event is dispatched to all registered ManagerEventHandlers.
@@ -1032,39 +1071,8 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
         }
         if (event instanceof DisconnectEvent)
         {
-            // When we receive get disconnected while we are connected start
-            // a new reconnect thread and set the state to RECONNECTING.
-            if (state == CONNECTED)
-            {
-                state = RECONNECTING;
-                // close socket if still open and remove reference to
-                // readerThread
-                // After sending the DisconnectThread that thread will die
-                // anyway.
-                cleanup();
-                reconnectThread = new Thread(new Runnable()
-                {
-                    public void run()
-                    {
-                        reconnect();
-                    }
-                });
-                reconnectThread.setName("Asterisk-Java ManagerConnection-" + id + "-Reconnect-"
-                        + reconnectThreadCounter.getAndIncrement());
-                reconnectThread.setDaemon(true);
-                reconnectThread.start();
-                // now the DisconnectEvent is dispatched to registered
-                // eventListeners
-                // (clients) and after that the ManagerReaderThread is gone.
-                // So effectively we replaced the reader thread by a
-                // ReconnectThread.
-            }
-            else
-            {
-                // when we receive a DisconnectEvent while not connected we
-                // ignore it and do not send it to clients
-                return;
-            }
+            onDisconnect();
+            return;
         }
         if (event instanceof ProtocolIdentifierReceivedEvent)
         {

@@ -40,7 +40,6 @@ public class ManagerReaderImpl implements ManagerReader
      */
     private final Log logger = LogFactory.getLog(getClass());
 
-    private final RespClassMap respClassMap;
     private final EventClassMap eventClassMap;
 
     /**
@@ -84,7 +83,6 @@ public class ManagerReaderImpl implements ManagerReader
         this.dispatcher = dispatcher;
         this.source = source;
 
-        respClassMap = new RespClassMap();
         eventClassMap = new EventClassMap();
     }
 

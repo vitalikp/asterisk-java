@@ -39,5 +39,7 @@ interface Dispatcher
      */
     void dispatchEvent(ManagerEvent event);
 
+    void onDisconnect();
+
     void dispatch(Packet packet);
 }

@@ -16,7 +16,6 @@
  */
 package org.asteriskjava.manager.internal;
 
-import org.asteriskjava.manager.event.DisconnectEvent;
 import org.asteriskjava.manager.event.ManagerEvent;
 import org.asteriskjava.manager.event.ProtocolIdentifierReceivedEvent;
 import org.asteriskjava.manager.response.ManagerResponse;
@@ -147,9 +146,7 @@ public class ManagerReaderImpl implements ManagerReader
         finally
         {
             // cleans resources and reconnects if needed
-            DisconnectEvent disconnectEvent = new DisconnectEvent(source);
-            disconnectEvent.setDateReceived(DateUtil.getDate());
-            dispatcher.dispatchEvent(disconnectEvent);
+            dispatcher.onDisconnect();
         }
     }
 

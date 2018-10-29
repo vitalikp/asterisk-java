@@ -1069,11 +1069,7 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
                 // + "internalActionId:\n" + responseEvent);
             } // NOPMD
         }
-        if (event instanceof DisconnectEvent)
-        {
-            onDisconnect();
-            return;
-        }
+
         if (event instanceof ProtocolIdentifierReceivedEvent)
         {
             ProtocolIdentifierReceivedEvent protocolIdentifierReceivedEvent;

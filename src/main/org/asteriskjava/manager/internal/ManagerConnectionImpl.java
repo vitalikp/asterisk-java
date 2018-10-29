@@ -918,7 +918,7 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
      * @param response the response received by the reader
      * @see ManagerReader
      */
-    public void dispatchResponse(String ID, ManagerResponse response)
+    private void dispatchResponse(String ID, ManagerResponse response)
     {
         String internalActionId;
         SendActionCallback listener;

@@ -56,11 +56,6 @@ public class ManagerReaderImpl implements ManagerReader
     private SocketConnectionFacade socket;
 
     /**
-     * If set to <code>true</code>, terminates and closes the reader.
-     */
-    private boolean die = false;
-
-    /**
      * <code>true</code> if the main loop has finished.
      */
     private boolean dead = false;
@@ -134,7 +129,6 @@ public class ManagerReaderImpl implements ManagerReader
             throw new IllegalStateException("Unable to run: socket is null.");
         }
 
-        this.die = false;
         this.dead = false;
 
         try
@@ -143,7 +137,7 @@ public class ManagerReaderImpl implements ManagerReader
             readPrompt();
 
             // main loop
-            while (!this.die)
+            while (socket.isConnected())
             {
                 packet = new AmiPacket();
                 packet.read(socket);

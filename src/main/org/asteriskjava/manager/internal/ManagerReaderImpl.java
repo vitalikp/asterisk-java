@@ -168,11 +168,6 @@ public class ManagerReaderImpl implements ManagerReader
         }
     }
 
-    public void die()
-    {
-        this.die = true;
-    }
-
     public boolean isDead()
     {
         return dead;

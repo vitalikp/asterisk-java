@@ -18,7 +18,6 @@ package org.asteriskjava.manager.internal;
 
 import java.io.IOException;
 
-import org.asteriskjava.manager.event.ManagerEvent;
 import org.asteriskjava.util.SocketConnectionFacade;
 
 /**
@@ -42,16 +41,6 @@ public interface ManagerReader extends Runnable
      * @param socket the socket to use for reading from the asterisk server.
      */
     void setSocket(final SocketConnectionFacade socket);
-
-    /**
-     * Registers a new event type with the underlying EventBuilder.
-     *
-     * <p>The eventClass must extend ManagerEvent.
-     *
-     * @see ManagerEvent
-     * @param event class of the event to register.
-     */
-    void registerEventClass(Class event);
 
     void die();
 

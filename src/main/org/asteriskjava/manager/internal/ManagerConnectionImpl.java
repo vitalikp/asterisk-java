@@ -390,14 +390,10 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
         return ssl;
     }
 
+    @SuppressWarnings("unchecked")
     public void registerUserEventClass(Class userEventClass)
     {
-        if (reader == null)
-        {
-            reader = createReader(this, this);
-        }
-
-        reader.registerEventClass(userEventClass);
+        eventClassMap.regClass(userEventClass);
     }
 
     public void setSocketTimeout(int socketTimeout)

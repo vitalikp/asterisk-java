@@ -17,7 +17,6 @@
 package org.asteriskjava.manager.internal;
 
 import org.asteriskjava.manager.event.ManagerEvent;
-import org.asteriskjava.manager.response.ManagerResponse;
 
 /**
  * The Dispatcher defines the interface used for communication between
@@ -31,16 +30,6 @@ import org.asteriskjava.manager.response.ManagerResponse;
  */
 interface Dispatcher
 {
-    /**
-     * This method is called by the reader whenever a {@link ManagerResponse} is
-     * received. The response is dispatched to the associated
-     * {@link org.asteriskjava.manager.SendActionCallback}.
-     *
-     * @param response the response received by the reader
-     * @see ManagerReader
-     */
-    void dispatchResponse(String ID, ManagerResponse response);
-
     /**
      * This method is called by the reader whenever a ManagerEvent is received.
      * The event is dispatched to all registered ManagerEventHandlers.

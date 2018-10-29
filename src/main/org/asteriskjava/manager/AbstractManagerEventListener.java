@@ -46,7 +46,6 @@ import org.asteriskjava.manager.event.ParkedCallsCompleteEvent;
 import org.asteriskjava.manager.event.PeerEntryEvent;
 import org.asteriskjava.manager.event.PeerStatusEvent;
 import org.asteriskjava.manager.event.PeerlistCompleteEvent;
-import org.asteriskjava.manager.event.ProtocolIdentifierReceivedEvent;
 import org.asteriskjava.manager.event.QueueEntryEvent;
 import org.asteriskjava.manager.event.QueueEvent;
 import org.asteriskjava.manager.event.QueueMemberAddedEvent;
@@ -199,10 +198,6 @@ public abstract class AbstractManagerEventListener implements ManagerEventListen
     }
 
     protected void handleEvent(PeerStatusEvent event)
-    {
-    }
-
-    protected void handleEvent(ProtocolIdentifierReceivedEvent event)
     {
     }
 
@@ -476,10 +471,6 @@ public abstract class AbstractManagerEventListener implements ManagerEventListen
         else if (event instanceof PeerStatusEvent)
         {
             handleEvent((PeerStatusEvent) event);
-        }
-        else if (event instanceof ProtocolIdentifierReceivedEvent)
-        {
-            handleEvent((ProtocolIdentifierReceivedEvent) event);
         }
         else if (event instanceof QueueEvent)
         {

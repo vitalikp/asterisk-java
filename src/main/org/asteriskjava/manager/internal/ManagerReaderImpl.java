@@ -94,8 +94,7 @@ public class ManagerReaderImpl implements ManagerReader
     }
 
     /**
-     * Reads line by line from the asterisk server, sets the protocol identifier (using a
-     * generated {@link org.asteriskjava.manager.event.ProtocolIdentifierReceivedEvent}) as soon as it is
+     * Reads line by line from the asterisk server, sets the protocol identifier as soon as it is
      * received and dispatches the received events and responses via the associated dispatcher.
      *
      * @see org.asteriskjava.manager.internal.Dispatcher#dispatchEvent(ManagerEvent)

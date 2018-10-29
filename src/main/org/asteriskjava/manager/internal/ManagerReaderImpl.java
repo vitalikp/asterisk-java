@@ -43,11 +43,6 @@ public class ManagerReaderImpl implements ManagerReader
     private final Dispatcher dispatcher;
 
     /**
-     * The source to use when creating {@link ManagerEvent}s.
-     */
-    private final Object source;
-
-    /**
      * The socket to use for reading from the asterisk server.
      */
     private SocketConnectionFacade socket;
@@ -61,12 +56,10 @@ public class ManagerReaderImpl implements ManagerReader
      * Creates a new ManagerReaderImpl.
      *
      * @param dispatcher the dispatcher to use for dispatching events and responses.
-     * @param source     the source to use when creating {@link ManagerEvent}s
      */
-    public ManagerReaderImpl(final Dispatcher dispatcher, Object source)
+    public ManagerReaderImpl(final Dispatcher dispatcher)
     {
         this.dispatcher = dispatcher;
-        this.source = source;
     }
 
     /**

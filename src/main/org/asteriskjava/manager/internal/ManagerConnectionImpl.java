@@ -238,9 +238,9 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
 
     // the following two methods can be overridden when running test cases to
     // return a mock object
-    protected ManagerReader createReader(Dispatcher dispatcher, Object source)
+    protected ManagerReader createReader(Dispatcher dispatcher)
     {
-        return new ManagerReaderImpl(dispatcher, source);
+        return new ManagerReaderImpl(dispatcher);
     }
 
     protected ManagerWriter createWriter()
@@ -581,7 +581,7 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
         if (reader == null)
         {
             logger.debug("Creating reader for " + hostname + ":" + port);
-            reader = createReader(this, this);
+            reader = createReader(this);
         }
 
         if (writer == null)

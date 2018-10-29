@@ -1085,6 +1085,44 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
         fireEvent(event);
     }
 
+    public void dispatch(Packet packet)
+    {
+        if (packet == null)
+            return;
+
+        switch (packet.getPackType())
+        {
+            case Event:
+                {
+                    ManagerEvent event;
+
+                    event = eventClassMap.newInstance(packet.getProps(), this);
+                    if (event != null)
+                    {
+                        event.setDateReceived(packet.getDateReceived());
+                        dispatchEvent(event);
+                    }
+                }
+                break;
+
+            case Response:
+                {
+                    ManagerResponse resp;
+
+                    resp = respClassMap.buildResp(packet.getProps());
+                    if (resp != null)
+                    {
+                        resp.setDateReceived(DateUtil.getDate());
+                        dispatchResponse(packet.getID(), resp);
+                    }
+                }
+                break;
+
+            default:
+                logger.debug("buffer contains neither response nor event");
+        }
+    }
+
     /**
      * Notifies all {@link ManagerEventListener}s registered by users.
      *

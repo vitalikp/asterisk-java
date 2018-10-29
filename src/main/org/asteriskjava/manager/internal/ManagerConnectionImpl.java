@@ -967,7 +967,13 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
 
     public void onPrompt(String protoId)
     {
-        setProtocolIdentifier(protoId);
+        logger.info("Connected via " + protoId);
+
+        synchronized (protocolIdentifier)
+        {
+            protocolIdentifier.value = protoId;
+            protocolIdentifier.notify();
+        }
     }
 
     public void onDisconnect()
@@ -1139,24 +1145,6 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
                     logger.warn("Unexpected exception in eventHandler " + listener.getClass().getName(), e);
                 }
             }
-        }
-    }
-
-    /**
-     * This method is called when a {@link ProtocolIdentifierReceivedEvent} is
-     * received from the reader. Having received a correct protocol identifier
-     * is the precondition for logging in.
-     *
-     * @param identifier the protocol version used by the Asterisk server.
-     */
-    private void setProtocolIdentifier(final String identifier)
-    {
-        logger.info("Connected via " + identifier);
-
-        synchronized (protocolIdentifier)
-        {
-            protocolIdentifier.value = identifier;
-            protocolIdentifier.notify();
         }
     }
 

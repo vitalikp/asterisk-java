@@ -49,4 +49,6 @@ interface Dispatcher
      * @see ManagerReader
      */
     void dispatchEvent(ManagerEvent event);
+
+    void dispatch(Packet packet);
 }

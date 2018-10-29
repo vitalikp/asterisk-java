@@ -40,8 +40,6 @@ public class ManagerReaderImpl implements ManagerReader
      */
     private final Log logger = LogFactory.getLog(getClass());
 
-    private final EventClassMap eventClassMap;
-
     /**
      * The dispatcher to use for dispatching events and responses.
      */
@@ -82,8 +80,6 @@ public class ManagerReaderImpl implements ManagerReader
     {
         this.dispatcher = dispatcher;
         this.source = source;
-
-        eventClassMap = new EventClassMap();
     }
 
     /**
@@ -94,12 +90,6 @@ public class ManagerReaderImpl implements ManagerReader
     public void setSocket(final SocketConnectionFacade socket)
     {
         this.socket = socket;
-    }
-
-    @SuppressWarnings("unchecked")
-    public void registerEventClass(Class eventClass)
-    {
-        eventClassMap.regClass(eventClass);
     }
 
     private void readPrompt()

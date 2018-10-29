@@ -1024,7 +1024,7 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
      * @see #removeEventListener(ManagerEventListener)
      * @see ManagerReader
      */
-    public void dispatchEvent(ManagerEvent event)
+    private void dispatchEvent(ManagerEvent event)
     {
         // shouldn't happen
         if (event == null)

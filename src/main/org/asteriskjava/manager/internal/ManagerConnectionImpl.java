@@ -183,7 +183,7 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
     /**
      * The writer to use to send actions to asterisk.
      */
-    private ManagerWriterImpl writer;
+    private ManagerWriter writer;
 
     /**
      * The protocol identifer Asterisk sends on connect wrapped into an object
@@ -243,9 +243,9 @@ public class ManagerConnectionImpl implements ManagerConnection, Dispatcher
         return new ManagerReader(dispatcher);
     }
 
-    protected ManagerWriterImpl createWriter()
+    protected ManagerWriter createWriter()
     {
-        return new ManagerWriterImpl();
+        return new ManagerWriter();
     }
 
     /**

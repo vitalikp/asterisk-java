@@ -27,7 +27,7 @@ import org.asteriskjava.util.SocketConnectionFacade;
  * @author srt
  * @version $Id: ManagerWriterImpl.java 636 2007-04-17 00:26:18Z srt $
  */
-public class ManagerWriterImpl
+public class ManagerWriter
 {
     /**
      * The action builder utility to convert ManagerAction to a String suitable to be sent to the
@@ -40,7 +40,7 @@ public class ManagerWriterImpl
     /**
      * Creates a new ManagerWriter.
      */
-    public ManagerWriterImpl()
+    public ManagerWriter()
     {
         this.actionBuilder = new ActionBuilderImpl();
     }

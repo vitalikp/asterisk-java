@@ -20,8 +20,6 @@ package org.asteriskjava.manager.event;
  * A ZapShowChannelsCompleteEvent is triggered after the state of all zap channels has been reported
  * in response to a ZapShowChannelsAction.
  *
- * @see org.asteriskjava.manager.event.ZapShowChannelsEvent
- *
  * @author srt
  * @version $Id: ZapShowChannelsCompleteEvent.java 229 2006-04-16 21:04:17Z srt $
  */

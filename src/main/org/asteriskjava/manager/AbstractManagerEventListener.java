@@ -66,7 +66,6 @@ import org.asteriskjava.manager.event.UnlinkEvent;
 import org.asteriskjava.manager.event.UnparkedCallEvent;
 import org.asteriskjava.manager.event.UserEvent;
 import org.asteriskjava.manager.event.ZapShowChannelsCompleteEvent;
-import org.asteriskjava.manager.event.ZapShowChannelsEvent;
 
 /**
  * Utility class that provides a protected handler method for each concrete manager event.
@@ -385,10 +384,6 @@ public abstract class AbstractManagerEventListener implements ManagerEventListen
     {
     }
 
-    protected void handleEvent(ZapShowChannelsEvent event)
-    {
-    }
-
     /**
      * Dispatches to the appropriate handleEvent(...) method.
      *
@@ -655,10 +650,6 @@ public abstract class AbstractManagerEventListener implements ManagerEventListen
         else if (event instanceof ZapShowChannelsCompleteEvent)
         {
             handleEvent((ZapShowChannelsCompleteEvent) event);
-        }
-        else if (event instanceof ZapShowChannelsEvent)
-        {
-            handleEvent((ZapShowChannelsEvent) event);
         }
     }
 }

@@ -69,8 +69,7 @@ public class AstUtil
      *     }
      * </pre>
      *
-     * To support the dnd property of
-     * {@link org.asteriskjava.manager.event.ZapShowChannelsEvent} this method
+     * To support the boolean property this method
      * also considered the string "Enabled" as true.
      *
      * @param s the String to check for <code>true</code>.

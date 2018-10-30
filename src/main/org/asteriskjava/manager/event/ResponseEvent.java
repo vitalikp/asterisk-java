@@ -28,6 +28,8 @@ package org.asteriskjava.manager.event;
  */
 public abstract class ResponseEvent extends ManagerEvent
 {
+    private static final long serialVersionUID = 1l;
+
     private String actionId;
     private String internalActionId;
 

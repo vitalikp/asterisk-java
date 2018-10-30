@@ -20,6 +20,7 @@ import java.io.IOException;
 
 import org.asteriskjava.manager.action.EventGeneratingAction;
 import org.asteriskjava.manager.action.ManagerAction;
+import org.asteriskjava.manager.event.ManagerEvent;
 import org.asteriskjava.manager.exceptions.ResponseException;
 import org.asteriskjava.manager.internal.ManagerConnectionImpl;
 import org.asteriskjava.manager.response.ManagerResponse;
@@ -252,7 +253,7 @@ public class DefaultManagerConnection implements ManagerConnection
         return impl.isSsl();
     }
 
-    public void registerUserEventClass(Class userEventClass)
+    public void registerUserEventClass(Class<? extends ManagerEvent> userEventClass)
     {
         impl.registerUserEventClass(userEventClass);
     }

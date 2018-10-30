@@ -43,7 +43,6 @@ import org.asteriskjava.manager.event.NewCallerIdEvent;
 import org.asteriskjava.manager.event.NewChannelEvent;
 import org.asteriskjava.manager.event.NewExtenEvent;
 import org.asteriskjava.manager.event.NewStateEvent;
-import org.asteriskjava.manager.event.OriginateFailureEvent;
 import org.asteriskjava.manager.event.OriginateResponseEvent;
 import org.asteriskjava.manager.event.ParkedCallEvent;
 import org.asteriskjava.manager.event.ParkedCallGiveUpEvent;
@@ -86,7 +85,6 @@ class EventClassMap extends ClassMap<ManagerEvent>
 		regEventClasses();
 	}
 
-	@SuppressWarnings("deprecation")
 	private void regEventClasses()
 	{
 		regClass(AgentCallbackLoginEvent.class);
@@ -128,7 +126,6 @@ class EventClassMap extends ClassMap<ManagerEvent>
 		regClass(NewChannelEvent.class);
 		regClass(NewExtenEvent.class);
 		regClass(NewStateEvent.class);
-		regClass(OriginateFailureEvent.class);
 		regClass(OriginateResponseEvent.class);
 		regClass(ParkedCallGiveUpEvent.class);
 		regClass(ParkedCallEvent.class);

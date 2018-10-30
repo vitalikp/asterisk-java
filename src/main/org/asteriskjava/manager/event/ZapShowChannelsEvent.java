@@ -20,8 +20,6 @@ package org.asteriskjava.manager.event;
  * A ZapShowChannelsEvent is triggered in response to a ZapShowChannelsAction and shows the state of
  * a zap channel.
  *
- * @see org.asteriskjava.manager.action.ZapShowChannelsAction
- *
  * @author srt
  * @version $Id: ZapShowChannelsEvent.java 397 2006-05-26 12:13:32Z srt $
  */

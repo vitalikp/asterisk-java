@@ -45,7 +45,6 @@ import org.asteriskjava.manager.event.NewExtenEvent;
 import org.asteriskjava.manager.event.NewStateEvent;
 import org.asteriskjava.manager.event.OriginateFailureEvent;
 import org.asteriskjava.manager.event.OriginateResponseEvent;
-import org.asteriskjava.manager.event.OriginateSuccessEvent;
 import org.asteriskjava.manager.event.ParkedCallEvent;
 import org.asteriskjava.manager.event.ParkedCallGiveUpEvent;
 import org.asteriskjava.manager.event.ParkedCallTimeOutEvent;
@@ -130,7 +129,6 @@ class EventClassMap extends ClassMap<ManagerEvent>
 		regClass(NewExtenEvent.class);
 		regClass(NewStateEvent.class);
 		regClass(OriginateFailureEvent.class);
-		regClass(OriginateSuccessEvent.class);
 		regClass(OriginateResponseEvent.class);
 		regClass(ParkedCallGiveUpEvent.class);
 		regClass(ParkedCallEvent.class);

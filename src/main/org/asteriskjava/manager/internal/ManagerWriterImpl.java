@@ -27,7 +27,7 @@ import org.asteriskjava.util.SocketConnectionFacade;
  * @author srt
  * @version $Id: ManagerWriterImpl.java 636 2007-04-17 00:26:18Z srt $
  */
-public class ManagerWriterImpl implements ManagerWriter
+public class ManagerWriterImpl
 {
     /**
      * The action builder utility to convert ManagerAction to a String suitable to be sent to the

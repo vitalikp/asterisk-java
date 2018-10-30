@@ -77,7 +77,6 @@ import org.asteriskjava.manager.event.UnholdEvent;
 import org.asteriskjava.manager.event.UnlinkEvent;
 import org.asteriskjava.manager.event.UnparkedCallEvent;
 import org.asteriskjava.manager.event.UserEvent;
-import org.asteriskjava.manager.event.ZapShowChannelsCompleteEvent;
 
 class EventClassMap extends ClassMap<ManagerEvent>
 {
@@ -162,7 +161,6 @@ class EventClassMap extends ClassMap<ManagerEvent>
 		regClass(UnholdEvent.class);
 		regClass(UnlinkEvent.class);
 		regClass(UnparkedCallEvent.class);
-		regClass(ZapShowChannelsCompleteEvent.class);
 	}
 
 	protected void regClass(String type, Class<? extends ManagerEvent> cls)

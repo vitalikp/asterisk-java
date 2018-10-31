@@ -30,6 +30,7 @@ public class HangupAction extends AbstractManagerAction
     static final long serialVersionUID = 3479615884618713986L;
 
     private String channel;
+    private int cause;
 
     /**
      * Creates a new empty HangupAction.
@@ -77,5 +78,15 @@ public class HangupAction extends AbstractManagerAction
     public void setChannel(String channel)
     {
         this.channel = channel;
+    }
+
+    public int getCause()
+    {
+        return cause;
+    }
+
+    public void setCause(int cause)
+    {
+        this.cause = cause;
     }
 }

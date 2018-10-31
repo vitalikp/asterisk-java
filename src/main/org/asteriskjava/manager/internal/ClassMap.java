@@ -86,7 +86,7 @@ class ClassMap<C>
 		if (clsType == null)
 			return null;
 
-		return newInstance(clsType);
+		return newInstance(clsType, params);
 	}
 
 	protected C newInstance(ClassType<C> clsType, Object ... params)

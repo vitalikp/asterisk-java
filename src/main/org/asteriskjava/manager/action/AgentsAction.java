@@ -51,7 +51,6 @@ public class AgentsAction extends AbstractManagerAction implements EventGenerati
     /**
      * Returns the name of this action, i.e. "Agents".
      */
-    @Override
     public String getAction()
     {
         return "Agents";

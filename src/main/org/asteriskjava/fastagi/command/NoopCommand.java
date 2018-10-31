@@ -37,7 +37,6 @@ public class NoopCommand extends AbstractAgiCommand
         super();
     }
 
-    @Override
     public String buildCommand()
     {
         return "NOOP";

@@ -145,7 +145,6 @@ public abstract class ManagerEvent extends EventObject implements Serializable
         this.timestamp = timestamp;
     }
 
-    @Override
     public String toString()
     {
         StringBuffer sb;

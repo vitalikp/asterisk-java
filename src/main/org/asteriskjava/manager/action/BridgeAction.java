@@ -75,7 +75,6 @@ public class BridgeAction extends AbstractManagerAction
     /**
      * Returns the name of this action, i.e. "Bridge".
      */
-    @Override
     public String getAction()
     {
         return "Bridge";

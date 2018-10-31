@@ -130,7 +130,6 @@ public class Voicemailbox implements Serializable
         this.oldMessages = oldMessages;
     }
 
-    @Override
     public String toString()
     {
         StringBuffer sb;

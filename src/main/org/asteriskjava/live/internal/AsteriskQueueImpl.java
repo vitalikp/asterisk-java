@@ -125,7 +125,6 @@ class AsteriskQueueImpl extends AbstractLiveObject implements AsteriskQueue
         fireEntryLeave(entry);
     }
 
-    @Override
     public String toString()
     {
         final StringBuffer sb;

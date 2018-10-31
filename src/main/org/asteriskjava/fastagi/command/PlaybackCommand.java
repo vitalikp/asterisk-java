@@ -11,7 +11,6 @@ public class PlaybackCommand extends AbstractAgiCommand
 		this.filenames = filenames;
 	}
 
-	@Override
 	public String buildCommand()
 	{
 		StringBuilder cmd = new StringBuilder();

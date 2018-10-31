@@ -367,7 +367,6 @@ public class AgiReplyImpl implements Serializable, AgiReply
         return usage;
     }
 
-    @Override
     public String toString()
     {
         StringBuffer sb;

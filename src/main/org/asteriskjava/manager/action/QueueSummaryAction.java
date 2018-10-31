@@ -45,7 +45,6 @@ public class QueueSummaryAction extends AbstractManagerAction implements EventGe
         this.queue = queue;
     }
 
-    @Override
     public String getAction()
     {
         return "QueueSummary";

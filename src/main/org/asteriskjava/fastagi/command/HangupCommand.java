@@ -77,7 +77,6 @@ public class HangupCommand extends AbstractAgiCommand
         this.channel = channel;
     }
 
-    @Override
     public String buildCommand()
     {
         return "HANGUP"

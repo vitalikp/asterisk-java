@@ -81,7 +81,6 @@ public class WaitForDigitCommand extends AbstractAgiCommand
         this.timeout = timeout;
     }
 
-    @Override
     public String buildCommand()
     {
         return "WAIT FOR DIGIT " + timeout;

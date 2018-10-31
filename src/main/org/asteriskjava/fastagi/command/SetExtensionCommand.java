@@ -67,7 +67,6 @@ public class SetExtensionCommand extends AbstractAgiCommand
         this.extension = extension;
     }
 
-    @Override
     public String buildCommand()
     {
         return "SET EXTENSION " + escapeAndQuote(extension);

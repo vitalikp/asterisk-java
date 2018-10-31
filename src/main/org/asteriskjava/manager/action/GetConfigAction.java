@@ -53,7 +53,6 @@ public class GetConfigAction extends AbstractManagerAction
     /**
      * Returns the name of this action, i.e. "GetConfig".
      */
-    @Override
     public String getAction()
     {
         return "GetConfig";

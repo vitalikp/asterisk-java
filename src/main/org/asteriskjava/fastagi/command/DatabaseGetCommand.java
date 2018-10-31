@@ -97,7 +97,6 @@ public class DatabaseGetCommand extends AbstractAgiCommand
         this.key = key;
     }
 
-    @Override
     public String buildCommand()
     {
         return "DATABASE GET " + escapeAndQuote(family) + " "

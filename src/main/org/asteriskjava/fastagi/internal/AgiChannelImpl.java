@@ -231,7 +231,6 @@ public class AgiChannelImpl implements AgiChannel
 		return reply.getResultCode();
 	}
 
-	@Override
 	public int playback(String ... filenames)
 		throws IOException
 	{
@@ -242,7 +241,6 @@ public class AgiChannelImpl implements AgiChannel
 		return reply.getResultCode();
 	}
 
-	@Override
 	public int background(String ... filenames)
 		throws IOException
 	{

@@ -70,7 +70,6 @@ public class OriginateAction extends AbstractManagerAction implements EventGener
      *
      * @return the name of this action.
      */
-    @Override
     public String getAction()
     {
         return "Originate";

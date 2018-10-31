@@ -272,7 +272,6 @@ public class RecordFileCommand extends AbstractAgiCommand
         this.maxSilence = maxSilence;
     }
 
-    @Override
     public String buildCommand()
     {
         return "RECORD FILE " + escapeAndQuote(file) + " " + escapeAndQuote(format) + " " + escapeAndQuote(escapeDigits)

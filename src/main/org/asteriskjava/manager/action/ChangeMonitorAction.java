@@ -60,7 +60,6 @@ public class ChangeMonitorAction extends AbstractManagerAction
     /**
      * Returns the name of this action, i.e. "ChangeMonitor".
      */
-    @Override
     public String getAction()
     {
         return "ChangeMonitor";

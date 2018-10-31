@@ -116,7 +116,6 @@ public class GetFullVariableCommand extends AbstractAgiCommand
         this.channel = channel;
     }
 
-    @Override
     public String buildCommand()
     {
         StringBuffer sb;

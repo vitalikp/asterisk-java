@@ -61,7 +61,6 @@ public class QueueStatusAction extends AbstractManagerAction
     /**
      * Returns the name of this action, i.e. "QueueStatus".
      */
-    @Override
     public String getAction()
     {
         return "QueueStatus";

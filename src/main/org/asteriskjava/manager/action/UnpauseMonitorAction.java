@@ -65,7 +65,6 @@ public class UnpauseMonitorAction extends AbstractManagerAction
      *
      * @return the name of this action.
      */
-    @Override
     public String getAction()
     {
         return "UnpauseMonitor";

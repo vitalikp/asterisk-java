@@ -29,7 +29,6 @@ public class SecureAsteriskServer extends DefaultAsteriskServer
         super(hostname, port, username, password);
     }
 
-    @Override
     protected DefaultManagerConnection createManagerConnection(String hostname, int port, String username, String password)
     {
         DefaultManagerConnection dmc;

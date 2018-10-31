@@ -106,7 +106,6 @@ public class DatabaseDelCommand extends AbstractAgiCommand
         this.keyTree = keyTree;
     }
 
-    @Override
     public String buildCommand()
     {
         return "DATABASE DELTREE " + escapeAndQuote(family)

@@ -105,7 +105,6 @@ public class DatabaseDelTreeCommand extends AbstractAgiCommand
         this.keytree = keytree;
     }
 
-    @Override
     public String buildCommand()
     {
         if (keytree == null)

@@ -57,7 +57,6 @@ public class ChallengeAction extends AbstractManagerAction
     /**
      * Returns Returns the name of this action, i.e. "Challenge".
      */
-    @Override
     public String getAction()
     {
         return "Challenge";

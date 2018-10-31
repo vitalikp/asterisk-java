@@ -70,7 +70,6 @@ public class Extension implements Serializable
         return appData;
     }
 
-    @Override
     public String toString()
     {
         StringBuffer sb;

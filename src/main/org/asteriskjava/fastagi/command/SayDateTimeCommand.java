@@ -209,7 +209,6 @@ public class SayDateTimeCommand extends AbstractAgiCommand
         this.timezone = timezone;
     }
 
-    @Override
     public String buildCommand()
     {
         StringBuffer sb;

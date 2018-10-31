@@ -90,7 +90,6 @@ public class CallerId implements Serializable
      * Returns a string representation of this CallerId in the form
      * <code>"Some Name" &lt;1234&gt;</code>.
      */
-    @Override
     public String toString()
     {
         final StringBuilder sb;
@@ -116,7 +115,6 @@ public class CallerId implements Serializable
         return sb.toString();
     }
 
-    @Override
     public int hashCode()
     {
         final int PRIME = 31;
@@ -126,7 +124,6 @@ public class CallerId implements Serializable
         return result;
     }
 
-    @Override
     public boolean equals(Object obj)
     {
         if (this == obj)

@@ -76,7 +76,6 @@ public class GetVariableCommand extends AbstractAgiCommand
         this.variable = variable;
     }
 
-    @Override
     public String buildCommand()
     {
         return "GET VARIABLE " + escapeAndQuote(variable);

@@ -88,7 +88,6 @@ public class LinkedChannelHistoryEntry implements Serializable
         return channel;
     }
 
-    @Override
     public String toString()
     {
         final StringBuilder sb;

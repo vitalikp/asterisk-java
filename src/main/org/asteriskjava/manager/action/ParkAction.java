@@ -78,7 +78,6 @@ public class ParkAction extends AbstractManagerAction
     /**
      * Returns the name of this action, i.e. "Park".
      */
-    @Override
     public String getAction()
     {
         return "Park";

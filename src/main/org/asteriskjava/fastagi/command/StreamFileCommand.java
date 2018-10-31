@@ -159,7 +159,6 @@ public class StreamFileCommand extends AbstractAgiCommand
         this.offset = offset;
     }
 
-    @Override
     public String buildCommand()
     {
         return "STREAM FILE " + escapeAndQuote(file) + " "

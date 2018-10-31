@@ -60,7 +60,6 @@ public class DbPutAction extends AbstractManagerAction
         this.val = val;
     }
 
-    @Override
     public String getAction()
     {
         return "DBPut";

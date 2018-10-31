@@ -161,7 +161,6 @@ class MeetMeUserImpl extends AbstractLiveObject implements MeetMeUser
         }
     }
 
-    @Override
     public String toString()
     {
         StringBuffer sb;

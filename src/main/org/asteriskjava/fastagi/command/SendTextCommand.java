@@ -70,7 +70,6 @@ public class SendTextCommand extends AbstractAgiCommand
         this.text = text;
     }
 
-    @Override
     public String buildCommand()
     {
         return "SEND TEXT " + escapeAndQuote(text);

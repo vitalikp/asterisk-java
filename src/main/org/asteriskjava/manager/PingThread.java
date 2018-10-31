@@ -104,7 +104,6 @@ public class PingThread extends Thread
         interrupt();
     }
 
-    @Override
     public void run()
     {
         while (!die)

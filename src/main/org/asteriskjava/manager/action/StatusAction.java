@@ -38,6 +38,8 @@ public class StatusAction extends AbstractManagerAction
      */
     static final long serialVersionUID = -320228893513973367L;
 
+    private String channel;
+
     /**
      * Creates a new StatusAction.
      */
@@ -53,6 +55,16 @@ public class StatusAction extends AbstractManagerAction
     public String getAction()
     {
         return "Status";
+    }
+
+    public String getChannel()
+    {
+        return channel;
+    }
+
+    public void setChannel(String channel)
+    {
+        this.channel = channel;
     }
 
     public Class getActionCompleteEventClass()
